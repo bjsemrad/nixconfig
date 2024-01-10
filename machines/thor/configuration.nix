@@ -19,6 +19,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  hardware.enableAllFirmware = true;
+
+  nix.gc.automatic = true;
+  nix.gc.dates = "daily";
+  nix.gc.options = "--delete-older-than +5"; 
+  
   networking.hostName = "thor"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -96,7 +102,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
+  nixpkgs.config.allowUnfreePredicate = (pkg: true);
    
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -106,6 +112,7 @@
     flatpak
     jq
     tailscale
+    jetbrains-toolbox
 #  wget
   ];
 
