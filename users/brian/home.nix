@@ -21,18 +21,25 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+  programs.firefox.enable = true;
+  programs.neovim.enable = true;
+  programs.starship.enable = true;
+  programs.git.enable = true;
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk21;
+  };
   home.packages = with pkgs; [
-    zsh
-    neovim
-    firefox
     alacritty
     bitwarden
-    git
-    jdk21
+    #git #programs.git.enable
+    #jdk21 #programs.java.enable will setup JAVA_HOME and be system level
     go
     rustup
-    starship
-    jetbrains-toolbox
+    #starship #programs.starship.enable
+    jetbrains.idea-ultimate
+    vscode
+    #doesn't work for launching not within toolbox jetbrains-toolbox
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
