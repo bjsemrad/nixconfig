@@ -51,9 +51,11 @@ in
       homeupdate = "home-manager switch --flake ${nixconfigdir}";
       nixupdate = "cd ${nixconfigdir} && nix flake update && sudo nixos-rebuild switch --flake ${nixconfigdir}";
       nixgc = "nix-store --gc";
-    };  
+    };
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true; #OLD enableSyntaxHighlighting = true;
   };
-  
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
