@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./opengl.nix
       ./kernel.nix
@@ -23,8 +24,8 @@
 
   nix.gc.automatic = true;
   nix.gc.dates = "daily";
-  nix.gc.options = "--delete-older-than +5"; 
-  
+  nix.gc.options = "--delete-older-than +5";
+
   networking.hostName = "thor"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -60,14 +61,14 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = with pkgs; [
-  	gnome.cheese
-	gnome-photos 
-	gnome.gnome-music
-	epiphany
-	gnome-tour
-	gnome.gnome-maps
+    gnome.cheese
+    gnome-photos
+    gnome.gnome-music
+    epiphany
+    gnome-tour
+    gnome.gnome-maps
   ];
-  programs.hyprland.enable = true;  
+  programs.hyprland.enable = true;
 
   # Configure keymap
   services.xserver = {
@@ -99,19 +100,19 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  programs.zsh.enable = true;  
+  programs.zsh.enable = true;
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Semrad";
-    extraGroups = [ "networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
-   
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -120,8 +121,9 @@
     flatpak
     jq
     tailscale
-    jetbrains-toolbox
-#  wget
+    nixfmt
+    nixpkgs-fmt
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -138,7 +140,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-   networking.firewall = {
+  networking.firewall = {
     # enable the firewall
     enable = true;
 
@@ -158,5 +160,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

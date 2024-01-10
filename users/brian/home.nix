@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 let
-   username = "brian";
-   homeDirectory = "/home/brian";
-   nixconfigdir = "${homeDirectory}/nixconfig";
-in 
+  username = "brian";
+  homeDirectory = "/home/brian";
+  nixconfigdir = "${homeDirectory}/nixconfig";
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -25,11 +25,12 @@ in
   programs.neovim.enable = true;
   programs.starship.enable = true;
   programs.git.enable = true;
+  programs.direnv.enable = true;
   programs.java = {
     enable = true;
     package = pkgs.jdk21;
   };
-  
+
   home.packages = with pkgs; [
     alacritty
     bitwarden
@@ -49,14 +50,14 @@ in
     enable = true;
     shellAliases = {
       homeupdate = "home-manager switch --flake ${nixconfigdir}";
-      nixupdate = "cd ${nixconfigdir} && nix flake update && sudo nixos-rebuild switch --flake ${nixconfigdir}";
+      nixupdate = "cd ${nixconfigdir} && nix flake update && sudo nixos-rebuild switch --upgrade --flake ${nixconfigdir}";
       nixgc = "nix-store --gc";
     };
     enableAutosuggestions = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true; #OLD enableSyntaxHighlighting = true;
   };
-# Home Manager is pretty good at managing dotfiles. The primary way to manage
+  # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
