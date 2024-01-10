@@ -16,6 +16,7 @@
       ./firmware.nix
       ./tailscale.nix
       ./desktops.nix
+      ./printing.nix
     ];
 
   # Bootloader.
@@ -54,13 +55,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
-
-  
-
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
