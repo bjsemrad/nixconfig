@@ -25,7 +25,7 @@ in
     zsh
     neovim
     firefox
-    wezterm
+    alacritty
     bitwarden
     git
     jdk21
