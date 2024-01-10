@@ -46,6 +46,7 @@ in
     shellAliases = {
       homeupdate = "home-manager switch --flake ${nixconfigdir}";
       nixupdate = "cd ${nixconfigdir} && nix flake update && sudo nixos-rebuild switch --flake ${nixconfigdir}";
+      nixgc = "nix-store --gc";
     };  
   };
   
