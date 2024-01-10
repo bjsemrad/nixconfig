@@ -29,14 +29,12 @@ in
     enable = true;
     package = pkgs.jdk21;
   };
+  
   home.packages = with pkgs; [
     alacritty
     bitwarden
-    #git #programs.git.enable
-    #jdk21 #programs.java.enable will setup JAVA_HOME and be system level
     go
     rustup
-    #starship #programs.starship.enable
     jetbrains.idea-ultimate
     vscode
     #doesn't work for launching not within toolbox jetbrains-toolbox
