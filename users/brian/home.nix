@@ -50,7 +50,7 @@ in
     enable = true;
     shellAliases = {
       homeupdate = "home-manager switch --flake ${nixconfigdir}";
-      nixupdate = "cd ${nixconfigdir} && nix flake update && sudo nixos-rebuild switch --upgrade --flake ${nixconfigdir}";
+      nixupdate = "cd ${nixconfigdir} && nix flake update && sudo nixos-rebuild switch --verbose --upgrade --flake ${nixconfigdir}";
       nixgc = "nix-store --gc";
     };
     enableAutosuggestions = true;
