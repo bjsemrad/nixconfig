@@ -9,6 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./firewall.nix
       ./opengl.nix
       ./kernel.nix
       ./fingerprint.nix
@@ -54,16 +55,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11/Wayland windowing system.
-  services.xserver.enable = true;
 
   
 
-  # Configure keymap
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -85,11 +79,10 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.zsh.enable = true;
+
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Semrad";
@@ -128,19 +121,6 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  networking.firewall = {
-    # enable the firewall
-    enable = true;
-
-    # always allow traffic from your Tailscale network
-    trustedInterfaces = [ "tailscale0" ];
-
-    # allow the Tailscale UDP port through the firewall
-    allowedUDPPorts = [ config.services.tailscale.port ];
-  };
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
