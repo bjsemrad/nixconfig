@@ -4,7 +4,8 @@
   programs.starship.enable = true;
   programs.starship.settings = {
     format = lib.concatStrings [
-      "$env_var  $username"
+      "$os "
+      "$username"
       "$hostname"
       "$localip"
       "$shlvl"
@@ -17,6 +18,7 @@
       "$git_state"
       "$git_metrics"
       "$git_status"
+      "$nix_shell"
       "$hg_branch"
       "$docker_context"
       "$package"
@@ -83,6 +85,10 @@
 
     add_newline = true;
 
+    os = {
+      disabled = false;
+    };
+
     memory_usage = {
       disabled = true;
       threshold = -1;
@@ -121,7 +127,7 @@
     };
 
     username = {
-      format = "[$user]($style) on ";
+      #format = "[\$user](\$style) on ";
       style_user = "bold #8be9fd";
     };
 
@@ -150,7 +156,7 @@
 
     java = {
       symbol = "";
-      format = "[${symbol}(${version} )]($style)";
+      format = "[\${symbol}(\${version} )]($style)";
       style = "bold white";
     };
 
