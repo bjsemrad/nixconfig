@@ -17,6 +17,7 @@
       ./tailscale.nix
       ./desktops.nix
       ./printing.nix
+      ./fonts.nix
     ];
 
   # Bootloader.
