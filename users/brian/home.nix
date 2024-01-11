@@ -8,6 +8,9 @@ in
   imports =
     [
       ./starship.nix
+      ./git.nix
+      ./java.nix
+      ./neovim.nix
     ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -26,13 +29,7 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   programs.firefox.enable = true;
-  programs.neovim.enable = true;
-  programs.git.enable = true;
   programs.direnv.enable = true;
-  programs.java = {
-    enable = true;
-    package = pkgs.jdk21;
-  };
 
   home.packages = with pkgs; [
     alacritty
