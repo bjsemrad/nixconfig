@@ -16,6 +16,6 @@
   imports =
     [
       ../common/wm/gnome.nix
-      ../common/wm/hyprland.nix
+      ../common/wm/hyprland
     ];
 }

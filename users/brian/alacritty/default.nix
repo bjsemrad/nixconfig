@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    ".alacritty.toml".source = ./alacritty.toml;
+     home.file = { 
+        ".alacritty.toml".source = ./alacritty.toml;
+     };
 }
