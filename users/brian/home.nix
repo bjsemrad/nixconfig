@@ -38,6 +38,8 @@ in
     rustup
     jetbrains.idea-ultimate
     vscode
+    nodejs
+    gcc
     #doesn't work for launching not within toolbox jetbrains-toolbox
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

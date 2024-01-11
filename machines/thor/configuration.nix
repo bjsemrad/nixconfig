@@ -100,6 +100,7 @@
     tailscale
     nixfmt
     nixpkgs-fmt
+    unzip
     #  wget
   ];
 
