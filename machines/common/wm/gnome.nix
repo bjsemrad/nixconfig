@@ -11,4 +11,8 @@
     gnome-tour
     gnome.gnome-maps
   ];
+
+  environment.systemPackages = with pkgs; [
+        gnome-firmware
+  ];
 }
