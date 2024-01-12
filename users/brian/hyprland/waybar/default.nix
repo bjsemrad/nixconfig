@@ -24,7 +24,6 @@
           "bluetooth"
           "battery"
           "clock"
-          /*"custom/session"*/
         ];
         "wlr/taskbar" = {
           "format" = "{icon}";
@@ -110,7 +109,7 @@
           "spacing" = 15;
         };
         "clock" = {
-          "format" = "{ = %a %b %d, %G %I = %M %p} ";
+          "format" = "{:%a %b %d, %G %I:%M %p} ";
           "interval" = 60;
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
@@ -194,238 +193,236 @@
           "on-scroll-down" = "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-";
           "scroll-step" = 5;
         };
-        "custom/media" =
-          {
-            "format" = "{icon} {}";
-            "return-type" = "json";
-            "max-length" = 40;
-            "format-icons" = {
-              "spotify" = "";
-              "default" = "🎜";
-            };
+        "custom/media" = {
+          "format" = "{icon} {}";
+          "return-type" = "json";
+          "max-length" = 40;
+          "format-icons" = {
+            "spotify" = "";
+            "default" = "🎜";
           };
-
-        style = ''
-          @define-color base   #3b4045;/*rgba(30,30,46, 0.8);*/ /*#1e1e2e;*/
-          @define-color mantle #31363b;
-          @define-color crust  #232629;
-
-          @define-color text     #fcfcfc;
-          @define-color subtext0 #a6adc8;
-          @define-color subtext1 #bac2de;
-
-          @define-color hover #3daee6;
-
-          @define-color surface0 #313244;
-          @define-color surface1 #45475a;
-          @define-color surface2 #585b70;
-
-          @define-color overlay0 #6c7086;
-          @define-color overlay1 #7f849c;
-          @define-color overlay2 #9399b2;
-
-          @define-color blue      #3daee9; /*#89b4fa;*/
-          @define-color lavender  #b4befe;
-          @define-color sapphire  #74c7ec;
-          @define-color sky       #89dceb;
-          @define-color teal      #94e2d5;
-          @define-color green     #27ae60;
-          @define-color orange    #f67400;
-          @define-color yellow    #fdbc4b;
-          @define-color peach     #fab387;
-          @define-color maroon    #eba0ac;
-          @define-color red       #da4453;
-          @define-color mauve     #cba6f7;
-          @define-color pink      #f5c2e7;
-          @define-color flamingo  #f2cdcd;
-          @define-color rosewater #f5e0dc;
-          * {
-            border: none;
-            font-family: Font Awesome, NotoMono Nerd Font, JetBrainsMono Nerd Font;
-            font-size: 14px;
-          }
-
-          window {
-          }
-
-          window#waybar {
-            background-color: rgba(0,0,0,0.6);
-            transition-property: background-color;
-            transition-duration: 0.5s;
-          }
-
-          .modules-right {
-            background: transparent;
-            margin: 0 -12px 0 0;
-            border-radius: 20px;
-          }
-          .modules-center {
-            background: transparent;
-            margin: 0 0 0 0;
-            border-radius: 20px;
-          }
-          .modules-left {
-            background: transparent;
-            margin: 0 0 0 -12px;
-          }
-
-          tooltip {
-            background-color: @crust;
-            border: 2px solid #585b70;
-            color: @text;
-            border-radius: 10px;
-          }
-
-          #workspaces {
-            margin-left: 15px;
-            margin-top: 2px;
-          }
-          #workspaces button {
-              background: transparent;
-              color: @subtext0;
-              padding: 0 10px;
-              font-weight: bold;
-              border-radius: 2;
-          }
-
-          #workspaces button:hover {
-              color: @text;
-              background: transparent;
-          }
-
-          #workspaces button.active {
-            color: @white;
-            background: transparent;
-          }
-
-          #workspaces button.focused {
-            color: @crust;
-          }
-
-          #taskbar button {
-            background: transparent;
-          }
-
-          #taskbar button.active {
-            background: transparent;
-          }
-
-
-          button.urgent {
-              color: #11111b;
-              background: #fab387;
-              border-radius: 10px;
-          }
-
-          #custom-sep {
-            color: #313244;
-            font-size: 14px;
-          }
-
-          #custom-session {
-            color: #FFFFFF;
-            font-size: 20px;
-            margin-right: 20px;
-            margin-left: 5px;
-          }
-
-          #window {
-            color: #FFFFFF;
-            font-size: 14;
-          }
-
-          #custom-recorder {
-            font-size: 10px;
-          }
-
-          #clock {
-            color: @white;
-            margin-right: 20px;
-            margin-left: 5px;
-            margin-top: 2px;
-          }
-
-          #tray {
-            margin-right: 10px;
-            margin-top: 2px;
-            color: @white;
-            padding: 4px;
-          }
-
-          #battery {
-            margin-right: 1px;
-            margin-left: 2px;
-            margin-top: 2px;
-            color: @white;
-            font-size: 18px;
-          }
-
-          #pulseaudio,
-          #wireplumber,
-          #mode,
-          #custom-clipboard,
-          #custom-power,
-          #custom-menu,
-          #backlight,
-          #idle_inhibitor {
-            margin-right: 10px;
-            margin-left: 10px;
-            margin-top: 2px;
-            color: @white;
-            font-size: 18px;
-          }
-
-          #network {
-            margin-right: 10px;
-            margin-left: 2px;
-            margin-top: 2px;
-            color: @white;
-            font-size: 18px;
-          }
-
-          #bluetooth {
-            margin-right: 8px;
-            margin-left: 8px;
-            margin-top: 2px;
-            color: @white;
-            font-size: 20px;
-          }
-
-
-          #cpu,
-          #memory,
-          #temperature {
-            color: @white;
-          }
-
-
-          #mode {
-            color: #cc3436;
-            font-weight: bold;
-          }
-
-          #network.disconnected {
-            color: @white;
-          }
-          #network.disabled {
-            color: @red;
-          }
-          #idle_inhibitor.activated {
-            color: @lavender;
-          }
-          #pulseaudio.muted {
-          }
-          #battery.charging {
-            color: @white;
-          }
-          #battery.warning:not(.charging) {
-            color: @orange;
-          }
-          #battery.critical:not(.charging) {
-            color: @red;
-          }
-        '';
+        };
       };
     };
+    style = ''
+      @define-color base   #3b4045;/*rgba(30,30,46, 0.8);*/ /*#1e1e2e;*/
+      @define-color mantle #31363b;
+      @define-color crust  #232629;
+
+      @define-color text     #fcfcfc;
+      @define-color subtext0 #a6adc8;
+      @define-color subtext1 #bac2de;
+
+      @define-color hover #3daee6;
+
+      @define-color surface0 #313244;
+      @define-color surface1 #45475a;
+      @define-color surface2 #585b70;
+
+      @define-color overlay0 #6c7086;
+      @define-color overlay1 #7f849c;
+      @define-color overlay2 #9399b2;
+
+      @define-color blue      #3daee9; /*#89b4fa;*/
+      @define-color lavender  #b4befe;
+      @define-color sapphire  #74c7ec;
+      @define-color sky       #89dceb;
+      @define-color teal      #94e2d5;
+      @define-color green     #27ae60;
+      @define-color orange    #f67400;
+      @define-color yellow    #fdbc4b;
+      @define-color peach     #fab387;
+      @define-color maroon    #eba0ac;
+      @define-color red       #da4453;
+      @define-color mauve     #cba6f7;
+      @define-color pink      #f5c2e7;
+      @define-color flamingo  #f2cdcd;
+      @define-color rosewater #f5e0dc;
+      * {
+        border-radius: 20px;
+        font-family: Font Awesome, NotoMono Nerd Font, JetBrainsMono Nerd Font;
+        font-size: 14px;
+      }
+
+      window {
+      }
+
+      window#waybar {
+        background-color: rgba(0,0,0,0.7);
+        transition-property: background-color;
+        transition-duration: 0.5s;
+      }
+
+      .modules-right {
+        background: transparent;
+        margin: 0 -12px 0 0;
+        border-radius: 20px;
+      }
+      .modules-center {
+        background: transparent;
+        margin: 0 0 0 0;
+        border-radius: 20px;
+      }
+      .modules-left {
+        background: transparent;
+        margin: 0 0 0 -12px;
+      }
+
+      tooltip {
+        background-color: @crust;
+        border: 2px solid #585b70;
+        color: @text;
+        border-radius: 10px;
+      }
+
+      #workspaces {
+        margin-left: 15px;
+        margin-top: 2px;
+      }
+      #workspaces button {
+          background: transparent;
+          color: @subtext0;
+          padding: 0 10px;
+          font-weight: bold;
+          border-radius: 2;
+      }
+
+      #workspaces button:hover {
+          color: @text;
+          background: transparent;
+      }
+
+      #workspaces button.active {
+        color: @white;
+        background: transparent;
+      }
+
+      #workspaces button.focused {
+        color: @crust;
+      }
+
+      #taskbar button {
+        background: transparent;
+      }
+
+      #taskbar button.active {
+        background: transparent;
+      }
+
+
+      button.urgent {
+          color: #11111b;
+          background: #fab387;
+          border-radius: 10px;
+      }
+
+      #custom-sep {
+        color: #313244;
+        font-size: 14px;
+      }
+
+      #custom-session {
+        color: #FFFFFF;
+        font-size: 20px;
+        margin-right: 20px;
+        margin-left: 5px;
+      }
+
+      #window {
+        color: #FFFFFF;
+        font-size: 14;
+      }
+
+      #custom-recorder {
+        font-size: 10px;
+      }
+
+      #clock {
+        color: @white;
+        margin-right: 20px;
+        margin-left: 5px;
+        margin-top: 2px;
+      }
+
+      #tray {
+        margin-right: 10px;
+        margin-top: 2px;
+        color: @white;
+        padding: 4px;
+      }
+
+      #battery {
+        margin-right: 1px;
+        margin-left: 2px;
+        margin-top: 2px;
+        color: @white;
+        font-size: 18px;
+      }
+
+      #pulseaudio,
+      #wireplumber,
+      #mode,
+      #custom-clipboard,
+      #custom-power,
+      #custom-menu,
+      #backlight,
+      #idle_inhibitor {
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 2px;
+        color: @white;
+        font-size: 18px;
+      }
+
+      #network {
+        margin-right: 10px;
+        margin-left: 2px;
+        margin-top: 2px;
+        color: @white;
+        font-size: 18px;
+      }
+
+      #bluetooth {
+        margin-right: 8px;
+        margin-left: 8px;
+        margin-top: 2px;
+        color: @white;
+        font-size: 20px;
+      }
+
+
+      #cpu,
+      #memory,
+      #temperature {
+        color: @white;
+      }
+
+
+      #mode {
+        color: #cc3436;
+        font-weight: bold;
+      }
+
+      #network.disconnected {
+        color: @white;
+      }
+      #network.disabled {
+        color: @red;
+      }
+      #idle_inhibitor.activated {
+        color: @lavender;
+      }
+      #pulseaudio.muted {
+      }
+      #battery.charging {
+        color: @white;
+      }
+      #battery.warning:not(.charging) {
+        color: @orange;
+      }
+      #battery.critical:not(.charging) {
+        color: @red;
+      }
+    '';
   };
 }

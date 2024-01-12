@@ -2,12 +2,13 @@
 
 {
 
-    imports =
+  imports =
     [
       ./hyprpaper
       ./waybar
     ];
 
+  services.blueman-applet.enable = false;
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
@@ -39,9 +40,8 @@
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
       # Execute your favorite apps at launch
-      # exec-once = waybar & hyprpaper & firefox
-      #exec = pkill waybar & sleep 0.5 && waybar
-      #exec-once=waybar 
+      #exec-once = pkill waybar & sleep 0.5 && waybar
+      exec-once=waybar 
       exec-once=hyprpaper
       exec-once=swayidle -w
       exec-once=dunst
@@ -52,11 +52,12 @@
       exec-once=/usr/lib/polkit-kde-authentication-agent-1
       # Source a file (multi-file configs)
       # source = ~/.config/hypr/myColors.conf
+      exec-once=hyprctl setcursor Adwaita 24
 
       # Some default env vars.
       #env = GDK_BACKEND,wayland
       env = GTK_THEME,Adwaita:dark
-      env = XCURSOR_SIZE,16
+      env = XCURSOR_SIZE,24
       env = QT_QPA_PLATFORM,wayland
       env = QT_QPA_PLATFORMTHEME,qt5ct
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/

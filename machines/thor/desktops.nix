@@ -17,5 +17,6 @@
     [
       ../common/wm/gnome.nix
       ../common/wm/hyprland
+      ../common/wm/kde.nix
     ];
 }

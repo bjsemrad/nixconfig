@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.enable = false;
   services.xserver.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = with pkgs; [
     gnome.cheese
@@ -10,6 +10,7 @@
     epiphany
     gnome-tour
     gnome.gnome-maps
+    gnome.gnome-tweaks
   ];
 
   environment.systemPackages = with pkgs; [

@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   programs.hyprland.enable = true;
+  services.blueman.enable = true;
 
   environment.systemPackages = with pkgs; [
     hyprpaper
@@ -14,5 +15,6 @@
     cliphist
     dunst
     swayidle
+    networkmanagerapplet
   ];
 }
