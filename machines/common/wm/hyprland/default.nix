@@ -16,5 +16,7 @@
     dunst
     swayidle
     networkmanagerapplet
+    xfce.thunar
+    xdg-desktop-portal-gtk 
   ];
 }

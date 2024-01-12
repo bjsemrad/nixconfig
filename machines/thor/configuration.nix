@@ -29,6 +29,7 @@
   nix.gc.automatic = true;
   nix.gc.dates = "daily";
   nix.gc.options = "--delete-older-than +5";
+  nix.optimise.automatic = true;
 
   networking.hostName = "thor"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -103,6 +104,8 @@
     unzip
     wl-clipboard
     killall
+    yazi
+    neofetch
     #  wget
   ];
 
