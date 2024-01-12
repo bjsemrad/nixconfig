@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
 {
+
+    imports =
+    [
+      ./hyprpaper
+      ./waybar.nix
+    ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
