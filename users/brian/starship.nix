@@ -4,7 +4,8 @@
   programs.starship.enable = true;
   programs.starship.settings = {
     format = lib.concatStrings [
-      "$os "
+   #   "$os "
+      " "
       "$username"
       "$hostname"
       "$localip"
@@ -87,6 +88,7 @@
 
     os = {
       disabled = false;
+      
     };
 
     memory_usage = {

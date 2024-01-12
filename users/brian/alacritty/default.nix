@@ -1,7 +1,13 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-     home.file = { 
-        ".alacritty.toml".source = ./alacritty.toml;
-     };
+
+  programs.alacritty.enable = true;
+  programs.alacritty.settings = {
+    window.opacity = lib.mkForce 0.95;
+    font.size = 14.0;
+  };
+#   home.file = {
+#     ".config/alacritty/.alacritty.toml".source = ./alacritty.toml;
+#   };
 }
