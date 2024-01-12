@@ -2,7 +2,6 @@
 {
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
-  programs.wlogout.enable = true;
 
   services.cliphist.enable = true;
   services.dunst.enable = true;
@@ -12,6 +11,7 @@
     hyprpaper
     wl-clipboard
     brightnessctl
+    wlogout
     #rofi-wayland
     pavucontrol
     pamixer
