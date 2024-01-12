@@ -2,14 +2,19 @@
 {
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
+  programs.wlogout.enable = true;
+  programs.fuzzel.enable = true;
 
-    environment.systemPackages = with pkgs; [
-            hyprpaper
-            swayidle
-            dunst
-            wl-clipboard
-            brightnessctl
-            rofi-wayland
-            wlogout
+  services.cliphist.enable = true;
+  services.dunst.enable = true;
+  services.swayidle.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    hyprpaper
+    wl-clipboard
+    brightnessctl
+    #rofi-wayland
+    pavucontrol
+    pamixer
   ];
 }
