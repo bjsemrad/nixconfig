@@ -5,7 +5,7 @@
     imports =
     [
       ./hyprpaper
-      ./waybar.nix
+      ./waybar
     ];
 
   wayland.windowManager.hyprland = {
@@ -26,7 +26,7 @@
 
       # See https://wiki.hyprland.org/Configuring/Monitors/
       #monitor=,preferred,auto,1.0
-      monitor=,preferred,auto,1.25
+      monitor=,preferred,auto,1.175
 
       xwayland {
         force_zero_scaling = true
@@ -40,7 +40,8 @@
 
       # Execute your favorite apps at launch
       # exec-once = waybar & hyprpaper & firefox
-      exec-once=waybar
+      #exec = pkill waybar & sleep 0.5 && waybar
+      #exec-once=waybar 
       exec-once=hyprpaper
       exec-once=swayidle -w
       exec-once=dunst
@@ -55,7 +56,7 @@
       # Some default env vars.
       #env = GDK_BACKEND,wayland
       env = GTK_THEME,Adwaita:dark
-      env = XCURSOR_SIZE,24
+      env = XCURSOR_SIZE,16
       env = QT_QPA_PLATFORM,wayland
       env = QT_QPA_PLATFORMTHEME,qt5ct
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
@@ -181,13 +182,14 @@
       $mainMod = ALT_L
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-      #bind = $mainMod, T, exec, alacritty
-      bind = $mainMod, T, exec, wezterm
+      bind = $mainMod, T, exec, alacritty
+      #bind = $mainMod, T, exec, wezterm
       bind = $mainMod, Q, killactive,
       #bind = $mainMod, M, exit,
       bind = $mainMod, E, exec, dolphin
       bind = $mainMod, G, togglefloating,
-      bind = $mainMod, D, exec, $HOME/.config/rofi/bin/launcher
+      bind = $mainMod, D, exec, fuzzel
+      #$HOME/.config/rofi/bin/launcher
       bind = $mainMod, W, exec, $HOME/.config/rofi/bin/window
       bind = $mainMod CTRL_L SHIFT, P, exec, killall wlogout || wlogout -b 5 -m 500
       bind = $mainMod CTRL_L SHIFT, C, exec, $HOME/.config/rofi/bin/clipboard
@@ -197,7 +199,7 @@
       bind = $mainMod CTRL_L SHIFT, N, exec, dunstctl close 
       #bind = $mainMod, R, exec, krunner
       bind = $mainMod, J, togglesplit, # dwindle
-      bind = $mainMod SHIFT, W, exec, killall waybar && waybar
+      bind = $mainMod SHIFT, W, exec, pkill waybar && waybar
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, movefocus, l
@@ -259,6 +261,6 @@
       bind = $mainMod, F, fullscreen,1
     '';
     xwayland = { enable = true; };
-    systemdIntegration = true;
+    systemd.enable = true;
   };
 }

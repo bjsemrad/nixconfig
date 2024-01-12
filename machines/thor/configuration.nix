@@ -101,6 +101,7 @@
     nixpkgs-fmt
     unzip
     wl-clipboard
+    killall
     #  wget
   ];
 
