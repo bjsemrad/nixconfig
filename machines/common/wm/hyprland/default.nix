@@ -3,7 +3,6 @@
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
   programs.wlogout.enable = true;
-  programs.fuzzel.enable = true;
 
   services.cliphist.enable = true;
   services.dunst.enable = true;
@@ -16,5 +15,6 @@
     #rofi-wayland
     pavucontrol
     pamixer
+    fuzzel
   ];
 }
