@@ -103,7 +103,7 @@
     '';
   };
 
-  home.files = {
+  home.file = {
     ".config/wlogout/lock-hover.png".source = ./images/lock-hover.png;
     ".config/wlogout/lock.png".source = ./images/lock.png;
     ".config/wlogout/logout-hover.png".source = ./images/logout-hover.png;
