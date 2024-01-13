@@ -1,166 +1,49 @@
 { config, pkgs, ... }:
-let
-  username = "brian";
-  homeDirectory = "/home/brian";
-  nixconfigdir = "${homeDirectory}/nixconfig";
-in
 {
   imports =
     [
-      ./starship.nix
-      ./git.nix
-      ./java.nix
-      ./neovim.nix
-      ./alacritty
-      ./hyprland
+      ./modules/alacritty
+      ./modules/firefox
+      ./modules/git
+      ./modules/hyprland
+      ./modules/java
+      ./modules/neovim
+      ./modules/shell
+      ./modules/starship
+      ./modules/tmux
     ];
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = username;
-  home.homeDirectory = homeDirectory;
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
+  home = {
+    username = "brian";
+    homeDirectory = "/home/brian";
+    packages = with pkgs; [
+      bitwarden
+      go
+      rustup
+      jetbrains.idea-ultimate
+      vscode
+      nodejs
+      gcc
+    ];
+
+    sessionVariables = {
+      # EDITOR = "emacs";
+    };
+    # This value determines the Home Manager release that your configuration is
+    # compatible with. This helps avoid breakage when a new Home Manager release
+    # introduces backwards incompatible changes.
+    #
+    # You should not change this value, even if you update Home Manager. If you do
+    # want to update the value, then make sure to first check the Home Manager
+    # release notes.
+    stateVersion = "23.11"; # Please read the comment before changing.
+  };
+
   # environment.
-  programs.firefox.enable = true;
   programs.direnv.enable = true;
 
-  programs.tmux = {
-    enable = true;
-
-    baseIndex = 1;
-    newSession = true;
-    plugins = [
-        pkgs.tmuxPlugins.onedark-theme 
-        pkgs.tmuxPlugins.sensible
-    ];
-
-      extraConfig = ''
-     # Fix Colors
-    set -g default-terminal "screen-256color"
-    set -ag terminal-overrides ",xterm-256color:Tc"
-
-    set -g prefix C-b
-
-    set -g base-index 1
-    setw -g pane-base-index 1
-
-    set -g mouse on
-
-    set -g status-position bottom
-   
-    #set -g @onedark_widgets "#(date +%s)"
-    set -g @onedark_time_format "%I:%M %p"
-    set -g @onedark_date_format "%D"
-    # set -g @catppuccin_window_right_separator "█ "
-
-    # set -g @catppuccin_window_default_fill "number"
-    # set -g @catppuccin_window_default_text "#W - #{pane_current_path}"
-
-    # set -g @catppuccin_window_current_fill "number"
-    # set -g @catppuccin_window_current_text "#W - #{pane_current_path}"
-
-    # set -g @catppuccin_window_right_separator "█ "
-    # set -g @catppuccin_window_number_position "left"
-    # set -g @catppuccin_window_middle_separator " | "
-
-    # set -g @catppuccin_window_default_fill "none"
-
-    # set -g @catppuccin_window_current_fill "all"
-    # set -g @catppuccin_status_modules_right "session user host"
-    # set -g @catppuccin_status_left_separator "█"
-    # set -g @catppuccin_status_right_separator "█"
+  #CONFIRM  programs.home-manager.enable = true;
 
 
-    # set -g @catppuccin_status_right_separator_inverse "no"
-    # set -g @catppuccin_status_fill "icon"
-    # set -g @catppuccin_status_connect_separator "no"
-
-    # set -g @catppuccin_directory_text "#{pane_current_path}"
-
-    '';
-  };
-
-
-  home.packages = with pkgs; [
-    bitwarden
-    go
-    rustup
-    jetbrains.idea-ultimate
-    vscode
-    nodejs
-    gcc
-    #doesn't work for launching not within toolbox jetbrains-toolbox
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-  ];
-
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      #homeupdate = "home-manager switch --flake ${nixconfigdir}";
-      nixupdate = "cd ${nixconfigdir} && nix flake update && sudo nixos-rebuild switch --verbose --upgrade --flake ${nixconfigdir}";
-      nixswitch = "cd ${nixconfigdir} && sudo nixos-rebuild switch --verbose --upgrade --flake ${nixconfigdir}";
-      nixgc = "nix-store --gc";
-      # recommeneded to sometimes run as sudo to collect additional garbage
-      nixgcd = "sudo nix-collect-garbage -d";
-      # As a separation of concerns - you will need to run this command to clean out boot
-      nixcleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
-      ga = "git add";
-      gba = "git branch -a";
-      gc = "git commit -v";
-      gcb = "git checkout -b";
-      gcmsg = "git commit -m";
-      gl = "git pull";
-      gp = "git push";
-      gco = "git checkout";
-      gst = "git status";
-    };
-    enableAutosuggestions = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true; #OLD enableSyntaxHighlighting = true;
-  };
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
-
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. If you don't want to manage your shell through Home
-  # Manager then you have to manually source 'hm-session-vars.sh' located at
-  # either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/brian/etc/profile.d/hm-session-vars.sh
-  #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
