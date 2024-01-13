@@ -17,7 +17,7 @@
         thor = lib.nixosSystem {
           inherit system; # Framework
           modules = [
-            ./machines/thor/configuration.nix
+            ./hosts/thor/configuration.nix
           ];
         };
       };
