@@ -20,7 +20,7 @@
       ./fonts.nix
     ];
 
-  nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+  nixpkgs.overlays = [ inputs.alacritty-theme.overlays.default ];
   
   home-manager = {
     useGlobalPkgs = true;

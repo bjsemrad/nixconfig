@@ -25,7 +25,7 @@
     home-manager,
     nixos-hardware, 
     alacritty-theme,
-     ... }:
+     ... } @ inputs :
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
