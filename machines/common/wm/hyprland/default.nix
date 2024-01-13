@@ -10,7 +10,6 @@
     wl-clipboard
     brightnessctl
     wlogout    
-    #rofi-wayland
     pavucontrol
     pamixer
     fuzzel

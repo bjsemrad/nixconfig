@@ -12,6 +12,7 @@
     gnome-tour
     gnome.gnome-maps
     gnome.gnome-tweaks
+    gnome.gnome-characters
   ];
 
   environment.systemPackages = with pkgs; [

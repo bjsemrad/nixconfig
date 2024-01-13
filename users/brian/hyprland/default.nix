@@ -31,6 +31,7 @@
 
   };
 
+programs.rofi.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -206,7 +207,7 @@
       #bind = $mainMod, M, exit,
       bind = $mainMod, E, exec, dolphin
       bind = $mainMod, G, togglefloating,
-      bind = $mainMod, D, exec, fuzzel
+      bind = $mainMod, D, exec, rofi -show drun
       #$HOME/.config/rofi/bin/launcher
       bind = $mainMod, W, exec, $HOME/.config/rofi/bin/window
       bind = $mainMod CTRL_L SHIFT, P, exec, killall wlogout || wlogout -b 5 -m 500

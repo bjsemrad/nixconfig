@@ -92,6 +92,44 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
+  powerManagement.enable = true;
+  services.thermald.enable = true;
+  powerManagement.powertop.enable = true;
+  services.power-profiles-daemon.enable = false;
+  services.tlp = {
+    enable = false;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 50;
+
+      CPU_BOOST_ON_BAT = 0;
+      RUNTIME_PM_ON_BAT = "auto";
+      #Optional helps save long term battery health
+      START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
+      STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+
+    };
+  };
+
+services.auto-cpufreq.enable = true;
+services.auto-cpufreq.settings = {
+  battery = {
+     governor = "powersave";
+     turbo = "never";
+  };
+  charger = {
+     governor = "performance";
+     turbo = "auto";
+  };
+};
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -106,6 +144,7 @@
     killall
     yazi
     neofetch
+    powertop
     #  wget
   ];
 
