@@ -3,6 +3,8 @@
   programs.hyprland.enable = true;
   services.blueman.enable = true;
 
+services.xserver.displayManager.defaultSession = "hyprland";
+
   environment.systemPackages = with pkgs; [
     hyprpaper
     wl-clipboard

@@ -6,8 +6,13 @@
   programs.alacritty.settings = {
     window.opacity = lib.mkForce 0.95;
     font.size = 14.0;
+    shell.args = [ "--login" "-c" "tmux attach || tmux" ];
+    shell.program = "/home/brian/.nix-profile/bin/zsh";
+    env.term = "xterm-256color";
+    import = [ pkgs.alacritty-theme.one_dark ];
   };
-#   home.file = {
-#     ".config/alacritty/.alacritty.toml".source = ./alacritty.toml;
-#   };
+
+  # home.packages = with pkgs; [
+  #   alacritty-theme
+  # ];
 }
