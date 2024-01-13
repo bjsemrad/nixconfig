@@ -3,13 +3,13 @@
   programs.hyprland.enable = true;
   services.blueman.enable = true;
 
-services.xserver.displayManager.defaultSession = "hyprland";
-
+  services.xserver.displayManager.defaultSession = "hyprland";
+  security.pam.services.swaylock = { };
   environment.systemPackages = with pkgs; [
     hyprpaper
     wl-clipboard
     brightnessctl
-    wlogout
+    wlogout    
     #rofi-wayland
     pavucontrol
     pamixer
@@ -19,6 +19,6 @@ services.xserver.displayManager.defaultSession = "hyprland";
     swayidle
     networkmanagerapplet
     xfce.thunar
-    xdg-desktop-portal-gtk 
+    xdg-desktop-portal-gtk
   ];
 }

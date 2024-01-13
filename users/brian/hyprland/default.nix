@@ -6,6 +6,7 @@
     [
       ./hyprpaper
       ./waybar
+      ./swaylock
     ];
 
   home.pointerCursor = {
