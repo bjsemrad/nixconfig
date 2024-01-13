@@ -8,6 +8,7 @@
       ./waybar
       ./swaylock
       ./wlogout
+      ./swayidle
     ];
 
   home.pointerCursor = {
