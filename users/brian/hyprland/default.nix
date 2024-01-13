@@ -7,6 +7,7 @@
       ./hyprpaper
       ./waybar
       ./swaylock
+      ./wlogout
     ];
 
   home.pointerCursor = {
