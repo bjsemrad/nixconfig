@@ -109,7 +109,7 @@ in
   programs.zsh = {
     enable = true;
     shellAliases = {
-      homeupdate = "home-manager switch --flake ${nixconfigdir}";
+      #homeupdate = "home-manager switch --flake ${nixconfigdir}";
       nixupdate = "cd ${nixconfigdir} && nix flake update && sudo nixos-rebuild switch --verbose --upgrade --flake ${nixconfigdir}";
       nixgc = "nix-store --gc";
       # recommeneded to sometimes run as sudo to collect additional garbage

@@ -18,26 +18,38 @@
           inherit system; # Framework
           modules = [
             ./hosts/thor/configuration.nix
+            ({ config, pkgs, ... }: {
+              # install the overlay
+              nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+            })
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.brian = import ./users/brian/home.nix;
+            }
           ];
         };
       };
-      ##### TO SWAP TO NON STANDALONE
+
+      #Moved to Home-manager module due to the NIX PKGS would not be in sync for the system utilities
+     ##### TO SWAP TO NON STANDALONE
       ## Add the home-manager channel to the root user
       #Remove the home-manager channel from $user
       #Add home-manager to the imports in /etc/nixos/configuration.nix (See flake documentation_)
       #Move to module based configu.
       #sudo nixos-rebuild switch and hopefully everything works?
-      homeConfigurations = {
-        brian = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./users/brian/home.nix
-            ({ config, pkgs, ... }: {
-              # install the overlay
-              nixpkgs.overlays = [ alacritty-theme.overlays.default ];
-            })
-          ];
-        };
-      };
+      # homeConfigurations = {
+      #   brian = home-manager.lib.homeManagerConfiguration {
+      #     inherit pkgs;
+      #     modules = [
+      #       ./users/brian/home.nix
+      #       ({ config, pkgs, ... }: {
+      #         # install the overlay
+      #         nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+      #       })
+      #     ];
+      #   };
+      # };
     };
 }
