@@ -12,7 +12,4 @@
     import = [ pkgs.alacritty-theme.one_dark ];
   };
 
-  # home.packages = with pkgs; [
-  #   alacritty-theme
-  # ];
 }

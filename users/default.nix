@@ -1,0 +1,3 @@
+{
+  brian = import ./brian;
+}

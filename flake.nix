@@ -1,12 +1,31 @@
 {
   description = "NixOS Configuration";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    alacritty-theme.url = "github:alexghr/alacritty-theme.nix/2cd654fa494fc8ecb226ca1e7c5f91cf1cebbba9"; #pre 0.13 alacritty
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixos-23.11";
+    };
+    
+    nixos-hardware = {
+      url = "github:nixos/nixos-hardware";
+    };
+
+    home-manager = {
+          url = "github:nix-community/home-manager/release-23.11";
+          inputs.nixpkgs.follows = "nixpkgs";
+    };  
+
+    alacritty-theme = {
+        url = "github:alexghr/alacritty-theme.nix/2cd654fa494fc8ecb226ca1e7c5f91cf1cebbba9";
+     }; #pre 0.13 alacritty
   };
-  outputs = { self, nixpkgs, home-manager, alacritty-theme, ... }:
+  outputs = 
+  {
+     self, 
+    nixpkgs, 
+    home-manager,
+    nixos-hardware, 
+    alacritty-theme,
+     ... }:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -18,17 +37,21 @@
           inherit system; # Framework
           modules = [
             ./hosts/thor/configuration.nix
-            ({ config, pkgs, ... }: {
-              # install the overlay
-              nixpkgs.overlays = [ alacritty-theme.overlays.default ];
-            })
             home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.brian = import ./users/brian/home.nix;
-            }
+            nixos-hardware.nixosModules.framework-12th-gen-intel
+            nixos-hardware.nixosModules.common-gpu-intel
+            # ({ config, pkgs, ... }: {
+            #   # install the overlay
+            #   nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+            # })
+            # home-manager.nixosModules.home-manager
+            # {
+            #   home-manager.useGlobalPkgs = true;
+            #   home-manager.useUserPackages = true;
+            #   home-manager.users.brian = import ./users/brian/home.nix;
+            # }
           ];
+          specialArgs = { inherit inputs; };
         };
       };
 
