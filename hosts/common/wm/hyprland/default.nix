@@ -14,11 +14,10 @@
     pamixer
     fuzzel
     cliphist
-    dunst
+    #dunst
     swayidle
     networkmanagerapplet
     xfce.thunar
     xdg-desktop-portal-gtk
-    swayidle
   ];
 }
