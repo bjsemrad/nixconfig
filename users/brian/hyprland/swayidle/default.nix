@@ -22,6 +22,6 @@
         timeout = 600;
         command = "systemctl suspend' resume 'hyprctl dispatch dpms on";
       }
-    ]
-      };
-  }
+    ];
+  };
+}
