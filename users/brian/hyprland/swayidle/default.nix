@@ -5,22 +5,24 @@
     events = [
       {
         event = "before-sleep";
-        command = "swaylock -f --clock";
+        command = "${pkgs.swaylock-effects}/bin/swaylock -f --clock";
       }
     ];
 
     timeouts = [
       {
-        timeout = 300;
-        command = "swaylock -f --clock";
+        timeout = 30;
+        command = "${pkgs.swaylock-effects}/bin/swaylock -f --clock";
       }
       {
-        timeout = 305;
-        command = "hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on";
+        timeout = 35; #5
+        command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+        resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
       }
       {
-        timeout = 600;
-        command = "systemctl suspend' resume 'hyprctl dispatch dpms on";
+        timeout = 40;
+        command = "${pkgs.systemd}/bin/systemctl suspend";
+        resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
       }
     ];
   };

@@ -19,5 +19,6 @@
     networkmanagerapplet
     xfce.thunar
     xdg-desktop-portal-gtk
+    swayidle
   ];
 }
