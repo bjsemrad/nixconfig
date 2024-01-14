@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager.sddm.enable = false;

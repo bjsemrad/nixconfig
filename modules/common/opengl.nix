@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   # OpenGL
   hardware.opengl = {

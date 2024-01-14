@@ -1,5 +1,3 @@
-{ config, pkgs, inputs, ... }:
-
 {
   nix.gc.automatic = true;
   nix.gc.dates = "daily";

@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{  inputs, ... }:
 
 {
   #Setup overlay to access the alacritty theme
