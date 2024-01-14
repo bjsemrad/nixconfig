@@ -1,29 +1,26 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, ... }:
 
 {
-   imports = with inputs.self.nixosModules; [
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./firewall.nix
-      ./opengl.nix
-      ./kernel.nix
-      ./fingerprint.nix
-      ./firmware.nix
-      ./tailscale.nix
-      ./printing.nix
-      ./fonts.nix
-      desktop-gnome
-      desktop-hyprland
-    ];
+  imports = with inputs.self.nixosModules; [
+    ./hardware-configuration.nix
+    ./opengl.nix
+    ./kernel.nix
+    ./firmware.nix
+    ./tailscale.nix
+    ./printing.nix
+    ./fonts.nix
+    desktop-gnome
+    desktop-hyprland
+    profiles-tailscale
+  ];
+
+# Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   nixpkgs.overlays = [ inputs.alacritty-theme.overlays.default ];
-  
-   # Enable the X11/Wayland windowing system.
+
+  # Enable the X11/Wayland windowing system.
   services.xserver.enable = true;
 
   # Configure keymap
@@ -42,9 +39,7 @@
     };
   };
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  
 
   hardware.enableAllFirmware = true;
 
@@ -62,6 +57,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
   services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+  services.avahi.openFirewall = true;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -118,28 +115,6 @@
   services.thermald.enable = true;
   powerManagement.powertop.enable = true;
   services.power-profiles-daemon.enable = false;
-  services.tlp = {
-    enable = false;
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-
-      CPU_MIN_PERF_ON_AC = 0;
-      CPU_MAX_PERF_ON_AC = 100;
-      CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 50;
-
-      CPU_BOOST_ON_BAT = 0;
-      RUNTIME_PM_ON_BAT = "auto";
-      #Optional helps save long term battery health
-      START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
-      STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
-
-    };
-  };
 
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
@@ -169,6 +144,13 @@
     powertop
     #  wget
   ];
+
+
+  # Open ports in the firewall.
+  networking.firewall = {
+    # enable the firewall
+    enable = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

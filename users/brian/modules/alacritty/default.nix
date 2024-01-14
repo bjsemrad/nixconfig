@@ -1,7 +1,6 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
-
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
     window.opacity = lib.mkForce 0.95;
