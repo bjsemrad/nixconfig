@@ -213,7 +213,7 @@
       bind = $mainMod CTRL_L SHIFT, I, exec, grim -g "$(slurp)"
 
       bind = $mainMod CTRL_L SHIFT, N, exec, dunstctl close 
-      bind = $mainMod SHIFT, W, ex ec, pkill waybar && waybar
+      bind = $mainMod SHIFT, W, exec, pkill waybar && waybar
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, movefocus, l
