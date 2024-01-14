@@ -15,5 +15,6 @@
     unzip
     killall
     neofetch
+    ripgrep
   ];
 }

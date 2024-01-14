@@ -10,7 +10,7 @@
         #icon-theme = "Mint-L";
         font = "Noto:size=15";
         fuzzy = "yes";
-        width = 100;
+        width = 30;
       };
       colors = {
         background = "1d1f21aa";

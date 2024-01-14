@@ -68,12 +68,9 @@
       #exec-once = pkill waybar & sleep 0.5 && waybar
       exec-once=waybar 
       exec-once=hyprpaper
-      #exec-once=swayidle -w
-      #exec-once=dunst
       #exec-once=bitwarden-desktop
       exec-once = wl-paste --type text --watch cliphist -max-items 25 store #Stores only text data
       exec-once = wl-paste --type image --watch cliphist -max-items 25 store #Stores only image data
-      #exec-once=openrgb -p Arc
       #exec-once=/usr/lib/polkit-kde-authentication-agent-1
 
       # Some default env vars.
@@ -206,13 +203,13 @@
       #bind = $mainMod, T, exec, wezterm
       bind = $mainMod, Q, killactive,
       #bind = $mainMod, M, exit,
-      bind = $mainMod, E, exec, dolphin
+      bind = $mainMod, E, exec, nautilus
+      #dolphin
       bind = $mainMod, G, togglefloating,
-      bind = $mainMod, D, exec, rofi -show drun
-      #$HOME/.config/rofi/bin/launcher
-      bind = $mainMod, W, exec, $HOME/.config/rofi/bin/window
+      bind = $mainMod, D, exec, $HOME/.config/rofi/scripts/launcher.sh
+      bind = $mainMod, W, exec, $HOME/.config/rofi/scripts/window.sh
       bind = $mainMod CTRL_L SHIFT, P, exec, killall wlogout || wlogout -b 5 -m 500
-      bind = $mainMod CTRL_L SHIFT, C, exec, $HOME/.config/rofi/bin/clipboard
+      bind = $mainMod CTRL_L SHIFT, C, exec, $HOME/.config/rofi/scripts/clipboard.sh
 
       bind = $mainMod CTRL_L SHIFT, I, exec, grim -g "$(slurp)"
 
