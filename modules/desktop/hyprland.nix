@@ -20,5 +20,6 @@
     xdg-desktop-portal-gtk
     grim
     slurp
+    gojq
   ];
 }
