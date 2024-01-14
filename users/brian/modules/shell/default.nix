@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 let 
   nixconfigdir = "nixconfig";
   in
