@@ -11,6 +11,7 @@
       ./swayidle
       ./dunst
       ./rofi
+      ./fuzzel
     ];
 
   home.pointerCursor = {
