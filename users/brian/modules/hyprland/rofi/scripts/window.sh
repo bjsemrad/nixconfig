@@ -2,14 +2,9 @@
 if pgrep -x rofi >/dev/null; then
 	pkill rofi
 else
-    hyprctl clients | \
-    awk '/title: ./ { gsub("\t*title: *", ""); print}' | \
-     rofi -dmenu \
+     rofi -show window \
             -scroll-method 0 \
-	      -kb-cancel Escape \
-            -theme "$HOME"/.config/rofi/style.rasi \
-     | xargs -I{} hyprctl dispatch focuswindow "title:{}" 
+            -show-icons \
+	     -kb-cancel Escape \
+            -theme "$HOME"/.config/rofi/style.rasi 
 fi
-
-#-theme "$HOME"/.config/rofi/config/rounded-dark-grey.rasi \
- 

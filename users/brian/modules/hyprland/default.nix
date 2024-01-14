@@ -194,7 +194,6 @@
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
-
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       $mainMod = ALT_L
 
