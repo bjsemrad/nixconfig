@@ -207,8 +207,8 @@
       #dolphin
       bind = $mainMod, G, togglefloating,
       bind = $mainMod, D, exec, $HOME/.config/rofi/scripts/launcher.sh
-      bind = $mainMod, W, exec, $HOME/.config/rofi/scripts/window.sh
-      bind = $mainMod CTRL_L SHIFT, P, exec, killall wlogout || wlogout -b 5 -m 500
+      bind = $mainMod CTRL_L, W, exec, $HOME/.config/rofi/scripts/window.sh
+      bind = $mainMod CTRL_L SHIFT, P, exec, $HOME/.config/wlogout/scripts/wlogout.sh
       bind = $mainMod CTRL_L SHIFT, C, exec, $HOME/.config/rofi/scripts/clipboard.sh
 
       bind = $mainMod CTRL_L SHIFT, I, exec, grim -g "$(slurp)"
