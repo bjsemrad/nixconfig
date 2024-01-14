@@ -156,7 +156,7 @@
           "tooltip-format-ethernet" = "  {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}";
           "format-linked" = "{ifname} (No IP)";
           "on-click-right" = "nm-connection-editor";
-          "on-click" = "nm-connection-editor";
+          "on-click" = "$HOME/.config/rofi/scripts/networkmanager.sh";
         };
         "pulseaudio#sink" = {
           "format" = "{icon}";
