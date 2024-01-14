@@ -13,7 +13,7 @@
     common-alacritty
     desktop-gnome
     desktop-hyprland
-    profiles-tailscale
+    services-tailscale
   ];
 
   # Bootloader.
