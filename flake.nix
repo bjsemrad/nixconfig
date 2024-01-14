@@ -45,7 +45,7 @@
           specialArgs = { inherit inputs; };
         };
         odin = lib.nixosSystem {
-          inherit system; # Framework
+          inherit system; #Desktop
           modules = [
             ./hosts/odin/configuration.nix
             home-manager.nixosModules.home-manager
