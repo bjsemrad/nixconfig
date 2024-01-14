@@ -7,6 +7,7 @@ else
      rofi -dmenu \
             -scroll-method 0 \
 		    -kb-cancel Escape \
+            -theme "$HOME"/.config/rofi/style.rasi \
      | xargs -I{} hyprctl dispatch focuswindow "title:{}" 
 fi
 

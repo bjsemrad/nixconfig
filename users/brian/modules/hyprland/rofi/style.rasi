@@ -14,7 +14,7 @@ configuration {
 @import                          "themes/colors.rasi"
 
 * {
-     font: "NotoMono Nerd Font 10";
+     font: "NotoMono Nerd Font 14";
     border-colour:               var(selected);
     handle-colour:               var(selected);
     background-colour:           var(background);
