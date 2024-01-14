@@ -4,7 +4,6 @@ if pgrep -x rofi >/dev/null; then
 else
      rofi -show window \
             -scroll-method 0 \
-            -show-icons \
-	     -kb-cancel Escape \
+	       -kb-cancel Escape \
             -theme "$HOME"/.config/rofi/style.rasi 
 fi
