@@ -10,6 +10,5 @@
     ".config/rofi/scripts/networkmanager.sh".source = ./scripts/networkmanager.sh;
     ".config/rofi/style.rasi".source = ./style.rasi;
     ".config/rofi/themes/colors.rasi".source = ./themes/colors.rasi;
-    ;
-    };
-    }
+  };
+}
