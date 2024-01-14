@@ -14,7 +14,6 @@
     pamixer
     fuzzel
     cliphist
-    #dunst
     swayidle
     networkmanagerapplet
     xfce.thunar

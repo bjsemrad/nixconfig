@@ -25,24 +25,26 @@
     , nixos-hardware
     , alacritty-theme
     , ...
-    } @ inputs:
-    let
-      system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = import nixpkgs { system = "${system}"; config.allowUnfree = true; };
-    in
-    {
-      nixosConfigurations = {
-        thor = lib.nixosSystem {
-          inherit system; # Framework
-          modules = [
-            ./hosts/thor/configuration.nix
-            home-manager.nixosModules.home-manager
-            nixos-hardware.nixosModules.framework-12th-gen-intel
-            nixos-hardware.nixosModules.common-gpu-intel
-          ];
-          specialArgs = { inherit inputs; };
-        };
-      };
+    } @ inputs: {
+      nixosModules = import ./modules { lib = nixpkgs.lib; };
     };
+  let
+  system = "x86_64-linux";
+  lib = nixpkgs.lib;
+  pkgs = import nixpkgs { system = "${system}"; config.allowUnfree = true; };
+  in
+  {
+  nixosConfigurations = {
+    thor = lib.nixosSystem {
+      inherit system; # Framework
+      modules = [
+        ./hosts/thor/configuration.nix
+        home-manager.nixosModules.home-manager
+        nixos-hardware.nixosModules.framework-12th-gen-intel
+        nixos-hardware.nixosModules.common-gpu-intel
+      ];
+      specialArgs = { inherit inputs; };
+    };
+  };
+};
 }

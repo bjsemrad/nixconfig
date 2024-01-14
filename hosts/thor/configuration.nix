@@ -5,7 +5,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
+   imports = with inputs.self.nixosModules; [
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -15,13 +15,23 @@
       ./fingerprint.nix
       ./firmware.nix
       ./tailscale.nix
-      ./desktops.nix
       ./printing.nix
       ./fonts.nix
+      desktop-gnome
+      desktop-hyprland
     ];
 
   nixpkgs.overlays = [ inputs.alacritty-theme.overlays.default ];
   
+   # Enable the X11/Wayland windowing system.
+  services.xserver.enable = true;
+
+  # Configure keymap
+  services.xserver = {
+    layout = "us";
+    xkbVariant = "";
+  };
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
