@@ -1,6 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
+
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     ./opengl.nix
@@ -9,6 +10,7 @@
     ./printing.nix
     ./fonts.nix
     ./power-management.nix
+    common-alacritty
     desktop-gnome
     desktop-hyprland
     profiles-tailscale
@@ -17,8 +19,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-
 
   # Enable the X11/Wayland windowing system.
   services.xserver.enable = true;
@@ -111,7 +111,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
- 
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
