@@ -10,6 +10,7 @@
       ./wlogout
       ./swayidle
       ./dunst
+      ./rofi
     ];
 
   home.pointerCursor = {
@@ -31,8 +32,6 @@
     };
 
   };
-
-programs.rofi.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
