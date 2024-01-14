@@ -3,7 +3,7 @@
 {
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
-    window.opacity = lib.mkForce 0.95;
+    window.opacity = lib.mkForce 0.85;
     font.size = 14.0;
     shell.args = [ "--login" "-c" "tmux attach || tmux" ];
     shell.program = "${pkgs.zsh}/bin/zsh";
