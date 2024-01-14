@@ -44,6 +44,17 @@
           ];
           specialArgs = { inherit inputs; };
         };
+        odin = lib.nixosSystem {
+          inherit system; # Framework
+          modules = [
+            ./hosts/odin/configuration.nix
+            home-manager.nixosModules.home-manager
+            nixos-hardware.nixosModules.common-cpu-amd
+            nixos-hardware.nixosModules.common-hidpi
+            nixos-hardware.nixosModules.common-pc-ssd
+          ];
+          specialArgs = { inherit inputs; };
+        };
       };
     };
 }
