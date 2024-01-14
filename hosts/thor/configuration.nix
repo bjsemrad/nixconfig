@@ -22,6 +22,7 @@
     common-locale
     common-fonts
     common-opengl
+    common-packages
   ];
 
   # Bootloader.
@@ -48,24 +49,6 @@
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate = (pkg: true);
-
-  # List packages installed in system profile.
-  programs.zsh.enable = true;
-  environment.systemPackages = with pkgs; [
-    vim
-    flatpak
-    jq
-    nixfmt
-    nixpkgs-fmt
-    unzip
-    killall
-    neofetch
-    powertop
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

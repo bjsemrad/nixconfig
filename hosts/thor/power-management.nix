@@ -17,5 +17,9 @@
       turbo = "auto";
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    powertop
+  ];
 }
 
