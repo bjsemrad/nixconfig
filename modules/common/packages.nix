@@ -10,7 +10,6 @@
   environment.systemPackages = with pkgs; [
     vim
     flatpak
-    #jq
     nixfmt
     nixpkgs-fmt
     unzip

@@ -49,6 +49,7 @@
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
+  environment.systemPackages = with pkgs; [ ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
