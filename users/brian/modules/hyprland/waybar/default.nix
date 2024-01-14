@@ -238,7 +238,7 @@
       @define-color rosewater #f5e0dc;
       * {
         border-radius: 20px;
-        font-family: Font Awesome, NotoMono Nerd Font, JetBrainsMono Nerd Font;
+        font-family: NotoMono Nerd Font, JetBrainsMono Nerd Font;
         font-size: 14px;
       }
 

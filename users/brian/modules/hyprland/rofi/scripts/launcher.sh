@@ -6,7 +6,7 @@ else
 		-show drun \
 		-scroll-method 0 \
 		-terminal alacritty \
-		-kb-cancel Escape 
-fi
+		-kb-cancel Escape \
+		-theme "$HOME"/.config/rofi/style.rasi
 
-#		-theme "$HOME"/.config/rofi/config/rounded-dark-grey.rasi
+fi

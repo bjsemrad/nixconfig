@@ -7,7 +7,7 @@ else
 			-dmenu \
 			-scroll-method 0 \
 			-kb-cancel Escape \
-			)
+			-theme "$HOME"/.config/rofi/style.rasi)
 	if [ $? -eq 0 ]; then
 		echo "$selection" | cliphist decode | wl-copy
 	fi
