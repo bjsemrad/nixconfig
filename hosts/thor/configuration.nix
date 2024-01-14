@@ -6,19 +6,19 @@
     ./opengl.nix
     ./kernel.nix
     ./firmware.nix
-    ./tailscale.nix
     ./printing.nix
     ./fonts.nix
+    ./power-management.nix
     desktop-gnome
     desktop-hyprland
     profiles-tailscale
   ];
 
-# Bootloader.
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  nixpkgs.overlays = [ inputs.alacritty-theme.overlays.default ];
+
 
   # Enable the X11/Wayland windowing system.
   services.xserver.enable = true;
@@ -39,7 +39,7 @@
     };
   };
 
-  
+
 
   hardware.enableAllFirmware = true;
 
@@ -111,22 +111,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
-  powerManagement.enable = true;
-  services.thermald.enable = true;
-  powerManagement.powertop.enable = true;
-  services.power-profiles-daemon.enable = false;
-
-  services.auto-cpufreq.enable = true;
-  services.auto-cpufreq.settings = {
-    battery = {
-      governor = "powersave";
-      turbo = "never";
-    };
-    charger = {
-      governor = "performance";
-      turbo = "auto";
-    };
-  };
+ 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
