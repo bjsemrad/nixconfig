@@ -7,6 +7,7 @@
     ./hardware-configuration.nix
     ./kernel.nix
     ./power-management.nix
+    ./security.nix
 
     services-firmware
     desktop-gnome
@@ -44,14 +45,6 @@
     extraSpecialArgs = {
       inherit inputs;
     };
-  };
-
-  security.pam.services.swaylock = {
-    text = ''
-      auth sufficient pam_unix.so try_first_pass likeauth nullok
-      auth sufficient pam_fprintd.so
-      auth include login
-    '';
   };
 
   # Set your time zone.
