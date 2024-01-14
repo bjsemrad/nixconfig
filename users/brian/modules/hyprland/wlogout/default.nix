@@ -112,5 +112,6 @@
     ".config/wlogout/restart.png".source = ./images/restart.png;
     ".config/wlogout/sleep-hover.png".source = ./images/sleep-hover.png;
     ".config/wlogout/sleep.png".source = ./images/sleep.png;
+    ".config/wlogout/scripts/wlogout.sh".source = ./scripts/wlogout.sh;
   };
 }

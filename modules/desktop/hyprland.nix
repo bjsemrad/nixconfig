@@ -18,5 +18,7 @@
     networkmanagerapplet
     xfce.thunar
     xdg-desktop-portal-gtk
+    grim
+    slurp
   ];
 }

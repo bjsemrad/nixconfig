@@ -200,11 +200,10 @@
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = $mainMod, T, exec, alacritty
-      #bind = $mainMod, T, exec, wezterm
       bind = $mainMod, Q, killactive,
       #bind = $mainMod, M, exit,
       bind = $mainMod, E, exec, nautilus
-      #dolphin
+
       bind = $mainMod, G, togglefloating,
       bind = $mainMod, D, exec, $HOME/.config/rofi/scripts/launcher.sh
       bind = $mainMod CTRL_L, W, exec, $HOME/.config/rofi/scripts/window.sh
@@ -214,9 +213,7 @@
       bind = $mainMod CTRL_L SHIFT, I, exec, grim -g "$(slurp)"
 
       bind = $mainMod CTRL_L SHIFT, N, exec, dunstctl close 
-      #bind = $mainMod, R, exec, krunner
-      bind = $mainMod, J, togglesplit, # dwindle
-      bind = $mainMod SHIFT, W, exec, pkill waybar && waybar
+      bind = $mainMod SHIFT, W, ex ec, pkill waybar && waybar
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, movefocus, l
