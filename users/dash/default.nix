@@ -15,7 +15,7 @@ in
     ];
 
     file = {
-      "compose.yaml".source = ./compose.yaml;
+      "compose2.yaml".source = ./compose.yaml;
     };
 
     sessionVariables = {
