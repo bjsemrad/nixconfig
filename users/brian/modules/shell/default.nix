@@ -22,6 +22,10 @@ let
       gp = "git push";
       gco = "git checkout";
       gst = "git status";
+      sshdash="ssh dash@dashboard.otter-rigel.ts.net";
+      sshprox="ssh root@proxmox.otter-rigel.ts.net";
+      sshtruenas="ssh root@10.0.10.13";
+      sshchannels="ssh channelsl@channels.otter-rigel.ts.net";
     };
     enableAutosuggestions = true;
     enableCompletion = true;
