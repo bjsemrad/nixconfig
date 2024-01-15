@@ -58,7 +58,8 @@
     description = "dashboard";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [ ];
-     shell = pkgs.zsh;
+    shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
   };
 
   home-manager = {
