@@ -46,7 +46,7 @@ in
       userEmail = "bjsemrad@gmail.com";
     };
 
-    home.file = {
+    file = {
       "compose.yaml".source = ./compose.yaml;
     };
 
