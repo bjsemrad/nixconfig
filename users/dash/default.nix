@@ -12,7 +12,6 @@ in
     username = "dash";
     homeDirectory = "/home/dash";
     packages = with pkgs; [
-
     ];
 
     programs.zsh = {
