@@ -55,6 +55,14 @@
           ];
           specialArgs = { inherit inputs; };
         };
+        heimdall = lib.nixosSystem {
+          inherit system; #Dashboard Server 
+          modules = [
+            ./hosts/heimdall/configuration.nix
+            home-manager.nixosModules.home-manager
+          ];
+          specialArgs = { inherit inputs; };
+        };
       };
     };
 }
