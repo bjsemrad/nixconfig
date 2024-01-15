@@ -5,13 +5,13 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./portainer.nix
-      common-nixsettings
-    ];
+
+  imports = with inputs.self.nixosModules; [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./portainer.nix
+    common-nixsettings
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
