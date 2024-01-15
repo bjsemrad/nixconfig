@@ -21,5 +21,6 @@
     grim
     slurp
     gojq
+    adw-gtk3
   ];
 }

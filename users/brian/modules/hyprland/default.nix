@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -24,7 +24,15 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Adwait:dark";
+      name = "Adwaita:dark";
+    };
+
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = "1";
+    };
+
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = "1";
     };
 
     iconTheme = {
