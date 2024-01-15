@@ -64,7 +64,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users = import "${inputs.self}/users/dash";
+    users.dash = import "${inputs.self}/users/dash";
     extraSpecialArgs = {
       inherit inputs;
     };
