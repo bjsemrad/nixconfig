@@ -61,16 +61,16 @@
     shell = pkgs.zsh;
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users = import "${inputs.self}/users/dash";
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-  };
+  # home-manager = {
+  #   useGlobalPkgs = true;
+  #   useUserPackages = true;
+  #   users = import "${inputs.self}/users/dash";
+  #   extraSpecialArgs = {
+  #     inherit inputs;
+  #   };
+  # };
 
-  # Allow unfree packages
+  # # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
