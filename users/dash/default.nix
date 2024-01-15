@@ -14,6 +14,10 @@ in
     packages = with pkgs; [
     ];
 
+    file = {
+      "compose.yaml".source = ./compose.yaml;
+    };
+
     programs.zsh = {
       enable = true;
       shellAliases = {
@@ -44,10 +48,6 @@ in
       enable = true;
       userName = "Brian Semrad";
       userEmail = "bjsemrad@gmail.com";
-    };
-
-    file = {
-      "compose.yaml".source = ./compose.yaml;
     };
 
     sessionVariables = {
