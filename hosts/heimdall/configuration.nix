@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./portainer.nix
     ];
@@ -55,7 +56,16 @@
     isNormalUser = true;
     description = "dashboard";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
+  };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users = import "${inputs.self}/users/dash";
+    extraSpecialArgs = {
+      inherit inputs;
+    };
   };
 
   # Allow unfree packages
@@ -64,12 +74,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-   tailscale
-   vim
-   curl
-   git
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
+    tailscale
+    vim
+    curl
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -87,7 +97,7 @@
   # List services that you want to enable:
   services.tailscale.enable = true;
 
-   # create a oneshot job to authenticate to Tailscale
+  # create a oneshot job to authenticate to Tailscale
   systemd.services.tailscale-autoconnect = {
     description = "Automatic connection to Tailscale";
 
@@ -151,7 +161,7 @@
 
   services.samba-wsdd = {
     enable = true;
-    discovery = true;  
+    discovery = true;
     openFirewall = true;
     extraOptions = [
       "--verbose"
@@ -169,7 +179,7 @@
     trustedInterfaces = [ "tailscale0" ];
 
     # allow the Tailscale UDP port through the firewall (3702 SAMBA)
-    allowedUDPPorts = [ config.services.tailscale.port 3702  ];
+    allowedUDPPorts = [ config.services.tailscale.port 3702 ];
 
     # allow you to SSH in over the public internet (5357 SAMBA)
     allowedTCPPorts = [ 22 5357 ];

@@ -17,7 +17,11 @@
       userName = "Brian Semrad";
       userEmail = "bjsemrad@gmail.com";
     };
-    
+
+    home.file = {
+      "compose.yaml".source = ./compose.yaml;
+    };
+
     sessionVariables = {
       # EDITOR = "emacs";
     };
