@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -13,7 +13,6 @@
       ./modules/starship
       ./modules/tmux
     ];
-
 
   home = {
     username = "brian";
