@@ -5,8 +5,7 @@
 
 {
   imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
@@ -14,19 +13,43 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+ services.btrfs.autoScrub = {
+      enable = true;
+      interval = "weekly";
+ };
+
   fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/c91aa817-45cd-44ea-9cbb-149e5bb83075";
-      fsType = "ext4";
+    { device = "/dev/disk/by-uuid/65a103fb-1937-4019-8579-2801fb396e15";
+      fsType = "btrfs";
+      options = [ "subvol=root" "compress=zstd" "noatime"];
+    };
+
+  boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/b49bd4bf-77fa-46cf-88a5-6c7d00118346";
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/65a103fb-1937-4019-8579-2801fb396e15";
+      fsType = "btrfs";
+      options = [ "subvol=home" "compress=zstd" "noatime"];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/65a103fb-1937-4019-8579-2801fb396e15";
+      fsType = "btrfs";
+      options = [ "subvol=nix" "compress=zstd" "noatime"];
+    };
+
+  fileSystems."/swap" =
+    { device = "/dev/disk/by-uuid/65a103fb-1937-4019-8579-2801fb396e15";
+      fsType = "btrfs";
+      options = [ "subvol=swap"];
     };
 
   fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/264A-C831";
+    { device = "/dev/disk/by-uuid/264A-C831";
       fsType = "vfat";
     };
-
-  swapDevices = [ ];
+  
+  swapDevices = [ { device = "/swap/swapfile"; } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
