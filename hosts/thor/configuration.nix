@@ -38,6 +38,8 @@
     packages = with pkgs; [ ];
   };
 
+   users.users.root.hashedPassword = "!";
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
