@@ -2,14 +2,7 @@
 {
   # Enable the GNOME Desktop Environment.
   services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm = {
-    enable = true;
-    settings = {
-      greeter = {
-        Exclude = "root";
-      };
-    };
-  };
+  services.xserver.displayManager.gdm.enable = true;
   services.gvfs.enable = true;
   environment.gnome.excludePackages = with pkgs; [
     gnome.cheese

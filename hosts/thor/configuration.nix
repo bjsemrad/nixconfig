@@ -38,6 +38,7 @@
     packages = with pkgs; [ ];
   };
 
+  # Broken, logs into hyprland then swaps to gnome with GDM.
   # services.xserver.displayManager.autoLogin.enable = true;
   # services.xserver.displayManager.autoLogin.user = "brian";
 
