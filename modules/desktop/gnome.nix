@@ -6,7 +6,7 @@
     enable = true;
     settings = {
       greeter = {
-        exclude = "root";
+        Exclude = "root";
       };
     };
   };

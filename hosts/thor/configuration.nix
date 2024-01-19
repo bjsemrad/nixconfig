@@ -38,8 +38,8 @@
     packages = with pkgs; [ ];
   };
 
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "brian";
+  # services.xserver.displayManager.autoLogin.enable = true;
+  # services.xserver.displayManager.autoLogin.user = "brian";
 
   users.users.root = {
     # disable root login here, and also when installing nix by running `nixos-install --no-root-passwd`
