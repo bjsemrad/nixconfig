@@ -38,6 +38,12 @@
     packages = with pkgs; [ ];
   };
 
+  users.users.root = {
+        # disable root login here, and also when installing nix by running `nixos-install --no-root-passwd`
+        # https://discourse.nixos.org/t/how-to-disable-root-user-account-in-configuration-nix/13235/3
+        hashedPassword = "!";  # disable root logins, nothing hashes to !
+  };
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
