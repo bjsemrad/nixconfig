@@ -38,10 +38,13 @@
     packages = with pkgs; [ ];
   };
 
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "brian";
+
   users.users.root = {
-        # disable root login here, and also when installing nix by running `nixos-install --no-root-passwd`
-        # https://discourse.nixos.org/t/how-to-disable-root-user-account-in-configuration-nix/13235/3
-        hashedPassword = "!";  # disable root logins, nothing hashes to !
+    # disable root login here, and also when installing nix by running `nixos-install --no-root-passwd`
+    # https://discourse.nixos.org/t/how-to-disable-root-user-account-in-configuration-nix/13235/3
+    hashedPassword = "!"; # disable root logins, nothing hashes to !
   };
 
   home-manager = {
@@ -53,16 +56,16 @@
     };
   };
 
-    # Set your time zone.
-    time.timeZone = "America/Chicago";
+  # Set your time zone.
+  time.timeZone = "America/Chicago";
 
-    environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [ ];
 
-    # This value determines the NixOS release from which the default
-    # settings for stateful data, like file locations and database versions
-    # on your system were taken. It‘s perfectly fine and recommended to leave
-    # this value at the release version of the first install of this system.
-    # Before changing this value read the documentation for this option
-    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-    system.stateVersion = "23.11"; # Did you read the comment?
-  }
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "23.11"; # Did you read the comment?
+}
