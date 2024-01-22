@@ -59,7 +59,7 @@
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
-
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [ ];
 
   # This value determines the NixOS release from which the default
