@@ -48,7 +48,6 @@
           inherit system; #Desktop
           modules = [
             ./hosts/odin/configuration.nix
-            hyprland.nixosModules.default
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.common-cpu-amd
             nixos-hardware.nixosModules.common-hidpi
