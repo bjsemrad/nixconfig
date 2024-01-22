@@ -197,6 +197,7 @@
       windowrulev2 = workspace 3,class:(org.wezfurlong.wezterm)
       windowrulev2 = workspace 4,class:(jetbrains-idea)
       windowrulev2 = workspace 4,class:(Code)
+      windowrulev2 = workspace 4,class:(code-url-handler)
       windowrulev2 = workspace 2,class:(discord)
 
       windowrulev2 = opacity 1.0 override 1.0 override,class:^(firefox)$
