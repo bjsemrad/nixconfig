@@ -67,7 +67,7 @@
 
       # See https://wiki.hyprland.org/Configuring/Monitors/
       #monitor=,preferred,auto,1.0
-      monitor=,preferred,auto,1.25
+      monitor=,preferred,auto,1.175
 
       xwayland {
         force_zero_scaling = true
