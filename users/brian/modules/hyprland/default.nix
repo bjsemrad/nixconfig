@@ -50,7 +50,6 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package =  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [
       #  (pkgs.callPackage ./hyprbars.nix { inherit hyprland-plugins; } )
     ];
