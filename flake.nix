@@ -15,7 +15,7 @@
     };
 
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = "github:hyprwm/Hyprland/v0.34.0";
     };
 
     alacritty-theme = {
