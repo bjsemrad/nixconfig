@@ -43,7 +43,6 @@
           inherit system; # Framework
           modules = [
             ./hosts/thor/configuration.nix
-            hyprland.homeManagerModules.default
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.framework-12th-gen-intel
             nixos-hardware.nixosModules.common-gpu-intel
@@ -54,7 +53,6 @@
           inherit system; #Desktop
           modules = [
             ./hosts/odin/configuration.nix
-            hyprland.homeManagerModules.default
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.common-cpu-amd
             nixos-hardware.nixosModules.common-hidpi
