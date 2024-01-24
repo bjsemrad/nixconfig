@@ -75,11 +75,13 @@
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     tailscale
-    vim
-    curl
   ];
 
   # List services that you want to enable:
+  services.croc = {
+    enable = true;
+    openFirewall = true;
+  };
   services.tailscale.enable = true;
 
   # Enable the OpenSSH daemon.

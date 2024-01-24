@@ -25,6 +25,7 @@
       vscode
       nodejs
       gcc
+      croc
     ];
 
     sessionVariables = {

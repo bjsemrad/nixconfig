@@ -69,7 +69,7 @@
           specialArgs = { inherit inputs; };
         };
         loki = lib.nixosSystem {
-          inherit system; #Wormhole Server 
+          inherit system; #Croc/Wormhole Server 
           modules = [
             ./hosts/loki/configuration.nix
             home-manager.nixosModules.home-manager
