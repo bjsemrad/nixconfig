@@ -68,10 +68,10 @@
           ];
           specialArgs = { inherit inputs; };
         };
-        wormhole = lib.nixosSystem {
-          inherit system; #Dashboard Server 
+        loki = lib.nixosSystem {
+          inherit system; #Wormhole Server 
           modules = [
-            ./hosts/wormhole/configuration.nix
+            ./hosts/loki/configuration.nix
             home-manager.nixosModules.home-manager
           ];
           specialArgs = { inherit inputs; };
