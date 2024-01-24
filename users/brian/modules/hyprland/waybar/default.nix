@@ -15,6 +15,7 @@
         modules-center = [ ];
         modules-right = [
           "tray"
+          "custom/clipboard"
           "backlight"
           "pulseaudio#sink"
           "pulseaudio#source"
@@ -29,6 +30,14 @@
           "tooltip-format" = "{title}";
           "on-click" = "activate";
           "on-click-middle" = "close";
+        };
+         "custom/launcher" = {
+          format = "{icon}";
+          "icon-size" = 22;
+          format-icons = [
+            ""
+          ];
+          "on-click" = "$HOME/.config/rofi/scripts/launcher.sh";
         };
         "custom/sep" = {
           "format" = " | ";
@@ -46,7 +55,7 @@
           format-icons = {
             "default" = "󰨸";
           };
-          "on-click" = "/home/brian/.config/rofi/bin/clipboard";
+          "on-click" = "$HOME/.config/rofi/scripts/clipboard.sh";
           "on-click-right" = "cliphist wipe";
         };
         "custom/notification" = {
@@ -271,6 +280,11 @@
         border: 2px solid #585b70;
         color: @text;
         border-radius: 10px;
+      }
+
+      #custom-launcher {
+        margin-left: 25px;
+        margin-top: 2px;
       }
 
       #workspaces {
