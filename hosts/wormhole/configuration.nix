@@ -5,11 +5,9 @@
 { config, pkgs, inputs, ... }:
 
 {
-
   imports = with inputs.self.nixosModules; [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./portainer.nix
     common-nixsettings
     virt-qemu-guest
   ];
@@ -19,7 +17,7 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "heimdall"; # Define your hostname.
+  networking.hostName = "wormhole"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -54,25 +52,14 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.dash = {
+  users.users.worm = {
     isNormalUser = true;
-    description = "dashboard";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    description = "worm";
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [ ];
-    shell = pkgs.zsh;
-    ignoreShellProgramCheck = true;
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.dash = import "${inputs.self}/users/dash";
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-  };
-
-  # # Allow unfree packages
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
@@ -83,66 +70,13 @@
     tailscale
     vim
     curl
-    git
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  services.portainer-ce.enable = true;
-  services.portainer-ce.version = "latest";
-
-  virtualisation.docker.enable = true;
   # List services that you want to enable:
   services.tailscale.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  services.samba = {
-    enable = true;
-    securityType = "user";
-    openFirewall = true;
-    extraConfig = ''
-      workgroup = WORKGROUP
-      server string = dashnix
-      netbios name = dashnix
-      security = user 
-      #use sendfile = yes
-      #max protocol = smb2
-      # note: localhost is the ipv6 localhost ::1
-      hosts allow = 10.0.10. 127.0.0.1 localhost
-      hosts deny = 0.0.0.0/0
-      guest account = nobody
-      map to guest = bad user
-    '';
-    shares = {
-      private = {
-        path = "/home/dash/dashconfig";
-        browseable = "yes";
-        "read only" = "no";
-        "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "force user" = "dash";
-        #"force group" = "users";
-      };
-    };
-  };
-
-  services.samba-wsdd = {
-    enable = true;
-    discovery = true;
-    openFirewall = true;
-    extraOptions = [
-      "--verbose"
-    ];
-  };
 
   # Open ports in the firewall.
   networking.firewall = {
@@ -161,6 +95,7 @@
     allowedTCPPorts = [ 22 5357 ];
   };
 
+  # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
