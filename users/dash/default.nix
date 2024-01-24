@@ -16,7 +16,6 @@ in
 
     file = {
       "compose.yaml".source = ./compose.yaml;
-      ".ssh/authorized_keys".source = ../../keys/authorized_keys;
     };
 
     sessionVariables = {
