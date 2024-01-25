@@ -42,8 +42,8 @@
     };
 
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.kora-icon-theme;
+      name = "kora";
     };
 
   };

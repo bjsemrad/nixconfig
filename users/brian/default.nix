@@ -26,6 +26,7 @@
       nodejs
       gcc
       croc
+      kora-icon-theme
     ];
 
     sessionVariables = {
