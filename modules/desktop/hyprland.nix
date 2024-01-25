@@ -6,6 +6,8 @@
   };
   services.blueman.enable = true;
 
+  programs.thunar.enable = true;
+
   services.xserver.displayManager.defaultSession = "hyprland";
   security.pam.services.swaylock = { };
   environment.systemPackages = with pkgs; [
@@ -19,7 +21,6 @@
     cliphist
     swayidle
     networkmanagerapplet
-    xfce.thunar
     xdg-desktop-portal-gtk
     grim
     slurp

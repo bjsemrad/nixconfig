@@ -1,11 +1,16 @@
 { pkgs, ... }:
 {
   # Enable the KDE Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.enable = false;
   services.xserver.desktopManager.plasma5.enable = true;
- # services.xserver.displayManager.defaultSession = "plasmawayland";
+  # or this for seahorse
+  #programs.ssh.askPassword = "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
+  # Use this for the kssshaskpass
+  #programs.ssh.askPassword =  "${pkgs.plasma5Packages.ksshaskpass}/bin/ksshaskpass";
+
+  # services.xserver.displayManager.defaultSession = "plasmawayland";
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-#    oxygen
+    #    oxygen
   ];
 
   #GTK themes are not applied in Wayland applications / Window Decorations missing / Cursor looks different
