@@ -26,9 +26,9 @@ let
       sshprox="ssh root@proxmox.otter-rigel.ts.net";
       sshtruenas="ssh root@10.0.10.13";
       sshchannels="ssh channels@channels.otter-rigel.ts.net";
-      sshcroc="ssh worm@croc.otter-rigel.ts.net";
-      croc-rebuild="nixos-rebuild switch -s --flake .#loki --target-host root@croc.otter-rigel.ts.net  --verbose";
-      dashboard-rebuild="nixos-rebuild switch -s --flake .#heimdall --target-host root@loki.otter-rigel.ts.net  --verbose";
+      sshcroc="ssh worm@loki.otter-rigel.ts.net";
+      croc-rebuild="nixos-rebuild switch -s --flake .#loki --target-host root@loki.otter-rigel.ts.net  --verbose";
+      dashboard-rebuild="nixos-rebuild switch -s --flake .#heimdall --target-host root@dashboard.otter-rigel.ts.net  --verbose";
     };
     enableAutosuggestions = true;
     enableCompletion = true;
