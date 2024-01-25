@@ -66,8 +66,8 @@
        #
 
        # See https://wiki.hyprland.org/Configuring/Monitors/
-      monitor=,preferred,auto,1.0
-      #monitor=,preferred,auto,1.175
+      #monitor=,preferred,auto,1.0
+      monitor=,preferred,auto,1.175
 
        xwayland {
          force_zero_scaling = true
@@ -89,7 +89,7 @@
        #exec-once=/usr/lib/polkit-kde-authentication-agent-1
 
        # Some default env vars.
-       #env = GDK_BACKEND,wayland
+       env = GDK_BACKEND,wayland
        env = GTK_THEME,Adwaita:dark
        env = XCURSOR_SIZE,22
        env = QT_QPA_PLATFORM,wayland
