@@ -29,6 +29,8 @@ let
       sshcroc="ssh worm@loki.otter-rigel.ts.net";
       croc-rebuild="nixos-rebuild switch -s --flake .#loki --target-host root@loki.otter-rigel.ts.net  --verbose";
       dashboard-rebuild="nixos-rebuild switch -s --flake .#heimdall --target-host root@dashboard.otter-rigel.ts.net  --verbose";
+      crocsend="send(){ croc --relay loki.otter-rigel.ts.net:9009 send --code $2 $1};send";
+      crocreceive="receive(){ croc --relay loki.otter-rigel.ts.net:9009 $1};receive";
     };
     enableAutosuggestions = true;
     enableCompletion = true;
