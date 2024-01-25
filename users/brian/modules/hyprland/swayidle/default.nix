@@ -11,11 +11,11 @@
 
     timeouts = [
       {
-        timeout = 120;
+        timeout = 300;
         command = "${pkgs.swaylock-effects}/bin/swaylock -f --clock";
       }
       {
-        timeout = 300;
+        timeout = 400;
         command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
         resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
       }
