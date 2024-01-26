@@ -38,6 +38,10 @@
     packages = with pkgs; [ ];
   };
 
+  wayland.windowManager.hyprland.settings = {
+        monitor = ",preferred,auto,1.0";
+  };
+
   # Broken, logs into hyprland then swaps to gnome with GDM.
   # services.xserver.displayManager.autoLogin.enable = true;
   # services.xserver.displayManager.autoLogin.user = "brian";

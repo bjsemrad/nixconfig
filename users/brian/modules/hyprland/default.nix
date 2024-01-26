@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, ... }:
 
 {
 
@@ -47,14 +47,13 @@
     };
 
   };
-
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [
       #  (pkgs.callPackage ./hyprbars.nix { inherit hyprland-plugins; } )
     ];
-    settings = { };
+    
     extraConfig = ''
        # This is an example Hyprland config file.
        #
@@ -66,8 +65,8 @@
        #
 
        # See https://wiki.hyprland.org/Configuring/Monitors/
-      #monitor=,preferred,auto,1.0
-      monitor=,preferred,auto,1.175
+      monitor=,preferred,auto,1.0
+      #monitor=,preferred,auto,1.175
 
        xwayland {
          force_zero_scaling = true
