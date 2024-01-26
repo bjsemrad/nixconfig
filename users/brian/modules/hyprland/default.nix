@@ -1,9 +1,5 @@
 { config, pkgs, inputs, lib, ... }:
-let
-  hostname = builtins.getEnv "HOSTNAME";
-in
 {
-
   imports =
     [
       ./hyprpaper
@@ -57,7 +53,9 @@ in
       #  (pkgs.callPackage ./hyprbars.nix { inherit hyprland-plugins; } )
     ];
     settings = {
-      monitor = ",preferred,auto,1.0"; #TODO FIX
+      monitor = [
+        ",preferred,auto,1.0"
+      ];
       xwayland = {
         force_zero_scaling = true;
       };
