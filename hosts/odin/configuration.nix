@@ -6,7 +6,8 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     ./kernel.nix
-
+    ./ups.nix
+    
     services-firmware
     desktop-gnome
     desktop-hyprland
@@ -49,6 +50,7 @@
       inherit inputs;
     };
   };
+
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
