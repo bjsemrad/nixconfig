@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ config, pkgs, inputs, lib, osConfig, ... }:
 {
   imports =
     [
@@ -54,8 +54,14 @@
     ];
     settings = {
       monitor = [
-        ",preferred,auto,1.0"
-      ];
+
+      ] ++ (
+        if (osConfig.networking.hostName == "thor") then
+          [ ",preferred,auto,1.175" ]
+        else if (osConfig.networking.hostName == "odin") then
+          [ ",preferred,auto,1.0" ]
+        else [ ",preferred,auto,1.0" ]
+      );
       xwayland = {
         force_zero_scaling = true;
       };
@@ -77,8 +83,13 @@
         "XCURSOR_SIZE,22"
         "QT_QPA_PLATFORM,wayland"
         "QT_QPA_PLATFORMTHEME,qt5ct"
-        "GDK_DPI_SCALE,1.0" #TODO FIX
-      ];
+      ] ++ (
+        if (osConfig.networking.hostName == "thor") then
+          [ "GDK_DPI_SCALE,1.175" ]
+        else if (osConfig.networking.hostName == "odin") then
+          [ "GDK_DPI_SCALE,1.0" ]
+        else  [ "GDK_DPI_SCALE,1.0" ]
+      );
 
       input = {
         kb_layout = "us";
