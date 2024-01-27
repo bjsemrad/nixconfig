@@ -49,7 +49,7 @@
     };
 
   fileSystems."/mnt/games" = {
-    device = "/dev/sdc1";
+    device = "/dev/disk/by-uuid/dab14479-8c57-4f41-aac0-4d78005dbedd";
     fsType = "btrfs";
     options = [ "compress=zstd" "noatime"  "nosuid" "nodev" "nofail" "x-gvfs-show"  ];
   };
