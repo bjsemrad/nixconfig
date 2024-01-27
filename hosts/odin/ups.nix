@@ -16,7 +16,7 @@ in
       # find your driver here:
       # https://networkupstools.org/docs/man/usbhid-ups.html
       driver = "usbhid-ups";
-      description = "CP1500 AVR UPS";
+      description = "CP1500 VA  UPS";
       port = "auto";
       directives = [
         "vendorid = ${vid}"
