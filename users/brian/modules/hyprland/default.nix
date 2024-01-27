@@ -75,7 +75,11 @@
         "hyprpaper"
         "wl-paste --type text --watch cliphist -max-items 25 store" #Stores only text data
         "wl-paste --type image --watch cliphist -max-items 25 store" #Stores only image data
-      ];
+      ] ++ (
+        if (osConfig.networking.hostName == "odin") then
+          [ "openrgb -p Nix" ]
+        else [  ]
+      );
 
       env = [
         "GDK_BACKEND,wayland"
