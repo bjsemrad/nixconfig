@@ -23,6 +23,8 @@
     common-fonts
     common-opengl
     common-packages
+
+    programs-steam
   ];
 
   # Bootloader.
