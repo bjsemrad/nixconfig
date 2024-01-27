@@ -59,7 +59,7 @@
         if (osConfig.networking.hostName == "thor") then
           [ ",preferred,auto,1.175" ]
         else if (osConfig.networking.hostName == "odin") then
-          [ ",preferred,auto,1.0" ]
+          [ ",3840x1600@60,auto,1.0" ]
         else [ ",preferred,auto,1.0" ]
       );
       xwayland = {
