@@ -24,6 +24,8 @@
     common-fonts
     common-opengl
     common-packages
+
+    keyboard-qmk
   ];
 
   # Bootloader.

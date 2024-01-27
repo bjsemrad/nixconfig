@@ -28,6 +28,9 @@
       gcc
       croc
       kora-icon-theme
+      vial
+      via
+      qmk
     ];
 
     sessionVariables = {

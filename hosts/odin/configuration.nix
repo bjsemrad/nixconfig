@@ -25,6 +25,8 @@
     common-packages
 
     programs-steam
+
+    keyboard-qmk
   ];
 
   # Bootloader.
