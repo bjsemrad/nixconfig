@@ -51,10 +51,9 @@
   fileSystems."/mnt/games" = {
     device = "/dev/disk/by-uuid/dab14479-8c57-4f41-aac0-4d78005dbedd";
     fsType = "btrfs";
-    options = [ "compress=zstd" "noatime"  "nosuid" "nodev" "nofail" "x-gvfs-show"  ];
+    options = [ "compress=zstd" "noatime" "nosuid" "nodev" "nofail" "x-gvfs-show" ];
+    label = "games";
   };
-
-
 
   swapDevices = [{ device = "/swap/swapfile"; }];
 
