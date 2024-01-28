@@ -13,7 +13,6 @@
       ./modules/starship
       ./modules/tmux
       ./modules/openrgb
-      ./modules/thunderbird
     ];
 
   home = {
