@@ -12,7 +12,8 @@
       ./modules/shell
       ./modules/starship
       ./modules/tmux
-      ./modules/openrgb 
+      ./modules/openrgb
+      ./modules/thunderbird
     ];
 
   home = {
@@ -31,6 +32,7 @@
       vial
       via
       qmk
+      element-desktop
     ];
 
     sessionVariables = {

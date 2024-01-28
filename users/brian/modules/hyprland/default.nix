@@ -189,6 +189,7 @@
         "workspace 4,class:(Code)"
         "workspace 4,class:(code-url-handler)"
         "workspace 2,class:(discord)"
+        "workspace 2,class:(Element)"
         "workspace 5,class:(steam)"
 
         "opacity 1.0 override 1.0 override,class:^(firefox)$"
