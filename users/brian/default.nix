@@ -13,6 +13,7 @@
       ./modules/starship
       ./modules/tmux
       ./modules/openrgb
+      ./modules/sway
     ];
 
   home = {

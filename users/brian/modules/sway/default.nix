@@ -1,12 +1,14 @@
- wayland.windowManager.sway = {
+{
+  wayland.windowManager.sway = {
     enable = true;
     config = rec {
-      modifier = "ALT_L";
+      modifier = "Mod1";
       # Use kitty as default terminal
-      terminal = "alacritty"; 
+      terminal = "alacritty";
       # startup = [
       #   # Launch Firefox on start
       #   {command = "firefox";}
       # ];
     };
   };
+}

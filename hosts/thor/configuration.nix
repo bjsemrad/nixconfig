@@ -12,6 +12,7 @@
     services-firmware
     desktop-gnome
     desktop-hyprland
+    desktop-sway
     services-tailscale
     services-network
     services-sound
