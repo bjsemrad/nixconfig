@@ -32,6 +32,7 @@
       via
       qmk
       element-desktop
+      fastfetch
     ];
 
     sessionVariables = {
