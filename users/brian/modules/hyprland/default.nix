@@ -182,14 +182,14 @@
 
       windowrulev2 = [
         "workspace 1,class:(firefox)"
-        "workspace 3,class:(Alacritty)"
-        "workspace 3,class:(org.wezfurlong.wezterm)"
-        "workspace 4,class:(jetbrains-idea)"
-        "workspace 4,class:(Code)"
-        "workspace 4,class:(code-url-handler)"
+        "workspace 4,class:(Alacritty)"
+        "workspace 4,class:(org.wezfurlong.wezterm)"
+        "workspace 5,class:(jetbrains-idea)"
+        "workspace 5,class:(Code)"
+        "workspace 5,class:(code-url-handler)"
         "workspace 2,class:(discord)"
         "workspace 2,class:(Element)"
-        "workspace 5,class:(steam)"
+        "workspace 6,class:(steam)"
 
         "opacity 1.0 override 1.0 override,class:^(firefox)$"
         "opacity 0.9 override 0.9 override,class:^(jetbrains-idea)$"
