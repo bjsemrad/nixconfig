@@ -3,7 +3,7 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      theme = "catppuccin-macchiato";
+      theme = "catppuccin-mocha";
     };
   };
 }
