@@ -9,8 +9,6 @@
       ./swayidle
       ./dunst
       ./rofi
-      ./fuzzel
-      ./kanshi
     ];
 
   home.pointerCursor = {
@@ -55,7 +53,7 @@
     ];
     settings = {
       monitor = [
-
+           ",preferred,auto,1"
       ] ++ (
         if (osConfig.networking.hostName == "thor") then
           [ "eDP-1,preferred,auto,1.175" ]

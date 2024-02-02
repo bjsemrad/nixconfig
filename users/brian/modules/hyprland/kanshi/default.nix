@@ -1,6 +1,6 @@
 {
   services.kanshi = {
-    enable = true;
+    enable = false;
     systemdTarget = "hyprland-session.target";
 
     profiles = {
@@ -14,24 +14,19 @@
         ];
       };
 
-      # home_office = {
-      #   outputs = [
-      #     {
-      #       criteria = "GIGA-BYTE TECHNOLOGY CO., LTD. Gigabyte M32U 21351B000087";
-      #       position = "3840,0";
-      #       mode = "3840x2160@60Hz";
-      #     }
-      #     {
-      #       criteria = "Dell Inc. DELL G3223Q 82X70P3";
-      #       position = "0,0";
-      #       mode = "3840x2160@60Hz";
-      #     }
-      #     {
-      #       criteria = "eDP-1";
-      #       status = "disable";
-      #     }
-      #   ];
-      # };
+      home_office = {
+        outputs = [
+          {
+            criteria = "Dell Inc. DELL U3818DW 97F8P96B0R1L";
+            position = "0,0";
+            #  mode = "3840x2160@60Hz";
+          }
+          {
+            criteria = "eDP-1";
+            status = "disable";
+          }
+        ];
+      };
     };
   };
 }
