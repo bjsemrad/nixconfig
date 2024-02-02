@@ -12,6 +12,7 @@
       ./modules/shell
       ./modules/starship
       ./modules/tmux
+      ./modules/zellij
       ./modules/openrgb
       ./modules/sway
     ];
