@@ -7,7 +7,7 @@
     ./hardware-configuration.nix
     ./kernel.nix
     ./ups.nix
-    
+
     services-firmware
     desktop-gnome
     desktop-hyprland
@@ -37,7 +37,7 @@
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Semrad";
-    extraGroups = [ "networkmanager" "wheel" "storage"];
+    extraGroups = [ "networkmanager" "wheel" "storage" ];
     shell = pkgs.zsh;
     packages = with pkgs; [ ];
   };

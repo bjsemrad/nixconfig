@@ -53,7 +53,7 @@
     ];
     settings = {
       monitor = [
-           ",preferred,auto,1"
+        ",preferred,auto,1"
       ] ++ (
         if (osConfig.networking.hostName == "thor") then
           [ "eDP-1,preferred,auto,1.175" ]
@@ -76,11 +76,11 @@
         "wl-paste --type image --watch cliphist -max-items 25 store" #Stores only image data
       ] ++ (
         if (osConfig.networking.hostName == "odin") then
-          [ 
+          [
             "openrgb -p Nix"
-            "wpctl set-default 45" 
+            "wpctl set-default 45"
           ]
-        else [  ]
+        else [ ]
       );
 
       env = [
@@ -89,12 +89,13 @@
         "XCURSOR_SIZE,22"
         "QT_QPA_PLATFORM,wayland"
         "QT_QPA_PLATFORMTHEME,qt5ct"
+        "NIXOS_OZONE_WL,1"
       ] ++ (
         if (osConfig.networking.hostName == "thor") then
           [ "GDK_DPI_SCALE,1.175" ]
         else if (osConfig.networking.hostName == "odin") then
           [ "GDK_DPI_SCALE,1.0" ]
-        else  [ "GDK_DPI_SCALE,1.0" ]
+        else [ "GDK_DPI_SCALE,1.0" ]
       );
 
       input = {
@@ -111,11 +112,15 @@
       };
 
       general = {
-        gaps_in = 1;
-        gaps_out = 2;
+        gaps_in = 3;
+        gaps_out = 4;
         border_size = 3;
-        "col.active_border" = "rgba(5277C3ff) rgba(953B9Dff) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+
+        #"col.active_border" = "rgba(${config.colorScheme.palette.base0C}ff) rgba(${config.colorScheme.palette.base0D}ff) rgba(${config.colorScheme.palette.base0B}ff) rgba(${config.colorScheme.palette.base0E}ff) 45deg";
+        #"col.inactive_border" = "rgba(${config.colorScheme.palette.base00}cc) rgba(${config.colorScheme.palette.base01}cc) 45deg";
+
+        "col.active_border" = "rgba(7EBAE4ff) rgba(7EBAE4ff) 45deg";
+        "col.inactive_border" = "rgba(585b70ff)";
         layout = "master";
       };
       decoration = {
@@ -123,22 +128,19 @@
         active_opacity = 0.85;
         inactive_opacity = 0.6;
 
+
         blur = {
           enabled = true;
           size = 6;
-          passes = 3;
+          passes = 4;
           new_optimizations = true;
           ignore_opacity = true;
-          #xray = true;
-          #noise = 0;
-          #brightness = 0.60;
+          xray = true;
         };
         drop_shadow = true;
-        shadow_range = 4;
+        shadow_range = 30;
         shadow_render_power = 3;
-
-        "col.shadow" = "rgba(3daee9ff)";
-        "col.shadow_inactive" = "rgba(595959aa)";
+        "col.shadow" = "0x66000000";
       };
 
       animations = {
@@ -191,8 +193,8 @@
         "workspace 2,class:(Element)"
         "workspace 6,class:(steam)"
 
-        "opacity 1.0 override 1.0 override,class:^(firefox)$"
-        "opacity 0.9 override 0.9 override,class:^(jetbrains-idea)$"
+        #"opacity 1.0 override 1.0 override,class:^(firefox)$"
+        #"opacity 0.9 override 0.9 override,class:^(jetbrains-idea)$"
 
         "float,class:^(blueman-manager)$"
         "float,class:^(nm-connection-editor)$"

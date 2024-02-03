@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -17,8 +17,12 @@
       ./modules/openrgb
       ./modules/sway
       ./modules/neomutt
+      inputs.nix-colors.homeManagerModules.default
     ];
 
+  
+  colorScheme = inputs.nix-colors.colorSchemes.dracula;
+  
   home = {
     username = "brian";
     homeDirectory = "/home/brian";
