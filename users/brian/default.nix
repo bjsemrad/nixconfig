@@ -5,6 +5,7 @@
     [
       ./modules/alacritty
       ./modules/firefox
+      ./modules/chromium
       ./modules/git
       ./modules/hyprland
       ./modules/java
