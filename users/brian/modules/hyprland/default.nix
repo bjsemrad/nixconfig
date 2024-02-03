@@ -129,9 +129,9 @@
           passes = 3;
           new_optimizations = true;
           ignore_opacity = true;
-          xray = true;
-          noise = 0;
-          brightness = 0.60;
+          #xray = true;
+          #noise = 0;
+          #brightness = 0.60;
         };
         drop_shadow = true;
         shadow_range = 4;

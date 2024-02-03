@@ -9,7 +9,6 @@
         margin-left = 10;
         margin-right = 10;
         modules-left = [
-          "custom/launcher"
           "hyprland/workspaces"
           "wlr/taskbar"
         ];
