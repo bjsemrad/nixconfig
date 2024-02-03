@@ -16,6 +16,7 @@
       ./modules/zellij
       ./modules/openrgb
       ./modules/sway
+      ./modules/neomutt
     ];
 
   home = {
