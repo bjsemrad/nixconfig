@@ -30,13 +30,12 @@
       gcc
       croc
       kora-icon-theme
-      tela-circle-icon-theme
       vial
       via
       qmk
-      element-desktop
+      #element-desktop
       fastfetch
-      thunderbird
+      #thunderbird
     ];
 
     sessionVariables = {
