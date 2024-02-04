@@ -29,7 +29,7 @@
     , home-manager
     , nixos-hardware
     , alacritty-theme
-    ,hyprland
+    , hyprland
     , ...
     } @ inputs:
     let

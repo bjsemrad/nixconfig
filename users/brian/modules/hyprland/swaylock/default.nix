@@ -5,7 +5,7 @@
     enable = true;
     package = pkgs.swaylock-effects;
     settings = {
-     image = "/home/brian/.config/hypr/nix-purple.png";
+     image = "/home/brian/.config/hypr/blue_purple_waves.jpg";
       clock = true;
       timestr="%I:%M %p";
       indicator-idle-visible = true;
