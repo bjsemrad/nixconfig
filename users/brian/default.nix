@@ -37,7 +37,6 @@
       fastfetch
       #thunderbird
       discord
-      mailspring
     ];
 
     sessionVariables = {
