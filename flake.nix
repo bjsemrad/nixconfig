@@ -22,7 +22,6 @@
       url = "github:alexghr/alacritty-theme.nix/2cd654fa494fc8ecb226ca1e7c5f91cf1cebbba9";
     }; #pre 0.13 alacritty
 
-    nix-colors.url = "github:misterio77/nix-colors";
   };
   outputs =
     { self
@@ -31,7 +30,6 @@
     , nixos-hardware
     , alacritty-theme
     ,hyprland
-    ,nix-colors
     , ...
     } @ inputs:
     let

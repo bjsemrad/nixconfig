@@ -15,13 +15,7 @@
       ./modules/tmux
       ./modules/zellij
       ./modules/openrgb
-      ./modules/sway
-      ./modules/neomutt
-      inputs.nix-colors.homeManagerModules.default
     ];
-
-  
-  colorScheme = inputs.nix-colors.colorSchemes.dracula;
   
   home = {
     username = "brian";
@@ -42,6 +36,7 @@
       qmk
       element-desktop
       fastfetch
+      thunderbird
     ];
 
     sessionVariables = {
