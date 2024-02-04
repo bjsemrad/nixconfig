@@ -206,7 +206,7 @@
       bind = [
         "$mainMod, T, exec, alacritty"
         "$mainMod, Q, killactive,"
-        "$mainMod, E, exec, nautilus"
+        "$mainMod, E, exec, thunar"
         "$mainMod, G, togglefloating,"
         "$mainMod, D, exec, $HOME/.config/rofi/scripts/launcher.sh"
         "$mainMod CTRL_L, W, exec, $HOME/.config/rofi/scripts/window.sh"

@@ -12,7 +12,7 @@
           "hyprland/workspaces"
           "wlr/taskbar"
         ];
-        modules-center = [ ];
+        modules-center = [ "clock"];
         modules-right = [
           "tray"
           "custom/clipboard"
@@ -22,7 +22,7 @@
           "network"
           "bluetooth"
           "battery"
-          "clock"
+          "custom/session"
         ];
         "wlr/taskbar" = {
           "format" = "{icon}";
@@ -353,7 +353,7 @@
 
       #clock {
         color: @white;
-        margin-right: 20px;
+        margin-right: 5px;
         margin-left: 5px;
         margin-top: 2px;
       }
@@ -409,6 +409,7 @@
       #memory,
       #temperature {
         color: @white;
+        margin-right: 5px;
       }
 
 
