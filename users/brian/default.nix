@@ -36,6 +36,7 @@
       #element-desktop
       fastfetch
       #thunderbird
+      discord
     ];
 
     sessionVariables = {
