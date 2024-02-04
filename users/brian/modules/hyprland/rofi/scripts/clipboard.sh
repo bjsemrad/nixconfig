@@ -12,5 +12,3 @@ else
 		echo "$selection" | cliphist decode | wl-copy
 	fi
 fi
-
-#-theme "$HOME"/.config/rofi/config/rounded-dark-grey.rasi

@@ -55,7 +55,7 @@
           format-icons = {
             "default" = "󰨸";
           };
-          "on-click" = "$HOME/.config/rofi/scripts/clipboard.sh";
+          #"on-click" = "$HOME/.config/rofi/scripts/clipboard.sh";
           "on-click-right" = "cliphist wipe";
         };
         "custom/notification" = {
