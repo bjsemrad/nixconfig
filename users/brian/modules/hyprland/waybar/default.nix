@@ -230,7 +230,7 @@
       @define-color overlay1 #7f849c;
       @define-color overlay2 #9399b2;
 
-      @define-color blue      #3daee9; /*#89b4fa;*/
+      @define-color blue      #7EBAE4; 
       @define-color lavender  #b4befe;
       @define-color sapphire  #74c7ec;
       @define-color sky       #89dceb;
@@ -296,7 +296,7 @@
           color: @subtext0;
           padding: 0 10px;
           font-weight: bold;
-          border-radius: 2;
+          border: none;
       }
 
       #workspaces button:hover {
@@ -315,10 +315,12 @@
 
       #taskbar button {
         background: transparent;
+        border: none;
       }
 
       #taskbar button.active {
         background: transparent;
+        border-radius: 1px;
       }
 
 
