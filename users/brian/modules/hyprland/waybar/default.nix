@@ -12,7 +12,7 @@
           "hyprland/workspaces"
           "wlr/taskbar"
         ];
-        modules-center = [ "clock"];
+        modules-center = [ "clock" ];
         modules-right = [
           "tray"
           "custom/clipboard"
@@ -339,7 +339,7 @@
         color: #FFFFFF;
         font-size: 20px;
         margin-right: 20px;
-        margin-left: 5px;
+        margin-left: 10px;
       }
 
       #window {
@@ -390,7 +390,7 @@
 
       #network {
         margin-right: 10px;
-        margin-left: 2px;
+        margin-left: 5px;
         margin-top: 2px;
         color: @white;
         font-size: 18px;
@@ -428,6 +428,7 @@
         color: @lavender;
       }
       #pulseaudio.muted {
+        margin-right: 5px;
       }
       #battery.charging {
         color: @white;
