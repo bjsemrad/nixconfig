@@ -192,7 +192,7 @@
         "workspace 2,class:(discord)"
         "workspace 2,class:(Element)"
         "workspace 6,class:(steam)"
-        "workspace 3,class(geary)"
+        "workspace 3,class:(geary)"
 
         #"opacity 1.0 override 1.0 override,class:^(firefox)$"
         #"opacity 0.9 override 0.9 override,class:^(jetbrains-idea)$"
