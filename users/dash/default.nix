@@ -12,6 +12,7 @@ in
     username = "dash";
     homeDirectory = "/home/dash";
     packages = with pkgs; [
+            croc
     ];
 
     file = {
@@ -49,6 +50,8 @@ in
       gp = "git push";
       gco = "git checkout";
       gst = "git status";
+      crocsend="send(){ croc --relay loki.otter-rigel.ts.net:9009 send --code $2 $1};send";
+      crocreceive="receive(){ croc --relay loki.otter-rigel.ts.net:9009 $1};receive";
     };
     enableAutosuggestions = true;
     enableCompletion = true;
