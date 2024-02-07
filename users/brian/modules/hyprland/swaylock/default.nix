@@ -23,9 +23,9 @@
       ring-clear-color="232629";
       text-clear-color="f8f8f2";
 
-      inside-ver-color="5277C3";
-      line-ver-color="5277C3";
-      ring-ver-color="5277C3";
+      inside-ver-color="232629";
+      line-ver-color="232629";
+      ring-ver-color="232629";
       text-ver-color="f8f8f2";
 
       inside-wrong-color="232629";
