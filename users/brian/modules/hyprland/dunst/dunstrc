@@ -19,11 +19,12 @@
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
     progress_bar_max_width = 300
+    progress_bar_corner_radius = 20
     separator_height = 2
     frame_width = 2
-    frame_color = "#585b70" 
+    frame_color = "#00000" 
     separator_color = "frame" 
-    corner_radius = 8 
+    corner_radius = 20
     transparency = 0 
     gap_size = 8 
     line_height = 0 
@@ -54,18 +55,18 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#232629F2"
+    background = "#000000F2"
     foreground = "#D9E0EE"
     highlight = "#3daee9"
 
 
 [urgency_normal]
-    background = "#232629F2"
+    background = "#000000F2"
     foreground = "#D9E0EE"
     highlight = "#FFFFFF"
 
 [urgency_critical]
-    background = "#232629F2"
+    background = "#000000F2"
     foreground = "#da4453"
     frame_color = "#da4453"
     highlight = "#da4453"
