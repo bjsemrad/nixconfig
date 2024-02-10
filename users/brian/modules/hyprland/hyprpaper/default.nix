@@ -6,5 +6,11 @@
     ".config/hypr/nix-purple.png".source = ../../../wallpaper/nix-purple.png;
     ".config/hypr/fetchnix.png".source = ../../../wallpaper/fetchnix.png;
     ".config/hypr/blue_purple_waves.jpg".source = ../../../wallpaper/blue_purple_waves.jpg;
-  };
-}
+    ".config/hypr/abstractglass.png".source = ../../../wallpaper/abstractglass.png;
+    ".config/hypr/colorful-abstract.jpg".source = ../../../wallpaper/colorful-abstract.jpg;
+    ".config/hypr/exploding.jpg".source = ../../../wallpaper/exploding.jpg;
+    ".config/hypr/vibrant-colors.jpg".source = ../../../wallpaper/vibrant-colors.jpg;
+    ".config/hypr/multicolored.jpg".source = ../../../wallpaper/multicolored.jpg;
+
+    };
+  }
