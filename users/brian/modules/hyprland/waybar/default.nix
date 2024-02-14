@@ -289,7 +289,8 @@
 
       #workspaces {
         margin-left: 15px;
-        margin-top: 2px;
+        margin-top: 5px;
+        margin-bottom: 5px;
       }
       #workspaces button {
           background: transparent;
@@ -320,7 +321,7 @@
 
       #taskbar button.active {
         background: transparent;
-        border-radius: 1px;
+        /*border-radius: 1px;*/
       }
 
 
