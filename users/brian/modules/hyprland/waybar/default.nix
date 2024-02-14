@@ -214,7 +214,7 @@
     style = ''
       @define-color base   #3b4045;/*rgba(30,30,46, 0.8);*/ /*#1e1e2e;*/
       @define-color mantle #31363b;
-      @define-color crust  #232629;
+      @define-color crust  rgba(11, 10, 16, 0.95); /*#232629;*/
 
       @define-color text     #fcfcfc;
       @define-color subtext0 #a6adc8;
@@ -255,7 +255,7 @@
       }
 
       window#waybar {
-        background-color: rgba(11, 10, 16, 1.0);
+        background-color: rgba(11, 10, 16, 0.85);
         transition-property: background-color;
         transition-duration: 0.5s;
       }
@@ -277,7 +277,7 @@
 
       tooltip {
         background-color: @crust;
-        border: 2px solid #585b70;
+        border: 2px solid #0b0a10;
         color: @text;
         border-radius: 10px;
       }
