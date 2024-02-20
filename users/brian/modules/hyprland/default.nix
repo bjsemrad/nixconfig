@@ -3,6 +3,8 @@
   imports =
     [
       ./hyprpaper
+      ./hyprlock
+      ./hypridle
       ./waybar
       ./swaylock
       ./wlogout

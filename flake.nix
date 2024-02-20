@@ -18,6 +18,14 @@
       url = "github:hyprwm/Hyprland/v0.35.0";
     };
 
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+    };
+
+    hypridle = {
+      url = "github:hyprwm/hypridle";
+    };
+
     alacritty-theme = {
       url = "github:alexghr/alacritty-theme.nix/2cd654fa494fc8ecb226ca1e7c5f91cf1cebbba9";
     }; #pre 0.13 alacritty
@@ -30,6 +38,8 @@
     , nixos-hardware
     , alacritty-theme
     , hyprland
+    , hypridle
+    , hyprlock
     , ...
     } @ inputs:
     let
