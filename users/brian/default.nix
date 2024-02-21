@@ -38,6 +38,8 @@
       #thunderbird
       discord
       gnumake
+      quickemu
+      quickgui
     ];
 
     sessionVariables = {
