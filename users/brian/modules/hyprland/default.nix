@@ -2,9 +2,9 @@
 {
   imports =
     [
-      #./hyprpaper
+      ./hyprpaper
       #./hyprlock
-      ./hypridle
+      #./hypridle
       ./waybar
       ./swaylock
       ./wlogout
