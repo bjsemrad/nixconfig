@@ -40,6 +40,7 @@
       gnumake
       quickemu
       quickgui
+      python3
     ];
 
     sessionVariables = {
