@@ -92,6 +92,7 @@
     tailscale
     vim
     curl
+    wget
     git
   ];
 
