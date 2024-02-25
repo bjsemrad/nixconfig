@@ -41,6 +41,7 @@
       quickemu
       quickgui
       python3
+      distrobox
     ];
 
     sessionVariables = {

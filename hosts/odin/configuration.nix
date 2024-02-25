@@ -28,6 +28,7 @@
     programs-steam
 
     keyboard-qmk
+    virt-podman
   ];
 
   # Bootloader.
