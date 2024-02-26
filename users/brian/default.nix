@@ -42,6 +42,7 @@
       quickgui
       python3
       distrobox
+      exercism
     ];
 
     sessionVariables = {

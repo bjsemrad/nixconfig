@@ -2,8 +2,14 @@
   programs.zellij = {
     enable = true;
     enableZshIntegration = true;
-    settings = {
-      theme = "catppuccin-mocha";
-    };
+    # Cannot get keybinds to properly work using config file model.
+    #settings = {
+    #  theme = "catppuccin-mocha";
+    #};
   };
+
+    home.file =  {
+        ".config/zellij/config.kdl".source = ./config.kdl;
+    };
+
 }
