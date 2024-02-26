@@ -27,6 +27,7 @@
     common-packages
 
     keyboard-qmk
+    programs-nix-ld
   ];
 
   # Bootloader.
