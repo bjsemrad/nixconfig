@@ -5,9 +5,9 @@
       mainBar = {
         spacing = 0;
         layer = "top";
-        margin-top = 5;
-        margin-left = 10;
-        margin-right = 10;
+        margin-top = 0; #5;
+        margin-left = 0; #10;
+        margin-right = 0; #10;
         modules-left = [
           "hyprland/workspaces"
           "wlr/taskbar"
@@ -246,7 +246,7 @@
       @define-color flamingo  #f2cdcd;
       @define-color rosewater #f5e0dc;
       * {
-        border-radius: 20px;
+        /*border-radius: 20px;*/
         font-family: NotoMono Nerd Font, JetBrainsMono Nerd Font;
         font-size: 14px;
       }
@@ -262,13 +262,14 @@
 
       .modules-right {
         background: transparent;
+        margin: 0px 0px 0px 0px;
         margin: 0 -12px 0 0;
-        border-radius: 20px;
+        /*border-radius: 20px;*/
       }
       .modules-center {
         background: transparent;
-        margin: 0 0 0 0;
-        border-radius: 20px;
+        /*margin: 0 0 0 0;
+        border-radius: 20px;*/
       }
       .modules-left {
         background: transparent;
