@@ -11,8 +11,8 @@ in
     enable = true;
     listeners = [
       {
-        timeout = 300;
-        onTimeout = "hyprlock";
+        timeout = 100;
+        onTimeout = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
       }
       {
         timeout = 400;
@@ -29,8 +29,8 @@ in
       else [ ] 
     );
 
-    lockCmd = "hyprlock";
-    beforeSleepCmd = "hyprlock";
+    lockCmd = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
+    beforeSleepCmd = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
     afterSleepCmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
   };
 }

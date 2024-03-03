@@ -6,9 +6,9 @@
       ./hyprlock
       ./hypridle
       ./waybar
-      ./swaylock
+      #./swaylock
       ./wlogout
-      ./swayidle
+      #./swayidle
       ./dunst
       ./rofi
     ];
