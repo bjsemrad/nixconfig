@@ -10,6 +10,7 @@
 
   services.xserver.displayManager.defaultSession = "hyprland";
   security.pam.services.swaylock = { };
+  security.pam.services.hyprlock = {};
   environment.systemPackages = with pkgs; [
     hyprpaper
     wl-clipboard
