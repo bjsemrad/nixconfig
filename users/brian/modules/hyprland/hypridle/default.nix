@@ -11,7 +11,7 @@ in
     enable = true;
     listeners = [
       {
-        timeout = 100;
+        timeout = 300;
         onTimeout = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
       }
       {
