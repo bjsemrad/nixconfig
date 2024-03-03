@@ -18,5 +18,7 @@
     ".config/hypr/view-clear-water-motion.jpg".source = ../../../wallpaper/view-clear-water-motion.jpg;
     ".config/hypr/computer-chip-cpu.png".source = ../../../wallpaper/computer-chip-cpu.png;
     ".config/hypr/matrix.png".source = ../../../wallpaper/matrix.png;
+    ".config/hypr/leaves.png".source = ../../../wallpaper/leaves.png;
+    ".config/hypr/flower.png".source = ../../../wallpaper/flower.png;
   };
 }

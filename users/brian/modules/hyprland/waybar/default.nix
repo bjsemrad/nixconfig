@@ -309,6 +309,8 @@
       #workspaces button.active {
         color: @white;
         background: transparent;
+        /*border-radius: 20px;
+        background: linear-gradient(to right, #fb00dc, #00d4ff);*/
       }
 
       #workspaces button.focused {
