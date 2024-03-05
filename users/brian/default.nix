@@ -43,6 +43,7 @@
       python3
       distrobox
       exercism
+      vlc
     ];
 
     sessionVariables = {
