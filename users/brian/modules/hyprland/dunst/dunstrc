@@ -55,18 +55,18 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#000000F2"
+    background = "#000000F0"
     foreground = "#D9E0EE"
     highlight = "#3daee9"
 
 
 [urgency_normal]
-    background = "#000000F2"
+    background = "#000000F0"
     foreground = "#D9E0EE"
     highlight = "#FFFFFF"
 
 [urgency_critical]
-    background = "#000000F2"
+    background = "#000000F0"
     foreground = "#da4453"
     frame_color = "#da4453"
     highlight = "#da4453"
