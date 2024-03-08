@@ -44,6 +44,7 @@
       distrobox
       exercism
       vlc
+      httpie
     ];
 
     sessionVariables = {
