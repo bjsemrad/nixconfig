@@ -30,7 +30,6 @@
     keyboard-qmk
     virt-podman
     programs-nix-ld
-    services-atuin
   ];
 
   # Bootloader.
