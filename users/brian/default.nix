@@ -16,6 +16,7 @@
       ./modules/zellij
       ./modules/openrgb
       ./modules/atuin
+      inputs.sops-nix.homeManagerModules.sops
     ];
   
   home = {
