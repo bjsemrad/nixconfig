@@ -3,7 +3,6 @@ let
   nixconfigdir = "nixconfig";
   in
 {
-
   programs.zsh = {
     enable = true;
     shellAliases = {
@@ -39,6 +38,7 @@ let
     };
     enableAutosuggestions = true;
     enableCompletion = true;
-    syntaxHighlighting.enable = true; #OLD enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
+
   };
 }

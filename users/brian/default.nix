@@ -15,6 +15,7 @@
       ./modules/tmux
       ./modules/zellij
       ./modules/openrgb
+      ./modules/atuin
     ];
   
   home = {
@@ -45,6 +46,7 @@
       exercism
       vlc
       httpie
+      fzf
     ];
 
     sessionVariables = {
