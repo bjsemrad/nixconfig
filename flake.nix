@@ -30,10 +30,6 @@
       url = "github:alexghr/alacritty-theme.nix/2cd654fa494fc8ecb226ca1e7c5f91cf1cebbba9";
     }; #pre 0.13 alacritty
 
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-    };
-
   };
   outputs =
     { self
@@ -44,7 +40,6 @@
     , hyprland
     , hypridle
     , hyprlock
-    , sops-nix
     , ...
     } @ inputs:
     let

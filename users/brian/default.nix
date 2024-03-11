@@ -16,9 +16,8 @@
       ./modules/zellij
       ./modules/openrgb
       ./modules/atuin
-      inputs.sops-nix.homeManagerModules.sops
     ];
-  
+
   home = {
     username = "brian";
     homeDirectory = "/home/brian";
