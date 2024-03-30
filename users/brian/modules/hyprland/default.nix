@@ -268,7 +268,7 @@
             in
             [
               "CTRL_L, ${ws}, workspace, ${toString (x + 1)}"
-              "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+              "CTRL_L SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
             ]
           )
           9)
