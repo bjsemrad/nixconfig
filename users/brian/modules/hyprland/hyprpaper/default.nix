@@ -20,5 +20,6 @@
     ".config/hypr/matrix.png".source = ../../../wallpaper/matrix.png;
     ".config/hypr/leaves.png".source = ../../../wallpaper/leaves.png;
     ".config/hypr/flower.png".source = ../../../wallpaper/flower.png;
+    ".config/hypr/shaded_landscape.png".source = ../../../wallpaper/shaded_landscape.png;
   };
 }
