@@ -34,6 +34,7 @@
       vial
       via
       qmk
+      qmk-udev-rules
       #element-desktop
       fastfetch
       #thunderbird
