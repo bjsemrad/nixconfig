@@ -51,6 +51,7 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [
+       #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       #  (pkgs.callPackage ./hyprbars.nix { inherit hyprland-plugins; } )
     ];
     settings = {
