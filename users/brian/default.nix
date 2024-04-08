@@ -27,6 +27,7 @@
       rustup
       jetbrains.idea-ultimate
       vscode
+      zig
       nodejs
       gcc
       croc
@@ -49,6 +50,7 @@
       httpie
       fzf
       mblock-mlink
+      kicad
     ];
 
     sessionVariables = {
