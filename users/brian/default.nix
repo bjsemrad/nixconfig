@@ -50,7 +50,6 @@
       httpie
       fzf
       mblock-mlink
-      kicad
     ];
 
     sessionVariables = {
