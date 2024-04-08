@@ -48,6 +48,7 @@
       vlc
       httpie
       fzf
+      mblock-mlink
     ];
 
     sessionVariables = {
