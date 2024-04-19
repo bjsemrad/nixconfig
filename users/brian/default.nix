@@ -49,7 +49,7 @@
       vlc
       httpie
       fzf
-      ykman
+      yubikey-manager
       mblock-mlink
     ];
 
