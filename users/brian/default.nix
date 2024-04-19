@@ -49,6 +49,7 @@
       vlc
       httpie
       fzf
+      ykman
       mblock-mlink
     ];
 
