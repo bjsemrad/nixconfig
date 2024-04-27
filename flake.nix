@@ -65,7 +65,7 @@
             ./hosts/thor/configuration.nix
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.framework-12th-gen-intel
-            nixos-hardware.nixosModules.common-gpu-intel
+            #nixos-hardware.nixosModules.common-gpu-intel
           ];
           specialArgs = { inherit inputs; };
         };
