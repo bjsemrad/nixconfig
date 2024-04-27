@@ -219,7 +219,7 @@
         "float,class:^(pavucontrol)$"
       ];
 
-      "$mainMod" = "ALT_L";
+      "$mainMod" = "SUPER_L";
 
       bind = [
         #"$mainMod, grave, hyprexpo:expo, toggle"  # can be: toggle, off/disable or on/enable
@@ -249,10 +249,10 @@
         "$mainMod SHIFT, down, swapwindow, d"
 
         # Resize window
-        "SUPER SHIFT, left, resizeactive, -160 0"
-        "SUPER SHIFT, right, resizeactive, 160 0"
-        "SUPER SHIFT, down, resizeactive, 0 -160"
-        "SUPER SHIFT, up, resizeactive, 0 160"
+        "$mainMod CTRL_L, left, resizeactive, -160 0"
+        "$mainMod CTRL_L, right, resizeactive, 160 0"
+        "$mainMod CTRL_L, down, resizeactive, 0 -160"
+        "$mainMod CTRL_L, up, resizeactive, 0 160"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
@@ -261,10 +261,9 @@
 
         "$mainMod SHIFT CTRL_L, M, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         "$mainMod SHIFT CTRL_L, S, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        "ALT, Tab, focuscurrentorlast,"
+        "$mainMod, Tab, focuscurrentorlast,"
 
-        "SUPER,F,fullscreen"
-        "$mainMod, F, fullscreen,1"
+        "$mainMod,F,fullscreen"
 
         "CTRL_L, 0, workspace, 10"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
