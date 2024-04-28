@@ -51,6 +51,7 @@
       fzf
       yubikey-manager
       mblock-mlink
+      gimp
     ];
 
     sessionVariables = {
