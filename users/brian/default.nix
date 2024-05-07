@@ -50,7 +50,7 @@
       httpie
       fzf
       yubikey-manager
-      mblock-mlink
+      #Failed to download try again later mblock-mlink
       gimp
     ];
 
