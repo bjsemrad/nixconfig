@@ -248,8 +248,8 @@ plugins {
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
- theme "dracula"
- //theme "catppuccin-mocha"
+ //theme "dracula"
+ theme "catppuccin-mocha"
 
 // themes {
 //     dracula {

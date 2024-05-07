@@ -15,7 +15,7 @@
     };
 
     hyprland = {
-      url = "github:hyprwm/Hyprland/v0.38.1";
+      url = "github:hyprwm/Hyprland/v0.40.0";
     };
 
     hyprland-plugins = {
