@@ -194,13 +194,13 @@ plugins {
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
 // eg. when terminal window with an active zellij session is closed
 // Options:clear-defaults=truese "quit"
-
+on_force_close "quit"
 //  Send a request for a simplified ui (without arrow fonts) to plugins
 //  Options:
 //    - true
 //    - false (Default)
 //
-// simplified_ui true
+//simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -275,7 +275,7 @@ plugins {
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -348,3 +348,10 @@ plugins {
 // Default: true
 //
 // styled_underlines false
+
+ui {
+  pane_frames {
+    rounded_corners true;
+    hide_session_name true;
+  }
+}
