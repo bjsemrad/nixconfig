@@ -212,8 +212,8 @@
         "workspace 3,class:(geary)"
 
         "opacity 1.0 override 1.0 override,class:^(firefox)$"
-        "opacity 1.0 override 1.0 override,class:^(Alacritty)$"
-        "opacity 1.0 override 1.0 override,class:^(jetbrains-idea)$"
+        #"opacity 1.0 override 1.0 override,class:^(Alacritty)$"
+        #"opacity 1.0 override 1.0 override,class:^(jetbrains-idea)$"
 
         "float,class:^(blueman-manager)$"
         "float,class:^(nm-connection-editor)$"
