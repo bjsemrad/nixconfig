@@ -11,10 +11,6 @@ in
     enable = true;
     listeners = [
       {
-        timeout = 300;
-        onTimeout = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
-      }
-      {
         timeout = 400;
         onTimeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
         onResume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
@@ -22,11 +18,18 @@ in
     ] ++ (
       if (osConfig.networking.hostName == "thor") then
         [{
+          timeout = 300;
+          onTimeout = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
+         }
+         {
           timeout = 600;
           onTimeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on && ${pkgs.systemd}/bin/systemctl suspend";
           onResume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
-        }]
-      else [ ] 
+         }]
+      else [ {
+        timeout = 600;
+        onTimeout = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
+      }] 
     );
 
     lockCmd = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
