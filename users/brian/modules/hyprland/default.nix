@@ -117,7 +117,7 @@
       general = {
         gaps_in = 3;
         gaps_out = 4;
-        border_size = 2;
+        border_size = 0;
 
         #"col.active_border" = "rgba(${config.colorScheme.palette.base0C}ff) rgba(${config.colorScheme.palette.base0D}ff) rgba(${config.colorScheme.palette.base0B}ff) rgba(${config.colorScheme.palette.base0E}ff) 45deg";
         #"col.inactive_border" = "rgba(${config.colorScheme.palette.base00}cc) rgba(${config.colorScheme.palette.base01}cc) 45deg";
@@ -134,7 +134,7 @@
 
         blur = {
           enabled = true;
-          size = 6;
+          size = 12;
           passes = 4;
           new_optimizations = true;
           ignore_opacity = true;
@@ -212,8 +212,8 @@
         "workspace 3,class:(geary)"
 
         "opacity 1.0 override 1.0 override,class:^(firefox)$"
-        #"opacity 1.0 override 1.0 override,class:^(Alacritty)$"
-        #"opacity 1.0 override 1.0 override,class:^(jetbrains-idea)$"
+        "opacity 1.0 override 1.0 override,class:^(Alacritty)$"
+        "opacity 1.0 override 1.0 override,class:^(jetbrains-idea)$"
 
         "float,class:^(blueman-manager)$"
         "float,class:^(nm-connection-editor)$"
@@ -225,7 +225,7 @@
       bind = [
         #"$mainMod, grave, hyprexpo:expo, toggle"  # can be: toggle, off/disable or on/enable
 
-        "$mainMod, T, exec, alacritty"
+        "$mainMod, RETURN, exec, alacritty"
         "$mainMod, Q, killactive,"
         "$mainMod, E, exec, thunar"
         "$mainMod, G, togglefloating,"

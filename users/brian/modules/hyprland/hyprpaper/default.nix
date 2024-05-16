@@ -21,5 +21,11 @@
     ".config/hypr/leaves.png".source = ../../../wallpaper/leaves.png;
     ".config/hypr/flower.png".source = ../../../wallpaper/flower.png;
     ".config/hypr/shaded_landscape.png".source = ../../../wallpaper/shaded_landscape.png;
+    ".config/hypr/forest-mist.png".source = ../../../wallpaper/forest-mist.png;
+    ".config/hypr/island-night-moon.png".source = ../../../wallpaper/island-night-moon.png;
+    ".config/hypr/blue_night_moon_over_lake.png".source = ../../../wallpaper/blue_night_moon_over_lake.png;
+    ".config/hypr/forest-landscape.png".source = ../../../wallpaper/forest-landscape.png;
+    ".config/hypr/mountain-lake.png".source = ../../../wallpaper/mountain-lake.png;
+    ".config/hypr/wallhaven3.png".source = ../../../wallpaper/wallhaven3.png;
   };
 }
