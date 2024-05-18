@@ -53,6 +53,7 @@
       yubikey-manager
       #Failed to download try again later mblock-mlink
       gimp
+      nixd
     ];
 
     sessionVariables = {
