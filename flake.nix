@@ -38,6 +38,12 @@
     waybar = {
       url = "github:Alexays/Waybar";
     };
+
+    neovim-flake = { 
+      url = "github:neovim/neovim/v0.10.0?dir=contrib"; 
+    };
+
+
   };
   outputs =
     { self
@@ -49,6 +55,7 @@
     , hypridle
     , hyprlock
     , waybar
+    , neovim-flake
     , ...
     } @ inputs:
     let
