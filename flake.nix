@@ -22,7 +22,8 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-      
+    
+    /*Drop these and potentlly hyprland when we move to 24.05*/
     hyprlock = {
       url = "github:hyprwm/hyprlock/v0.3.0";
     };
