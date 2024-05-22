@@ -24,11 +24,11 @@
     };
       
     hyprlock = {
-      url = "github:hyprwm/hyprlock";
+      url = "github:hyprwm/hyprlock/v0.3.0";
     };
 
     hypridle = {
-      url = "github:hyprwm/hypridle";
+      url = "github:hyprwm/hypridle/v0.1.2";
     };
 
     alacritty-theme = {
