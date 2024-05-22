@@ -10,7 +10,7 @@ in
   programs.hyprlock = {
     enable = true;
     backgrounds = [{
-      path = "/home/brian/.config/hypr/forest-mist.png";
+      path = "/home/brian/.config/hypr/mountain-lake.png";
       blur_passes = 1;
       contrast = 0.8916;
       brightness = 0.8172;
