@@ -30,6 +30,7 @@
       zig
       nodejs
       gcc
+      clang-tools
       cmake
       croc
       kora-icon-theme
