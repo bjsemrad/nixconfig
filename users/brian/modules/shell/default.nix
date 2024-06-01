@@ -36,7 +36,8 @@ let
       build-lily58="QMK_HOME=~/vial-qmk qmk compile -kb lily58/rev1 -km brian -e CONVERT_TO=rp2040_ce";
       flash-lily58="MK_HOME=~/vial-qmk qmk flash -kb lily58/rev1 -km brian -e CONVERT_TO=rp2040_ce";
     };
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;   
+    #enableAutosuggestions = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
 

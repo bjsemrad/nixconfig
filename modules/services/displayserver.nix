@@ -4,7 +4,7 @@
 
   # Configure keymap
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
   };
 }

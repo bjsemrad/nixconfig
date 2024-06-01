@@ -8,7 +8,7 @@
 
   programs.thunar.enable = true;
 
-  services.xserver.displayManager.defaultSession = "hyprland";
+  services.displayManager.defaultSession = "hyprland";
   security.pam.services.swaylock = { };
   security.pam.services.hyprlock = {};
   environment.systemPackages = with pkgs; [

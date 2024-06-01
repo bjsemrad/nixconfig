@@ -15,7 +15,7 @@
   services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
     vim
-    nixfmt
+    nixfmt-classic
     nixpkgs-fmt
     unzip
     killall
