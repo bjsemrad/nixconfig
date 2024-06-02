@@ -6,7 +6,7 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     ./kernel.nix
-    ./ups.nix
+    # Temporary ./ups.nix
 
     services-firmware
     desktop-gnome
