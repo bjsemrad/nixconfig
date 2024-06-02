@@ -4,7 +4,7 @@
     enable = true;
     package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
     settings = {
-      backgrounds = [{
+      background = [{
         path = "/home/brian/.config/hypr/mountain-lake.png";
         blur_passes = 1;
         contrast = 0.8916;
@@ -17,7 +17,7 @@
         grace = 0;
         disable_loading_bar = true;
       };
-      labels = [{
+      label = [{
         text = "cmd[update:1000] echo \"<b><big> $(${pkgs.coreutils}/bin/date +\"%r\") </big></b>\"";
         color = "rgb(200, 200, 200)";
         font_size = 64;
@@ -28,7 +28,7 @@
         halign = "center";
         valign = "center";
       }];
-      input-fields = [{
+      input-field = [{
         size = {
           width = 250;
           height = 60;

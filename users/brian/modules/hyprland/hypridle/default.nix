@@ -8,7 +8,7 @@
     enable = true;
     package = inputs.hypridle.packages.${pkgs.system}.hypridle;
     settings = {
-      listeners = [
+      listener = [
         {
           timeout = 400;
           onTimeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
