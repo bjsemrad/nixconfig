@@ -16,7 +16,7 @@
 
     hyprland = {
       type = "git"; 
-      url = "https://github.com/hyprwm/Hyprland?ref=v0.41.0";
+      url = "https://github.com/hyprwm/Hyprland?ref=v0.41.1";
       submodules = true;
     };
 
@@ -46,6 +46,9 @@
       url = "github:neovim/neovim/v0.10.0?dir=contrib"; 
     };
 
+    ags = {
+      url = "github:Aylur/ags/v1.8.2";
+    };
 
   };
   outputs =
@@ -59,6 +62,7 @@
     , hyprlock
     , waybar
     , neovim-flake
+    , ags
     , ...
     } @ inputs:
     let
