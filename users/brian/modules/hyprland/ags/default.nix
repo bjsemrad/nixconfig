@@ -8,6 +8,7 @@
     bun
     dart-sass
   ];
+
   programs.ags = {
     enable = true;
     configDir = ./config;

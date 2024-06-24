@@ -50,6 +50,10 @@
       url = "github:Aylur/ags/v1.8.2";
     };
 
+    matugen = {
+      url = "github:InioX/matugen?ref=v2.2.0";
+    };
+
   };
   outputs =
     { self
@@ -63,6 +67,7 @@
     , waybar
     , neovim-flake
     , ags
+    , matugen
     , ...
     } @ inputs:
     let
