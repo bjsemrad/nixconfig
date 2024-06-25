@@ -4,8 +4,9 @@ import icons from "lib/icons"
 
 export default () => PanelButton({
     class_name: "recorder",
-    on_clicked: () => screenrecord.stop(),
-    visible: screenrecord.bind("recording"),
+    on_clicked: () => screenrecord.screenshot(),
+    on_secondary_click: () => screenrecord.recording ? screenrecord.stop() : screenrecord.start(),
+    visible: true, //screenrecord.bind("recording"),
     child: Widget.Box({
         children: [
             Widget.Icon(icons.recorder.recording),

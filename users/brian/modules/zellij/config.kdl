@@ -249,8 +249,8 @@ on_force_close "quit"
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
  //theme "dracula"
- //theme "catppuccin-macchiato"
 
+theme "catppuccin-macchiato"
 
 themes {
     draculacust {
@@ -267,7 +267,7 @@ themes {
         orange 255 184 108
     }
 }
-theme "draculacust"
+//theme "draculacust"
 // Choose the theme that is specified in the themes section.
 // Default: default
 //

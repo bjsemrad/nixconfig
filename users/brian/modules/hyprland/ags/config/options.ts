@@ -2,6 +2,7 @@ import { opt, mkOptions } from "lib/option"
 import { distro } from "lib/variables"
 import { icon } from "lib/utils"
 import icons from "lib/icons"
+import weather from "service/weather"
 
 const options = mkOptions(OPTIONS, {
     autotheme: opt(false),
@@ -55,21 +56,21 @@ const options = mkOptions(OPTIONS, {
         radius: opt(11),
     },
 
-    transition: opt(200),
+    transition: opt(100),
 
     font: {
-        size: opt(11),
+        size: opt(10),
         name: opt("Ubuntu Nerd Font"),
     },
 
     bar: {
         flatButtons: opt(true),
         position: opt<"top" | "bottom">("top"),
-        corners: opt(50),
+        corners: opt(25), //50
         transparent: opt(false),
         layout: {
             start: opt<Array<import("widget/bar/Bar").BarWidget>>([
-                "launcher",
+                // "launcher",
                 "workspaces",
                 "taskbar",
                 "expander",
@@ -79,10 +80,9 @@ const options = mkOptions(OPTIONS, {
                 "date",
             ]),
             end: opt<Array<import("widget/bar/Bar").BarWidget>>([
-                "media",
                 "expander",
+                "media",
                 "systray",
-                "colorpicker",
                 "screenrecord",
                 "system",
                 "battery",
@@ -101,23 +101,23 @@ const options = mkOptions(OPTIONS, {
             action: opt(() => App.toggleWindow("launcher")),
         },
         date: {
-            format: opt("%H:%M - %A %e."),
+            format: opt("%a %b %d, %G %I:%M %p"),
             action: opt(() => App.toggleWindow("datemenu")),
         },
         battery: {
             bar: opt<"hidden" | "regular" | "whole">("hidden"),
             charging: opt("#00D787"),
-            percentage: opt(true),
+            percentage: opt(false),
             blocks: opt(7),
             width: opt(50),
             low: opt(30),
         },
         workspaces: {
-            workspaces: opt(7),
+            workspaces: opt(9),
         },
         taskbar: {
             iconSize: opt(0),
-            monochrome: opt(true),
+            monochrome: opt(false),
             exclusive: opt(false),
         },
         messages: {
@@ -137,7 +137,7 @@ const options = mkOptions(OPTIONS, {
             length: opt(40),
         },
         powermenu: {
-            monochrome: opt(false),
+            monochrome: opt(true),
             action: opt(() => App.toggleWindow("powermenu")),
         },
     },
@@ -153,15 +153,11 @@ const options = mkOptions(OPTIONS, {
             max: opt(16),
         },
         apps: {
-            iconSize: opt(62),
-            max: opt(6),
+            iconSize: opt(32),
+            max: opt(10),
             favorites: opt([
                 [
-                    "firefox",
-                    "wezterm",
-                    "org.gnome.Nautilus",
-                    "org.gnome.Calendar",
-                    "spotify",
+                    // "firefox",
                 ],
             ]),
         },
@@ -169,7 +165,7 @@ const options = mkOptions(OPTIONS, {
 
     overview: {
         scale: opt(9),
-        workspaces: opt(7),
+        workspaces: opt(9),
         monochromeIcon: opt(true),
     },
 

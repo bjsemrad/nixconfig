@@ -47,7 +47,7 @@
     };
 
     ags = {
-      url = "github:Aylur/ags/v1.8.2";
+      url = "github:Aylur/ags";#/v1.8.2";
     };
 
     matugen = {

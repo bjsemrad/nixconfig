@@ -7,6 +7,7 @@ const apps = await Service.import("applications")
 const { query } = apps
 const { iconSize } = options.launcher.apps
 
+
 const QuickAppButton = (app: Application) => Widget.Button({
     hexpand: true,
     tooltip_text: app.name,
@@ -51,7 +52,7 @@ const AppItem = (app: Application) => {
         vpack: "center",
         children: app.description ? [title, description] : [title],
     })
-
+apps
     return Widget.Button({
         class_name: "app-item",
         attribute: { app },
@@ -64,6 +65,7 @@ const AppItem = (app: Application) => {
         },
     })
 }
+
 export function Favorites() {
     const favs = options.launcher.apps.favorites.bind()
     return Widget.Revealer({

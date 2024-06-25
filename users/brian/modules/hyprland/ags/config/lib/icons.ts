@@ -4,6 +4,7 @@ export const substitutes = {
     "Caprine": "facebook-messenger",
     "com.raggesilver.BlackBox-symbolic": "terminal-symbolic",
     "org.wezfurlong.wezterm-symbolic": "terminal-symbolic",
+    "Alacritty-symbolic": "terminal-symbolic",
     "audio-headset-bluetooth": "audio-headphones-symbolic",
     "audio-card-analog-usb": "audio-speakers-symbolic",
     "audio-card-analog-pci": "audio-card-symbolic",
@@ -74,17 +75,6 @@ export default {
         balanced: "power-profile-balanced-symbolic",
         "power-saver": "power-profile-power-saver-symbolic",
         performance: "power-profile-performance-symbolic",
-    },
-    asusctl: {
-        profile: {
-            Balanced: "power-profile-balanced-symbolic",
-            Quiet: "power-profile-power-saver-symbolic",
-            Performance: "power-profile-performance-symbolic",
-        },
-        mode: {
-            Integrated: "processor-symbolic",
-            Hybrid: "controller-symbolic",
-        },
     },
     battery: {
         charging: "battery-flash-symbolic",

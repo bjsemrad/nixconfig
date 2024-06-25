@@ -20,6 +20,7 @@
     pavucontrol
     networkmanager
     gtk3
+    libdbusmenu-gtk3
   ];
 
   programs.ags = {

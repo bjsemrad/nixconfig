@@ -37,7 +37,7 @@
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Semrad";
-    extraGroups = [ "networkmanager" "wheel" "dialout"];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     shell = pkgs.zsh;
     packages = with pkgs; [ ];
   };
@@ -45,6 +45,11 @@
   # Broken, logs into hyprland then swaps to gnome with GDM.
   # services.xserver.displayManager.autoLogin.enable = true;
   # services.xserver.displayManager.autoLogin.user = "brian";
+  services.logind.extraConfig = ''
+    # don’t shutdown when power button is short-pressed
+    HandlePowerKey=ignore
+  '';
+
 
   users.users.root = {
     # disable root login here, and also when installing nix by running `nixos-install --no-root-passwd`

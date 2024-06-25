@@ -97,7 +97,7 @@
           "active-only" = false;
           "on-click" = "activate";
           "format" = "{icon}";
-          "persistent_workspaces" = {
+          "persistent-workspaces" = {
             "*" = 2;
           };
           format-icons = {

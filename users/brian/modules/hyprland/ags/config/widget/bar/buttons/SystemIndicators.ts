@@ -1,45 +1,16 @@
 import PanelButton from "../PanelButton"
 import icons from "lib/icons"
-import asusctl from "service/asusctl"
 
 const notifications = await Service.import("notifications")
 const bluetooth = await Service.import("bluetooth")
 const audio = await Service.import("audio")
 const network = await Service.import("network")
-const powerprof = await Service.import("powerprofiles")
-
-const ProfileIndicator = () => {
-    const visible = asusctl.available
-        ? asusctl.bind("profile").as(p => p !== "Balanced")
-        : powerprof.bind("active_profile").as(p => p !== "balanced")
-
-    const icon = asusctl.available
-        ? asusctl.bind("profile").as(p => icons.asusctl.profile[p])
-        : powerprof.bind("active_profile").as(p => icons.powerprofile[p])
-
-    return Widget.Icon({ visible, icon })
-}
-
-const ModeIndicator = () => {
-    if (!asusctl.available) {
-        return Widget.Icon({
-            setup(self) {
-                Utils.idle(() => self.visible = false)
-            },
-        })
-    }
-
-    return Widget.Icon({
-        visible: asusctl.bind("mode").as(m => m !== "Hybrid"),
-        icon: asusctl.bind("mode").as(m => icons.asusctl.mode[m]),
-    })
-}
 
 const MicrophoneIndicator = () => Widget.Icon()
     .hook(audio, self => self.visible =
         audio.recorders.length > 0
         || audio.microphone.is_muted
-        || false)
+        || true)
     .hook(audio.microphone, self => {
         const vol = audio.microphone.is_muted ? 0 : audio.microphone.volume
         const { muted, low, medium, high } = icons.audio.mic
@@ -87,11 +58,9 @@ export default () => PanelButton({
     on_scroll_up: () => audio.speaker.volume += 0.02,
     on_scroll_down: () => audio.speaker.volume -= 0.02,
     child: Widget.Box([
-        ProfileIndicator(),
-        ModeIndicator(),
         DNDIndicator(),
-        BluetoothIndicator(),
         NetworkIndicator(),
+        BluetoothIndicator(),
         AudioIndicator(),
         MicrophoneIndicator(),
     ]),

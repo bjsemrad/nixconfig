@@ -74,7 +74,8 @@
       };
 
       exec-once = [
-        "waybar"
+        # "waybar"
+        "ags"
         "hyprpaper"
         "wl-paste --type text --watch cliphist -max-items 25 store" #Stores only text data
         "wl-paste --type image --watch cliphist -max-items 25 store" #Stores only image data
@@ -118,12 +119,12 @@
       general = {
         gaps_in = 3;
         gaps_out = 4;
-        border_size = 0;
+        border_size = 2;
 
         #"col.active_border" = "rgba(${config.colorScheme.palette.base0C}ff) rgba(${config.colorScheme.palette.base0D}ff) rgba(${config.colorScheme.palette.base0B}ff) rgba(${config.colorScheme.palette.base0E}ff) 45deg";
         #"col.inactive_border" = "rgba(${config.colorScheme.palette.base00}cc) rgba(${config.colorScheme.palette.base01}cc) 45deg";
 
-        "col.active_border" = "rgba(7EBAE4ff) rgba(7EBAE4ff) 45deg";
+        "col.active_border" = "rgba(51a4e7ff) rgba(51a4e7ff) 45deg"; #"rgba(7EBAE4ff) rgba(7EBAE4ff) 45deg";
         "col.inactive_border" = "rgba(585b70ff)";
         layout = "master";
       };
@@ -207,6 +208,7 @@
         "workspace 5,class:(Code)"
         "workspace 5,class:(code-url-handler)"
         "workspace 2,class:(discord)"
+        "workspace 2,class:(Cider)"
         "workspace 2,class:(Element)"
         "workspace 6,class:(steam)"
         "workspace 3,class:(geary)"
@@ -229,14 +231,19 @@
         "$mainMod, Q, killactive,"
         "$mainMod, E, exec, thunar"
         "$mainMod, G, togglefloating,"
-        "$mainMod, D, exec, $HOME/.config/rofi/scripts/launcher.sh"
-        "$mainMod CTRL_L, W, exec, $HOME/.config/rofi/scripts/window.sh"
-        "$mainMod CTRL_L SHIFT, P, exec, $HOME/.config/wlogout/scripts/wlogout.sh"
+        "$mainMod, D, exec, ags -t launcher"
+        ",XF86PowerOff,  exec, ags -t powermenu"
+        "$mainMod CTRL_L SHIFT, P, exec, ags -t powermenu"
+        # "$mainMod, D, exec, $HOME/.config/rofi/scripts/launcher.sh"
+        # "$mainMod CTRL_L, W, exec, $HOME/.config/rofi/scripts/window.sh"
+        # "$mainMod CTRL_L SHIFT, P, exec, $HOME/.config/wlogout/scripts/wlogout.sh"
         "$mainMod CTRL_L SHIFT, C, exec, $HOME/.config/rofi/scripts/clipboard.sh"
         "$mainMod CTRL_L SHIFT, I, exec, grim -g \"$(slurp)\""
-
+        ",Print, exec, grim -g \"$(slurp)\""
+        
         "$mainMod CTRL_L SHIFT, N, exec, dunstctl close"
         "$mainMod SHIFT, W, exec, pkill waybar && waybar"
+        "$mainMod CTRL_L SHIFT, A, exec, ags -q && ags"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
@@ -295,16 +302,31 @@
         "$mainMod CTRL_L, mouse:272, resizewindow"
       ];
 
-      binde = [
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && dunstify -i ~/.config/dunst/assets/$(pamixer --get-mute | grep -q \"true\" && echo \"volume-mute.png\" || echo \"volume.png\") -t 500 -r 2593 \"Toggle Mute\""
-        ", XF86MonBrightnessUp, exec, brightnessctl s 5%+ && dunstify -h int:value:\"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))\"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 \"Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%\""
-        ", XF86MonBrightnessDown, exec, brightnessctl s 5%- && dunstify -h int:value:\"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))\"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 \"Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%\""
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && dunstify -h int:value:\"$(pamixer --get-volume)\" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 \"Volume: $(pamixer --get-volume) %\""
+      # binde = [
+      #   ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && dunstify -i ~/.config/dunst/assets/$(pamixer --get-mute | grep -q \"true\" && echo \"volume-mute.png\" || echo \"volume.png\") -t 500 -r 2593 \"Toggle Mute\""
+      #   ", XF86MonBrightnessUp, exec, brightnessctl s 5%+ && dunstify -h int:value:\"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))\"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 \"Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%\""
+      #   ", XF86MonBrightnessDown, exec, brightnessctl s 5%- && dunstify -h int:value:\"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))\"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 \"Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%\""
+      #   ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && dunstify -h int:value:\"$(pamixer --get-volume)\" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 \"Volume: $(pamixer --get-volume) %\""
+      # ];
+      #
+      # bindl = [
+      #   ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && dunstify -h int:value:\"$(pamixer --get-volume)\" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 \"Volume: $(pamixer --get-volume) %\""
+      # ];
+      #
+
+      # For AGS 
+       binde = [
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
       ];
 
       bindl = [
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && dunstify -h int:value:\"$(pamixer --get-volume)\" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 \"Volume: $(pamixer --get-volume) %\""
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        
       ];
+
 
     };
     extraConfig = ''
