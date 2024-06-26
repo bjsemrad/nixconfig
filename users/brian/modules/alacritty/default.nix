@@ -10,5 +10,4 @@
     env.term = "xterm-256color";
     import = [ pkgs.alacritty-theme.rose-pine-moon ];
   };
-
 }

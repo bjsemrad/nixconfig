@@ -15,17 +15,24 @@ const options = mkOptions(OPTIONS, {
     theme: {
         dark: {
             primary: {
-                bg: opt("#51a4e7"),
-                fg: opt("#141414"),
+                // bg: opt("#51a4e7"),
+                bg: opt("#9ccfd8"), //rosepine
+                // fg: opt("#141414"),
+                fg: opt("#403d52"), //rosepine
             },
             error: {
-                bg: opt("#e55f86"),
+                // bg: opt("#e55f86"),
+                bg: opt("#eb6f92"),
                 fg: opt("#141414"),
             },
-            bg: opt("#171717"),
-            fg: opt("#eeeeee"),
-            widget: opt("#eeeeee"),
-            border: opt("#eeeeee"),
+            // bg: opt("#171717"),
+            bg: opt("#191724"), //rosepine
+            // fg: opt("#eeeeee"),
+            fg: opt("#e0def4"), //rosepine
+            widget: opt("#e0def4"),
+            border: opt("#e0def4"),
+            // widget: opt("#eeeeee"), 
+            // border: opt("#eeeeee"),
         },
         light: {
             primary: {
@@ -106,7 +113,7 @@ const options = mkOptions(OPTIONS, {
         },
         battery: {
             bar: opt<"hidden" | "regular" | "whole">("hidden"),
-            charging: opt("#00D787"),
+            charging:  opt("#31748f"), //opt("#00D787"),
             percentage: opt(false),
             blocks: opt(7),
             width: opt(50),

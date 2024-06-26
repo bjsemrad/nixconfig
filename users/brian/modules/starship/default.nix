@@ -101,8 +101,8 @@
     };
 
     character = {
-      error_symbol = "[>](bold #ff5555)";
-      success_symbol = "[>](bold #50fa7b)";
+      error_symbol = "[>](bold #eb6f92)";
+      success_symbol = "[>](bold #c4a7e7)"; #50fa7b)";
     };
 
     cmd_duration = {
@@ -110,7 +110,7 @@
     };
 
     directory = {
-      style = "bold #50fa7b";
+      style = "bold #9ccfd8"; #50fa7b";   
       truncation_symbol = "…/";
       truncate_to_repo = false;
     };

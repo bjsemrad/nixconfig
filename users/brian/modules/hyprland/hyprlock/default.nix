@@ -18,7 +18,7 @@
         disable_loading_bar = true;
       };
       label = [{
-        text = "cmd[update:1000] echo \"<b><big> $(${pkgs.coreutils}/bin/date +\"%r\") </big></b>\"";
+        text = ""; #"cmd[update:1000] echo \"<b><big> $(${pkgs.coreutils}/bin/date +\"%r\") </big></b>\"";
         color = "rgb(200, 200, 200)";
         font_size = 64;
         position = {
