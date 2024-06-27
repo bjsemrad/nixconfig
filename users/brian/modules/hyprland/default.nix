@@ -52,7 +52,7 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [
-       #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       #  (pkgs.callPackage ./hyprbars.nix { inherit hyprland-plugins; } )
     ];
     settings = {
@@ -120,12 +120,32 @@
         gaps_in = 3;
         gaps_out = 4;
         border_size = 2;
+        # Rose PIne
+        #         $base           = 0xff191724
+        # $surface        = 0xff1f1d2e
+        # $overlay        = 0xff26233a
+        # $muted          = 0xff6e6a86
+        # $subtle         = 0xff908caa
+        # $text           = 0xffe0def4
+        # $love           = 0xffeb6f92
+        # $gold           = 0xfff6c177
+        # $rose           = 0xffebbcba
+        # $pine           = 0xff31748f
+        # $foam           = 0xff9ccfd8
+        # $iris           = 0xffc4a7e7
+        # $highlightLow   = 0xff21202e
+        # $highlightMed   = 0xff403d52
+        # $highlightHigh  = 0xff524f67
+
+        "col.active_border" = "rgba(9ccfd8ff)";
+        "col.inactive_border" = "rgba(6e6a86ff)";
+        # ROTATION "col.active_border" = "rgba(ebbcbaff) rgba(31748ff) rgba(eb6f92ff) rgba(c4a7e7ff) 90deg"
 
         #"col.active_border" = "rgba(${config.colorScheme.palette.base0C}ff) rgba(${config.colorScheme.palette.base0D}ff) rgba(${config.colorScheme.palette.base0B}ff) rgba(${config.colorScheme.palette.base0E}ff) 45deg";
         #"col.inactive_border" = "rgba(${config.colorScheme.palette.base00}cc) rgba(${config.colorScheme.palette.base01}cc) 45deg";
 
-        "col.active_border" = "rgba(51a4e7ff) rgba(51a4e7ff) 45deg"; #"rgba(7EBAE4ff) rgba(7EBAE4ff) 45deg";
-        "col.inactive_border" = "rgba(585b70ff)";
+        #OLD "col.active_border" = "rgba(51a4e7ff) rgba(51a4e7ff) 45deg"; #"rgba(7EBAE4ff) rgba(7EBAE4ff) 45deg";
+        #OLD "col.inactive_border" = "rgba(585b70ff)";
         layout = "master";
       };
       decoration = {
@@ -216,6 +236,9 @@
         "opacity 1.0 override 1.0 override,class:^(firefox)$"
         "opacity 1.0 override 1.0 override,class:^(Alacritty)$"
         "opacity 1.0 override 1.0 override,class:^(jetbrains-idea)$"
+        "opacity 1.0 override 1.0 override,class:^(Code)$"
+        "opacity 1.0 override 1.0 override,class:^(code-url-handler)$"
+
 
         "float,class:^(blueman-manager)$"
         "float,class:^(nm-connection-editor)$"
@@ -240,7 +263,7 @@
         "$mainMod CTRL_L SHIFT, C, exec, $HOME/.config/rofi/scripts/clipboard.sh"
         "$mainMod CTRL_L SHIFT, I, exec, grim -g \"$(slurp)\""
         ",Print, exec, grim -g \"$(slurp)\""
-        
+
         "$mainMod CTRL_L SHIFT, N, exec, dunstctl close"
         "$mainMod SHIFT, W, exec, pkill waybar && waybar"
         "$mainMod CTRL_L SHIFT, A, exec, ags -q && ags"
@@ -315,7 +338,7 @@
       #
 
       # For AGS 
-       binde = [
+      binde = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"
         ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
@@ -324,7 +347,7 @@
 
       bindl = [
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        
+
       ];
 
 
