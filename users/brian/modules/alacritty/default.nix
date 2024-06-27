@@ -8,7 +8,7 @@
     #shell.args = [ "--login" "-c" "tmux attach || tmux" ];
     shell.program = "${pkgs.zsh}/bin/zsh";
     env.term = "xterm-256color";
-    import = [ pkgs.alacritty-theme.catppuccin_mocha ];
+    import = [ pkgs.alacritty-theme.rose-pine-moon ];
   };
 
 }
