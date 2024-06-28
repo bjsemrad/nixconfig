@@ -56,6 +56,8 @@
       gimp
       nixd
       cider
+      podman-tui
+      podman-compose
     ];
 
     sessionVariables = {
