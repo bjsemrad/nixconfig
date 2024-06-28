@@ -121,7 +121,7 @@
     };
 
     git_status = {
-      style = "bold #eb6f92"; #ff5555";
+      style = "bold #c4a7e7"; #ff5555";
     };
 
     hostname = {
