@@ -14,4 +14,3 @@ export default () => PanelButton({
         Widget.Icon(icons.notifications.message),
     ]),
 })
-s

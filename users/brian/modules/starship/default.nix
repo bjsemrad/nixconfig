@@ -97,7 +97,7 @@
     };
 
     aws = {
-      style = "bold #ffb86c";
+      style = "bold #f6c177"; #ffb86c";
     };
 
     character = {
@@ -106,7 +106,7 @@
     };
 
     cmd_duration = {
-      style = "bold #f1fa8c";
+      style = "bold #f6c177";
     };
 
     directory = {
@@ -117,11 +117,11 @@
 
 
     git_branch = {
-      style = "bold #ff79c6";
+      style = "bold #ebbcba"; #ff79c6";
     };
 
     git_status = {
-      style = "bold #ff5555";
+      style = "bold #eb6f92"; #ff5555";
     };
 
     hostname = {
@@ -149,6 +149,7 @@
     time = {
       disabled = false;
       use_12hr = true;
+      style = "bold #f6c177";
     };
 
     fill = {
@@ -159,7 +160,7 @@
     java = {
       symbol = "";
       format = "[\${symbol}(\${version} )]($style)";
-      style = "bold white";
+      style = "bold #e0def4"; #white";
     };
 
     package = {

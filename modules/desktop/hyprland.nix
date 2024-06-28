@@ -27,5 +27,6 @@
     slurp
     gojq
     adw-gtk3
+    rose-pine-gtk-theme
   ];
 }

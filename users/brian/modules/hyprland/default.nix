@@ -28,9 +28,13 @@
 
   gtk = {
     enable = true;
+    # theme = {
+    #   name = "Adwaita-dark";
+    #   package = pkgs.gnome.gnome-themes-extra;
+    # };
+
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome.gnome-themes-extra;
+      name = "rose-pine-gtk";
     };
 
     gtk3.extraConfig = {
@@ -139,7 +143,7 @@
 
         "col.active_border" = "rgba(9ccfd8ff)";
         "col.inactive_border" = "rgba(6e6a86ff)";
-        # ROTATION "col.active_border" = "rgba(ebbcbaff) rgba(31748ff) rgba(eb6f92ff) rgba(c4a7e7ff) 90deg"
+        # "col.active_border" = "rgba(ebbcbaff) rgba(31748fff) rgba(eb6f92ff) rgba(c4a7e7ff) 90deg";
 
         #"col.active_border" = "rgba(${config.colorScheme.palette.base0C}ff) rgba(${config.colorScheme.palette.base0D}ff) rgba(${config.colorScheme.palette.base0B}ff) rgba(${config.colorScheme.palette.base0E}ff) 45deg";
         #"col.inactive_border" = "rgba(${config.colorScheme.palette.base00}cc) rgba(${config.colorScheme.palette.base01}cc) 45deg";

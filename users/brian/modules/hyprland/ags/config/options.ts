@@ -25,8 +25,8 @@ const options = mkOptions(OPTIONS, {
                 bg: opt("#eb6f92"),
                 fg: opt("#141414"),
             },
-            // bg: opt("#171717"),
-            bg: opt("#191724"), //rosepine
+            bg: opt("#171717"),
+            // bg: opt("#191724"), //rosepine
             // fg: opt("#eeeeee"),
             fg: opt("#e0def4"), //rosepine
             widget: opt("#e0def4"),
