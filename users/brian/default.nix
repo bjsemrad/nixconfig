@@ -58,6 +58,8 @@
       cider
       podman-tui
       podman-compose
+
+      zed-editor
     ];
 
     sessionVariables = {
