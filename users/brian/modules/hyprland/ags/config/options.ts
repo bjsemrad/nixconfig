@@ -16,23 +16,28 @@ const options = mkOptions(OPTIONS, {
         dark: {
             primary: {
                 // bg: opt("#51a4e7"),
-                bg: opt("#9ccfd8"), //rosepine
+                bg: opt("#89b4fa"), //catppuccin blue
+                //bg: opt("#9ccfd8"), //rosepine blue
                 // fg: opt("#141414"),
                 fg: opt("#403d52"), //rosepine
             },
             error: {
                 // bg: opt("#e55f86"),
-                bg: opt("#eb6f92"),
+                bg: opt("#f38ba8"), //catppuccin
+                //bg: opt("#eb6f92"), //rosepine 
                 fg: opt("#141414"),
             },
             bg: opt("#171717"),
             // bg: opt("#191724"), //rosepine
-            // fg: opt("#eeeeee"),
-            fg: opt("#e0def4"), //rosepine
-            widget: opt("#e0def4"),
-            border: opt("#e0def4"),
-            // widget: opt("#eeeeee"), 
-            // border: opt("#eeeeee"),
+            fg: opt("#eeeeee"),
+            // fg: opt("#cdd6f4"), //catppuccin text
+            // fg: opt("#e0def4"), //rosepine
+            // widget: opt("#e0def4"), //rosepine
+            // border: opt("#e0def4"), //rosepine
+            // widget: opt("#cdd6f4"), //catppuccin
+            // border: opt("#cdd6f4"), //catppuccin
+            widget: opt("#eeeeee"), 
+            border: opt("#eeeeee"),
         },
         light: {
             primary: {
@@ -113,7 +118,8 @@ const options = mkOptions(OPTIONS, {
         },
         battery: {
             bar: opt<"hidden" | "regular" | "whole">("hidden"),
-            charging:  opt("#31748f"), //opt("#00D787"),
+            // charging:  opt("#31748f"), //rosepine //opt("#00D787"),
+            charging: opt("#a6e3a1"), //catppuccin
             percentage: opt(false),
             blocks: opt(7),
             width: opt(50),

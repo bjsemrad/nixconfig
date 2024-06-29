@@ -150,8 +150,8 @@
         # $highlightMed   = 0xff403d52
         # $highlightHigh  = 0xff524f67
 
-        "col.active_border" = "rgba(9ccfd8ff)";
-        "col.inactive_border" = "rgba(6e6a86ff)";
+        "col.active_border" = "rgba(89b4faff)"; #catppuccin #rosepine "rgba(9ccfd8ff)";
+        "col.inactive_border" = "rgba(313244ff)"; #catppuccin #rosepine rgba(6e6a86ff)";
         # "col.active_border" = "rgba(ebbcbaff) rgba(31748fff) rgba(eb6f92ff) rgba(c4a7e7ff) 90deg";
 
         #"col.active_border" = "rgba(${config.colorScheme.palette.base0C}ff) rgba(${config.colorScheme.palette.base0D}ff) rgba(${config.colorScheme.palette.base0B}ff) rgba(${config.colorScheme.palette.base0E}ff) 45deg";

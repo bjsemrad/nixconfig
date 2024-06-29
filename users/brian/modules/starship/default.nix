@@ -101,27 +101,27 @@
     };
 
     character = {
-      error_symbol = "[>](bold #eb6f92)";
-      success_symbol = "[>](bold #c4a7e7)"; #50fa7b)";
+      error_symbol = "[>](bold #ee99a0)";  #eb6f92 rosepine
+      success_symbol = "[>](bold #a6da95)"; #c4a7e7 rosepine  50fa7b)";
     };
 
     cmd_duration = {
-      style = "bold #f6c177";
+      style = "bold #eed49f"; #f6c177 rosepine
     };
 
     directory = {
-      style = "bold #9ccfd8"; #50fa7b";   
+      style = "bold #89b4fa"; #9ccfd8" rosepine; #50fa7b";   
       truncation_symbol = "…/";
       truncate_to_repo = false;
     };
 
 
     git_branch = {
-      style = "bold #ebbcba"; #ff79c6";
+      style = "bold #fab387"; #rose pine ebbcba"; #ff79c6";
     };
 
     git_status = {
-      style = "bold #c4a7e7"; #ff5555";
+      style = "bold #74c7ec"; #rosepoine c4a7e7"; #ff5555";
     };
 
     hostname = {
@@ -130,7 +130,7 @@
 
     username = {
       #format = "[\$user](\$style) on ";
-      style_user = "bold #8be9fd";
+      style_user = "bold #8be9fd"; #TODO
     };
 
     nodejs = {
@@ -149,7 +149,7 @@
     time = {
       disabled = false;
       use_12hr = true;
-      style = "bold #f6c177";
+      style = "bold #eed49f"; #rosepine #f6c177";
     };
 
     fill = {
