@@ -39,7 +39,7 @@
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Semrad";
-    extraGroups = [ "networkmanager" "wheel" "storage" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "storage" "dialout" "podman" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [ ];
   };

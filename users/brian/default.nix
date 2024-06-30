@@ -58,7 +58,7 @@
       cider
       podman-tui
       podman-compose
-
+      docker-compose
       zed-editor
     ];
 
