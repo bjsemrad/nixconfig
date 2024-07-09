@@ -11,6 +11,7 @@
 
     services-firmware
     desktop-gnome
+    #desktop-plasma
     desktop-hyprland
     desktop-sway
     services-tailscale
