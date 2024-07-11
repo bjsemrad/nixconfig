@@ -27,5 +27,6 @@
     ".config/hypr/forest-landscape.png".source = ../../../wallpaper/forest-landscape.png;
     ".config/hypr/mountain-lake.png".source = ../../../wallpaper/mountain-lake.png;
     ".config/hypr/wallhaven3.png".source = ../../../wallpaper/wallhaven3.png;
+    ".config/hypr/fantasy-world.png".source = ../../../wallpaper/fantasy_world.png;
   };
 }

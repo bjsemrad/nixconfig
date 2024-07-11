@@ -5,7 +5,7 @@
     package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
     settings = {
       background = [{
-        path = "/home/brian/.config/hypr/mountain-lake.png";
+        path = "/home/brian/.config/hypr/fantasy-world.png";
         blur_passes = 1;
         contrast = 0.8916;
         brightness = 0.8172;
