@@ -113,7 +113,7 @@
           [ "GDK_DPI_SCALE,1.175" ]
         else if (osConfig.networking.hostName == "odin") then
           [ "GDK_DPI_SCALE,1.0"
-            "AQ_DRM_DEVICES,/dev/dri/card1"
+            # "AQ_DRM_DEVICES,/dev/dri/card1"
           ]
         else [ "GDK_DPI_SCALE,1.0" ]
       );
