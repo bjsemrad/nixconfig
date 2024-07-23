@@ -60,6 +60,7 @@
       podman-compose
       docker-compose
       zed-editor
+      pciutils
     ];
 
     sessionVariables = {
