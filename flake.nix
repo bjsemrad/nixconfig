@@ -55,6 +55,11 @@
       url = "github:InioX/matugen?ref=v2.2.0";
     };
 
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
   outputs =
     { self
@@ -69,6 +74,7 @@
     , neovim-flake
     , ags
     , matugen
+    , anyrun
     , ...
     } @ inputs:
     let

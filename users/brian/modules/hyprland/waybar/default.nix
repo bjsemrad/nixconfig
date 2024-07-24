@@ -58,7 +58,7 @@
           format-icons = {
             "default" = "󰨸";
           };
-          #"on-click" = "$HOME/.config/rofi/scripts/clipboard.sh";
+          # "on-click" = "$HOME/.config/rofi/scripts/clipboard.sh";
           "on-click-right" = "cliphist wipe";
         };
         "custom/notification" = {
@@ -258,7 +258,7 @@
       }
 
       window#waybar {
-        background-color: rgba(11, 10, 16, 0.85);
+        background-color: rgba(11, 10, 16, 0.90);
         transition-property: background-color;
         transition-duration: 0.5s;
       }
@@ -266,7 +266,7 @@
       .modules-right {
         background: transparent;
         margin: 0px 0px 0px 0px;
-        margin: 0 -12px 0 0;
+        margin: 0px -12px 0px 0px;
         /*border-radius: 20px;*/
       }
       .modules-center {
@@ -276,7 +276,7 @@
       }
       .modules-left {
         background: transparent;
-        margin: 0 0 0 -12px;
+        margin: 0px 0px 0px -12px;
       }
 
       tooltip {
@@ -299,7 +299,7 @@
       #workspaces button {
           background: transparent;
           color: @subtext0;
-          padding: 0 10px;
+          padding: 0px 10px;
           font-weight: bold;
           border: none;
       }

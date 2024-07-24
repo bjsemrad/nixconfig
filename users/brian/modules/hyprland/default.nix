@@ -12,6 +12,7 @@
       ./dunst
       ./rofi
       ./ags
+      # ./anyrun
     ];
 
   home.pointerCursor = {
@@ -20,7 +21,7 @@
     name = "Bibata-Modern-Classic";
     size = 22;
   };
-  
+
   # home.pointerCursor = {
   #   gtk.enable = true;
   #   package = pkgs.rose-pine-cursor;
@@ -87,8 +88,8 @@
       };
 
       exec-once = [
-        # "waybar"
-        "ags"
+        "waybar"
+        # "ags"
         "hyprpaper"
         "wl-paste --type text --watch cliphist -max-items 25 store" #Stores only text data
         "wl-paste --type image --watch cliphist -max-items 25 store" #Stores only image data
@@ -112,7 +113,8 @@
         if (osConfig.networking.hostName == "thor") then
           [ "GDK_DPI_SCALE,1.175" ]
         else if (osConfig.networking.hostName == "odin") then
-          [ "GDK_DPI_SCALE,1.0"
+          [
+            "GDK_DPI_SCALE,1.0"
             # "AQ_DRM_DEVICES,/dev/dri/card1"
           ]
         else [ "GDK_DPI_SCALE,1.0" ]
@@ -269,19 +271,22 @@
         "$mainMod, Q, killactive,"
         "$mainMod, E, exec, thunar"
         "$mainMod, G, togglefloating,"
-        "$mainMod, D, exec, ags -t launcher"
-        ",XF86PowerOff,  exec, ags -t powermenu"
-        "$mainMod CTRL_L SHIFT, P, exec, ags -t powermenu"
-        # "$mainMod, D, exec, $HOME/.config/rofi/scripts/launcher.sh"
-        # "$mainMod CTRL_L, W, exec, $HOME/.config/rofi/scripts/window.sh"
-        # "$mainMod CTRL_L SHIFT, P, exec, $HOME/.config/wlogout/scripts/wlogout.sh"
+
+        # "$mainMod, D, exec, ags -t launcher"
+        # ",XF86PowerOff,  exec, ags -t powermenu"
+        # "$mainMod CTRL_L SHIFT, P, exec, ags -t powermenu"
+        "$mainMod, D, exec, $HOME/.config/rofi/scripts/launcher.sh"
+        "$mainMod CTRL_L, W, exec, $HOME/.config/rofi/scripts/window.sh"
+        ",XF86PowerOff,  exec, $HOME/.config/wlogout/scripts/wlogout.sh"
+        "$mainMod CTRL_L SHIFT, P, exec, $HOME/.config/wlogout/scripts/wlogout.sh"
+        
         "$mainMod CTRL_L SHIFT, C, exec, $HOME/.config/rofi/scripts/clipboard.sh"
         "$mainMod CTRL_L SHIFT, I, exec, grim -g \"$(slurp)\""
         ",Print, exec, grim -g \"$(slurp)\""
 
         "$mainMod CTRL_L SHIFT, N, exec, dunstctl close"
         "$mainMod SHIFT, W, exec, pkill waybar && waybar"
-        "$mainMod CTRL_L SHIFT, A, exec, ags -q && ags"
+        # "$mainMod CTRL_L SHIFT, A, exec, ags -q && ags"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
@@ -340,30 +345,30 @@
         "$mainMod CTRL_L, mouse:272, resizewindow"
       ];
 
+      binde = [
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && dunstify -i ~/.config/dunst/assets/$(pamixer --get-mute | grep -q \"true\" && echo \"volume-mute.png\" || echo \"volume.png\") -t 500 -r 2593 \"Toggle Mute\""
+        ", XF86MonBrightnessUp, exec, brightnessctl s 5%+ && dunstify -h int:value:\"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))\"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 \"Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%\""
+        ", XF86MonBrightnessDown, exec, brightnessctl s 5%- && dunstify -h int:value:\"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))\"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 \"Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%\""
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && dunstify -h int:value:\"$(pamixer --get-volume)\" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 \"Volume: $(pamixer --get-volume) %\""
+      ];
+      # #
+      bindl = [
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && dunstify -h int:value:\"$(pamixer --get-volume)\" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 \"Volume: $(pamixer --get-volume) %\""
+      ];
+
+
+      # # For AGS 
       # binde = [
-      #   ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && dunstify -i ~/.config/dunst/assets/$(pamixer --get-mute | grep -q \"true\" && echo \"volume-mute.png\" || echo \"volume.png\") -t 500 -r 2593 \"Toggle Mute\""
-      #   ", XF86MonBrightnessUp, exec, brightnessctl s 5%+ && dunstify -h int:value:\"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))\"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 \"Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%\""
-      #   ", XF86MonBrightnessDown, exec, brightnessctl s 5%- && dunstify -h int:value:\"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))\"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 \"Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%\""
-      #   ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && dunstify -h int:value:\"$(pamixer --get-volume)\" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 \"Volume: $(pamixer --get-volume) %\""
+      #   ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      #   ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"
+      #   ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
+      #   ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
       # ];
       #
       # bindl = [
-      #   ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && dunstify -h int:value:\"$(pamixer --get-volume)\" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 \"Volume: $(pamixer --get-volume) %\""
-      # ];
+      #   ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       #
-
-      # For AGS 
-      binde = [
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"
-        ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
-      ];
-
-      bindl = [
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-
-      ];
+      # ];
 
 
     };
