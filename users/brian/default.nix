@@ -17,8 +17,9 @@
       ./modules/zellij
       ./modules/openrgb
       ./modules/atuin
+      ./modules/kitty
     ];
-  
+
   home = {
     username = "brian";
     homeDirectory = "/home/brian";
@@ -62,6 +63,8 @@
       docker-compose
       zed-editor
       pciutils
+      slides
+      file
     ];
 
     sessionVariables = {
