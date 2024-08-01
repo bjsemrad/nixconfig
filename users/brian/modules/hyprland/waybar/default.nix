@@ -14,6 +14,7 @@
       mainBar = {
         spacing = 0;
         layer = "top";
+        gtk-layer-shell = true;
         margin-top = 0; #5;
         margin-left = 0; #10;
         margin-right = 0; #10;
@@ -65,7 +66,7 @@
           format-icons = {
             "default" = "󰨸";
           };
-          # "on-click" = "$HOME/.config/rofi/scripts/clipboard.sh";
+          "on-click" = "$HOME/.config/rofi/scripts/clipboard.sh";
           "on-click-right" = "cliphist wipe";
         };
         "custom/notification" = {
@@ -147,7 +148,7 @@
           "format" = "  {}%";
         };
         "bluetooth" = {
-          "format" = "󰂯";
+          "format" = "";
           "format-disabled" = "";
           "format-connected" = "";
           "tooltip-format" = "{status} {device_alias}";
@@ -266,9 +267,8 @@
             @define-color flamingo  #f2cdcd;
             @define-color rosewater #f5e0dc;
             * {
-              /*border-radius: 20px;*/
-              font-family: NotoMono Nerd Font, JetBrainsMono Nerd Font;
-              font-size: 14px;
+              font-family: JetBrainsMono Nerd Font;
+              font-size: 16px;
             }
 
             window {
@@ -282,14 +282,10 @@
 
             .modules-right {
               background: transparent;
-              margin: 0px 0px 0px 0px;
               margin: 0px -12px 0px 0px;
-              /*border-radius: 20px;*/
             }
             .modules-center {
               background: transparent;
-              /*margin: 0 0 0 0;
-              border-radius: 20px;*/
             }
             .modules-left {
               background: transparent;
@@ -313,6 +309,7 @@
               margin-top: 5px;
               margin-bottom: 5px;
             }
+
             #workspaces button {
                 background: transparent;
                 color: @subtext0;
@@ -329,8 +326,6 @@
             #workspaces button.active {
               color: @white;
               background: transparent;
-              /*border-radius: 20px;
-              background: linear-gradient(to right, #fb00dc, #00d4ff);*/
             }
 
             #workspaces button.focused {
@@ -344,9 +339,7 @@
 
             #taskbar button.active {
               background: transparent;
-              /*border-radius: 1px;*/
             }
-
 
             button.urgent {
                 color: #11111b;
@@ -356,22 +349,19 @@
 
             #custom-sep {
               color: #313244;
-              font-size: 14px;
             }
 
             #custom-session {
               color: #FFFFFF;
-              font-size: 20px;
               margin-right: 20px;
-              margin-left: 10px;
             }
 
             #window {
               color: #FFFFFF;
-              font-size: 14;
             }
 
             #clock {
+              font-family: Ubuntu Nerd Font;    
               color: @white;
               margin-right: 5px;
               margin-left: 5px;
@@ -379,96 +369,69 @@
             }
 
             #tray {
-              margin-right: 10px;
+              padding: 0px 10px;
               margin-top: 2px;
               color: @white;
-              padding: 4px;
             }
 
             #battery {
-              margin-right: 1px;
-              margin-left: 2px;
+              padding: 0px 5px;
               margin-top: 2px;
               color: @white;
-              font-size: 18px;
             }
 
             #pulseaudio,
             #wireplumber,
-            #mode,
             #custom-clipboard,
             #custom-power,
             #custom-menu,
             #backlight,
-            #idle_inhibitor {
-              margin-right: 10px;
-              margin-left: 10px;
-              margin-top: 2px;
-              color: @white;
-              font-size: 18px;
-            }
-
-            #network {
-              margin-right: 10px;
-              margin-left: 5px;
-              margin-top: 2px;
-              color: @white;
-              font-size: 18px;
-            }
-
+            #idle_inhibitor,
+            #network,
             #bluetooth {
-              margin-right: 8px;
-              margin-left: 8px;
+              padding: 0px 10px;
               margin-top: 2px;
               color: @white;
-              font-size: 20px;
-            }
-
-
-            #cpu,
-            #memory,
-            #temperature {
-              color: @white;
-              margin-right: 5px;
-            }
-
-
-            #mode {
-              color: #cc3436;
-              font-weight: bold;
             }
 
             #network.disconnected {
               color: @white;
+              padding: 0px 10px;
             }
+            
             #network.disabled {
               color: @red;
+              padding: 0px 10px;
             }
-            #idle_inhibitor.activated {
-              color: @lavender;
-            }
+            
             #pulseaudio.muted {
-              margin-right: 5px;
+              padding: 0px 10px;
             }
+
+            #pulseaudio {
+              padding: 0px 10px;
+            }
+            
             #battery.charging {
               color: @white;
             }
+            
             #battery.warning:not(.charging) {
               color: @orange;
             }
+            
             #battery.critical:not(.charging) {
               color: @red;
             }
 
             #custom-recorder {
-              font-size: 18px;
+              padding: 0px 10px;
               margin-top: 2px;
             }
 
             #custom-recorder.enabled {
-      	      font-size: 18px;
+              padding: 0px 10px;
               margin-top: 2px;
-      	     /* margin: 2px 7px 0px 7px; */
       	      color:#c9545d;
             }
     '';
