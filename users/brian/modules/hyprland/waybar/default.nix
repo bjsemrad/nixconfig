@@ -268,7 +268,7 @@
             @define-color rosewater #f5e0dc;
             * {
               font-family: JetBrainsMono Nerd Font;
-              font-size: 16px;
+              font-size: 14px;
             }
 
             window {
