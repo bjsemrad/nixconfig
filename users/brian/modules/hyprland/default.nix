@@ -240,6 +240,7 @@
       windowrulev2 = [
         "workspace 1,class:(firefox)"
         "workspace 4,class:(Alacritty)"
+        "workspace 4,class:(kitty)"
         "workspace 4,class:(org.wezfurlong.wezterm)"
         "workspace 5,class:(jetbrains-idea)"
         "workspace 5,class:(Code)"
@@ -252,6 +253,7 @@
 
         "opacity 1.0 override 1.0 override,class:^(firefox)$"
         "opacity 1.0 override 1.0 override,class:^(Alacritty)$"
+        "opacity 1.0 override 1.0 override,class:^(kitty)$"
         "opacity 1.0 override 1.0 override,class:^(jetbrains-idea)$"
         "opacity 1.0 override 1.0 override,class:^(Code)$"
         "opacity 1.0 override 1.0 override,class:^(code-url-handler)$"
