@@ -18,6 +18,7 @@
       ./modules/openrgb
       ./modules/atuin
       ./modules/kitty
+      ./modules/yazi
     ];
 
   home = {
