@@ -1,9 +1,15 @@
-{pkgs, inputs, ...}:
+{ pkgs, inputs, ... }:
 
 {
+  
+  home.file.".config/waybar/scripts/recorder.sh" = { 
+    source = ./scripts/recorder.sh;
+    executable = true;
+  };
+
   programs.waybar = {
     enable = true;
-   # package = inputs.waybar.packages.${pkgs.system}.waybar;
+    # package = inputs.waybar.packages.${pkgs.system}.waybar;
     settings = {
       mainBar = {
         spacing = 0;
@@ -18,6 +24,7 @@
         modules-center = [ "clock" ];
         modules-right = [
           "tray"
+          "custom/recorder"
           "custom/clipboard"
           "backlight"
           "pulseaudio#sink"
@@ -75,6 +82,16 @@
           "exec" = "swaync-client -swb";
           "on-click" = "swaync-client -t -sw";
           "on-click-right" = "swaync-client -d -sw";
+          "escape" = true;
+        };
+        "custom/recorder" = {
+          "format" = "{}";
+          "exec" = "$HOME/.config/waybar/scripts/recorder.sh";
+          "return-type" = "json";
+          "signal" = 12;
+          "interval" = 5;
+          "on-click" = "wf-recorder -f $(xdg-user-dir VIDEOS)/$(date +'recording_%Y-%m-%d-%H%M%S.mp4')";
+          "on-click-right" = "pkill --signal SIGINT wf-recorder";
           "escape" = true;
         };
         "custom/session" = {
@@ -215,237 +232,245 @@
       };
     };
     style = ''
-      @define-color base   #3b4045;/*rgba(30,30,46, 0.8);*/ /*#1e1e2e;*/
-      @define-color mantle #31363b;
-      @define-color crust  rgba(11, 10, 16, 0.95); /*#232629;*/
+            @define-color base   #3b4045;/*rgba(30,30,46, 0.8);*/ /*#1e1e2e;*/
+            @define-color mantle #31363b;
+            @define-color crust  rgba(11, 10, 16, 0.95); /*#232629;*/
 
-      @define-color text     #fcfcfc;
-      @define-color subtext0 #a6adc8;
-      @define-color subtext1 #bac2de;
+            @define-color text     #fcfcfc;
+            @define-color subtext0 #a6adc8;
+            @define-color subtext1 #bac2de;
 
-      @define-color hover #3daee6;
+            @define-color hover #3daee6;
 
-      @define-color surface0 #313244;
-      @define-color surface1 #45475a;
-      @define-color surface2 #585b70;
+            @define-color surface0 #313244;
+            @define-color surface1 #45475a;
+            @define-color surface2 #585b70;
 
-      @define-color overlay0 #6c7086;
-      @define-color overlay1 #7f849c;
-      @define-color overlay2 #9399b2;
+            @define-color overlay0 #6c7086;
+            @define-color overlay1 #7f849c;
+            @define-color overlay2 #9399b2;
 
-      @define-color blue      #7EBAE4; 
-      @define-color lavender  #b4befe;
-      @define-color sapphire  #74c7ec;
-      @define-color sky       #89dceb;
-      @define-color teal      #94e2d5;
-      @define-color green     #27ae60;
-      @define-color orange    #f67400;
-      @define-color yellow    #fdbc4b;
-      @define-color peach     #fab387;
-      @define-color maroon    #eba0ac;
-      @define-color red       #da4453;
-      @define-color mauve     #cba6f7;
-      @define-color pink      #f5c2e7;
-      @define-color flamingo  #f2cdcd;
-      @define-color rosewater #f5e0dc;
-      * {
-        /*border-radius: 20px;*/
-        font-family: NotoMono Nerd Font, JetBrainsMono Nerd Font;
-        font-size: 14px;
-      }
+            @define-color blue      #7EBAE4; 
+            @define-color lavender  #b4befe;
+            @define-color sapphire  #74c7ec;
+            @define-color sky       #89dceb;
+            @define-color teal      #94e2d5;
+            @define-color green     #27ae60;
+            @define-color orange    #f67400;
+            @define-color yellow    #fdbc4b;
+            @define-color peach     #fab387;
+            @define-color maroon    #eba0ac;
+            @define-color red       #da4453;
+            @define-color mauve     #cba6f7;
+            @define-color pink      #f5c2e7;
+            @define-color flamingo  #f2cdcd;
+            @define-color rosewater #f5e0dc;
+            * {
+              /*border-radius: 20px;*/
+              font-family: NotoMono Nerd Font, JetBrainsMono Nerd Font;
+              font-size: 14px;
+            }
 
-      window {
-      }
+            window {
+            }
 
-      window#waybar {
-        background-color: rgba(11, 10, 16, 0.90);
-        transition-property: background-color;
-        transition-duration: 0.5s;
-      }
+            window#waybar {
+              background-color: rgba(11, 10, 16, 0.90);
+              transition-property: background-color;
+              transition-duration: 0.5s;
+            }
 
-      .modules-right {
-        background: transparent;
-        margin: 0px 0px 0px 0px;
-        margin: 0px -12px 0px 0px;
-        /*border-radius: 20px;*/
-      }
-      .modules-center {
-        background: transparent;
-        /*margin: 0 0 0 0;
-        border-radius: 20px;*/
-      }
-      .modules-left {
-        background: transparent;
-        margin: 0px 0px 0px -12px;
-      }
+            .modules-right {
+              background: transparent;
+              margin: 0px 0px 0px 0px;
+              margin: 0px -12px 0px 0px;
+              /*border-radius: 20px;*/
+            }
+            .modules-center {
+              background: transparent;
+              /*margin: 0 0 0 0;
+              border-radius: 20px;*/
+            }
+            .modules-left {
+              background: transparent;
+              margin: 0px 0px 0px -12px;
+            }
 
-      tooltip {
-        background-color: @crust;
-        border: 2px solid #0b0a10;
-        color: @text;
-        border-radius: 10px;
-      }
+            tooltip {
+              background-color: @crust;
+              border: 2px solid #0b0a10;
+              color: @text;
+              border-radius: 10px;
+            }
 
-      #custom-launcher {
-        margin-left: 25px;
-        margin-top: 2px;
-      }
+            #custom-launcher {
+              margin-left: 25px;
+              margin-top: 2px;
+            }
 
-      #workspaces {
-        margin-left: 15px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-      }
-      #workspaces button {
-          background: transparent;
-          color: @subtext0;
-          padding: 0px 10px;
-          font-weight: bold;
-          border: none;
-      }
+            #workspaces {
+              margin-left: 15px;
+              margin-top: 5px;
+              margin-bottom: 5px;
+            }
+            #workspaces button {
+                background: transparent;
+                color: @subtext0;
+                padding: 0px 10px;
+                font-weight: bold;
+                border: none;
+            }
 
-      #workspaces button:hover {
-          color: @text;
-          background: transparent;
-      }
+            #workspaces button:hover {
+                color: @text;
+                background: transparent;
+            }
 
-      #workspaces button.active {
-        color: @white;
-        background: transparent;
-        /*border-radius: 20px;
-        background: linear-gradient(to right, #fb00dc, #00d4ff);*/
-      }
+            #workspaces button.active {
+              color: @white;
+              background: transparent;
+              /*border-radius: 20px;
+              background: linear-gradient(to right, #fb00dc, #00d4ff);*/
+            }
 
-      #workspaces button.focused {
-        color: @crust;
-      }
+            #workspaces button.focused {
+              color: @crust;
+            }
 
-      #taskbar button {
-        background: transparent;
-        border: none;
-      }
+            #taskbar button {
+              background: transparent;
+              border: none;
+            }
 
-      #taskbar button.active {
-        background: transparent;
-        /*border-radius: 1px;*/
-      }
-
-
-      button.urgent {
-          color: #11111b;
-          background: #fab387;
-          border-radius: 10px;
-      }
-
-      #custom-sep {
-        color: #313244;
-        font-size: 14px;
-      }
-
-      #custom-session {
-        color: #FFFFFF;
-        font-size: 20px;
-        margin-right: 20px;
-        margin-left: 10px;
-      }
-
-      #window {
-        color: #FFFFFF;
-        font-size: 14;
-      }
-
-      #custom-recorder {
-        font-size: 10px;
-      }
-
-      #clock {
-        color: @white;
-        margin-right: 5px;
-        margin-left: 5px;
-        margin-top: 2px;
-      }
-
-      #tray {
-        margin-right: 10px;
-        margin-top: 2px;
-        color: @white;
-        padding: 4px;
-      }
-
-      #battery {
-        margin-right: 1px;
-        margin-left: 2px;
-        margin-top: 2px;
-        color: @white;
-        font-size: 18px;
-      }
-
-      #pulseaudio,
-      #wireplumber,
-      #mode,
-      #custom-clipboard,
-      #custom-power,
-      #custom-menu,
-      #backlight,
-      #idle_inhibitor {
-        margin-right: 10px;
-        margin-left: 10px;
-        margin-top: 2px;
-        color: @white;
-        font-size: 18px;
-      }
-
-      #network {
-        margin-right: 10px;
-        margin-left: 5px;
-        margin-top: 2px;
-        color: @white;
-        font-size: 18px;
-      }
-
-      #bluetooth {
-        margin-right: 8px;
-        margin-left: 8px;
-        margin-top: 2px;
-        color: @white;
-        font-size: 20px;
-      }
+            #taskbar button.active {
+              background: transparent;
+              /*border-radius: 1px;*/
+            }
 
 
-      #cpu,
-      #memory,
-      #temperature {
-        color: @white;
-        margin-right: 5px;
-      }
+            button.urgent {
+                color: #11111b;
+                background: #fab387;
+                border-radius: 10px;
+            }
+
+            #custom-sep {
+              color: #313244;
+              font-size: 14px;
+            }
+
+            #custom-session {
+              color: #FFFFFF;
+              font-size: 20px;
+              margin-right: 20px;
+              margin-left: 10px;
+            }
+
+            #window {
+              color: #FFFFFF;
+              font-size: 14;
+            }
+
+            #clock {
+              color: @white;
+              margin-right: 5px;
+              margin-left: 5px;
+              margin-top: 2px;
+            }
+
+            #tray {
+              margin-right: 10px;
+              margin-top: 2px;
+              color: @white;
+              padding: 4px;
+            }
+
+            #battery {
+              margin-right: 1px;
+              margin-left: 2px;
+              margin-top: 2px;
+              color: @white;
+              font-size: 18px;
+            }
+
+            #pulseaudio,
+            #wireplumber,
+            #mode,
+            #custom-clipboard,
+            #custom-power,
+            #custom-menu,
+            #backlight,
+            #idle_inhibitor {
+              margin-right: 10px;
+              margin-left: 10px;
+              margin-top: 2px;
+              color: @white;
+              font-size: 18px;
+            }
+
+            #network {
+              margin-right: 10px;
+              margin-left: 5px;
+              margin-top: 2px;
+              color: @white;
+              font-size: 18px;
+            }
+
+            #bluetooth {
+              margin-right: 8px;
+              margin-left: 8px;
+              margin-top: 2px;
+              color: @white;
+              font-size: 20px;
+            }
 
 
-      #mode {
-        color: #cc3436;
-        font-weight: bold;
-      }
+            #cpu,
+            #memory,
+            #temperature {
+              color: @white;
+              margin-right: 5px;
+            }
 
-      #network.disconnected {
-        color: @white;
-      }
-      #network.disabled {
-        color: @red;
-      }
-      #idle_inhibitor.activated {
-        color: @lavender;
-      }
-      #pulseaudio.muted {
-        margin-right: 5px;
-      }
-      #battery.charging {
-        color: @white;
-      }
-      #battery.warning:not(.charging) {
-        color: @orange;
-      }
-      #battery.critical:not(.charging) {
-        color: @red;
-      }
+
+            #mode {
+              color: #cc3436;
+              font-weight: bold;
+            }
+
+            #network.disconnected {
+              color: @white;
+            }
+            #network.disabled {
+              color: @red;
+            }
+            #idle_inhibitor.activated {
+              color: @lavender;
+            }
+            #pulseaudio.muted {
+              margin-right: 5px;
+            }
+            #battery.charging {
+              color: @white;
+            }
+            #battery.warning:not(.charging) {
+              color: @orange;
+            }
+            #battery.critical:not(.charging) {
+              color: @red;
+            }
+
+            #custom-recorder {
+              font-size: 18px;
+              margin-top: 2px;
+            }
+
+            #custom-recorder.enabled {
+      	      font-size: 18px;
+              margin-top: 2px;
+      	     /* margin: 2px 7px 0px 7px; */
+      	      color:#c9545d;
+            }
     '';
   };
 }
