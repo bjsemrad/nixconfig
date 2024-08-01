@@ -27,7 +27,6 @@
           "tray"
           "custom/recorder"
           "custom/clipboard"
-          "backlight"
           "pulseaudio#sink"
           "pulseaudio#source"
           "network"
@@ -51,7 +50,7 @@
           "on-click" = "$HOME/.config/rofi/scripts/launcher.sh";
         };
         "custom/sep" = {
-          "format" = " | ";
+          "format" = "|";
         };
         "custom/space" = {
           "format" = " ";
