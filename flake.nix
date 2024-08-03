@@ -60,6 +60,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # tailscale = {
+      # url = "github:/tailscale/tailscale/v1.70.0";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
   };
   outputs =
     { self
