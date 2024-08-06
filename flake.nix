@@ -47,17 +47,12 @@
       url = "github:neovim/neovim/v0.10.0?dir=contrib"; 
     };
 
-    ags = {
-      url = "github:Aylur/ags";#/v1.8.2";
-    };
+    # ags = {
+    #   url = "github:Aylur/ags";#/v1.8.2";
+    # };
 
     matugen = {
       url = "github:InioX/matugen?ref=v2.2.0";
-    };
-
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     
@@ -83,9 +78,7 @@
     , hyprlock
     , waybar
     , neovim-flake
-    , ags
     , matugen
-    , anyrun
     , cosmic
     , ...
     } @ inputs:

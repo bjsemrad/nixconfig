@@ -6,13 +6,9 @@
       ./hyprlock
       ./hypridle
       ./waybar
-      #./swaylock
       ./wlogout
-      #./swayidle
       ./dunst
       ./rofi
-      ./ags
-      # ./anyrun
     ];
 
   home.pointerCursor = {
@@ -22,12 +18,6 @@
     size = 22;
   };
 
-  # home.pointerCursor = {
-  #   gtk.enable = true;
-  #   package = pkgs.rose-pine-cursor;
-  #   name = "BreezeX-RoséPine";
-  #   size = 22;
-  # };
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -42,10 +32,6 @@
       package = pkgs.gnome.gnome-themes-extra;
     };
 
-    # theme = {
-    #   name = "rose-pine-gtk";
-    #   package = pkgs.rose-pine-gtk-theme;
-    # };
 
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
