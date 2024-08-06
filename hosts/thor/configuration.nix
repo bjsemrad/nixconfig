@@ -12,8 +12,9 @@
     services-firmware
     desktop-gnome
     #desktop-plasma
+    #desktop-sway
     desktop-hyprland
-    desktop-sway
+    desktop-cosmic
     services-tailscale
     services-network
     services-sound

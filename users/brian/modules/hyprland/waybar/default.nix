@@ -353,7 +353,8 @@
             #custom-session {
               color: #FFFFFF;
               font-size: 18px;
-              margin-right: 20px;
+              padding: 0px 10px;
+              margin-right: 10px;
               font-family: Ubuntu Nerd Font;
             }
 
@@ -386,7 +387,6 @@
             #pulseaudio,
             #wireplumber,
             #custom-clipboard,
-            #custom-power,
             #custom-menu,
             #backlight,
             #idle_inhibitor,
@@ -396,13 +396,6 @@
               padding: 0px 10px;
               margin-top: 2px;
               color: @white;
-            }
-
-            #custom-power {
-              font-family: Ubuntu Nerd Font;
-              margin-top: 2px;
-              padding: 0px 10px;
-              font-size: 18px;
             }
 
             #network.disconnected {
