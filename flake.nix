@@ -40,7 +40,9 @@
     }; 
     
     waybar = {
-      url = "github:Alexays/Waybar";
+      type = "git";
+      url = "https://github.com/Alexays/Waybar";
+      ref = "refs/tags/0.10.4";
     };
 
     neovim-flake = { 

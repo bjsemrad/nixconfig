@@ -66,6 +66,7 @@
       pciutils
       slides
       file
+      lm_sensors
     ];
 
     sessionVariables = {

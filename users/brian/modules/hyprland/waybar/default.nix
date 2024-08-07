@@ -22,8 +22,10 @@
           "hyprland/workspaces"
           "wlr/taskbar"
         ];
-        modules-center = [ "clock" ];
+        modules-center = [ ];
         modules-right = [
+          "cpu"
+          "memory"
           "tray"
           "custom/recorder"
           "custom/clipboard"
@@ -32,7 +34,7 @@
           "network"
           "bluetooth"
           "battery"
-          "custom/session"
+          "clock"
         ];
         "wlr/taskbar" = {
           "format" = "{icon}";
@@ -136,15 +138,19 @@
           "spacing" = 15;
         };
         "clock" = {
-          "format" = "{:%a %b %d, %G %I:%M %p} ";
+          # "format" = "{:%a %b %d, %G %I:%M %p} ";
+          "format" = "{:%a %b %d  %I:%M %p} ";
           "interval" = 60;
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
         "cpu" = {
-          "format" = "  {usage}%";
+          "format" = "  {usage}%";
+        };
+        "temperature" = {
+          "format" = " {temperatureC}°C";
         };
         "memory" = {
-          "format" = "  {}%";
+          "format" = "  {}%";
         };
         "bluetooth" = {
           "format" = "";
@@ -346,6 +352,11 @@
                 border-radius: 10px;
             }
 
+            #cpu, #disk, #memory, #temperature {
+	            padding: 0px 10px;
+
+            }
+
             #custom-sep {
               color: #313244;
             }
@@ -365,8 +376,8 @@
             #clock {
               font-family: Ubuntu Nerd Font;    
               color: @white;
-              margin-right: 5px;
-              margin-left: 5px;
+              padding: 0px 10px;
+              margin-right: 10px;
               margin-top: 2px;
             }
 
