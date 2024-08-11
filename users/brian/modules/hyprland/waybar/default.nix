@@ -15,17 +15,20 @@
         spacing = 0;
         layer = "top";
         gtk-layer-shell = true;
-        margin-top = 0; #5;
+        margin-top =  0; #5;
         margin-left = 0; #10;
         margin-right = 0; #10;
+        margin-bottom = 5;
         modules-left = [
           "hyprland/workspaces"
           "wlr/taskbar"
         ];
-        modules-center = [ ];
-        modules-right = [
+        modules-center = [          
           "cpu"
           "memory"
+          "temperature"
+        ];
+        modules-right = [
           "tray"
           "custom/recorder"
           "custom/clipboard"
@@ -147,7 +150,7 @@
           "format" = "  {usage}%";
         };
         "temperature" = {
-          "format" = " {temperatureC}°C";
+          "format" = " HEEH {temperatureC}°C";
         };
         "memory" = {
           "format" = "  {}%";
@@ -184,7 +187,7 @@
           "bat" = "BAT2";
         };
         "network" = {
-          "format-wifi" = "";
+          "format-wifi" = " {essid}";
           "format-ethernet" = "";
           "format-disconnected" = "";
           "tooltip-format-wifi" = " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}";
@@ -287,14 +290,14 @@
 
             .modules-right {
               background: transparent;
-              /*margin: 0px -12px 0px 0px;*/
             }
+
             .modules-center {
               background: transparent;
             }
+
             .modules-left {
               background: transparent;
-              /*margin: 0px 0px 0px -12px;*/ 
             }
 
             tooltip {
@@ -304,21 +307,13 @@
               border-radius: 10px;
             }
 
-            #custom-launcher {
-              margin-left: 25px;
-              margin-top: 2px;
-            }
-
             #workspaces {
-              margin-left: 15px;
-              margin-top: 5px;
-              margin-bottom: 5px;
+              background: transparent;
             }
 
             #workspaces button {
                 background: transparent;
                 color: @subtext0;
-                padding: 0px 10px;
                 font-weight: bold;
                 border: none;
             }
@@ -353,8 +348,7 @@
             }
 
             #cpu, #disk, #memory, #temperature {
-	            padding: 0px 10px;
-
+              padding-right: 10px;
             }
 
             #custom-sep {
@@ -364,7 +358,6 @@
             #custom-session {
               color: #FFFFFF;
               font-size: 18px;
-              padding: 0px 10px;
               margin-right: 10px;
               font-family: Ubuntu Nerd Font;
             }
@@ -376,22 +369,19 @@
             #clock {
               font-family: Ubuntu Nerd Font;    
               color: @white;
-              padding: 0px 10px;
               margin-right: 10px;
-              margin-top: 2px;
             }
 
             #tray {
               font-family: Ubuntu Nerd Font;    
-              padding: 0px 10px;
-              margin-top: 2px;
               color: @white;
+              padding-right: 10px;
+              padding-left: 10px;
             }
 
             #battery {
               font-family: Ubuntu Nerd Font; 
-              padding: 0px 5px;
-              margin-top: 2px;
+              padding-right: 5px;
               color: @white;
             }
 
@@ -404,31 +394,31 @@
             #network,
             #bluetooth {
               font-family: Ubuntu Nerd Font;
-              padding: 0px 10px;
-              margin-top: 2px;
               color: @white;
+              padding-right: 10px;
+              padding-left: 10px; 
             }
 
             #network.disconnected {
               font-family: Ubuntu Nerd Font;
               color: @white;
-              padding: 0px 10px;
+              padding-right: 10px;
             }
             
             #network.disabled {
               font-family: Ubuntu Nerd Font;
               color: @red;
-              padding: 0px 10px;
+              padding-right: 10px;
             }
             
             #pulseaudio.muted {
              font-family: Ubuntu Nerd Font;
-             padding: 0px 10px;
+             padding-right: 10px;
             }
 
             #pulseaudio {
               font-family: Ubuntu Nerd Font;
-              padding: 0px 10px;
+              padding-right: 10px;
             }
             
             #battery.charging {
@@ -448,14 +438,14 @@
 
             #custom-recorder {
               font-family: Ubuntu Nerd Font;
-              padding: 0px 10px;
-              margin-top: 2px;
+              padding-right: 10px;
+              padding-left: 10px;
             }
 
             #custom-recorder.enabled {
               font-family: Ubuntu Nerd Font;
-              padding: 0px 10px;
-              margin-top: 2px;
+              padding-right: 10px;
+              padding-left: 10px;
       	      color:#c9545d;
             }
     '';

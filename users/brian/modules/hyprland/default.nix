@@ -156,6 +156,7 @@
         active_opacity = 0.85;
         inactive_opacity = 0.6;
 
+        # layerrule = ["blur, waybar" "blur, rofi"];
 
         blur = {
           enabled = true;
