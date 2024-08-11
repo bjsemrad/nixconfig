@@ -44,6 +44,7 @@
       type = "git";
       url = "https://github.com/Alexays/Waybar";
       ref = "refs/tags/0.10.4";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     neovim-flake = { 
