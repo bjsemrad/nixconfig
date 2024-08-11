@@ -287,14 +287,14 @@
 
             .modules-right {
               background: transparent;
-              margin: 0px -12px 0px 0px;
+              /*margin: 0px -12px 0px 0px;*/
             }
             .modules-center {
               background: transparent;
             }
             .modules-left {
               background: transparent;
-              margin: 0px 0px 0px -12px;
+              /*margin: 0px 0px 0px -12px;*/ 
             }
 
             tooltip {
