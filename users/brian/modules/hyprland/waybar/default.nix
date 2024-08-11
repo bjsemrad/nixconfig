@@ -186,7 +186,7 @@
           "bat" = "BAT2";
         };
         "network" = {
-          "format-wifi" = " {essid}";
+          "format-wifi" = "";
           "format-ethernet" = "";
           "format-disconnected" = "";
           "tooltip-format-wifi" = " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}";
