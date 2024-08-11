@@ -26,7 +26,6 @@
         modules-center = [          
           "cpu"
           "memory"
-          "temperature"
         ];
         modules-right = [
           "tray"
