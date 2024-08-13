@@ -64,7 +64,9 @@
 					  ",preferred,auto,1,mirror,eDP-1"
 					]
         else if (osConfig.networking.hostName == "odin") then
-          [ ",3840x1600@60,auto,1.0" ]
+          [ ",3840x1600@60,auto,1.0" 
+						",preferred,auto,1"
+					]
         else [ ",preferred,auto,1.0" ]
       );
       xwayland = {
