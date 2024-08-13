@@ -57,10 +57,12 @@
     ];
     settings = {
       monitor = [
-        ",preferred,auto,1"
+        #",preferred,auto,1"
       ] ++ (
         if (osConfig.networking.hostName == "thor") then
-          [ "eDP-1,preferred,auto,1.175" ]
+          [ "eDP-1,preferred,auto,1.175" 
+					  ",preferred,auto,1,mirror,eDP-1"
+					]
         else if (osConfig.networking.hostName == "odin") then
           [ ",3840x1600@60,auto,1.0" ]
         else [ ",preferred,auto,1.0" ]
