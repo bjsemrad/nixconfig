@@ -60,11 +60,11 @@
     };
 
     
-    cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    # cosmic = {
+    #   url = "github:lilyinstarlight/nixos-cosmic";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    #
     # tailscale = {
       # url = "github:/tailscale/tailscale/v1.70.0";
       # inputs.nixpkgs.follows = "nixpkgs";
@@ -83,7 +83,7 @@
     , waybar
     , neovim-flake
     , matugen
-    , cosmic
+    # , cosmic
     , ...
     } @ inputs:
     let
@@ -100,7 +100,7 @@
             ./hosts/thor/configuration.nix
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.framework-12th-gen-intel
-            cosmic.nixosModules.default
+            # cosmic.nixosModules.default
             #nixos-hardware.nixosModules.common-gpu-intel
           ];
           specialArgs = { inherit inputs; };
