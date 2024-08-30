@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, pkgs-unstable, inputs, ... }:
 
 {
   imports =
@@ -19,6 +19,7 @@
       ./modules/atuin
       ./modules/kitty
       ./modules/yazi
+      ./modules/zed
     ];
 
   home = {
@@ -62,12 +63,12 @@
       podman-tui
       podman-compose
       docker-compose
-      zed-editor
       pciutils
       slides
       file
       lm_sensors
     ];
+     #++ [  pkgs-unstable.zed-editor];
 
     sessionVariables = {
       # EDITOR = "emacs";

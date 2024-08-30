@@ -51,6 +51,10 @@
       url = "github:neovim/neovim/v0.10.0?dir=contrib"; 
     };
 
+    zed-flake = {
+      url = "github:zed-industries/zed/v0.150.4";
+    };
+
     # ags = {
     #   url = "github:Aylur/ags";#/v1.8.2";
     # };
@@ -82,6 +86,7 @@
     , hyprlock
     , waybar
     , neovim-flake
+    , zed-flake
     , matugen
     # , cosmic
     , ...
