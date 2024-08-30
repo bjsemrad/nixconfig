@@ -5,6 +5,10 @@
       url = "github:NixOS/nixpkgs/nixos-24.05";
     };
 
+    nixpkgs-unstable = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+    };
+
     nixos-hardware = {
       url = "github:nixos/nixos-hardware";
     };
@@ -51,10 +55,6 @@
       url = "github:neovim/neovim/v0.10.0?dir=contrib"; 
     };
 
-    zed-flake = {
-      url = "github:zed-industries/zed/v0.150.4";
-    };
-
     # ags = {
     #   url = "github:Aylur/ags";#/v1.8.2";
     # };
@@ -86,8 +86,8 @@
     , hyprlock
     , waybar
     , neovim-flake
-    , zed-flake
     , matugen
+    , nixpkgs-unstable
     # , cosmic
     , ...
     } @ inputs:
@@ -108,7 +108,9 @@
             # cosmic.nixosModules.default
             #nixos-hardware.nixosModules.common-gpu-intel
           ];
-          specialArgs = { inherit inputs; };
+          specialArgs = { 
+            inherit inputs; 
+          };
         };
         odin = lib.nixosSystem {
           inherit system; #Desktop

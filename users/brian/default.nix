@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -19,7 +19,6 @@
       ./modules/atuin
       ./modules/kitty
       ./modules/yazi
-      ./modules/zed
     ];
 
   home = {
@@ -67,8 +66,7 @@
       slides
       file
       lm_sensors
-    ];
-     #++ [  pkgs-unstable.zed-editor];
+    ] ++ [  inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor];
 
     sessionVariables = {
       # EDITOR = "emacs";
