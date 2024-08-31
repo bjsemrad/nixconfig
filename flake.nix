@@ -22,7 +22,7 @@
       type = "git"; 
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
-      ref = "refs/tags/v0.41.2";
+      ref = "refs/tags/v0.42.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -33,7 +33,7 @@
     
     /*Drop these and potentlly hyprland when we move to 24.05*/
     hyprlock = {
-      url = "github:hyprwm/hyprlock/v0.3.0";
+      url = "github:hyprwm/hyprlock/v0.4.1";
     };
 
     hypridle = {
@@ -52,7 +52,7 @@
     };
 
     neovim-flake = { 
-      url = "github:neovim/neovim/v0.10.0?dir=contrib"; 
+      url = "github:neovim/neovim/v0.10.1?dir=contrib"; 
     };
 
     # ags = {
@@ -60,7 +60,7 @@
     # };
 
     matugen = {
-      url = "github:InioX/matugen?ref=v2.2.0";
+      url = "github:InioX/matugen?ref=v2.3.0";
     };
 
     
