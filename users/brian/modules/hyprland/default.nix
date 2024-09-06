@@ -309,7 +309,7 @@
 
         "$mainMod,F,fullscreen"
 
-        "CTRL_L, 0, workspace, 10"
+        "ALT_L, 0, workspace, 10"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
       ]
       ++ (
@@ -326,8 +326,8 @@
                 builtins.toString (x + 1 - (c * 10));
             in
             [
-              "CTRL_L, ${ws}, workspace, ${toString (x + 1)}"
-              "CTRL_L SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+              "ALT_L, ${ws}, workspace, ${toString (x + 1)}"
+              "ALT_L SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
             ]
           )
           9)
