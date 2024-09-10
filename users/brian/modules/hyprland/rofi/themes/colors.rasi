@@ -2,7 +2,7 @@
     background:    rgba(11, 10, 16, 0.85);
     background-alt: rgba(11, 10, 16, 0.85);
     foreground:     #FFFFFFFF;
-    selected:       #89b4faff; /*#7EBAE4ff;*/
+    selected:       #89b4faff;
     active:           #BBAADDff;
     urgent:         #E06C75FF;
 }

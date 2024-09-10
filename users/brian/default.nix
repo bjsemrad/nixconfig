@@ -19,6 +19,7 @@
       ./modules/atuin
       ./modules/kitty
       ./modules/yazi
+      ./modules/catppuccin
     ];
 
   home = {
