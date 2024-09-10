@@ -41,10 +41,12 @@
       gtk-application-prefer-dark-theme = true;
     };
 
-    iconTheme = {
-      package = pkgs.kora-icon-theme;
-      name = "kora";
-    };
+    catppuccin.icon.enable = true;
+    catppuccin.icon.accent = "blue";
+    # iconTheme = {
+    #   package = pkgs.kora-icon-theme;
+    #   name = "kora";
+    # };
 
   };
 
