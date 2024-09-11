@@ -41,12 +41,12 @@
       gtk-application-prefer-dark-theme = true;
     };
 
-    catppuccin.icon.enable = true;
-    catppuccin.icon.accent = "blue";
-    # iconTheme = {
-    #   package = pkgs.kora-icon-theme;
-    #   name = "kora";
-    # };
+    # catppuccin.icon.enable = true;
+    # catppuccin.icon.accent = "blue";
+    iconTheme = {
+      package = pkgs.kora-icon-theme;
+      name = "kora";
+    };
 
   };
 
@@ -250,7 +250,7 @@
         "opacity 1.0 override 1.0 override,class:^(jetbrains-idea)$"
         "opacity 1.0 override 1.0 override,class:^(Code)$"
         "opacity 1.0 override 1.0 override,class:^(code-url-handler)$"
-
+        "opacity 1.0 override 1.0 override,class:^(Cider)$"
 
         "float,class:^(blueman-manager)$"
         "float,class:^(nm-connection-editor)$"
