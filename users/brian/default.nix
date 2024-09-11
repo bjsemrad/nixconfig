@@ -48,7 +48,7 @@
       discord
       gnumake
       quickemu
-      quickgui
+      # quickgui doesn't work
       python3
       distrobox
       exercism

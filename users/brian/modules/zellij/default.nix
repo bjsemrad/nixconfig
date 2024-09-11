@@ -10,6 +10,7 @@
 
     home.file =  {
         ".config/zellij/config.kdl".source = ./config.kdl;
+        ".config/zellij/layouts/custom-simple.kdl".source = ./custom-simple.kdl;
     };
 
 }

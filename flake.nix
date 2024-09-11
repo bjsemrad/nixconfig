@@ -63,7 +63,6 @@
       url = "github:InioX/matugen?ref=v2.3.0";
     };
 
-    
     # cosmic = {
     #   url = "github:lilyinstarlight/nixos-cosmic";
     #   inputs.nixpkgs.follows = "nixpkgs";
