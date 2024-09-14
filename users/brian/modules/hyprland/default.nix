@@ -54,7 +54,8 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [
-      #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      pkgs.hyprlandPlugins.hyprexpo
+      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       #  (pkgs.callPackage ./hyprbars.nix { inherit hyprland-plugins; } )
     ];
     settings = {
@@ -209,18 +210,16 @@
         workspace_swipe = true;
       };
 
-      # plugin = {
-      #   hyprexpo = {
-      #     columns = 3;
-      #     gap_size = 5;
-      #     #bg_col = rgb(111111);
-      #     workspace_method = "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
-      #
-      #     enable_gesture = true; # laptop touchpad, 4 fingers
-      #     gesture_distance = 300; # how far is the "max"
-      #     gesture_positive = true; # positive = swipe down. Negative = swipe up.
-      #   };
-      # };
+      plugin = {
+        hyprexpo = {
+          columns = 3;
+          gap_size = 5;
+          workspace_method = "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
+          enable_gesture = true; # laptop touchpad, 4 fingers
+          gesture_distance = 300; # how far is the "max"
+          gesture_positive = false; # positive = swipe down. Negative = swipe up.
+        };
+      };
 
 
       # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
@@ -282,6 +281,8 @@
         "$mainMod CTRL_L SHIFT, N, exec, dunstctl close"
         "$mainMod SHIFT, W, exec, pkill waybar && waybar"
         # "$mainMod CTRL_L SHIFT, A, exec, ags -q && ags"
+
+        "$mainMod, grave, hyprexpo:expo, toggle"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
