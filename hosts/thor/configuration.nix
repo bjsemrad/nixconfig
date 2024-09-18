@@ -33,6 +33,8 @@
     programs-nix-ld
   ];
 
+  hardware.framework.enableKmod = false;
+
   # Bootloader.
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" "armv7l-linux" "armv6l-linux" "riscv64-linux" ];
