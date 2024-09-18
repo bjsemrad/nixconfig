@@ -15,9 +15,9 @@
         spacing = 0;
         layer = "top";
         gtk-layer-shell = true;
-        margin-top =  5; #5;
-        margin-left = 5; #10;
-        margin-right = 5; #10;
+        margin-top =  0; #5;
+        margin-left = 0; #10;
+        margin-right = 0; #10;
         margin-bottom = 5;
         modules-left = [
           "hyprland/workspaces"
@@ -282,10 +282,11 @@
             }
 
             window#waybar {
-              background-color: rgba(11, 10, 16, 0.80);
+              background-color: rgba(0, 0, 0, 1.0);
+              /*background-color: rgba(11, 10, 16, 1.0);*/
               transition-property: background-color;
               transition-duration: 0.5s;
-              border-radius: 5px;
+              /*border-radius: 5px;*/
             }
 
             .modules-right {
