@@ -113,7 +113,7 @@
   services.tailscale.enable = true;
 
   # Enable the OpenSSH daemon.
-  security.pam.enableSSHAgentAuth = true;
+  security.pam.sshAgentAuth.enable = true; 
   services.openssh.enable = true;
 
   services.samba = {
