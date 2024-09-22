@@ -56,6 +56,7 @@
       httpie
       fzf
       yubikey-manager
+      yubikey-manager-qt
       #Failed to download try again later mblock-mlink
       gimp
       nixd
