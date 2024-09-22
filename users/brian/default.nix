@@ -68,6 +68,9 @@
       slides
       file
       lm_sensors
+
+      tutanota-desktop
+      protonmail-desktop
     ] ++ [  inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor];
 
     sessionVariables = {
