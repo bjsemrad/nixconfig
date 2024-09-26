@@ -71,6 +71,8 @@
 
       tutanota-desktop
       protonmail-desktop
+
+      dotnet-sdk_8
     ] ++ [  inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor];
 
     sessionVariables = {
