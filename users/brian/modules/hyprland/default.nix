@@ -89,7 +89,7 @@
       ] ++ (
         if (osConfig.networking.hostName == "odin") then
           [
-            "openrgb -p Nix"
+            "openrgb -p Nix2"
             "wpctl set-default 45"
           ]
         else [ ]
