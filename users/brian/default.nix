@@ -73,6 +73,8 @@
       protonmail-desktop
 
       dotnet-sdk_8
+
+      brave
     ] ++ [  inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor];
 
     sessionVariables = {
