@@ -58,6 +58,7 @@
       yubikey-manager
       yubikey-manager-qt
       backblaze-b2
+      celeste
       #Failed to download try again later mblock-mlink
       gimp
       nixd
