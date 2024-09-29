@@ -57,6 +57,7 @@
       fzf
       yubikey-manager
       yubikey-manager-qt
+      backblaze-b2
       #Failed to download try again later mblock-mlink
       gimp
       nixd
