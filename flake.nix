@@ -51,7 +51,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim-flake = { 
+    neovim-flake = {
+      # url = "github:nix-community/neovim-nightly-overlay";
+      #inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.neovim-src.url = "github:neovim/neovim/v0.10.2"; 
       url = "github:neovim/neovim/v0.10.1?dir=contrib"; 
     };
 
