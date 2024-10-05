@@ -51,12 +51,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim-flake = {
-      # url = "github:nix-community/neovim-nightly-overlay";
-      #inputs.nixpkgs.follows = "nixpkgs";
-      #inputs.neovim-src.url = "github:neovim/neovim/v0.10.2"; 
-      url = "github:neovim/neovim/v0.10.1?dir=contrib"; 
-    };
+    # neovim-flake = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.neovim-src.url = "github:neovim/neovim/v0.10.2"; 
+      # url = "github:neovim/neovim/v0.10.1?dir=contrib"; 
+    # };
 
     # ags = {
     #   url = "github:Aylur/ags";#/v1.8.2";
@@ -89,7 +89,7 @@
     , hypridle
     , hyprlock
     , waybar
-    , neovim-flake
+    # , neovim-flake
     , matugen
     , catppuccin
     , nixpkgs-unstable
