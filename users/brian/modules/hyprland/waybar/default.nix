@@ -275,6 +275,7 @@
             @define-color rosewater #f5e0dc;
             * {
               font-family: JetBrainsMono Nerd Font;
+              font-weight: bold;
               font-size: 14px;
             }
 
@@ -360,7 +361,6 @@
               color: #FFFFFF;
               font-size: 18px;
               margin-right: 10px;
-              font-family: Ubuntu Nerd Font;
             }
 
             #window {
@@ -368,20 +368,17 @@
             }
 
             #clock {
-              font-family: Ubuntu Nerd Font;    
               color: @white;
               margin-right: 10px;
             }
 
             #tray {
-              font-family: Ubuntu Nerd Font;    
               color: @white;
               padding-right: 10px;
               padding-left: 10px;
             }
 
             #battery {
-              font-family: Ubuntu Nerd Font; 
               padding-right: 5px;
               color: @white;
             }
@@ -394,57 +391,47 @@
             #idle_inhibitor,
             #network,
             #bluetooth {
-              font-family: Ubuntu Nerd Font;
               color: @white;
               padding-right: 10px;
               padding-left: 10px; 
             }
 
             #network.disconnected {
-              font-family: Ubuntu Nerd Font;
               color: @white;
               padding-right: 10px;
             }
             
             #network.disabled {
-              font-family: Ubuntu Nerd Font;
               color: @red;
               padding-right: 10px;
             }
             
             #pulseaudio.muted {
-             font-family: Ubuntu Nerd Font;
              padding-right: 10px;
             }
 
             #pulseaudio {
-              font-family: Ubuntu Nerd Font;
               padding-right: 10px;
             }
             
             #battery.charging {
-              font-family: Ubuntu Nerd Font;
               color: @white;
             }
             
             #battery.warning:not(.charging) {
-              font-family: Ubuntu Nerd Font;
               color: @orange;
             }
             
             #battery.critical:not(.charging) {
-              font-family: Ubuntu Nerd Font;
               color: @red;
             }
 
             #custom-recorder {
-              font-family: Ubuntu Nerd Font;
               padding-right: 10px;
               padding-left: 10px;
             }
 
             #custom-recorder.enabled {
-              font-family: Ubuntu Nerd Font;
               padding-right: 10px;
               padding-left: 10px;
       	      color:#c9545d;
