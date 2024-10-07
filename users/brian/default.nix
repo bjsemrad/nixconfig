@@ -36,6 +36,7 @@
       nodejs
       gcc
       clang-tools
+      llvm_18
       cmake
       croc
       kora-icon-theme
