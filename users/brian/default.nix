@@ -36,7 +36,7 @@
       nodejs
       gcc
       clang-tools
-      llvm_18
+      bear
       cmake
       croc
       kora-icon-theme
