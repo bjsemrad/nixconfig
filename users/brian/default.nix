@@ -79,6 +79,8 @@
       dotnet-sdk_8
 
       brave
+
+      devenv
     ] ++ [  inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor];
 
     sessionVariables = {
