@@ -81,6 +81,7 @@
       brave
 
       devenv
+      temporal-cli
     ] ++ [  inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor];
 
     sessionVariables = {
