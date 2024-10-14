@@ -16,6 +16,7 @@
     services-sound
     services-displayserver
     services-printing
+    services-envfs
     services-openrgb
     common-nixsettings
     common-alacritty

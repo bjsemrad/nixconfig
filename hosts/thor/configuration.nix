@@ -20,6 +20,7 @@
     services-sound
     services-displayserver
     services-printing
+    services-envfs
 
     common-nixsettings
     common-alacritty
