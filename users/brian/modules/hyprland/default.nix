@@ -313,7 +313,7 @@
         "$mainMod,F,fullscreen"
 
         "ALT_L, 0, workspace, 10"
-        "$mainMod SHIFT, 0, movetoworkspace, 10"
+        "ALT_L SHIFT, 0, movetoworkspace, 10"
       ]
       ++ (
         # workspaces
