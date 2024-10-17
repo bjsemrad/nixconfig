@@ -10,6 +10,7 @@
       ./modules/git
       ./modules/hyprland
       ./modules/java
+      ./modules/gradle
       ./modules/neovim
       ./modules/shell
       ./modules/starship
@@ -39,6 +40,7 @@
       bear
       cmake
       croc
+      kotlin
       kora-icon-theme
       vial
       via
