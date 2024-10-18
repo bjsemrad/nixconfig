@@ -83,8 +83,9 @@
       brave
 
       devenv
-      temporal-cli
-    ] ++ [  inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor];
+    ] ++ [  inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor
+            inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
+    ];
 
     sessionVariables = {
       # EDITOR = "emacs";
