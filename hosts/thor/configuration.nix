@@ -21,6 +21,7 @@
     services-displayserver
     services-printing
     services-envfs
+    services-smartd
 
     common-nixsettings
     common-alacritty
