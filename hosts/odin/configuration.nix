@@ -17,6 +17,7 @@
     services-displayserver
     services-printing
     services-envfs
+    services-disks
     services-smartd
     services-openrgb
     common-nixsettings

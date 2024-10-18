@@ -22,7 +22,7 @@
     services-printing
     services-envfs
     services-smartd
-
+    services-disks
     common-nixsettings
     common-alacritty
     common-locale
