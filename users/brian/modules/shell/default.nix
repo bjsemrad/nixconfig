@@ -31,7 +31,7 @@ let
       dashboard-rebuild="nixos-rebuild switch -s --flake .#heimdall --target-host root@dashboard.otter-rigel.ts.net  --verbose";
       crocsend="send(){ croc --relay loki.otter-rigel.ts.net:9009 send --code $2 $1};send";
       crocreceive="receive(){ croc --relay loki.otter-rigel.ts.net:9009 $1};receive";
-      tailreceive="sudo tailscale file get ."
+      tailreceive="sudo tailscale file get .";
       setup-vial="qmk setup bjsemrad/vial-qmk -H ~/vial-qmk -b vial";
       setup-qmk="qmk setup bjsemrad/qmk_firmware -H ~/qmk_firmwarel";
       build-lily58="QMK_HOME=~/vial-qmk qmk compile -kb lily58/rev1 -km brian -e CONVERT_TO=rp2040_ce";
