@@ -48,12 +48,20 @@
       options = [ "noatime" "subvol=swap" ];
     };
 
+  # fileSystems."/mnt/games" = {
+  #   device = "/dev/disk/by-uuid/dab14479-8c57-4f41-aac0-4d78005dbedd";
+  #   fsType = "btrfs";
+  #   options = [ "compress=zstd" "noatime" "nosuid" "nodev" "nofail" "x-gvfs-show" ];
+  #   label = "gamestorage";
+  # };
   fileSystems."/mnt/games" = {
-    device = "/dev/disk/by-uuid/dab14479-8c57-4f41-aac0-4d78005dbedd";
-    fsType = "btrfs";
-    options = [ "compress=zstd" "noatime" "nosuid" "nodev" "nofail" "x-gvfs-show" ];
-    label = "gamestorage";
+    device = "/dev/disk/by-uuid/90bf654f-872d-469c-b4b0-f26699f1a1e2";
+    fsType = "ext4";
+    options = [ "noatime" "nosuid" "nodev" "nofail" "x-gvfs-show" ];
+    label = "Games";
   };
+
+
 
   swapDevices = [{ device = "/swap/swapfile"; }];
 
