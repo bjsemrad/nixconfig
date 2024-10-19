@@ -46,13 +46,10 @@
       via
       qmk
       qmk-udev-rules
-      #element-desktop
       fastfetch
-      #thunderbird
       discord
       gnumake
       quickemu
-      # quickgui doesn't work
       python3
       distrobox
       exercism
@@ -75,9 +72,8 @@
       file
       lm_sensors
 
-      tutanota-desktop
       protonmail-desktop
-
+      signal-desktop
       dotnet-sdk_8
 
       brave
