@@ -86,6 +86,7 @@
         "hyprpaper"
         "wl-paste --type text --watch cliphist -max-items 25 store" #Stores only text data
         "wl-paste --type image --watch cliphist -max-items 25 store" #Stores only image data
+        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       ] ++ (
         if (osConfig.networking.hostName == "odin") then
           [
