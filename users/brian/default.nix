@@ -63,7 +63,6 @@
       #Failed to download try again later mblock-mlink
       gimp
       nixd
-      cider
       podman-tui
       podman-compose
       docker-compose
@@ -81,6 +80,8 @@
       devenv
     ] ++ [  inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor
             inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
+            inputs.nixpkgs-unstable.legacyPackages.${system}.cider
+
     ];
 
     sessionVariables = {
