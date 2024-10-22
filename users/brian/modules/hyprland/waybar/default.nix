@@ -274,7 +274,7 @@
             @define-color flamingo  #f2cdcd;
             @define-color rosewater #f5e0dc;
             * {
-              font-family: JetBrainsMono Nerd Font;
+              font-family: Fira Code Nerd Font;
               font-weight: bold;
               font-size: 14px;
             }

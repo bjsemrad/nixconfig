@@ -4,7 +4,7 @@
     enable = true;
     font = {
       size = 13;
-      name = "JetBrainsMono Nerd Font";
+      name = "Fira Code Nerd Font";
     };
     shellIntegration = {
       enableZshIntegration = true;
