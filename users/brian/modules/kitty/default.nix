@@ -3,7 +3,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      size = 13;
+      size = 14;
       name = "Fira Code Nerd Font";
     };
     shellIntegration = {

@@ -1,5 +1,3 @@
-{ pkgs, inputs, ... }:
-
 {
 
   home.file.".config/waybar/scripts/recorder.sh" = {
@@ -141,7 +139,7 @@
         };
         "clock" = {
           # "format" = "{:%a %b %d, %G %I:%M %p} ";
-          "format" = "{:%a %b %d  %I:%M %p} ";
+          "format" = "{:%a %b %d %I:%M %p} ";
           "interval" = 60;
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
@@ -275,7 +273,7 @@
             @define-color rosewater #f5e0dc;
             * {
               font-family: Fira Code Nerd Font;
-              font-weight: bold;
+              /*font-weight: bold; */
               font-size: 14px;
             }
 
