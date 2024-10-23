@@ -272,9 +272,9 @@
             @define-color flamingo  #f2cdcd;
             @define-color rosewater #f5e0dc;
             * {
-              font-family: JetBrains Mono Nerd Font;
+              font-family: JetBrainsMono Nerd Font;
               /*font-weight: bold; */
-              font-size: 16px;
+              font-size: 14px;
             }
 
             window {

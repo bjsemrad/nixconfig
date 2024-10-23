@@ -3,8 +3,8 @@
   programs.kitty = {
     enable = true;
     font = {
-      size = 14;
-      name = "JetBrains Mono Nerd Font";
+      size = 13;
+      name = "JetBrainsMono Nerd Font";
     };
     shellIntegration = {
       enableZshIntegration = true;
