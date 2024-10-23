@@ -63,7 +63,7 @@
         #",preferred,auto,1"
       ] ++ (
         if (osConfig.networking.hostName == "thor") then
-          [ "eDP-1,preferred,auto,1.5,vrr,1" 
+          [ "eDP-1,preferred,auto,1.5" 
 					  ",preferred,auto,1.5"
 					]
         else if (osConfig.networking.hostName == "odin") then
@@ -105,7 +105,7 @@
         "NIXOS_OZONE_WL,1"
       ] ++ (
         if (osConfig.networking.hostName == "thor") then
-          [ "GDK_DPI_SCALE,1.175" ]
+          [ "GDK_DPI_SCALE,1.5" ]
         else if (osConfig.networking.hostName == "odin") then
           [
             "GDK_DPI_SCALE,1.0"

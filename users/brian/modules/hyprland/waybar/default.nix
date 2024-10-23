@@ -274,7 +274,7 @@
             * {
               font-family: JetBrainsMono Nerd Font;
               /*font-weight: bold; */
-              font-size: 14px;
+              font-size: 16px;
             }
 
             window {
