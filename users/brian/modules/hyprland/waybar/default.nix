@@ -239,24 +239,34 @@
       };
     };
     style = ''
-            @define-color base            #191724;
-            @define-color surface         #1f1d2e;
-            @define-color overlay         #26233a;
-
-            @define-color muted           #6e6a86;
-            @define-color subtle          #908caa;
-            @define-color text            #e0def4;
-
-            @define-color love            #eb6f92;
-            @define-color gold            #f6c177;
-            @define-color rose            #ebbcba;
-            @define-color pine            #31748f;
-            @define-color foam            #9ccfd8;
-            @define-color iris            #c4a7e7;
-
-            @define-color highlightLow    #21202e;
-            @define-color highlightMed    #403d52;
-            @define-color highlightHigh   #524f67;
+            @define-color black        #0e1013; /* rgba(14, 16, 19, 1) */
+            @define-color bgDark       #1E2127; /* rgba(30, 33, 39, 1) */
+	    @define-color bg0          #1f2329;
+	    @define-color bg1          #282c34;
+	    @define-color bg2          #30363f;
+	    @define-color bg3          #323641;
+	    @define-color bg_d         #181b20;
+	    @define-color bg_blue      #61afef;
+	    @define-color bg_yellow    #e8c88c;
+	    @define-color fg           #a0a8b7;
+            @define-color fg_dark      #abb2bf;
+	    @define-color purple       #bf68d9;
+	    @define-color green        #8ebd6b;
+	    @define-color orange       #cc9057;
+	    @define-color blue         #4fa6ed;
+	    @define-color yellow       #e2b86b;
+	    @define-color cyan         #48b0bd;
+	    @define-color red          #e55561;
+	    @define-color grey         #535965;
+	    @define-color light_grey   #7a818e;
+	    @define-color dark_cyan    #266269;
+	    @define-color dark_red     #8b3434;
+	    @define-color dark_yellow  #835d1a;
+	    @define-color dark_purple  #7e3992;
+	    @define-color diff_add     #272e23;
+            @define-color diff_delete  #2d2223;
+            @define-color diff_change  #172a3a;
+	    @define-color diff_text    #274964;
 
             * {
               font-family: JetBrainsMono Nerd Font;
@@ -268,11 +278,9 @@
             }
 
             window#waybar {
-              background-color: rgba(17, 17, 17, 1.0);
-              /*background-color: rgba(11, 10, 16, 1.0);*/
+              background-color: rgba(14, 16, 19, 1.0);
               transition-property: background-color;
               transition-duration: 0.5s;
-              /*border-radius: 5px;*/
             }
 
             .modules-right {
@@ -288,9 +296,9 @@
             }
 
             tooltip {
-              background-color: @surface;
-              border: 2px solid #0b0a10;
-              color: @text;
+              background-color: @black;
+              border: 2px solid @blue;
+              color: @light_grey;
               border-radius: 10px;
             }
 
@@ -300,7 +308,7 @@
 
             #workspaces button {
                 background: transparent;
-                color: @subtext0;
+                color: @fg_dark;
                 font-weight: bold;
                 border: none;
             }
@@ -311,12 +319,13 @@
             }
 
             #workspaces button.active {
-              color: @white;
+              color: @blue;
               background: transparent;
             }
 
             #workspaces button.focused {
-              color: @crust;
+              color: @blue;
+              background: transparent;
             }
 
             #taskbar button {
@@ -329,43 +338,45 @@
             }
 
             button.urgent {
-                color: #11111b;
-                background: #fab387;
+                color: @red;
+                background: @black;
                 border-radius: 10px;
             }
 
             #cpu, #disk, #memory, #temperature {
               padding-right: 10px;
+              color: @fg_dark;
             }
 
             #custom-sep {
-              color: #313244;
+              color: @black;
             }
 
             #custom-session {
-              color: #FFFFFF;
+              color: @text;
               font-size: 18px;
               margin-right: 10px;
             }
 
             #window {
-              color: #FFFFFF;
+              color: @fg_dark;
             }
 
             #clock {
-              color: @white;
+              color: @fg_dark;
               margin-right: 10px;
             }
 
             #tray {
-              color: @white;
+              color: @fg_dark;
               padding-right: 10px;
               padding-left: 10px;
             }
 
             #battery {
-              padding-right: 5px;
-              color: @white;
+              padding-right: 10px;
+              padding-left: 10px;
+              color: @fg_dark;
             }
 
             #pulseaudio,
@@ -374,15 +385,25 @@
             #custom-menu,
             #backlight,
             #idle_inhibitor,
-            #network,
             #bluetooth {
-              color: @white;
+              color: @fg_dark;
               padding-right: 10px;
               padding-left: 10px; 
             }
 
+            #bluetooth.connected {
+              color: @green;
+            }
+
+            #network {
+              color: @green;
+              padding-right: 10px;
+              padding-left: 10px; 
+ 
+            }
+
             #network.disconnected {
-              color: @white;
+              color: @orange;
               padding-right: 10px;
             }
             
@@ -400,7 +421,7 @@
             }
             
             #battery.charging {
-              color: @white;
+              color: @green;
             }
             
             #battery.warning:not(.charging) {
@@ -414,12 +435,13 @@
             #custom-recorder {
               padding-right: 10px;
               padding-left: 10px;
+              color: @fg_dark;
             }
 
             #custom-recorder.enabled {
               padding-right: 10px;
               padding-left: 10px;
-      	      color:#c9545d;
+      	      color: @green;
             }
     '';
   };

@@ -131,25 +131,37 @@
         gaps_in = 3;
         gaps_out = 4;
         border_size = 2;
-        # Rose PIne
-        "$base"           = "0xff191724";
-        "$surface"        = "0xff1f1d2e";
-        "$overlay"        = "0xff26233a";
-        "$muted"          = "0xff6e6a86";
-        "$subtle"         = "0xff908caa";
-        "$text"           = "0xffe0def4";
-        "$love"           = "0xffeb6f92";
-        "$gold"           = "0xfff6c177";
-        "$rose"           = "0xffebbcba";
-        "$pine"           = "0xff31748f";
-        "$foam"           = "0xff9ccfd8";
-        "$iris"           = "0xffc4a7e7";
-        "$highlightLow"   = "0xff21202e";
-        "$highlightMed"   = "0xff403d52";
-        "$highlightHigh"  = "0xff524f67";
+        "$black" = "0xff0e1013";
+        "$bgDark" = "0xff1E2127";
+	"$bg0" = "0xff1f2329";
+	"$bg1" = "0xff282c34";
+	"$bg2" = "0xff30363f";
+	"$bg3" = "0xff323641";
+	"$bg_d" = "0xff181b20";
+	"$bg_blue" = "0xff61afef";
+	"$bg_yellow" = "0xffe8c88c";
+	"$fg" = "0xffa0a8b7";
+        "$fg_dark" = "0xffabb2bf";
+	"$purple" = "0xffbf68d9";
+	"$green" = "0xff8ebd6b";
+	"$orange" = "0xffcc9057";
+	"$blue" = "0xff4fa6ed";
+	"$yellow" = "0xffe2b86b";
+	"$cyan" = "0xff48b0bd";
+	"$red" = "0xffe55561";
+	"$grey" = "0xff535965";
+	"$light_grey" = "0xff7a818e";
+	"$dark_cyan" = "0xff266269";
+	"$dark_red" = "0xff8b3434";
+	"$dark_yellow" = "0xff835d1a";
+	"$dark_purple" = "0xff7e3992";
+	"$diff_add" = "0xff272e23";
+        "$diff_delete" = "0xff2d2223";
+	"$diff_change" = "0xff172a3a";
+	"$diff_text" = "0xff274964";
 
-        "col.active_border" = "$foam"; #"rgba(89b4faff)"; #catppuccin #rosepine "rgba(9ccfd8ff)";
-        "col.inactive_border" = "$muted"; #"rgba(313244ff)"; #catppuccin #rosepine rgba(6e6a86ff)";
+        "col.active_border" = "$blue";
+        "col.inactive_border" = "$bg1";
         layout = "master";
       };
       decoration = {
@@ -243,6 +255,7 @@
         "opacity 1.0 override 1.0 override,class:^(Code)$"
         "opacity 1.0 override 1.0 override,class:^(code-url-handler)$"
         "opacity 1.0 override 1.0 override,class:^(Cider)$"
+        "opacity 1.0 override 1.0 override,class:^(dev.zed.Zed)$"
 
         "float,class:^(blueman-manager)$"
         "float,class:^(nm-connection-editor)$"

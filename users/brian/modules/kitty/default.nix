@@ -11,14 +11,16 @@
     };
     
     settings = {
-      include = "rose-pine-cust.conf";
+      include = "onedark-dark.conf";
     };
+    # theme = "One Dark";
     #theme = "Rosé Pine";
     #theme = "Catppuccin-Mocha";
     #theme = "Dracula";
   };
 
-   home.file.".config/kitty/rose-pine-cust.conf" = {
-    source = ./rose-pine-cust.conf;
+   home.file = {
+    ".config/kitty/rose-pine-cust.conf".source = ./rose-pine-cust.conf;
+    ".config/kitty/onedark-dark.conf".source = ./onedark-dark.conf;
   };
 }
