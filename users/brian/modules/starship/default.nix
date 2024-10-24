@@ -161,11 +161,11 @@
 
 
     git_branch = {
-      style = "bold fg:purple";
+      style = "bold fg:red";
     };
 
     git_status = {
-      style = "bold fg:red";
+      style = "bold fg:orange";
     };
 
     hostname = {
