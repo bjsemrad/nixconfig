@@ -76,8 +76,6 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    catppuccin.url = "github:catppuccin/nix";
-
   };
   outputs =
     { self
@@ -91,7 +89,6 @@
     , waybar
     # , neovim-flake
     , matugen
-    , catppuccin
     , nixpkgs-unstable
     # , cosmic
     , ...
@@ -110,7 +107,6 @@
             ./hosts/thor/configuration.nix
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.framework-12th-gen-intel
-            catppuccin.nixosModules.catppuccin
             # cosmic.nixosModules.default
             #nixos-hardware.nixosModules.common-gpu-intel
           ];
@@ -126,7 +122,6 @@
             nixos-hardware.nixosModules.common-cpu-amd
             nixos-hardware.nixosModules.common-hidpi
             nixos-hardware.nixosModules.common-pc-ssd
-            catppuccin.nixosModules.catppuccin
           ];
           specialArgs = { inherit inputs; };
         };

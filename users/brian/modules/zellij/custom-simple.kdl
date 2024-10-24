@@ -61,12 +61,12 @@ layout {
     mode_session       "#[bg=$red,fg=$bgDark,bold] SESSION#[bg=$bgDark,fg=$red]"
     mode_prompt        "#[bg=$red,fg=$bgDark,bold] PROMPT#[bg=$bgDark,fg=$red]"
 
-    tab_normal              "#[bg=$bgDark,fg=$blue]#[bg=$blue,fg=$bg1,bold]{index} #[bg=$bg1,fg=$blue,bold] {name}{floating_indicator}#[bg=$bgDark,fg=$bg1]"
-    tab_normal_fullscreen   "#[bg=$bgDark,fg=$blue]#[bg=$blue,fg=$bgDark,bold]{index} #[bg=$bg1,fg=$blue,bold] {name}{fullscreen_indicator}#[bg=$bgDark,fg=$bg1]"
-    tab_normal_sync         "#[bg=$bgDark,fg=$blue]#[bg=$blue,fg=$bgDark,bold]{index} #[bg=$bg1,fg=$blue,bold] {name}{sync_indicator}#[bg=$bgDark,fg=$bg1]"
-    tab_active              "#[bg=$bgDark,fg=$purple]#[bg=$purple,fg=$bg1,bold]{index} #[bg=$bg1,fg=$purple,bold] {name}{floating_indicator}#[bg=$bgDark,fg=$bg1]"
-    tab_active_fullscreen   "#[bg=$bgDark,fg=$purple]#[bg=$purple,fg=$bg1,bold]{index} #[bg=$bg1,fg=$purple,bold] {name}{floating_indicator}#[bg=$bgDark,fg=$bg1]"
-    tab_active_sync         "#[bg=$bgDark,fg=$purple]#[bg=$purple,fg=$bg1,bold]{index} #[bg=$bg1,fg=$purple,bold] {name}{floating_indicator}#[bg=$bgDark,fg=$bg1]"
+    tab_normal              "#[bg=$bgDark,fg=$blue]#[bg=$blue,fg=$bg3,bold]{index} #[bg=$bg3,fg=$blue,bold] {name}{floating_indicator}#[bg=$bgDark,fg=$bg3]"
+    tab_normal_fullscreen   "#[bg=$bgDark,fg=$blue]#[bg=$blue,fg=$bgDark,bold]{index} #[bg=$bg3,fg=$blue,bold] {name}{fullscreen_indicator}#[bg=$bgDark,fg=$bg3]"
+    tab_normal_sync         "#[bg=$bgDark,fg=$blue]#[bg=$blue,fg=$bgDark,bold]{index} #[bg=$bg3,fg=$blue,bold] {name}{sync_indicator}#[bg=$bgDark,fg=$bg3]"
+    tab_active              "#[bg=$bgDark,fg=$purple]#[bg=$purple,fg=$bg3,bold]{index} #[bg=$bg3,fg=$purple,bold] {name}{floating_indicator}#[bg=$bgDark,fg=$bg3]"
+    tab_active_fullscreen   "#[bg=$bgDark,fg=$purple]#[bg=$purple,fg=$bg3,bold]{index} #[bg=$bg3,fg=$purple,bold] {name}{floating_indicator}#[bg=$bgDark,fg=$bg3]"
+    tab_active_sync         "#[bg=$bgDark,fg=$purple]#[bg=$purple,fg=$bg3,bold]{index} #[bg=$bg3,fg=$purple,bold] {name}{floating_indicator}#[bg=$bgDark,fg=$bg3]"
     tab_separator           "#[bg=$bgDark] "
 
     tab_sync_indicator       " "

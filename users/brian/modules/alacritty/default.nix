@@ -2,7 +2,6 @@
 
 {
   programs.alacritty.enable = true;
-  programs.alacritty.catppuccin.enable = true;
   programs.alacritty.settings = {
     #window.opacity = lib.mkForce 0.85;
     font.size = 13.0;
