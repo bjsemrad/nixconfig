@@ -297,9 +297,13 @@
 
             tooltip {
               background-color: @black;
-              border: 2px solid @blue;
-              color: @light_grey;
+              border: 2px solid @bg1;
+              color: @fg_dark;
               border-radius: 10px;
+            }
+            
+            tooltip label {
+              color: @fg_dark;
             }
 
             #workspaces {
