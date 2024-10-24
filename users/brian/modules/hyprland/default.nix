@@ -132,31 +132,24 @@
         gaps_out = 4;
         border_size = 2;
         # Rose PIne
-        #         $base           = 0xff191724
-        # $surface        = 0xff1f1d2e
-        # $overlay        = 0xff26233a
-        # $muted          = 0xff6e6a86
-        # $subtle         = 0xff908caa
-        # $text           = 0xffe0def4
-        # $love           = 0xffeb6f92
-        # $gold           = 0xfff6c177
-        # $rose           = 0xffebbcba
-        # $pine           = 0xff31748f
-        # $foam           = 0xff9ccfd8
-        # $iris           = 0xffc4a7e7
-        # $highlightLow   = 0xff21202e
-        # $highlightMed   = 0xff403d52
-        # $highlightHigh  = 0xff524f67
+        "$base"           = "0xff191724";
+        "$surface"        = "0xff1f1d2e";
+        "$overlay"        = "0xff26233a";
+        "$muted"          = "0xff6e6a86";
+        "$subtle"         = "0xff908caa";
+        "$text"           = "0xffe0def4";
+        "$love"           = "0xffeb6f92";
+        "$gold"           = "0xfff6c177";
+        "$rose"           = "0xffebbcba";
+        "$pine"           = "0xff31748f";
+        "$foam"           = "0xff9ccfd8";
+        "$iris"           = "0xffc4a7e7";
+        "$highlightLow"   = "0xff21202e";
+        "$highlightMed"   = "0xff403d52";
+        "$highlightHigh"  = "0xff524f67";
 
-        "col.active_border" = "rgba(89b4faff)"; #catppuccin #rosepine "rgba(9ccfd8ff)";
-        "col.inactive_border" = "rgba(313244ff)"; #catppuccin #rosepine rgba(6e6a86ff)";
-        # "col.active_border" = "rgba(ebbcbaff) rgba(31748fff) rgba(eb6f92ff) rgba(c4a7e7ff) 90deg";
-
-        #"col.active_border" = "rgba(${config.colorScheme.palette.base0C}ff) rgba(${config.colorScheme.palette.base0D}ff) rgba(${config.colorScheme.palette.base0B}ff) rgba(${config.colorScheme.palette.base0E}ff) 45deg";
-        #"col.inactive_border" = "rgba(${config.colorScheme.palette.base00}cc) rgba(${config.colorScheme.palette.base01}cc) 45deg";
-
-        #OLD "col.active_border" = "rgba(51a4e7ff) rgba(51a4e7ff) 45deg"; #"rgba(7EBAE4ff) rgba(7EBAE4ff) 45deg";
-        #OLD "col.inactive_border" = "rgba(585b70ff)";
+        "col.active_border" = "$foam"; #"rgba(89b4faff)"; #catppuccin #rosepine "rgba(9ccfd8ff)";
+        "col.inactive_border" = "$muted"; #"rgba(313244ff)"; #catppuccin #rosepine rgba(6e6a86ff)";
         layout = "master";
       };
       decoration = {

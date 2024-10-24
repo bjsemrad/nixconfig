@@ -3,13 +3,22 @@
   programs.kitty = {
     enable = true;
     font = {
-      size = 13;
+      size = 14;
       name = "JetBrainsMono Nerd Font";
     };
     shellIntegration = {
       enableZshIntegration = true;
     };
-    # theme = "Rosé Pine";
-    theme = "Catppuccin-Mocha";
+    
+    settings = {
+      include = "rose-pine-cust.conf";
+    };
+    #theme = "Rosé Pine";
+    #theme = "Catppuccin-Mocha";
+    #theme = "Dracula";
   };
-}  
+
+   home.file.".config/kitty/rose-pine-cust.conf" = {
+    source = ./rose-pine-cust.conf;
+  };
+}

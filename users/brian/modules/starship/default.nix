@@ -83,6 +83,19 @@
       "$line_break"
       "$character"
     ];
+    palette = "rose-pine";
+
+    palettes = {
+      rose-pine = {
+        overlay = "#26233a";
+        love = "#eb6f92";
+        gold = "#f6c177";
+        rose = "#ebbcba";
+        pine = "#3e8fb0"; #override #31748f";
+        foam = "#9ccfd8";
+        iris = "#c4a7e7";
+      };
+    };
 
     add_newline = true;
 
@@ -101,8 +114,8 @@
     };
 
     character = {
-      error_symbol = "[>](bold #ee99a0)";  #eb6f92 rosepine
-      success_symbol = "[>](bold #a6da95)"; #c4a7e7 rosepine  50fa7b)";
+      error_symbol = "[>](bold fg:love)";  #eb6f92 rosepine
+      success_symbol = "[>](bold fg:pine)"; #c4a7e7 rosepine  50fa7b)";
     };
 
     cmd_duration = {
@@ -110,18 +123,18 @@
     };
 
     directory = {
-      style = "bold #89b4fa"; #9ccfd8" rosepine; #50fa7b";   
+      style = "bold fg:foam"; #89b4fa-catppuccin #50fa7b";   
       truncation_symbol = "…/";
       truncate_to_repo = false;
     };
 
 
     git_branch = {
-      style = "bold #fab387"; #rose pine ebbcba"; #ff79c6";
+      style = "bold fg:gold"; #"#fab387"; #rose pine ebbcba"; #ff79c6";
     };
 
     git_status = {
-      style = "bold #74c7ec"; #rosepoine c4a7e7"; #ff5555";
+      style = "bold fg:love"; #rosepoine c4a7e7"; #ff5555";
     };
 
     hostname = {
@@ -130,7 +143,7 @@
 
     username = {
       #format = "[\$user](\$style) on ";
-      style_user = "bold #8be9fd"; #TODO
+      style_user = "bold fg:iris"; #TODO
     };
 
     nodejs = {
@@ -149,11 +162,11 @@
     time = {
       disabled = false;
       use_12hr = true;
-      style = "bold #eed49f"; #rosepine #f6c177";
+      style = "bold fg:gold"; #rosepine #f6c177";
     };
 
     fill = {
-      style = "bold #50FA7B";
+      style = "bold fg:overlay";
       symbol = " ";
     };
 

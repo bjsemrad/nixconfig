@@ -19,7 +19,8 @@
         margin-bottom = 5;
         modules-left = [
           "hyprland/workspaces"
-          "wlr/taskbar"
+          "hyprland/window"
+          # "wlr/taskbar"
         ];
         modules-center = [          
           "cpu"
@@ -238,39 +239,25 @@
       };
     };
     style = ''
-            @define-color base   #3b4045;/*rgba(30,30,46, 0.8);*/ /*#1e1e2e;*/
-            @define-color mantle #31363b;
-            @define-color crust  rgba(11, 10, 16, 0.95); /*#232629;*/
+            @define-color base            #191724;
+            @define-color surface         #1f1d2e;
+            @define-color overlay         #26233a;
 
-            @define-color text     #fcfcfc;
-            @define-color subtext0 #a6adc8;
-            @define-color subtext1 #bac2de;
+            @define-color muted           #6e6a86;
+            @define-color subtle          #908caa;
+            @define-color text            #e0def4;
 
-            @define-color hover #3daee6;
+            @define-color love            #eb6f92;
+            @define-color gold            #f6c177;
+            @define-color rose            #ebbcba;
+            @define-color pine            #31748f;
+            @define-color foam            #9ccfd8;
+            @define-color iris            #c4a7e7;
 
-            @define-color surface0 #313244;
-            @define-color surface1 #45475a;
-            @define-color surface2 #585b70;
+            @define-color highlightLow    #21202e;
+            @define-color highlightMed    #403d52;
+            @define-color highlightHigh   #524f67;
 
-            @define-color overlay0 #6c7086;
-            @define-color overlay1 #7f849c;
-            @define-color overlay2 #9399b2;
-
-            @define-color blue      #7EBAE4; 
-            @define-color lavender  #b4befe;
-            @define-color sapphire  #74c7ec;
-            @define-color sky       #89dceb;
-            @define-color teal      #94e2d5;
-            @define-color green     #27ae60;
-            @define-color orange    #f67400;
-            @define-color yellow    #fdbc4b;
-            @define-color peach     #fab387;
-            @define-color maroon    #eba0ac;
-            @define-color red       #da4453;
-            @define-color mauve     #cba6f7;
-            @define-color pink      #f5c2e7;
-            @define-color flamingo  #f2cdcd;
-            @define-color rosewater #f5e0dc;
             * {
               font-family: JetBrainsMono Nerd Font;
               /*font-weight: bold; */
@@ -281,7 +268,7 @@
             }
 
             window#waybar {
-              background-color: rgba(0, 0, 0, 1.0);
+              background-color: rgba(17, 17, 17, 1.0);
               /*background-color: rgba(11, 10, 16, 1.0);*/
               transition-property: background-color;
               transition-duration: 0.5s;
@@ -301,7 +288,7 @@
             }
 
             tooltip {
-              background-color: @crust;
+              background-color: @surface;
               border: 2px solid #0b0a10;
               color: @text;
               border-radius: 10px;
