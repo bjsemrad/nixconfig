@@ -18,15 +18,15 @@
         disable_loading_bar = true;
       };
       label = [{
-        text = ""; #"cmd[update:1000] echo \"<b><big> $(${pkgs.coreutils}/bin/date +\"%r\") </big></b>\"";
-        color = "rgb(200, 200, 200)";
+        text = "cmd[update:1000] echo \"$(${pkgs.coreutils}/bin/date +\"%r\")\"";
+        color = "rgba(171, 178, 191, 1)";
         font_size = 64;
         position = {
-          x = 0;
+          x = -30;
           y = 16;
         };
-        halign = "center";
-        valign = "center";
+        halign = "right";
+        valign = "top";
       }];
       input-field = [{
         size = {
