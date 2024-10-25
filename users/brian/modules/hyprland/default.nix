@@ -63,11 +63,11 @@
         #",preferred,auto,1"
       ] ++ (
         if (osConfig.networking.hostName == "thor") then
-          [ "eDP-1,preferred,auto,1.6" 
+          [ "eDP-1,preferred,auto,1.5" 
 					  ",preferred,auto,1.5"
 					]
         else if (osConfig.networking.hostName == "odin") then
-          [ "DP-3,3840x2560@60,auto,1.5" 
+          [ "DP-3,3840x2560@60,auto,1.6" 
 						",preferred,auto,1"
 					]
         else [ ",preferred,auto,1.0" ]
