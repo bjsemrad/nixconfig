@@ -262,22 +262,23 @@ themes {
 		black "#26233a"
 		white "#e0def4"
 	}
-  //  draculacust {
-  //      fg 248 248 242
-  //      bg "#282a36"
-  //      black "#282a36"
-  //      red 255 85 85
-  //      green 80 250 123
-  //     yellow 241 250 140
-  //      blue 98 114 164
-  //      magenta 255 121 198
-  //      cyan 139 233 253
-  //      white 255 255 255
-   //     orange 255 184 108
-   // }
+        onedark {
+            bg "#1E2127"
+	    fg "#a0a8b7"
+        //"$fg_dark" = "0xffabb2bf"
+	    red "#e55561"
+	    green "#8ebd6b"
+	    blue "#4fa6ed"
+	    yellow "#e2b86b"
+	    magenta "#bf68d9"
+	    orange "#cc9057"
+	    cyan "#48b0bd"
+	    white "#a0a8b7"
+            black "#0e1013"
+        }
 }
 
-theme "rose-pine"
+theme "onedark"
 //theme "catppuccin-mocha"
 // Choose the theme that is specified in the themes section.
 // Default: default
