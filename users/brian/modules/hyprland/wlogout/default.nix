@@ -35,11 +35,11 @@
     ];
 
     style = ''
-            window {
-          font-family: CaskaydiaCove Nerd Font, monospace;
+        window {
+          font-family: JetBrainsMono Nerd Font;
           font-size: 12pt;
-          color: #cdd6f4; 
-          background-color: rgba(30, 30, 46, 0.5);
+          color: #abb2bf; /* fg_dark */
+          background-color:  rgba(30, 33, 39, 0.85);
       }
 
       button {
@@ -47,20 +47,20 @@
           background-position: center;
           background-size: 20%;
           border: none;
-          color: #ced7f4;
+          color: #abb2bf; /* fg_dark */
           text-shadow: none;
-          background-color: rgba(30, 30, 46, 0);
+          background-color: rgba(30, 33, 39, 0);
           margin: 5px;
           transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
       }
 
       button:hover {
-          background-color: rgba(49, 50, 68, 0.1);
+          background-color: rgba(50,54,65, 0.5); /* bg3 */
       }
 
       button:focus {
-          background-color: #f6f5f4;
-          color: #18182a;
+          background-color: #4fa6ed; /*blue*/
+          color: #1E2127; /* bgDark */
           text-shadow: none;
       }
 
