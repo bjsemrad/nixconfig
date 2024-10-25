@@ -239,7 +239,7 @@
       };
     };
     style = ''
-            @define-color black        #000000; /* One Dark black #0e1013; */ /* rgba(14, 16, 19, 1) */
+            @define-color black        #0e1013; /* rgba(14, 16, 19, 1) */
             @define-color bgDark       #1E2127; /* rgba(30, 33, 39, 1) */
 	    @define-color bg0          #1f2329;
 	    @define-color bg1          #282c34;
@@ -278,7 +278,7 @@
             }
 
             window#waybar {
-              background-color: rgba(0, 0, 0, 1.0);
+              background-color: rgba(14, 16, 19, 1.0);
               transition-property: background-color;
               transition-duration: 0.5s;
             }
