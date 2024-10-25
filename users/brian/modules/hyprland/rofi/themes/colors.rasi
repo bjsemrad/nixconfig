@@ -1,5 +1,5 @@
 * {
-    background:     #0e1013ff; /* Black */
+    background:     #000000ff; /*#0e1013ff;*/ /* Black */
     background-alt: #282c34ff; /* Bg1 */  
     foreground:     #a0a8b7ff; /* text */
     selected:       #4fa6edff; /* blue */
