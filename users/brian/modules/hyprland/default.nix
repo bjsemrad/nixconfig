@@ -63,11 +63,11 @@
         #",preferred,auto,1"
       ] ++ (
         if (osConfig.networking.hostName == "thor") then
-          [ "eDP-1,preferred,auto,1.5" 
+          [ "eDP-1,preferred,auto,1.6" 
 					  ",preferred,auto,1.5"
 					]
         else if (osConfig.networking.hostName == "odin") then
-          [ ",3840x1600@60,auto,1.0" 
+          [ "DP-3,3840x2560@60,auto,1.5" 
 						",preferred,auto,1"
 					]
         else [ ",preferred,auto,1.0" ]
@@ -105,7 +105,7 @@
         "NIXOS_OZONE_WL,1"
       ] ++ (
         if (osConfig.networking.hostName == "thor") then
-          [ "GDK_DPI_SCALE,1.5" ]
+          [ "GDK_DPI_SCALE,1.0" ]
         else if (osConfig.networking.hostName == "odin") then
           [
             "GDK_DPI_SCALE,1.0"
@@ -302,10 +302,10 @@
         "$mainMod SHIFT, down, swapwindow, d"
 
         # Resize window
-        "$mainMod CTRL_L, left, resizeactive, -160 0"
-        "$mainMod CTRL_L, right, resizeactive, 160 0"
-        "$mainMod CTRL_L, down, resizeactive, 0 -160"
-        "$mainMod CTRL_L, up, resizeactive, 0 160"
+        "$mainMod CTRL_L, left, resizeactive, -10 0"
+        "$mainMod CTRL_L, right, resizeactive, 10 0"
+        "$mainMod CTRL_L, down, resizeactive, 0 -10"
+        "$mainMod CTRL_L, up, resizeactive, 0 10"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
