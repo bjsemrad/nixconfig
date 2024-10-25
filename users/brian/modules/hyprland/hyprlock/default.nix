@@ -1,11 +1,16 @@
 { config, inputs, pkgs, ... }:
 {
+  home.file = {
+    ".config/hypr/nix-logo.png".source = ./nixos-logo.png;
+    ".config/hypr/tux-small.png".source = ./tux-small.png;
+  };
   programs.hyprlock = {
     enable = true;
     package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
     settings = {
       background = [{
-        path = "/home/brian/.config/hypr/leaves.png";
+        #path = "/home/brian/.config/hypr/leaves.png";
+        color = "rgba(30,33,39, 1.0)"; #bgDark
         blur_passes = 1;
         contrast = 0.8916;
         brightness = 0.8172;
@@ -18,35 +23,67 @@
         disable_loading_bar = true;
       };
       label = [{
-        text = "cmd[update:1000] echo \"$(${pkgs.coreutils}/bin/date +\"%r\")\"";
+        text = "cmd[update:1000] echo \"$(${pkgs.coreutils}/bin/date +'%I:%M %P')\"";
         color = "rgba(171, 178, 191, 1)";
         font_size = 64;
-        position = {
-          x = -30;
-          y = 16;
-        };
+        position = "-40, -10";
+        font = "JetBrainsMono Nerd Font";
+        halign = "right";
+        valign = "top";
+      }
+      {
+        text = "cmd[update:43200000] echo \"$(${pkgs.coreutils}/bin/date +'%A, %B %d')\"";
+        color = "rgba(171, 178, 191, 1)";
+        font_size = 24;
+        position = "-40, -150";
+        font = "JetBrainsMono Nerd Font";
         halign = "right";
         valign = "top";
       }];
+      image = [{
+        path = "/home/brian/.config/hypr/tux-small.png";
+        size = 50;
+        border_color = "rgba(30,33,39, 1.0)";
+        position = "0, 150";
+        halign = "center";
+        valign = "center";
+      }];
       input-field = [{
-        size = {
-          width = 250;
-          height = 60;
-        };
+        size = "250,60";
+        font = "JetBrainsMono Nerd Font";
         outline_thickness = 2;
         dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
         dots_spacing = 0.2; # Scale of dots' absolute size, 0.0 - 1.0
         dots_center = true;
-        outer_color = "rgba(0, 0, 0, 0)";
-        inner_color = "rgba(0, 0, 0, 0.5)";
-        font_color = "rgb(200, 200, 200)";
+	#          "$black" = "0xff0e1013";
+	#        "$bgDark" = "0xff1E2127";
+	# "$bg0" = "0xff1f2329";
+	# "$bg1" = "0xff282c34";
+	# "$bg2" = "0xff30363f";
+	# "$bg3" = "0xff323641";
+	# "$bg_d" = "0xff181b20";
+	# "$bg_blue" = "0xff61afef";
+	# "$bg_yellow" = "0xffe8c88c";
+	# "$fg" = "0xffa0a8b7";
+	#        "$fg_dark" = "0xffabb2bf";
+	# "$purple" = "0xffbf68d9";
+	# "$green" = "0xff8ebd6b";
+	# "$orange" = "0xffcc9057";
+	# "$blue" = "0xff4fa6ed";
+	# "$yellow" = "0xffe2b86b";
+	# "$cyan" = "0xff48b0bd";
+	# "$red" = "0xffe55561";
+	# "$grey" = "0xff535965";
+
+        check_color = "rgba(204,144,87, 1.0)";
+        outer_color = "rgba(191,104,217, 1.0)"; #purple
+        inner_color = "rgba(30,33,39, 1.0)"; #bgDark
+        font_color = "rgba(171,178,191, 1.0)"; #fg_dark
+        fail_color = "rgba(229,85,97, 1.0)"; #red
         fade_on_empty = false;
-        placeholder_text = "<i><span foreground=\"##cdd6f4\">Input Password...</span></i>";
+        placeholder_text = "<i><span foreground=\"##abb2bf\">Input Password...</span></i>";
         hide_input = false;
-        position = {
-          x = 0;
-          y = -120;
-        };
+        # position = "0, -120";
         halign = "center";
         valign = "center";
       }];
