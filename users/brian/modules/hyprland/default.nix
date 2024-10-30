@@ -357,22 +357,6 @@
       bindl = [
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && dunstify -h int:value:\"$(pamixer --get-volume)\" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 \"Volume: $(pamixer --get-volume) %\""
       ];
-
-
-      # # For AGS 
-      # binde = [
-      #   ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-      #   ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"
-      #   ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
-      #   ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
-      # ];
-      #
-      # bindl = [
-      #   ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-      #
-      # ];
-
-
     };
     extraConfig = ''
     '';
