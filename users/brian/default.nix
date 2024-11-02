@@ -97,7 +97,11 @@
   };
 
   # environment.
-  programs.direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    enableNushellIntegration = true;  
+    enableZshIntegration = true;
+  };
 
   #CONFIRM  programs.home-manager.enable = true;
 
