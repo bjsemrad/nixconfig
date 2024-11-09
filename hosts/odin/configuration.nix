@@ -47,6 +47,16 @@
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
 
+  services.ollama = {
+    enable = true;
+    acceleration = "rocm";
+    environmentVariables = {
+      HSA_OVERRIDE_GFX_VERSION="10.3.0";
+      HCC_AMDGPU_TARGET = "gfx1030";
+    };
+    package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.ollama;
+  };
+
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Semrad";
