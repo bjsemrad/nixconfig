@@ -131,7 +131,7 @@ let
       sshprox="ssh root@proxmox.otter-rigel.ts.net";
       sshtruenas="ssh root@10.0.10.13";
       sshchannels="ssh channels@channels.otter-rigel.ts.net";
-      sshminecraft="ssh mine@minecraft@.otter-rigel.ts.net";
+      sshminecraft="ssh mine@minecraft.otter-rigel.ts.net";
       dashboard-rebuild="nixos-rebuild switch -s --flake .#heimdall --target-host root@dashboard.otter-rigel.ts.net  --verbose";
       tailreceive="sudo tailscale file get .";
       setup-vial="qmk setup bjsemrad/vial-qmk -H ~/vial-qmk -b vial";
