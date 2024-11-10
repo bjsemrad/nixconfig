@@ -101,6 +101,7 @@
         "GTK_THEME,Adwaita:dark"
         "XCURSOR_SIZE,22"
         "HYPRCURSOR_SIZE,22"
+        "HYPRCURSOR_THEME,Bibata-Modern-Classic"
         "QT_QPA_PLATFORM,wayland"
         "QT_QPA_PLATFORMTHEME,qt5ct"
         "NIXOS_OZONE_WL,1"
