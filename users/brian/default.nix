@@ -75,12 +75,11 @@
       dotnet-sdk_8
 
       brave
-      mumble
       devenv
     ] ++ [  inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor
             inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
             inputs.nixpkgs-unstable.legacyPackages.${system}.cider
-
+            inputs.nixpkgs-unstable.legacyPackages.${system}.mumble
     ];
 
     sessionVariables = {
