@@ -61,6 +61,15 @@
     label = "Games";
   };
 
+  fileSystems."/mnt/storage" = {
+    device = "/dev/disk/by-uuid/1a7661ed-6c37-4d6d-97dc-aae84f419742";
+    fsType = "ext4";
+    options = [ "noatime" "nosuid" "nodev" "nofail" "x-gvfs-show" ];
+    label = "Storage";
+  };
+
+
+
 
 
   swapDevices = [{ device = "/swap/swapfile"; }];
