@@ -68,6 +68,7 @@ let
 
   programs.nushell = {
     enable = true;
+    envFile.text = ''$env.PATH = ($env.PATH | split row (char esep) | append '~/tools/')'';
     extraConfig = ''
       $env.config = {
          show_banner: false,
