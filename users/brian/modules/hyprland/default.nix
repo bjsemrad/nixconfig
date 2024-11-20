@@ -169,7 +169,7 @@
       decoration = {
         rounding = 10;
         active_opacity = 0.85;
-        inactive_opacity = 0.6;
+        inactive_opacity = 0.85;
 
         # layerrule = ["blur, waybar" "blur, rofi"];
 
