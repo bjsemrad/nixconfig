@@ -20,7 +20,9 @@
       general = {
         no_fade_in = false;
         grace = 0;
+        immediate_render = true;
         disable_loading_bar = true;
+        enable_fingerprint = true;
       };
       label = [{
         text = "cmd[update:1000] echo \"$(${pkgs.coreutils}/bin/date +'%I:%M %P')\"";

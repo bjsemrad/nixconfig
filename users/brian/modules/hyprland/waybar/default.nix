@@ -32,8 +32,8 @@
           "custom/clipboard"
           "pulseaudio#sink"
           "pulseaudio#source"
-          "network"
-          "bluetooth"
+          # "network"
+          # "bluetooth"
           "battery"
           "clock"
         ];

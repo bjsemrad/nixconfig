@@ -3,6 +3,7 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
   services.gvfs = {
     enable = true;
     package = lib.mkForce pkgs.gnome.gvfs;

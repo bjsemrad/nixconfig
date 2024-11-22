@@ -50,11 +50,18 @@
 
   };
 
+  qt = {
+    enable = true;
+    style = {
+      name = "adwaita-dark";
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [
-      pkgs.hyprlandPlugins.hyprexpo
+      # pkgs.hyprlandPlugins.hyprexpo
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       #  (pkgs.callPackage ./hyprbars.nix { inherit hyprland-plugins; } )
     ];
@@ -86,7 +93,9 @@
         "hyprpaper"
         "wl-paste --type text --watch cliphist -max-items 25 store" #Stores only text data
         "wl-paste --type image --watch cliphist -max-items 25 store" #Stores only image data
-        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+        "systemctl --user start hyprpolkitagent"
+        "systemctl --user enable --now hypridle.service"
+        # "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       ] ++ (
         if (osConfig.networking.hostName == "odin") then
           [
@@ -181,10 +190,13 @@
           ignore_opacity = true;
           xray = true;
         };
-        drop_shadow = true;
-        shadow_range = 30;
-        shadow_render_power = 3;
-        "col.shadow" = "0x66000000";
+
+        shadow = {
+          enabled = true;
+          range = 30;
+          render_power = 3;
+          color = "0x66000000";
+        };
       };
 
       animations = {
@@ -219,14 +231,14 @@
       };
 
       plugin = {
-        hyprexpo = {
-          columns = 3;
-          gap_size = 5;
-          workspace_method = "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
-          enable_gesture = true; # laptop touchpad, 4 fingers
-          gesture_distance = 300; # how far is the "max"
-          gesture_positive = false; # positive = swipe down. Negative = swipe up.
-        };
+        # hyprexpo = {
+        #   columns = 3;
+        #   gap_size = 5;
+        #   workspace_method = "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
+        #   enable_gesture = true; # laptop touchpad, 4 fingers
+        #   gesture_distance = 300; # how far is the "max"
+        #   gesture_positive = false; # positive = swipe down. Negative = swipe up.
+        # };
       };
 
 
@@ -290,7 +302,7 @@
         "$mainMod SHIFT, W, exec, pkill waybar && waybar"
         # "$mainMod CTRL_L SHIFT, A, exec, ags -q && ags"
 
-        "$mainMod, grave, hyprexpo:expo, toggle"
+        # "$mainMod, grave, hyprexpo:expo, toggle"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
@@ -363,6 +375,7 @@
     extraConfig = ''
     '';
     xwayland = { enable = true; };
-    systemd.enable = true;
+    systemd.enable = false;
   };
+
 }

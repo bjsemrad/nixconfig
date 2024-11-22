@@ -30,6 +30,11 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+    hyprland-systeminfo = {
+      url = "github:hyprwm/hyprsysteminfo";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     hyprlock = {
       url = "github:hyprwm/hyprlock/v0.5.0";
@@ -85,6 +90,7 @@
     , hyprland
     , hypridle
     , hyprlock
+    , hyprland-systeminfo
     , waybar
     # , neovim-flake
     , matugen

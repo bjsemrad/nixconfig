@@ -3,16 +3,24 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    # withUWSM = true; NOT YET
   };
   services.blueman.enable = true;
-
   programs.thunar.enable = true;
 
   services.displayManager = {
-    defaultSession = "hyprland";
+    defaultSession = "hyprland-uwsm";
   };
 
-  security.pam.services.swaylock = { };
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors.hyprland = {
+        binPath = "/run/current-system/sw/bin/Hyprland";
+        comment = "Hyprland session managed bt uwsm";
+        prettyName = "Hyprland";
+    };
+  };
+
   security.pam.services.hyprlock = {};
   environment.systemPackages = with pkgs; [
     hyprpaper
@@ -31,6 +39,8 @@
     slurp
     gojq
     adw-gtk3
-    rose-pine-gtk-theme
+    hyprpolkitagent
+    inputs.hyprland-systeminfo.packages.${pkgs.system}.hyprsysteminfo
+
   ];
 }
