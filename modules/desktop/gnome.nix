@@ -8,14 +8,14 @@
     package = lib.mkForce pkgs.gnome.gvfs;
   };
   environment.gnome.excludePackages = with pkgs; [
-    gnome.cheese
+    cheese
     gnome-photos
-    gnome.gnome-music
+    gnome-music
     epiphany
     gnome-tour
-    gnome.gnome-maps
-    gnome.gnome-tweaks
-    gnome.gnome-characters
+    gnome-maps
+    gnome-tweaks
+    gnome-characters
   ];
 
   environment.systemPackages = with pkgs; [

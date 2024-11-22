@@ -2,7 +2,7 @@
   description = "NixOS Configuration";
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-24.05";
+      url = "github:NixOS/nixpkgs/nixos-24.11";
     };
 
     nixpkgs-unstable = {
@@ -14,7 +14,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -22,7 +22,7 @@
       type = "git"; 
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
-      ref = "refs/tags/v0.41.2";
+      ref = "refs/tags/v0.45.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -31,13 +31,12 @@
       inputs.hyprland.follows = "hyprland";
     };
     
-    /*Drop these and potentlly hyprland when we move to 24.05*/
     hyprlock = {
-      url = "github:hyprwm/hyprlock/v0.4.1";
+      url = "github:hyprwm/hyprlock/v0.5.0";
     };
 
     hypridle = {
-      url = "github:hyprwm/hypridle/v0.1.2";
+      url = "github:hyprwm/hypridle/v0.1.5";
     };
 
     alacritty-theme = {
@@ -47,7 +46,7 @@
     waybar = {
       type = "git";
       url = "https://github.com/Alexays/Waybar";
-      ref = "refs/tags/0.10.4";
+      ref = "refs/tags/0.11.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -63,7 +62,7 @@
     # };
 
     matugen = {
-      url = "github:InioX/matugen?ref=v2.3.0";
+      url = "github:InioX/matugen?ref=v2.4.1";
     };
 
     # cosmic = {
