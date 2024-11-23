@@ -38,7 +38,6 @@
       clang-tools
       bear
       cmake
-      croc
       kotlin
       kora-icon-theme
       vial
@@ -50,7 +49,6 @@
       gnumake
       quickemu
       python3
-      distrobox
       exercism
       vlc
       httpie
@@ -58,12 +56,9 @@
       yubikey-manager
       yubikey-manager-qt
       backblaze-b2
-      celeste
       #Failed to download try again later mblock-mlink
       gimp
       nixd
-      podman-tui
-      podman-compose
       docker-compose
       pciutils
       slides
@@ -73,19 +68,15 @@
       protonmail-desktop
       signal-desktop
       dotnet-sdk_8
-
-      brave
       devenv
-
       slack
+      lazygit
     ] ++ [  
-            #inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor
+            inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor
             inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
             inputs.nixpkgs-unstable.legacyPackages.${system}.cider
             inputs.nixpkgs-unstable.legacyPackages.${system}.mumble
-
             inputs.walker.packages.${system}.default
-            inputs.ashell.defaultPackage.${system}
       ];
 
     sessionVariables = {
