@@ -63,8 +63,8 @@ let
         fi
       }
 
-      # zellij_tab_name_update
-      # chpwd_functions+=(zellij_tab_name_update)
+      zellij_tab_name_update
+      chpwd_functions+=(zellij_tab_name_update)
       # This command let's me execute arbitrary binaries downloaded through channels such as mason.
       export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
     '';
@@ -113,8 +113,8 @@ let
         }
       }
 
-      # start_zellij
-      # zellij_tab_name_update
+      start_zellij
+      zellij_tab_name_update
 
     '';
       # $env.NIX_LD = (setupNIXLD)
