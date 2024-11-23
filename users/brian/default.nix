@@ -83,7 +83,9 @@
             inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
             inputs.nixpkgs-unstable.legacyPackages.${system}.cider
             inputs.nixpkgs-unstable.legacyPackages.${system}.mumble
-    ];
+
+            inputs.walker.packages.${system}.default
+      ];
 
     sessionVariables = {
       # EDITOR = "emacs";

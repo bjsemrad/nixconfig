@@ -55,6 +55,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    walker = {
+      url = "github:abenz1267/walker/v0.9.5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # neovim-flake = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -95,6 +100,7 @@
     # , neovim-flake
     , matugen
     , nixpkgs-unstable
+    , walker
     # , cosmic
     , ...
     } @ inputs:
