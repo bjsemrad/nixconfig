@@ -369,6 +369,7 @@
             #clock {
               color: @fg_dark;
               margin-right: 10px;
+              margin-left: 10px;
             }
 
             #tray {
