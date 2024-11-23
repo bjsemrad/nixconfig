@@ -85,6 +85,7 @@
             inputs.nixpkgs-unstable.legacyPackages.${system}.mumble
 
             inputs.walker.packages.${system}.default
+            inputs.ashell.defaultPackage.${system}
       ];
 
     sessionVariables = {

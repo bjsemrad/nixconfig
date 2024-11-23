@@ -35,7 +35,7 @@
       url = "github:hyprwm/hyprsysteminfo";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     hyprlock = {
       url = "github:hyprwm/hyprlock/v0.5.0";
     };
@@ -47,7 +47,7 @@
     alacritty-theme = {
       url = "github:alexghr/alacritty-theme.nix";#/2cd654fa494fc8ecb226ca1e7c5f91cf1cebbba9";
     }; 
-    
+
     waybar = {
       type = "git";
       url = "https://github.com/Alexays/Waybar";
@@ -57,6 +57,11 @@
 
     walker = {
       url = "github:abenz1267/walker/v0.9.5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ashell = {
+      url = "github:MalpenZibo/ashell/0.2.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -101,6 +106,7 @@
     , matugen
     , nixpkgs-unstable
     , walker
+    , ashell
     # , cosmic
     , ...
     } @ inputs:
