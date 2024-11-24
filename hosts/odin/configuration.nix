@@ -10,6 +10,7 @@
 
     services-firmware
     desktop-gnome
+    desktop-greetd
     desktop-hyprland
     services-tailscale
     services-network
