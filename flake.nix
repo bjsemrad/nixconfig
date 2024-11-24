@@ -64,16 +64,6 @@
       url = "github:InioX/matugen?ref=v2.4.1";
     };
 
-    # cosmic = {
-    #   url = "github:lilyinstarlight/nixos-cosmic";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # tailscale = {
-      # url = "github:/tailscale/tailscale/v1.70.0";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
   };
   outputs =
     { self
@@ -89,7 +79,6 @@
     , matugen
     , nixpkgs-unstable
     , walker
-    # , cosmic
     , ...
     } @ inputs:
     let
@@ -106,8 +95,6 @@
             ./hosts/thor/configuration.nix
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.framework-12th-gen-intel
-            # cosmic.nixosModules.default
-            #nixos-hardware.nixosModules.common-gpu-intel
           ];
           specialArgs = { 
             inherit inputs; 

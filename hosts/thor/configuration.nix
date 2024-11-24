@@ -15,7 +15,6 @@
     #desktop-plasma
     #desktop-sway
     desktop-hyprland
-    # desktop-cosmic
     services-tailscale
     services-network
     services-sound
