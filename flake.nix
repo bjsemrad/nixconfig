@@ -27,7 +27,7 @@
     };
 
     hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
+      url = "github:hyprwm/hyprland-plugins/v0.45.0";
       inputs.hyprland.follows = "hyprland";
     };
 
@@ -60,22 +60,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ashell = {
-      url = "github:MalpenZibo/ashell/0.2.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # neovim-flake = {
-    #   url = "github:nix-community/neovim-nightly-overlay";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.neovim-src.url = "github:neovim/neovim/v0.10.2"; 
-      # url = "github:neovim/neovim/v0.10.1?dir=contrib"; 
-    # };
-
-    # ags = {
-    #   url = "github:Aylur/ags";#/v1.8.2";
-    # };
-
     matugen = {
       url = "github:InioX/matugen?ref=v2.4.1";
     };
@@ -84,7 +68,7 @@
     #   url = "github:lilyinstarlight/nixos-cosmic";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    #
+
     # tailscale = {
       # url = "github:/tailscale/tailscale/v1.70.0";
       # inputs.nixpkgs.follows = "nixpkgs";
@@ -102,11 +86,9 @@
     , hyprlock
     , hyprland-systeminfo
     , waybar
-    # , neovim-flake
     , matugen
     , nixpkgs-unstable
     , walker
-    , ashell
     # , cosmic
     , ...
     } @ inputs:

@@ -63,8 +63,7 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [
       # pkgs.hyprlandPlugins.hyprexpo
-      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-      #  (pkgs.callPackage ./hyprbars.nix { inherit hyprland-plugins; } )
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
     ];
     settings = {
       monitor = [
@@ -232,14 +231,14 @@
       };
 
       plugin = {
-        # hyprexpo = {
-        #   columns = 3;
-        #   gap_size = 5;
-        #   workspace_method = "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
-        #   enable_gesture = true; # laptop touchpad, 4 fingers
-        #   gesture_distance = 300; # how far is the "max"
-        #   gesture_positive = false; # positive = swipe down. Negative = swipe up.
-        # };
+        hyprexpo = {
+          columns = 3;
+          gap_size = 5;
+          workspace_method = "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
+          enable_gesture = true; # laptop touchpad, 4 fingers
+          gesture_distance = 300; # how far is the "max"
+          gesture_positive = false; # positive = swipe down. Negative = swipe up.
+        };
       };
 
 
@@ -280,7 +279,7 @@
       "$mainMod" = "SUPER_L";
 
       bind = [
-        #"$mainMod, grave, hyprexpo:expo, toggle"  # can be: toggle, off/disable or on/enable
+        "$mainMod, grave, hyprexpo:expo, toggle"  # can be: toggle, off/disable or on/enable
 
         "$mainMod, RETURN, exec, kitty" #alacritty"
         "$mainMod, Q, killactive,"
