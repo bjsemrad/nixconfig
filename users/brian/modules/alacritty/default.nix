@@ -25,9 +25,9 @@
       style = "Regular";
     };
     #shell.args = [ "--login" "-c" "tmux attach || tmux" ];
-    shell.program = "${pkgs.zsh}/bin/zsh";
+    terminal.shell.program = "${pkgs.zsh}/bin/zsh";
     env.term = "xterm-256color";
-    import = [pkgs.alacritty-theme.one_dark];
+    general.import = [pkgs.alacritty-theme.one_dark];
     # import = [ pkgs.alacritty-theme.catppuccin_mocha ]; # rose-pine  ];
   };
 }

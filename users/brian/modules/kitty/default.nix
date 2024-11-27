@@ -13,6 +13,7 @@
     settings = {
       include = "onedark-dark.conf";
       enable_mouse_selection = true;
+      term = "xterm-256color";
     };
     # theme = "One Dark";
     #theme = "Rosé Pine";

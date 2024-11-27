@@ -1,23 +1,17 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports = with inputs.self.nixosModules; [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    common-nixsettings
-    virt-qemu-guest
-  ];
+      ./hardware-configuration.nix
+      common-nixsettings
+
+    ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "loki"; # Define your hostname.
+  networking.hostName = "yggdrasil"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -46,27 +40,41 @@
   };
 
   # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.worm = {
+   users.users.nginx = {
     isNormalUser = true;
-    description = "worm";
-    extraGroups = [ "networkmanager" "wheel" ];
+    description = "Nginx";
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [ ];
+    shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxG6NiEQZOEJiqpEDXg/eERqe71XNqnNLlI7VaOGqch bjsemrad@gmail.com"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBlihWxnAF0W+cuKqpQbN1yOY0bABNhQx7qb1sp83Z1 bjsemrad@gmail.com"
     ];
   };
 
-  users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxG6NiEQZOEJiqpEDXg/eERqe71XNqnNLlI7VaOGqch bjsemrad@gmail.com"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBlihWxnAF0W+cuKqpQbN1yOY0bABNhQx7qb1sp83Z1 bjsemrad@gmail.com"
+   users.users.root.openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxG6NiEQZOEJiqpEDXg/eERqe71XNqnNLlI7VaOGqch bjsemrad@gmail.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBlihWxnAF0W+cuKqpQbN1yOY0bABNhQx7qb1sp83Z1 bjsemrad@gmail.com"
   ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "hmback";
+    users.nginx = import "${inputs.self}/users/nginx";
+    extraSpecialArgs = {
+      inherit inputs;
+    };
+  };
+
+ 
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -74,22 +82,26 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
+    vim
+    docker-compose
+    compose2nix
     tailscale
+    curl
+    wget
+    git
   ];
 
   # List services that you want to enable:
-  services.croc = {
-    enable = true;
-    openFirewall = true;
-  };
+  virtualisation.docker.enable = true;
+
   services.tailscale.enable = true;
 
   # Enable the OpenSSH daemon.
+  security.pam.sshAgentAuth.enable = true; 
   services.openssh.enable = true;
+  
 
-  # Open ports in the firewall.
+   # Open ports in the firewall.
   networking.firewall = {
     # enable the firewall
     enable = true;
@@ -106,11 +118,6 @@
     allowedTCPPorts = [ 22 5357 ];
   };
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

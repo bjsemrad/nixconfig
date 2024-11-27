@@ -119,14 +119,15 @@
           ];
           specialArgs = { inherit inputs; };
         };
-        loki = lib.nixosSystem {
-          inherit system; #Croc/Wormhole Server 
+        yggdrasil = lib.nixosSystem {
+          inherit system; #Nginx Proxy for internal 
           modules = [
-            ./hosts/loki/configuration.nix
+            ./hosts/yggdrasil/configuration.nix
             home-manager.nixosModules.home-manager
           ];
           specialArgs = { inherit inputs; };
         };
+
       };
     };
 }
