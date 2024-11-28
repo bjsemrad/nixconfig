@@ -23,7 +23,7 @@
     stateVersion = "24.11"; # Please read the comment before changing.
   };
 
-   programs.zsh = {
+  programs.zsh = {
     enable = true;
     shellAliases = {
       nixgc = "nix-store --gc";

@@ -11,5 +11,7 @@
   services.avahi.nssmdns4 = true;
   services.avahi.openFirewall = true;
 
+  services.resolved.enable = true;
+
 }
 

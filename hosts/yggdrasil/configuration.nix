@@ -4,7 +4,7 @@
   imports = with inputs.self.nixosModules; [
       ./hardware-configuration.nix
       common-nixsettings
-
+      ./nginx-proxy.nix
     ];
 
   # Bootloader.
@@ -59,7 +59,12 @@
     ];
   };
 
-   users.users.root.openssh.authorizedKeys.keys = [
+  systemd.tmpfiles.rules = [
+        "d /home/nginx/data 0770 nginx users -"
+        "d /home/nginx/letsencrypt 0770 letsencrypt users -"
+  ];
+
+  users.users.root.openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxG6NiEQZOEJiqpEDXg/eERqe71XNqnNLlI7VaOGqch bjsemrad@gmail.com"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBlihWxnAF0W+cuKqpQbN1yOY0bABNhQx7qb1sp83Z1 bjsemrad@gmail.com"
   ];
@@ -92,8 +97,6 @@
   ];
 
   # List services that you want to enable:
-  virtualisation.docker.enable = true;
-
   services.tailscale.enable = true;
 
   # Enable the OpenSSH daemon.
@@ -112,10 +115,10 @@
     trustedInterfaces = [ "tailscale0" ];
 
     # allow the Tailscale UDP port through the firewall (3702 SAMBA)
-    allowedUDPPorts = [ config.services.tailscale.port 3702 ];
+    allowedUDPPorts = [ config.services.tailscale.port ];
 
     # allow you to SSH in over the public internet (5357 SAMBA)
-    allowedTCPPorts = [ 22 5357 ];
+    allowedTCPPorts = [ 22 80 443 81 ];
   };
 
 

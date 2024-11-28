@@ -64,6 +64,7 @@
       slides
       file
       lm_sensors
+      dig
 
       protonmail-desktop
       signal-desktop
