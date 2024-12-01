@@ -325,6 +325,9 @@
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
 
+        # Home Automations
+        "$mainMod CTRL_L ALT_L SHIFT, L, exec, curl -X GET \"https://home.semrad.net/api/webhook/-WaJcaS6CZ1F-V-0exl8Nuhmq\""
+
 
         "$mainMod SHIFT CTRL_L, M, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         "$mainMod SHIFT CTRL_L, S, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
