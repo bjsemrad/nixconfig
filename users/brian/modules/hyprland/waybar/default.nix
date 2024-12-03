@@ -379,7 +379,7 @@
             }
 
             #battery {
-              padding-right: 10px;
+              /*padding-right: 10px;*/
               padding-left: 10px;
               color: @fg_dark;
             }
