@@ -1,7 +1,9 @@
+{ inputs, pkgs, ...}:
 {
   programs.zellij = {
     enable = true;
     enableZshIntegration = true;
+    package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.zellij;
     # Cannot get keybinds to properly work using config file model.
     #settings = {
     #  theme = "catppuccin-mocha";
