@@ -106,9 +106,11 @@
   services.ntfy-sh = {
     enable = true;
     settings = {
+      upstream-base-url =  "https://ntfy.sh";
       listen-http = ":9332";
+      behind-proxy = true;
     };
-    settings.base-url = "http://proxy.otter-rigel.ts.net";
+    settings.base-url = "http://proxy.otter-rigel.ts.net:9332";
   };
    # Open ports in the firewall.
   networking.firewall = {
