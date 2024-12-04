@@ -103,7 +103,13 @@
   security.pam.sshAgentAuth.enable = true; 
   services.openssh.enable = true;
   
-
+  services.ntfy-sh = {
+    enable = true;
+    settings = {
+      listen-http = ":9332";
+    };
+    settings.base-url = "http://proxy.otter-rigel.ts.net";
+  };
    # Open ports in the firewall.
   networking.firewall = {
     # enable the firewall
