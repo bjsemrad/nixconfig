@@ -31,6 +31,7 @@
       go
       rustup
       jetbrains.idea-ultimate
+      jetbrains.rust-rover
       vscode
       zig
       nodejs
