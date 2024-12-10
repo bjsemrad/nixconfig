@@ -39,6 +39,7 @@
       clang-tools
       bear
       cmake
+      lldb
       kotlin
       kora-icon-theme
       vial
