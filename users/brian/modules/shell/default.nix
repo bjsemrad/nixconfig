@@ -77,9 +77,9 @@ let
       $env.config = {
          show_banner: false,
         hooks: {
-          # env_change: {
-            # PWD: {|after| (zellij_tab_name_update) }
-          # }
+          env_change: {
+             PWD: {|after| (zellij_tab_name_update) }
+          }
         }
       }
 
@@ -117,7 +117,6 @@ let
       zellij_tab_name_update
 
     '';
-      # $env.NIX_LD = (setupNIXLD)
     shellAliases = {
       nixswitch = "sudo nixos-rebuild switch --verbose --upgrade --flake ${config.home.homeDirectory}/${nixconfigdir}";
       nixgc = "sudo nix-store --gc";
