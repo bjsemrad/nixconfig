@@ -38,7 +38,7 @@
       gco = "git checkout";
       gst = "git status";
     };
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true; #OLD enableSyntaxHighlighting = true;
 

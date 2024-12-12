@@ -53,7 +53,7 @@ in
       crocsend="send(){ croc --relay loki.otter-rigel.ts.net:9009 send --code $2 $1};send";
       crocreceive="receive(){ croc --relay loki.otter-rigel.ts.net:9009 $1};receive";
     };
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true; #OLD enableSyntaxHighlighting = true;
 

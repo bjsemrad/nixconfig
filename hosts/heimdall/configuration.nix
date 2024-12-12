@@ -118,22 +118,33 @@
 
   services.samba = {
     enable = true;
-    securityType = "user";
     openFirewall = true;
-    extraConfig = ''
-      workgroup = WORKGROUP
-      server string = dashnix
-      netbios name = dashnix
-      security = user 
+    settings = {
+      global = {
+        workgroup = "WORKGROUP";
+        security = "user"; 
+      };
+      server = {
+        string = "dashnix";
+      };
+      netbios = {
+        name = "dashnix";
+      };
+      #security = "user"; 
       #use sendfile = yes
       #max protocol = smb2
       # note: localhost is the ipv6 localhost ::1
-      hosts allow = 10.0.10. 127.0.0.1 localhost
-      hosts deny = 0.0.0.0/0
-      guest account = nobody
-      map to guest = bad user
-    '';
-    shares = {
+      hosts = {
+        allow = "10.0.10. 127.0.0.1 localhost";
+        deny = "0.0.0.0/0";
+      };
+      guest = {
+        account = "nobody";
+      };
+      map = {
+        guest = "bad user";
+      };
+
       private = {
         path = "/home/dash/dashconfig";
         browseable = "yes";
