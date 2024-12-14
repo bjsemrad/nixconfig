@@ -30,6 +30,7 @@
       bitwarden
       go
       rustup
+      cargo-watch
       jetbrains.idea-ultimate
       jetbrains.rust-rover
       vscode
