@@ -55,11 +55,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    walker = {
-      url = "github:abenz1267/walker/v0.9.5";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     matugen = {
       url = "github:InioX/matugen?ref=v2.4.1";
     };
@@ -78,7 +73,6 @@
     , waybar
     , matugen
     , nixpkgs-unstable
-    , walker
     , ...
     } @ inputs:
     let
