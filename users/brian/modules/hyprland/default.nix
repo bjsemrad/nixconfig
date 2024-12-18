@@ -301,7 +301,6 @@
         "$mainMod SHIFT, W, exec,  uwsm app -- pkill waybar && waybar"
         # "$mainMod CTRL_L SHIFT, A, exec, ags -q && ags"
 
-        # "$mainMod, grave, hyprexpo:expo, toggle"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
