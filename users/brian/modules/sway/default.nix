@@ -6,7 +6,7 @@
       modifier = "Mod1";
       # Use kitty as default terminal
       terminal = "alacritty";
-      output = rec {
+      output = {
         eDP-1 = {
           scale = "1.175";
         };

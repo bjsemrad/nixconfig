@@ -20,7 +20,6 @@
       ./modules/atuin
       ./modules/kitty
       ./modules/yazi
-      ./modules/wezterm
     ];
 
   home = {

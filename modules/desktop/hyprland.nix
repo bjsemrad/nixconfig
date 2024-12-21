@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, lib, inputs, ... }:
 {
   programs.hyprland = {
     enable = true;
@@ -7,6 +7,11 @@
   };
   services.blueman.enable = true;
   programs.thunar.enable = true;
+
+   services.gvfs = {
+    enable = true;
+    package = lib.mkForce pkgs.gnome.gvfs;
+  };
 
   services.displayManager = {
     defaultSession = "hyprland-uwsm";
@@ -41,6 +46,7 @@
     adw-gtk3
     hyprpolkitagent
     inputs.hyprland-systeminfo.packages.${pkgs.system}.hyprsysteminfo
+    gnome-firmware
 
   ];
 }
