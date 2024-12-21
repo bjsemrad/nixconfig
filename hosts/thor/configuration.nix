@@ -10,7 +10,7 @@
     ./security.nix
 
     services-firmware
-    desktop-gnome
+    # desktop-gnome
     desktop-greetd
     #desktop-plasma
     #desktop-sway
@@ -29,6 +29,7 @@
     common-fonts
     common-graphics
     common-packages
+    common-bluetooth
 
     keyboard-qmk
     virt-podman
