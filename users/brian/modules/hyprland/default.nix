@@ -111,7 +111,7 @@
         "HYPRCURSOR_SIZE,22"
         "HYPRCURSOR_THEME,Bibata-Modern-Classic"
         "QT_QPA_PLATFORM,wayland"
-        "QT_QPA_PLATFORMTHEME,qt5ct"
+        "QT_QPA_PLATFORMTHEME,qt6ct"
         "NIXOS_OZONE_WL,1"
       ] ++ (
         if (osConfig.networking.hostName == "thor") then

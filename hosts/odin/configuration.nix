@@ -9,7 +9,7 @@
     # Temporary ./ups.nix
 
     services-firmware
-    desktop-gnome
+    # desktop-gnome
     desktop-greetd
     desktop-hyprland
     services-tailscale
@@ -27,6 +27,7 @@
     common-fonts
     common-graphics
     common-packages
+    common-bluetooth
 
     programs-steam
 

@@ -75,6 +75,7 @@
       slack
       lazygit
       btop
+      protonvpn-gui
     ] ++ [  
             inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor
             inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli

@@ -44,6 +44,7 @@
     slurp
     gojq
     adw-gtk3
+    glib
     hyprpolkitagent
     inputs.hyprland-systeminfo.packages.${pkgs.system}.hyprsysteminfo
     gnome-firmware
