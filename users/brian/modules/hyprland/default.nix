@@ -99,7 +99,7 @@
         if (osConfig.networking.hostName == "odin") then
           [
             "uwsm app -- openrgb -p Nix3"
-            "uwsm app -- wpctl set-default 45"
+            "uwsm app -- wpctl set-default 48"
           ]
         else [ ]
       );
