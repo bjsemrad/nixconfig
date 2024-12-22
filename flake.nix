@@ -23,7 +23,7 @@
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
       ref = "refs/tags/v0.46.2";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland-plugins = {
