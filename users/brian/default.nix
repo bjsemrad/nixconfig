@@ -21,6 +21,7 @@
       ./modules/kitty
       ./modules/yazi
       ./modules/helix
+      ./modules/ghostty
     ];
 
   home = {

@@ -59,6 +59,10 @@
       url = "github:InioX/matugen?ref=v2.4.1";
     };
 
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
+
   };
   outputs =
     { self
@@ -72,6 +76,7 @@
     , hyprland-systeminfo
     , waybar
     , matugen
+    , ghostty
     , nixpkgs-unstable
     , ...
     } @ inputs:
