@@ -56,7 +56,7 @@
       HSA_OVERRIDE_GFX_VERSION="10.3.0";
       HCC_AMDGPU_TARGET = "gfx1030";
     };
-    package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.ollama;
+    # package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.ollama;
   };
 
   users.users.brian = {
