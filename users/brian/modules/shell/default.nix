@@ -35,7 +35,7 @@ let
       sshproxy="ssh nginx@proxy.otter-rigel.ts.net";
       sshcroc="ssh worm@loki.otter-rigel.ts.net";
       croc-rebuild="nixos-rebuild switch -s --flake .#loki --target-host root@loki.otter-rigel.ts.net  --verbose";
-      dashboard-rebuild="nixos-rebuild switch -s --flake .#heimdall --target-host root@dashboard.otter-rigel.ts.net  --verbose";
+      dashboard-rebuild="nixos-rebuild switch -s --flake .#tyr --target-host root@dashboard.otter-rigel.ts.net  --verbose";
       proxy-rebuild="nixos-rebuild switch -s --flake .#yggdrasil --target-host root@proxy.otter-rigel.ts.net --verbose";
       tailreceive="sudo tailscale file get .";
       setup-vial="qmk setup bjsemrad/vial-qmk -H ~/vial-qmk -b vial";
@@ -137,7 +137,7 @@ let
       sshchannels="ssh channels@channels.otter-rigel.ts.net";
       sshminecraft="ssh mine@minecraft.otter-rigel.ts.net";
       sshproxy="ssh nginx@proxy.otter-rigel.ts.net";
-      dashboard-rebuild="nixos-rebuild switch -s --flake .#heimdall --target-host root@dashboard.otter-rigel.ts.net  --verbose";
+      dashboard-rebuild="nixos-rebuild switch -s --flake .#tyr --target-host root@dashboard.otter-rigel.ts.net  --verbose";
       proxy-rebuild="nixos-rebuild switch -s --flake .#yggdrasil --target-host root@proxy.otter-rigel.ts.net --verbose";
       tailreceive="sudo tailscale file get .";
       setup-vial="qmk setup bjsemrad/vial-qmk -H ~/vial-qmk -b vial";
