@@ -110,10 +110,10 @@
           ];
           specialArgs = { inherit inputs; };
         };
-        heimdall = lib.nixosSystem {
+        tyr = lib.nixosSystem {
           inherit system; #Dashboard Server 
           modules = [
-            ./hosts/heimdall/configuration.nix
+            ./hosts/tyr/configuration.nix
             home-manager.nixosModules.home-manager
           ];
           specialArgs = { inherit inputs; };
