@@ -6,5 +6,6 @@
 
      home.file = {
         ".config/ghostty/config".source = ./config;
+        ".config/ghostty/themes/onedark-darker".source = ./onedark-darker;
     };
 }
