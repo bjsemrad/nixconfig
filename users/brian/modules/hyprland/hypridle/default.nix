@@ -22,15 +22,15 @@
           }
             {
               timeout = 600;
-              on-timeout = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms on && ${pkgs.systemd}/bin/systemctl suspend";
+              on-timeout = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms off && ${pkgs.systemd}/bin/systemctl suspend";
               on-resume = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms on";
             }]
         else [{
-              timeout = 600;
+              timeout = 400;
               on-timeout = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
              }
              {
-              timeout = 800;
+              timeout = 600;
               on-timeout = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms off"; # && ${pkgs.systemd}/bin/systemctl suspend";
               on-resume = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms on";
             }
