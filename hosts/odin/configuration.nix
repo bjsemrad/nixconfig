@@ -63,7 +63,7 @@
     isNormalUser = true;
     description = "Brian Semrad";
     extraGroups = [ "networkmanager" "wheel" "storage" "dialout" "podman" "docker" ];
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
     packages = with pkgs; [ ];
   };
 
