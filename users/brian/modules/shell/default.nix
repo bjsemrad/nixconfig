@@ -63,6 +63,15 @@ let
         fi
       }
 
+
+      if [[ -z "$ZELLIJ" ]]; then
+        zellij attach -c main
+
+        if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+          exit
+        fi
+      fi
+
       zellij_tab_name_update
       chpwd_functions+=(zellij_tab_name_update)
       # This command let's me execute arbitrary binaries downloaded through channels such as mason.

@@ -22,6 +22,7 @@
       ./modules/yazi
       ./modules/helix
       ./modules/ghostty
+      ./modules/zoxide
     ];
 
   home = {
@@ -78,6 +79,7 @@
       lazygit
       btop
       protonvpn-gui
+      fd
     ] ++ [  
             inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor
             inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
