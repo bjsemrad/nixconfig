@@ -25,7 +25,7 @@ keybinds clear-defaults=true {
                 floating true
                 move_to_focused_tab true
                 cwd "/"
-                root_dirs "/home/brian;/home/brian/projects"
+                root_dirs "/home/brian"
                 session_layout "custom-simple"
             };
             SwitchToMode "Normal";
@@ -206,7 +206,7 @@ keybinds clear-defaults=true {
         bind "Ctrl h" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
-        bind "Ctrl m" { SwitchToMode "Tmux"; }
+        bind "Ctrl \\" { SwitchToMode "Tmux"; }
     }
 }
 

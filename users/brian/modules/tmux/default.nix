@@ -1,6 +1,8 @@
 {  pkgs, ... }:
 {
-     programs.tmux = {
+   home.packages = with pkgs; [ tmux-sessionizer ];
+
+  programs.tmux = {
     enable = true;
 
     baseIndex = 1;
@@ -14,8 +16,26 @@
        # Fix Colors
       set -g default-terminal "screen-256color"
       set -ag terminal-overrides ",xterm-256color:Tc"
+      set -g prefix C-a
+      unbind-key t
+      bind-key -T prefix t switch-client -T tms
+      bind-key -T tms p display-popup -E "tms"
+      bind-key -T tms s display-popup -E "tms switch"
 
-      set -g prefix C-b
+      bind-key -T prefix w switch-client -T window
+      bind-key -T window c new-window
+      bind-key -T window r command-prompt -I "#W" { rename-window "%%" } 
+      bind-key -T window x confirm kill-window
+
+      bind-key -T prefix s switch-client -T session
+      bind-key -T session r command-prompt -p "Rename active session to: " "run-shell 'tms rename %1'"
+      bind-key -T session c command-prompt -p "New Session:" "new-session -A -s '%%'"
+      bind-key -T session x confirm "run-shell 'tms kill'"
+
+      bind-key -T prefix p switch-client -T pane
+      bind-key -T pane h split-window -h
+      bind-key -T pane v split-window -v
+
 
       set -g base-index 1
       setw -g pane-base-index 1
@@ -24,35 +44,8 @@
 
       set -g status-position bottom
    
-      #set -g @onedark_widgets "#(date +%s)"
       set -g @onedark_time_format "%I:%M %p"
       set -g @onedark_date_format "%D"
-      # set -g @catppuccin_window_right_separator "█ "
-
-      # set -g @catppuccin_window_default_fill "number"
-      # set -g @catppuccin_window_default_text "#W - #{pane_current_path}"
-
-      # set -g @catppuccin_window_current_fill "number"
-      # set -g @catppuccin_window_current_text "#W - #{pane_current_path}"
-
-      # set -g @catppuccin_window_right_separator "█ "
-      # set -g @catppuccin_window_number_position "left"
-      # set -g @catppuccin_window_middle_separator " | "
-
-      # set -g @catppuccin_window_default_fill "none"
-
-      # set -g @catppuccin_window_current_fill "all"
-      # set -g @catppuccin_status_modules_right "session user host"
-      # set -g @catppuccin_status_left_separator "█"
-      # set -g @catppuccin_status_right_separator "█"
-
-
-      # set -g @catppuccin_status_right_separator_inverse "no"
-      # set -g @catppuccin_status_fill "icon"
-      # set -g @catppuccin_status_connect_separator "no"
-
-      # set -g @catppuccin_directory_text "#{pane_current_path}"
-
     '';
   };
 }
