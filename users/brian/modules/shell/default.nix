@@ -51,6 +51,10 @@ let
 	exec systemd-cat -t uwsm_start uwsm start default
       fi
 
+      if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+        tmux attach-session -t main || tmux new-session -s main
+      fi
+
       zellij_tab_name_update() {
         if [[ -n $ZELLIJ ]]; then
           local current_dir=$PWD
