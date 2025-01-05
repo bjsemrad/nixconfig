@@ -32,7 +32,7 @@
           owner = "bjsemrad";
           repo = "tmux-onedark-theme";
           rev = "master";
-          sha256 = "sha256-vSz7IoxjSLX7c4zPaA6w+vBKWLfxG8OBJZ8fUFtILkM=";
+          sha256 = "sha256-DH5SeQppoHrK4uEuoFNnTNpVYQHCV16xLSt10jMvAPE=";
         };
       }))
       tmuxPlugins.tmux-fzf
