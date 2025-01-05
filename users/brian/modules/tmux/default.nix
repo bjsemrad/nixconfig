@@ -27,7 +27,14 @@
           set -g @continuum-save-interval '1' # minutes
         '';
       }
-      tmuxPlugins.prefix-highlight
+      (tmuxPlugins.onedark-theme.overrideAttrs ( _: {
+        src = pkgs.fetchFromGitHub {
+          owner = "bjsemrad";
+          repo = "tmux-onedark-theme";
+          rev = "master";
+          sha256 = "sha256-vSz7IoxjSLX7c4zPaA6w+vBKWLfxG8OBJZ8fUFtILkM=";
+        };
+      }))
       tmuxPlugins.tmux-fzf
     ];
 
@@ -63,52 +70,6 @@
       set -g mouse on
 
       set -g status-position bottom
-
-
-# Set the One Dark theme colors as tmux variables
-set -g @onedark_black "#282c34"
-set -g @onedark_blue "#61afef"
-set -g @onedark_yellow "#e5c07b"
-set -g @onedark_red "#e06c75"
-set -g @onedark_white "#aab2bf"
-set -g @onedark_green "#98c379"
-set -g @onedark_visual_grey "#3e4452"
-set -g @onedark_comment_grey "#5c6370"
-
-# Set status bar appearance
-set -g status on
-set -g status-justify left
-set -g status-left-length 100
-set -g status-right-length 100
-
-
-# Set window style colors
-set -g window-style "fg=$onedark_comment_grey"
-set -g window-active-style "fg=$onedark_white"
-
-# Set display panes colors
-set -g display-panes-active-colour "$onedark_yellow"
-set -g display-panes-colour "$onedark_blue"
-
-# Set the status bar colors
-set -g status-bg "$onedark_black"
-set -g status-fg "$onedark_white"
-
-# Prefix highlight settings
-set -g @prefix_highlight_fg "$onedark_black"
-set -g @prefix_highlight_bg "$onedark_green"
-set -g @prefix_highlight_copy_mode_attr "fg=$onedark_black,bg=$onedark_green"
-set -g @prefix_highlight_output_prefix "  "
-
-# Set status-right to include time, date, and custom widgets
-set -g status-right "#[fg=$onedark_green,bg=$onedark_black,nobold,nounderscore,noitalics]#[fg=$onedark_black,bg=$onedark_green,bold] #h "
-
-# Set status-left to show session and prefix highlight
-set -g status-left "#[fg=$onedark_black,bg=$onedark_green,bold] #S #[fg=$onedark_green,bg=$onedark_black,nobold,nounderscore,noitalics]"
-
-# Set window status format
-set -g window-status-format "#[fg=$onedark_black,bg=$onedark_black,nobold,nounderscore,noitalics]#[fg=$onedark_white,bg=$onedark_black] #I  #W #[fg=$onedark_black,bg=$onedark_black,nobold,nounderscore,noitalics]"
-set -g window-status-current-format "#[fg=$onedark_black,bg=$onedark_visual_grey,nobold,nounderscore,noitalics]#[fg=$onedark_white,bg=$onedark_visual_grey,nobold] #I  #W #[fg=$onedark_visual_grey,bg=$onedark_black,nobold,nounderscore,noitalics]"
 
     '';
   };
