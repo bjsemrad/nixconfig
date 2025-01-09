@@ -32,7 +32,7 @@
     };
 
     hyprland-systeminfo = {
-      url = "github:hyprwm/hyprsysteminfo";
+      url = "github:hyprwm/hyprsysteminfo/v0.1.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
