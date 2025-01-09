@@ -28,5 +28,7 @@
     ".config/hypr/mountain-lake.png".source = ../../../wallpaper/mountain-lake.png;
     ".config/hypr/wallhaven3.png".source = ../../../wallpaper/wallhaven3.png;
     ".config/hypr/fantasy-world.png".source = ../../../wallpaper/fantasy_world.png;
+    ".config/hypr/cosmic-light.jpg".source = ../../../wallpaper/cosmic-light.jpg;
+    ".config/hypr/minimalpattern.png".source = ../../../wallpaper/minimalpattern.png;
   };
 }

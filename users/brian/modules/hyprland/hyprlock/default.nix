@@ -9,13 +9,13 @@
     package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
     settings = {
       background = [{
-        #path = "/home/brian/.config/hypr/leaves.png";
-        color = "rgba(30,33,39, 1.0)"; #bgDark
-        blur_passes = 1;
-        contrast = 0.8916;
-        brightness = 0.8172;
-        vibrancy = 0.1696;
-        vibrancy_darkness = 0.0;
+        path = "/home/brian/.config/hypr/minimalpattern.png";
+        #color = "rgba(30,33,39, 1.0)"; #bgDark
+        #blur_passes = 1;
+        #contrast = 0.8916;
+        #brightness = 0.8172;
+        #vibrancy = 0.1696;
+        #vibrancy_darkness = 0.0;
       }];
       general = {
         no_fade_in = false;
@@ -28,28 +28,28 @@
         text = "cmd[update:1000] echo \"$(${pkgs.coreutils}/bin/date +'%I:%M %P')\"";
         color = "rgba(171, 178, 191, 1)";
         font_size = 64;
-        position = "-40, -10";
+        position = "40, 10";
         font = "JetBrainsMono Nerd Font";
-        halign = "right";
-        valign = "top";
+        halign = "left";
+        valign = "bottom";
       }
       {
         text = "cmd[update:43200000] echo \"$(${pkgs.coreutils}/bin/date +'%A, %B %d')\"";
         color = "rgba(171, 178, 191, 1)";
         font_size = 24;
-        position = "-40, -150";
+        position = "40, 150";
         font = "JetBrainsMono Nerd Font";
-        halign = "right";
-        valign = "top";
+        halign = "left";
+        valign = "bottom";
       }];
-      image = [{
-        path = "/home/brian/.config/hypr/tux-small.png";
-        size = 50;
-        border_color = "rgba(30,33,39, 1.0)";
-        position = "0, 150";
-        halign = "center";
-        valign = "center";
-      }];
+      # image = [{
+      #   path = "/home/brian/.config/hypr/tux-small.png";
+      #   size = 50;
+      #   border_color = "rgba(30,33,39, 1.0)";
+      #   position = "0, 150";
+      #   halign = "center";
+      #   valign = "center";
+      # }];
       input-field = [{
         size = "250,60";
         font = "JetBrainsMono Nerd Font";
