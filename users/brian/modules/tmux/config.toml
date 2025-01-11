@@ -1,3 +1,11 @@
 [[search_dirs]]
 path = "/home/brian/projects"
 depth = 10
+
+[[search_dirs]]
+path = "/home/brian/nixconfig"
+depth = 1
+
+[[search_dirs]]
+path = "/home/brian/exercism"
+depth = 2
