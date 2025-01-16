@@ -30,5 +30,6 @@
     ".config/hypr/fantasy-world.png".source = ../../../wallpaper/fantasy_world.png;
     ".config/hypr/cosmic-light.jpg".source = ../../../wallpaper/cosmic-light.jpg;
     ".config/hypr/minimalpattern.png".source = ../../../wallpaper/minimalpattern.png;
+    ".config/hypr/funicons.jpg".source = ../../../wallpaper/funicons.jpg;
   };
 }
