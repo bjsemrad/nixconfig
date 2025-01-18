@@ -31,5 +31,7 @@
     ".config/hypr/cosmic-light.jpg".source = ../../../wallpaper/cosmic-light.jpg;
     ".config/hypr/minimalpattern.png".source = ../../../wallpaper/minimalpattern.png;
     ".config/hypr/funicons.jpg".source = ../../../wallpaper/funicons.jpg;
+    ".config/hypr/binary.jpg".source = ../../../wallpaper/binary.jpg;
+    ".config/hypr/programmer.jpg".source = ../../../wallpaper/programmer.jpg;
   };
 }
