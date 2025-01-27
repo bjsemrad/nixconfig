@@ -158,6 +158,8 @@ let
       setup-qmk="qmk setup bjsemrad/qmk_firmware -H ~/qmk_firmwarel";
       build-lily58="QMK_HOME=~/vial-qmk qmk compile -kb lily58/rev1 -km brian -e CONVERT_TO=rp2040_ce";
       flash-lily58="MK_HOME=~/vial-qmk qmk flash -kb lily58/rev1 -km brian -e CONVERT_TO=rp2040_ce";
+      build-ferrismx="QMK_HOME=~/vial-qmk qmk compile -kb ferris/sweep -km vialswappedleft -e CONVERT_TO=blok";
+      flash-ferrismx="MK_HOME=~/vial-qmk qmk flash -kb ferris/sweep -km vialswappedleft -e CONVERT_TO=blok";
     };
   };
 }

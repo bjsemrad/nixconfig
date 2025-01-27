@@ -37,7 +37,7 @@
     };
 
     hyprlock = {
-      url = "github:hyprwm/hyprlock/v0.5.0";
+      url = "github:hyprwm/hyprlock/v0.6.2";
     };
 
     hypridle = {
