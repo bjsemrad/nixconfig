@@ -33,5 +33,6 @@
     ".config/hypr/funicons.jpg".source = ../../../wallpaper/funicons.jpg;
     ".config/hypr/binary.jpg".source = ../../../wallpaper/binary.jpg;
     ".config/hypr/programmer.jpg".source = ../../../wallpaper/programmer.jpg;
+    ".config/hypr/mountain.jpg".source = ../../../wallpaper/mountain.jpg;
   };
 }
