@@ -38,7 +38,7 @@
       jetbrains.rust-rover
       vscode
       zig
-      nodejs
+      #nodejs
       gcc
       clang-tools
       bear
@@ -81,10 +81,10 @@
       btop
       protonvpn-gui
       fd
+      #zed-editor
 
-      kicad
+      #kicad
     ] ++ [  
-            inputs.nixpkgs-unstable.legacyPackages.${system}.zed-editor
             inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
             inputs.nixpkgs-unstable.legacyPackages.${system}.cider
             inputs.nixpkgs-unstable.legacyPackages.${system}.mumble
