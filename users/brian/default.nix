@@ -38,7 +38,7 @@
       jetbrains.rust-rover
       vscode
       zig
-      #nodejs
+      nodejs_23
       gcc
       clang-tools
       bear
