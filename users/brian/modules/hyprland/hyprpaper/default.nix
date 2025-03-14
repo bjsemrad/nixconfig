@@ -35,5 +35,6 @@
     ".config/hypr/programmer.jpg".source = ../../../wallpaper/programmer.jpg;
     ".config/hypr/mountain.jpg".source = ../../../wallpaper/mountain.jpg;
     ".config/hypr/bluewaves.png".source = ../../../wallpaper/bluewaves.png;
+    ".config/hypr/bluewave.png".source = ../../../wallpaper/bluewave.png;
   };
 }
