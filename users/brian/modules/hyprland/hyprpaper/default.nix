@@ -34,5 +34,6 @@
     ".config/hypr/binary.jpg".source = ../../../wallpaper/binary.jpg;
     ".config/hypr/programmer.jpg".source = ../../../wallpaper/programmer.jpg;
     ".config/hypr/mountain.jpg".source = ../../../wallpaper/mountain.jpg;
+    ".config/hypr/bluewaves.png".source = ../../../wallpaper/bluewaves.png;
   };
 }
