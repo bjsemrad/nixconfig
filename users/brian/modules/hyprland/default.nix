@@ -170,7 +170,7 @@
 	"$diff_change" = "0xff172a3a";
 	"$diff_text" = "0xff274964";
 
-        "col.active_border" = "$blue";
+        "col.active_border" = "$red";
         "col.inactive_border" = "$bg1";
         layout = "master";
       };
