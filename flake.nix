@@ -55,6 +55,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ashell.url = "github:MalpenZibo/ashell";
+
     matugen = {
       url = "github:InioX/matugen?ref=v2.4.1";
     };
@@ -78,6 +80,7 @@
     , matugen
     , ghostty
     , nixpkgs-unstable
+    , ashell
     , ...
     } @ inputs:
     let

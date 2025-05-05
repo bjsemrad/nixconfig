@@ -82,6 +82,7 @@
       btop
       protonvpn-gui
       fd
+      inputs.ashell.defaultPackage.${system}
       #zed-editor
 
       #kicad

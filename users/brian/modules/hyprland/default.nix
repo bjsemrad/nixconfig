@@ -88,7 +88,6 @@
 
       exec-once = [
         "uwsm app -- waybar"
-        # "ags"
         "uwsm app -- hyprpaper"
         "uwsm app --wl-paste --type text --watch cliphist -max-items 25 store" #Stores only text data
         "uwsm app --wl-paste --type image --watch cliphist -max-items 25 store" #Stores only image data
