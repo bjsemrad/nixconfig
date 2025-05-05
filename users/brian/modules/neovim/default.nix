@@ -1,11 +1,18 @@
 { pkgs, inputs, ... }:
+let
+  neovim-unwrapped = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.neovim-unwrapped.overrideAttrs (old: {
+    meta = old.meta or { } // {
+      maintainers = [ ];
+    };
+  });
+in
 {
 
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
-    package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.neovim-unwrapped;
+    package = neovim-unwrapped;
   };
 
   home.packages = with pkgs; [

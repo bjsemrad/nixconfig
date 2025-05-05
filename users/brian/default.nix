@@ -24,6 +24,7 @@
       ./modules/ghostty
       ./modules/zoxide
       ./modules/vial
+      ./modules/wezterm
     ];
 
   home = {
