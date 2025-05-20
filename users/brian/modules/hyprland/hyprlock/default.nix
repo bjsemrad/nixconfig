@@ -9,7 +9,7 @@
     package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
     settings = {
       background = [{
-        path = "/home/brian/.config/hypr/bluewaves.png";
+        path = "/home/brian/.config/hypr/retropc.jpg";
         #color = "rgba(30,33,39, 1.0)"; #bgDark
         #blur_passes = 1;
         #contrast = 0.8916;
