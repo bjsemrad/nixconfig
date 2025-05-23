@@ -49,7 +49,7 @@ let
     autosuggestion.enable = true;   
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-    initExtra = ''
+    initContent = ''
       export PATH=$PATH:~/tools
       if uwsm check may-start && uwsm select; then
 	exec systemd-cat -t uwsm_start uwsm start default

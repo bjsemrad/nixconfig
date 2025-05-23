@@ -6,6 +6,7 @@
     noto-fonts-emoji
     fira-code
     fira-code-symbols
-    nerdfonts
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.noto
   ];
 }

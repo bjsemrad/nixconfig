@@ -39,7 +39,7 @@
       jetbrains.rust-rover
       vscode
       zig
-      nodejs_23
+      nodejs_24
       gcc
       clang-tools
       bear
@@ -61,7 +61,7 @@
       httpie
       fzf
       yubikey-manager
-      yubikey-manager-qt
+      #Deprecated yubikey-manager-qt
       backblaze-b2
       #Failed to download try again later mblock-mlink
       gimp
@@ -102,7 +102,7 @@
     # You should not change this value, even if you update Home Manager. If you do
     # want to update the value, then make sure to first check the Home Manager
     # release notes.
-    stateVersion = "24.11"; # Please read the comment before changing.
+    stateVersion = "25.05"; # Please read the comment before changing.
   };
 
   # environment.

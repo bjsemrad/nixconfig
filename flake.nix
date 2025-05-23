@@ -2,7 +2,7 @@
   description = "NixOS Configuration";
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-24.11";
+      url = "github:NixOS/nixpkgs/nixos-25.05";
     };
 
     nixpkgs-unstable = {
@@ -14,7 +14,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -22,26 +22,26 @@
       type = "git"; 
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
-      ref = "refs/tags/v0.46.2";
+      ref = "refs/tags/v0.49.0";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins/v0.46.0";
+      url = "github:hyprwm/hyprland-plugins/v0.49.0-fix";
       inputs.hyprland.follows = "hyprland";
     };
 
     hyprland-systeminfo = {
-      url = "github:hyprwm/hyprsysteminfo/v0.1.2";
+      url = "github:hyprwm/hyprsysteminfo/v0.1.3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprlock = {
-      url = "github:hyprwm/hyprlock/v0.6.2";
+      url = "github:hyprwm/hyprlock/v0.8.2";
     };
 
     hypridle = {
-      url = "github:hyprwm/hypridle/v0.1.5";
+      url = "github:hyprwm/hypridle/v0.1.6";
     };
 
     alacritty-theme = {
