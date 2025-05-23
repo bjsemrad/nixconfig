@@ -58,14 +58,14 @@
     device = "/dev/disk/by-uuid/90bf654f-872d-469c-b4b0-f26699f1a1e2";
     fsType = "ext4";
     options = [ "noatime" "nosuid" "nodev" "nofail" "x-gvfs-show" ];
-    label = "Games";
+    #Duplicate of device now label = "Games";
   };
 
   fileSystems."/mnt/storage" = {
     device = "/dev/disk/by-uuid/1a7661ed-6c37-4d6d-97dc-aae84f419742";
     fsType = "ext4";
     options = [ "noatime" "nosuid" "nodev" "nofail" "x-gvfs-show" ];
-    label = "Storage";
+    #label = "Storage";
   };
 
 
