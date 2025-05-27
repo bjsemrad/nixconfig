@@ -34,6 +34,7 @@
     keyboard-qmk
     virt-podman
     programs-nix-ld
+    programs-appimage
   ];
 
   # Bootloader.
