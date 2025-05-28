@@ -65,6 +65,10 @@
       url = "github:ghostty-org/ghostty";
     };
 
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak/?ref=latest";
+    };
+
   };
   outputs =
     { self
@@ -81,6 +85,7 @@
     , ghostty
     , nixpkgs-unstable
     , ashell
+    , nix-flatpak
     , ...
     } @ inputs:
     let

@@ -25,6 +25,8 @@
       ./modules/zoxide
       ./modules/vial
       ./modules/wezterm
+      inputs.nix-flatpak.homeManagerModules.nix-flatpak
+      ./modules/flatpak
     ];
 
   home = {
