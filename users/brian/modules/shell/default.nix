@@ -31,7 +31,7 @@ let
       sshprox="ssh root@proxmox.otter-rigel.ts.net";
       sshtruenas="ssh root@10.0.10.13";
       sshchannels="ssh channels@channels.otter-rigel.ts.net";
-      sshminecraft="ssh mine@10.0.10.206";
+      sshminecraft="ssh mine@10.0.10.11";
       sshproxy="ssh nginx@proxy.otter-rigel.ts.net";
       sshcroc="ssh worm@loki.otter-rigel.ts.net";
       croc-rebuild="nixos-rebuild switch -s --flake .#loki --target-host root@loki.otter-rigel.ts.net  --verbose";
