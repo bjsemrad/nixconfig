@@ -85,6 +85,7 @@
       protonvpn-gui
       fd
       inputs.ashell.defaultPackage.${system}
+      brave
       #zed-editor
 
       #kicad
