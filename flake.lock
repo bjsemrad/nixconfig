@@ -77,11 +77,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1749141007,
-        "narHash": "sha256-Lub8IsCg3ADWWTI9Z4U3n8pXvG3zq/I3bAx0dCnlh9o=",
+        "lastModified": 1749213029,
+        "narHash": "sha256-4OJHnYy3LcABDaSraqoXdTpdfcjRQd+B4hc2AOM/oi8=",
         "owner": "MalpenZibo",
         "repo": "ashell",
-        "rev": "00e6c667636a80c813bee4f05010561117ae2a23",
+        "rev": "8ae2268e57c48fc59371bb145b22d13ccf7f2a83",
         "type": "github"
       },
       "original": {
@@ -216,11 +216,11 @@
         "zon2nix": "zon2nix"
       },
       "locked": {
-        "lastModified": 1749153583,
-        "narHash": "sha256-BSisfzPykZdAglo+0K9UXVa5WnhhYujq/u6lUFlFh9g=",
+        "lastModified": 1749220590,
+        "narHash": "sha256-tuGM4SQ8amrtJpsW+Q/hZfogvQSGsXr8B7i27ZSl9ZA=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "efc1ceab5d8fd853a0279249df66fb7f11993832",
+        "rev": "5b68e49847548ebb5ae6193df4aa7a94cb5cab75",
         "type": "github"
       },
       "original": {
@@ -995,11 +995,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1749056381,
-        "narHash": "sha256-QITcurR19KZlrCngBoCjsFF2BdYsiCG4UqmlrVcLb8Q=",
+        "lastModified": 1749195551,
+        "narHash": "sha256-W5GKQHgunda/OP9sbKENBZhMBDNu2QahoIPwnsF6CeM=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "029bd66faa180e11262dd1bc2732254c33415f52",
+        "rev": "4602f7e1d3f197b3cb540d5accf5669121629628",
         "type": "github"
       },
       "original": {
