@@ -9,6 +9,7 @@
       ./wlogout
       ./dunst
       ./rofi
+      ./walker
     ];
 
   home.pointerCursor = {
@@ -87,13 +88,13 @@
       };
 
       exec-once = [
-        "uwsm app -- waybar"
-        "uwsm app -- hyprpaper"
+        "systemctl --user enable --now waybar.service"
+        "systemctl --user enable --now hyprpaper.service"
         "uwsm app --wl-paste --type text --watch cliphist -max-items 25 store" #Stores only text data
         "uwsm app --wl-paste --type image --watch cliphist -max-items 25 store" #Stores only image data
-        "systemctl --user start hyprpolkitagent"
+        "systemctl --user enable --now hyprpolkitagent.service"
         "systemctl --user enable --now hypridle.service"
-        # "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+        "uwsm app udiskie -s"
       ] ++ (
         if (osConfig.networking.hostName == "odin") then
           [

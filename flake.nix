@@ -69,6 +69,23 @@
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };
 
+    walker = {
+      url = "github:abenz1267/walker/?ref=v0.12.23";
+    };
+
+    iwmenu = {
+      url = "github:e-tho/iwmenu";
+    };
+
+    bzmenu = {
+      url = "github:e-tho/bzmenu";
+    };
+
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
   outputs =
     { self
@@ -86,6 +103,10 @@
     , nixpkgs-unstable
     , ashell
     , nix-flatpak
+    , walker
+    , iwmenu
+    , bzmenu
+    , anyrun
     , ...
     } @ inputs:
     let

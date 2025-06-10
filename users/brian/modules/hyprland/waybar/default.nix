@@ -19,14 +19,17 @@
         margin-bottom = 5;
         modules-left = [
           "hyprland/workspaces"
-          "hyprland/window"
+          #"hyprland/window"
           # "wlr/taskbar"
         ];
         modules-center = [          
-          "cpu"
-          "memory"
+          #"cpu"
+          #"memory"
+          "hyprland/window"
         ];
         modules-right = [
+          "memory"
+          "cpu"
           "tray"
           "custom/recorder"
           "custom/clipboard"

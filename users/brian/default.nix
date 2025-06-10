@@ -26,6 +26,7 @@
       ./modules/vial
       ./modules/wezterm
       inputs.nix-flatpak.homeManagerModules.nix-flatpak
+      inputs.walker.homeManagerModules.default
       ./modules/flatpak
     ];
 
@@ -74,6 +75,7 @@
       file
       lm_sensors
       dig
+      udiskie
 
       protonmail-desktop
       signal-desktop
@@ -89,6 +91,9 @@
       #zed-editor
 
       #kicad
+      podman-tui
+      podman-desktop
+      kubectl
     ] ++ [  
             inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
             inputs.nixpkgs-unstable.legacyPackages.${system}.cider
