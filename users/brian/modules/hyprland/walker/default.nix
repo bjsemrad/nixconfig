@@ -7,11 +7,12 @@
   ];
 
   programs.walker = {
-    enable = true;
-    runAsService = true;
+    enable = false;
+    runAsService = false;
 
     # All options from the config.json can be used here.
     config = {
+      app_launch_prefix = "uwsm app -- ";
       search.placeholder = "";
       ui.fullscreen = false;
       list = {
@@ -24,7 +25,7 @@
 
     # If this is not set the default styling is used.
     #style = ''
-    #  * {
+    # * {
     #    color: #dcd7ba;
     #   }
     #'';

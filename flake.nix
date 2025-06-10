@@ -81,11 +81,6 @@
       url = "github:e-tho/bzmenu";
     };
 
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
   };
   outputs =
     { self
@@ -106,7 +101,6 @@
     , walker
     , iwmenu
     , bzmenu
-    , anyrun
     , ...
     } @ inputs:
     let

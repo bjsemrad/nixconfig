@@ -94,7 +94,8 @@
         "uwsm app --wl-paste --type image --watch cliphist -max-items 25 store" #Stores only image data
         "systemctl --user enable --now hyprpolkitagent.service"
         "systemctl --user enable --now hypridle.service"
-        "uwsm app udiskie -s"
+        "uwsm app -- udiskie -s"
+        # "uwsm app -- walker --gapplication-service"
       ] ++ (
         if (osConfig.networking.hostName == "odin") then
           [
@@ -291,11 +292,16 @@
         # ",XF86PowerOff,  exec, ags -t powermenu"
         # "$mainMod CTRL_L SHIFT, P, exec, ags -t powermenu"
         "$mainMod, D, exec, uwsm app -- $HOME/.config/rofi/scripts/launcher.sh"
+        #"$mainMod, D, exec, uwsm app -- walker -m applications"
+
         "$mainMod CTRL_L, W, exec, uwsm app -- $HOME/.config/rofi/scripts/window.sh"
+        #"$mainMod CTRL_L, W, exec, uwsm app -- walker -m windows"
         ",XF86PowerOff,  exec,  uwsm app -- $HOME/.config/wlogout/scripts/wlogout.sh"
         "$mainMod CTRL_L SHIFT, P, exec, uwsm app -- $HOME/.config/wlogout/scripts/wlogout.sh"
         
         "$mainMod CTRL_L SHIFT, C, exec,  uwsm app -- $HOME/.config/rofi/scripts/clipboard.sh"
+        #"$mainMod CTRL_L SHIFT, C, exec,  uwsm app -- walker -m clipboard"
+
         "$mainMod CTRL_L SHIFT, I, exec,  uwsm app -- grim -g \"$(slurp)\""
         ",Print, exec,  uwsm app -- grim -g \"$(slurp)\""
 
