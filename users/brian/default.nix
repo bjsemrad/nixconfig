@@ -38,8 +38,9 @@
       go
       rustup
       cargo-watch
-      jetbrains.idea-ultimate
-      jetbrains.rust-rover
+      #Moving to flatpack
+      #jetbrains.idea-ultimate
+      #jetbrains.rust-rover
       vscode
       zig
       nodejs_24
@@ -77,17 +78,16 @@
       dig
       udiskie
 
-      protonmail-desktop
       signal-desktop
       dotnet-sdk_8
       devenv
       slack
       lazygit
       btop
-      protonvpn-gui
       fd
       inputs.ashell.defaultPackage.${system}
       brave
+      gnome-disk-utility
       #zed-editor
 
       #kicad
@@ -99,8 +99,6 @@
       cosign
     ] ++ [  
             inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
-            inputs.nixpkgs-unstable.legacyPackages.${system}.cider
-            inputs.nixpkgs-unstable.legacyPackages.${system}.mumble
       ];
 
     sessionVariables = {
