@@ -18,6 +18,12 @@
     defaultSession = "hyprland-uwsm";
   };
 
+  security.polkit = {
+    enable = true;
+    package = pkgs.hyprpolkitagent;
+  };
+
+
   # programs.uwsm = {
   #   enable = true;
   #   waylandCompositors.hyprland = {
