@@ -5,12 +5,14 @@
       ./hyprpaper
       ./hyprlock
       ./hypridle
+      ./polkitagent
       ./waybar
       ./wlogout
       ./dunst
       ./rofi
       ./walker
     ];
+
 
   home.pointerCursor = {
     gtk.enable = true;

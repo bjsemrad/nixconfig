@@ -18,20 +18,8 @@
     defaultSession = "hyprland-uwsm";
   };
 
-  security.polkit = {
-    enable = true;
-    package = pkgs.hyprpolkitagent;
-  };
+  security.polkit.enable = true;
 
-
-  # programs.uwsm = {
-  #   enable = true;
-  #   waylandCompositors.hyprland = {
-  #       binPath = "/run/current-system/sw/bin/Hyprland";
-  #       comment = "Hyprland session managed bt uwsm";
-  #       prettyName = "Hyprland";
-  #   };
-  # };
 
   security.pam.services.hyprlock = {};
   environment.systemPackages = with pkgs; [
@@ -52,7 +40,6 @@
     gojq
     adw-gtk3
     glib
-    hyprpolkitagent
     inputs.hyprland-systeminfo.packages.${pkgs.system}.hyprsysteminfo
     gnome-firmware
 
