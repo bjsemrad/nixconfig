@@ -96,6 +96,7 @@
       kubectl
 
       overskride
+      cosign
     ] ++ [  
             inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
             inputs.nixpkgs-unstable.legacyPackages.${system}.cider
