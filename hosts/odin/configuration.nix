@@ -6,6 +6,7 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     ./kernel.nix
+    ./power-management.nix
     # Temporary ./ups.nix
 
     services-firmware

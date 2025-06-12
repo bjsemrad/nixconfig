@@ -22,5 +22,7 @@
   environment.systemPackages = with pkgs; [
     powertop
   ];
+  
+  services.upower.enable = true;
 }
 
