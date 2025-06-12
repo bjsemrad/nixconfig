@@ -97,6 +97,9 @@
 
       overskride
       cosign
+
+      devpod
+      devpod-desktop
     ] ++ [  
             inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
       ];
