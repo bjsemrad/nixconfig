@@ -22,6 +22,7 @@
         util-linux
         xz
         systemd
+        libgbm
     ];
   };
 }
