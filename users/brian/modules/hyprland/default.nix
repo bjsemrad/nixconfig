@@ -253,9 +253,9 @@
 
       windowrulev2 = [
         "workspace 1,class:(firefox)"
-        "workspace 2,class:(Proton Mail)"
-        "workspace 3,class:(discord)"
-        "workspace 3,class:(signal)"
+        "workspace 3,class:(Proton Mail)"
+        "workspace 2,class:(discord)"
+        "workspace 2,class:(signal)"
         "workspace 4,class:(Alacritty)"
         "workspace 4,class:(kitty)"
         "workspace 4,class:(com.mitchellh.ghostty)"
