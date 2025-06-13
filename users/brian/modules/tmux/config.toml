@@ -9,3 +9,8 @@ depth = 1
 [[search_dirs]]
 path = "/home/brian/exercism"
 depth = 2
+
+[[search_dirs]]
+path = "/home/brian/os-images"
+depth = 2
+
