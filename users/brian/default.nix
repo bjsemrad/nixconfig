@@ -78,14 +78,13 @@
       dig
       udiskie
 
-      signal-desktop
+      #broken signal-desktop
       dotnet-sdk_8
       devenv
       slack
       lazygit
       btop
       fd
-      inputs.ashell.defaultPackage.${system}
       brave
       gnome-disk-utility
       #zed-editor
