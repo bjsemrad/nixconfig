@@ -175,7 +175,7 @@
 
         "col.active_border" = "$red";
         "col.inactive_border" = "$bg1";
-        layout = "master";
+        layout = "dwindle";
       };
       decoration = {
         rounding = 10;
