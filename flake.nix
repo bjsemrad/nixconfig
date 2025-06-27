@@ -51,7 +51,7 @@
     waybar = {
       type = "git";
       url = "https://github.com/Alexays/Waybar";
-      ref = "refs/tags/0.11.0";
+      ref = "refs/tags/0.13.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -65,18 +65,6 @@
 
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
-    };
-
-    walker = {
-      url = "github:abenz1267/walker/?ref=v0.12.23";
-    };
-
-    iwmenu = {
-      url = "github:e-tho/iwmenu";
-    };
-
-    bzmenu = {
-      url = "github:e-tho/bzmenu";
     };
 
   };
@@ -95,9 +83,6 @@
     , ghostty
     , nixpkgs-unstable
     , nix-flatpak
-    , walker
-    , iwmenu
-    , bzmenu
     , ...
     } @ inputs:
     let

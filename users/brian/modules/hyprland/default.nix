@@ -10,7 +10,7 @@
       ./wlogout
       ./dunst
       ./rofi
-      ./walker
+      #./walker
     ];
 
 
@@ -94,10 +94,8 @@
         "systemctl --user enable --now hyprpaper.service"
         "systemctl --user enable --now hyprpolkitagent.service"
         "systemctl --user enable --now hypridle.service"
-        "uwsm app --wl-paste --type text --watch cliphist -max-items 25 store" #Stores only text data
-        "uwsm app --wl-paste --type image --watch cliphist -max-items 25 store" #Stores only image data
-        "uwsm app -- udiskie -s"
-        # "uwsm app -- walker --gapplication-service"
+        "uwsm app -- wl-paste --type text --watch cliphist -max-items 25 store" #Stores only text data
+        "uwsm app -- wl-paste --type image --watch cliphist -max-items 25 store" #Stores only image data
       ] ++ (
         if (osConfig.networking.hostName == "odin") then
           [
@@ -173,7 +171,7 @@
 	"$diff_change" = "0xff172a3a";
 	"$diff_text" = "0xff274964";
 
-        "col.active_border" = "$red";
+        "col.active_border" = "$blue";
         "col.inactive_border" = "$bg1";
         layout = "dwindle";
       };

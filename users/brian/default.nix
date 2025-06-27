@@ -26,7 +26,7 @@
       ./modules/vial
       ./modules/wezterm
       inputs.nix-flatpak.homeManagerModules.nix-flatpak
-      inputs.walker.homeManagerModules.default
+      #inputs.walker.homeManagerModules.default
       ./modules/flatpak
     ];
 
@@ -65,7 +65,6 @@
       httpie
       fzf
       yubikey-manager
-      #Deprecated yubikey-manager-qt
       backblaze-b2
       #Failed to download try again later mblock-mlink
       gimp
@@ -76,20 +75,15 @@
       file
       lm_sensors
       dig
-      udiskie
 
       #broken signal-desktop
-      dotnet-sdk_8
-      devenv
+      #Broken devenv
       slack
       lazygit
       btop
       fd
       brave
       gnome-disk-utility
-      #zed-editor
-
-      #kicad
       podman-tui
       podman-desktop
       kubectl

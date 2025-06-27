@@ -24,10 +24,14 @@
       family = "JetBrainsMono Nerd Font";
       style = "Regular";
     };
-    #shell.args = [ "--login" "-c" "tmux attach || tmux" ];
     terminal.shell.program = "${pkgs.zsh}/bin/zsh";
     env.term = "xterm-256color";
-    general.import = [pkgs.alacritty-theme.one_dark];
+    general.import = ["~/.config/alacritty/themes/onedark-darker.toml"];
+      #general.import = [pkgs.alacritty-theme.one_dark];
     # import = [ pkgs.alacritty-theme.catppuccin_mocha ]; # rose-pine  ];
   };
+
+    home.file = {
+        ".config/alacritty/themes/onedark-darker.toml".source = ./onedark-darker.toml;
+    };
 }

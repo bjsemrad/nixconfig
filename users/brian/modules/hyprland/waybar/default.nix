@@ -19,24 +19,17 @@
         margin-bottom = 5;
         modules-left = [
           "hyprland/workspaces"
-          #"hyprland/window"
-          # "wlr/taskbar"
         ];
         modules-center = [          
-          #"cpu"
-          #"memory"
-          "hyprland/window"
+          #"hyprland/window"
         ];
         modules-right = [
-          "memory"
-          "cpu"
-          "tray"
-          "custom/recorder"
+          #"custom/recorder"
           "custom/clipboard"
+          "bluetooth"
+          "network"
           "pulseaudio#sink"
           "pulseaudio#source"
-          # "network"
-          # "bluetooth"
           "battery"
           "clock"
         ];
@@ -143,9 +136,10 @@
         };
         "clock" = {
           # "format" = "{:%a %b %d, %G %I:%M %p} ";
-          "format" = "{:%a %b %d %I:%M %p} ";
+          #        "format" = "{:%a %b %d %I:%M %p} ";
+          "format" = "{:%a %I:%M %p} ";
           "interval" = 60;
-          "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          "tooltip-format" = "<big>{:%a %b %d}</big>\n<tt><small>{calendar}</small></tt>";
         };
         "cpu" = {
           "format" = "  {usage}%";
@@ -157,13 +151,12 @@
           "format" = "  {}%";
         };
         "bluetooth" = {
-          "format" = "";
-          "format-disabled" = "";
-          "format-connected" = "";
-          "tooltip-format" = "{status} {device_alias}";
-          "tooltip-format-connected" = " {device_enumerate}";
-          "tooltip-format-enumerate-connected" = "{device_alias}";
-          "on-click" = "blueman-manager";
+          "format" = "󰂯";
+          "format-disabled" = "󰂲";
+          "format-connected" = "󰂱";
+          "tooltip-format" = "Devices connected: {num_connections}";
+          "on-click" = "GTK_THEME=Adwaita-dark blueman-manager";
+          "justify" = "center";
         };
         "battery" = {
           "states" = {
@@ -174,26 +167,37 @@
           "format" = "{icon}";
           "format-charging" = "󰂄";
           "format-plugged" = " ";
-          "format-alt" = "{icon} {time}";
+          #"format-alt" = "{icon} {time}";
           "tooltip-format" = "{capacity}%, {time}";
           "format-icons" = [
-            "  "
-            "  "
-            "  "
-            "  "
-            "  "
+            ""
+            ""
+            ""
+            ""
+            ""
           ];
         };
         "battery#bat2" = {
           "bat" = "BAT2";
         };
         "network" = {
-          "format-wifi" = "";
+           "format-icons" = [
+            "󰤯"
+            "󰤟"
+            "󰤢"
+            "󰤥"
+            "󰤨"
+          ];
+          "family" = "ipv4";
+          "format" = "{icon}";
+          "format-wifi" = "{icon}";
           "format-ethernet" = "";
-          "format-disconnected" = "";
-          "tooltip-format-wifi" = " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}";
-          "tooltip-format-ethernet" = "  {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}";
-          "format-linked" = "{ifname} (No IP)";
+          "format-disconnected" = "󰖪";
+          "tooltip-format-wifi" = "{essid} {ipaddr} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
+          "tooltip-format-ethernet" = "{ipaddr} ⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
+          "tooltip-format-disconnected" = "Disconnected";
+          "interval" = 3;
+          "nospacing" = 1;
           "on-click-right" = "nm-connection-editor";
           "on-click" = "$HOME/.config/rofi/scripts/networkmanager.sh";
         };
@@ -272,8 +276,7 @@
 	    @define-color diff_text    #274964;
 
             * {
-              font-family: JetBrainsMono Nerd Font;
-              /*font-weight: bold; */
+              font-family: Hack Nerd Font;
               font-size: 16px;
             }
 
@@ -330,11 +333,6 @@
               background: transparent;
             }
 
-            #workspaces button.focused {
-              color: @blue;
-              background: transparent;
-            }
-
             #taskbar button {
               background: transparent;
               border: none;
@@ -350,11 +348,6 @@
                 border-radius: 10px;
             }
 
-            #cpu, #disk, #memory, #temperature {
-              padding-right: 10px;
-              color: @fg_dark;
-            }
-
             #custom-sep {
               color: @black;
             }
@@ -362,7 +355,6 @@
             #custom-session {
               color: @text;
               font-size: 18px;
-              margin-right: 10px;
             }
 
             #window {
@@ -370,68 +362,36 @@
             }
 
             #clock {
-              color: @fg_dark;
               margin-right: 10px;
-              margin-left: 10px;
-            }
-
-            #tray {
-              color: @fg_dark;
-              padding-right: 10px;
-              padding-left: 10px;
-            }
-
-            #battery {
-              /*padding-right: 10px;*/
-              padding-left: 10px;
-              color: @fg_dark;
             }
 
             #pulseaudio,
             #wireplumber,
+            #battery,
             #custom-clipboard,
             #custom-menu,
             #backlight,
             #idle_inhibitor,
-            #bluetooth {
+            #network,
+            #clock,
+            #tray,
+            #custom-session,
+            #custom-recorder,
+            #bluetooth,
+            #cpu,
+            #disk,
+            #memory,
+            #temperature {
               color: @fg_dark;
-              padding-right: 10px;
-              padding-left: 10px; 
+              min-width: 13px;
+              margin-right: 10px;
+              padding: 0px 5px 0px 5px;
             }
 
             #bluetooth.connected {
               color: @green;
             }
 
-            #network {
-              color: @green;
-              padding-right: 10px;
-              padding-left: 10px; 
- 
-            }
-
-            #network.disconnected {
-              color: @orange;
-              padding-right: 10px;
-            }
-            
-            #network.disabled {
-              color: @red;
-              padding-right: 10px;
-            }
-            
-            #pulseaudio.muted {
-             padding-right: 10px;
-            }
-
-            #pulseaudio {
-              padding-right: 10px;
-            }
-            
-            #battery.charging {
-              color: @green;
-            }
-            
             #battery.warning:not(.charging) {
               color: @orange;
             }
@@ -440,16 +400,8 @@
               color: @red;
             }
 
-            #custom-recorder {
-              padding-right: 10px;
-              padding-left: 10px;
-              color: @fg_dark;
-            }
-
             #custom-recorder.enabled {
-              padding-right: 10px;
-              padding-left: 10px;
-      	      color: @green;
+              color: @green;
             }
     '';
   };
