@@ -1,3 +1,4 @@
+{ osConfig, ... }:
 {
 
   home.file.".config/waybar/scripts/recorder.sh" = {
@@ -20,8 +21,8 @@
         modules-left = [
           "hyprland/workspaces"
         ];
-        modules-center = [          
-          #"hyprland/window"
+        modules-center = [
+          "hyprland/window"
         ];
         modules-right = [
           #"custom/recorder"
@@ -30,9 +31,13 @@
           "network"
           "pulseaudio#sink"
           "pulseaudio#source"
-          "battery"
-          "clock"
-        ];
+       ] ++ ( 
+        if (osConfig.networking.hostName == "thor") then
+          [ "battery" 
+	    "clock"
+	  ]
+        else [ "clock" ]
+      );
         "wlr/taskbar" = {
           "format" = "{icon}";
           "icon-size" = 14;
@@ -284,6 +289,7 @@
             }
 
             window#waybar {
+              /*background-color: rgba(31, 35, 41, 1.0);*/
               background-color: rgba(14, 16, 19, 1.0);
               transition-property: background-color;
               transition-duration: 0.5s;
@@ -318,18 +324,18 @@
 
             #workspaces button {
                 background: transparent;
-                color: @fg_dark;
+                color: @light_grey;
                 font-weight: bold;
                 border: none;
             }
 
             #workspaces button:hover {
-                color: @text;
+                color: @fg;
                 background: transparent;
             }
 
             #workspaces button.active {
-              color: #FFFFFF;
+              color: @fg;
               background: transparent;
             }
 

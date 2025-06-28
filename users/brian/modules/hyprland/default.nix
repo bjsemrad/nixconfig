@@ -322,6 +322,8 @@
         "$mainMod SHIFT, up, swapwindow, u"
         "$mainMod SHIFT, down, swapwindow, d"
 
+        "$mainMod, J, togglesplit, "# dwindle
+
         # Resize window
         "$mainMod CTRL_L, left, resizeactive, -10 0"
         "$mainMod CTRL_L, right, resizeactive, 10 0"
