@@ -210,7 +210,7 @@
           "border, 1, 10, default"
           "borderangle, 1, 8, default"
           "fade, 1, 7, default"
-          "workspaces, 1, 7, default, fade"
+          "workspaces, 0, 7, default, fade"
           "windowsMove, 1, 6, default"
         ];
       };
