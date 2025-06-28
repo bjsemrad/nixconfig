@@ -40,9 +40,8 @@
 
     extraConfig = ''
        # Fix Colors
-      set -g default-terminal "screen-256color"
-      set -ag terminal-overrides ",xterm-256color:Tc"
-
+      set -g default-terminal "$TERM"
+      set -ag terminal-overrides ",$TERM:Tc"
       set -g prefix C-a
       unbind-key t
  
