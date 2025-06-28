@@ -335,8 +335,11 @@
             }
 
             #workspaces button.active {
-              color: @fg;
-              background: transparent;
+              color: @black;
+              background: @fg;
+              border-radius: 5px;
+              border: 2px solid @bg1;
+              /*background: transparent;*/
             }
 
             #taskbar button {
@@ -380,7 +383,7 @@
             #idle_inhibitor,
             #network,
             #clock,
-            #tray,
+            #trayu
             #custom-session,
             #custom-recorder,
             #bluetooth,
