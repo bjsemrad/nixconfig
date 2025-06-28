@@ -61,6 +61,7 @@
 
     ghostty = {
       url = "github:ghostty-org/ghostty";
+      ref =  "refs/tags/v1.1.3";
     };
 
     nix-flatpak = {
