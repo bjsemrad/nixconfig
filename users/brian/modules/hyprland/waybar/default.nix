@@ -293,6 +293,7 @@
               background-color: rgba(14, 16, 19, 1.0);
               transition-property: background-color;
               transition-duration: 0.5s;
+              border-bottom: 2px solid @bg1;
             }
 
             .modules-right {
@@ -339,6 +340,7 @@
               background: @fg;
               border-radius: 5px;
               border: 2px solid @bg1;
+              margin: 4px 0 6px 0;
               /*background: transparent;*/
             }
 
