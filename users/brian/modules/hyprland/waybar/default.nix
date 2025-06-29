@@ -320,6 +320,7 @@
             }
 
             #workspaces {
+              margin-left: 10px;
               background: transparent;
             }
 
