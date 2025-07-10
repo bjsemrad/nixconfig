@@ -6,5 +6,6 @@
     nerd-fonts.caskaydia-mono
     nerd-fonts.hack
     font-awesome
+    noto-fonts
   ];
 }

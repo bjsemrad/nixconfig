@@ -284,7 +284,7 @@
       bind = [
         # "$mainMod, grave, hyprexpo:expo, toggle"  # can be: toggle, off/disable or on/enable
 
-        "$mainMod, RETURN, exec, uwsm app -- ghostty" #kitty" #alacritty"
+        "$mainMod, RETURN, exec, ghostty" #uwsm app -- ghostty" #kitty" #alacritty"
         "$mainMod, Q, killactive,"
         "$mainMod, E, exec,  uwsm app -- thunar"
         "$mainMod, G, togglefloating,"

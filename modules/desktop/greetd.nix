@@ -9,6 +9,11 @@
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --sessions ${config.services.displayManager.sessionData.desktops}/share/xsessions:${config.services.displayManager.sessionData.desktops}/share/wayland-sessions --remember --remember-user-session --asterisks";
         user = "greeter";
       };
+
+      #     initial_session = {
+      #  command = "exec uwsm start hyprland.desktop";
+      #  user = "brian";
+      #};
     };
   };
 }

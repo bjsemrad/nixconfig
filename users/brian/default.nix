@@ -41,7 +41,7 @@
       #Moving to flatpack
       #jetbrains.idea-ultimate
       #jetbrains.rust-rover
-      vscode
+      #vscode
       zig
       nodejs_24
       gcc
@@ -85,7 +85,7 @@
       brave
       gnome-disk-utility
       podman-tui
-      podman-desktop
+      #podman-desktop
       kubectl
 
       overskride

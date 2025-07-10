@@ -60,7 +60,7 @@
     };
 
     ghostty = {
-      url = "github:ghostty-org/ghostty?ref=v1.1.3";
+      url = "github:ghostty-org/ghostty";
     };
 
     nix-flatpak = {
