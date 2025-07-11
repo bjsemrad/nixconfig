@@ -290,7 +290,7 @@
 
                   #workspaces button {
                       background: transparent;
-                      color: @light_grey;
+                      color: @fg_dark;
                       font-weight: bold;
                       border: none;
                   }
@@ -303,11 +303,8 @@
                   }
 
                   #workspaces button.active {
-                    color: @black;
-                    background: @fg;
-                    border-radius: 5px;
-                    border: 2px solid @bg1;
-                    /*background: transparent;*/
+                    color: @yellow;
+                    background: transparent;
                   }
 
                   #taskbar button {
