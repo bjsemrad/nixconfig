@@ -63,7 +63,8 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = null;
+    portalPackage = null;
     plugins = [
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
     ];
@@ -284,9 +285,11 @@
       bind = [
         # "$mainMod, grave, hyprexpo:expo, toggle"  # can be: toggle, off/disable or on/enable
 
-        "$mainMod, RETURN, exec, ghostty" #uwsm app -- ghostty" #kitty" #alacritty"
+        "$mainMod, RETURN, exec, uwsm app -- ghostty" #kitty" #alacritty"
+        "$mainMod, T, exec, uwsm app -- ghostty"
         "$mainMod, Q, killactive,"
         "$mainMod, E, exec,  uwsm app -- thunar"
+        "$mainMod, B, exec,  uwsm app -- firefox"
         "$mainMod, G, togglefloating,"
 
         # "$mainMod, D, exec, ags -t launcher"

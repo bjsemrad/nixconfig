@@ -1,7 +1,18 @@
 {
-  nix.gc.automatic = true;
-  nix.gc.dates = "daily";
-  nix.gc.options = "--delete-older-than 14d";
+   nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 7d";
+    randomizedDelaySec = "5min";
+  };
+
+  # Automatic garbage collection (user profiles)
+  systemd.user.services."nix-gc" = {
+    description = "Garbage collection for user profiles";
+    script = "/run/current-system/sw/bin/nix-collect-garbage --delete-older-than 7d";
+    startAt = "daily";
+  };
+
   nix.optimise.automatic = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" "impure-derivations" "ca-derivations"];

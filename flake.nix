@@ -23,7 +23,7 @@
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
       ref = "refs/tags/v0.49.0";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland-plugins = {
@@ -33,15 +33,17 @@
 
     hyprland-systeminfo = {
       url = "github:hyprwm/hyprsysteminfo/v0.1.3";
-      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprlock = {
       url = "github:hyprwm/hyprlock/v0.8.2";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hypridle = {
       url = "github:hyprwm/hypridle/v0.1.6";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     alacritty-theme = {
@@ -59,9 +61,9 @@
       url = "github:InioX/matugen?ref=v2.4.1";
     };
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
+    #ghostty = {
+    #  url = "github:ghostty-org/ghostty?ref=v1.1.3";
+    #};
 
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
@@ -80,7 +82,7 @@
     , hyprland-systeminfo
     , waybar
     , matugen
-    , ghostty
+    #, ghostty
     , nixpkgs-unstable
     , nix-flatpak
     , ...

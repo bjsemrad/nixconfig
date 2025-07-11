@@ -282,7 +282,7 @@
 
             * {
               font-family: Hack Nerd Font;
-              font-size: 16px;
+              font-size: 14px;
             }
 
             window {
@@ -341,7 +341,7 @@
               background: @fg;
               border-radius: 5px;
               border: 2px solid @bg1;
-              margin: 4px 0 6px 0;
+              margin: 1px 0 2px 0;
               /*background: transparent;*/
             }
 
