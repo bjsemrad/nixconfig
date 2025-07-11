@@ -12,7 +12,7 @@ in {
     shellAliases = {
       #homeupdate = "home-manager switch --flake ${nixconfigdir}";
       nixupdate =
-        "(cd ${config.home.homeDirectory}/${nixconfigdir} && nix flake update) && sudo nixos-rebuild switch --verbose --upgrade --option keep-outputs false --flake ${config.home.homeDirectory}/${nixconfigdir}";
+        "(cd ${config.home.homeDirectory}/${nixconfigdir} && nix flake update) && sudo nixos-rebuild switch --verbose --upgrade --flake ${config.home.homeDirectory}/${nixconfigdir}";
       #forces cleanup of home manager generations
       nixupdateclean =
         "(cd ${config.home.homeDirectory}/${nixconfigdir} && nix flake update) && sudo nixos-rebuild switch --verbose --upgrade --option keep-outputs false --option keep-derivations false --flake ${config.home.homeDirectory}/${nixconfigdir}";
