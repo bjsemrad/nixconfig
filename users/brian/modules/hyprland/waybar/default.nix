@@ -100,19 +100,22 @@
           "all-outputs" = false;
           "active-only" = false;
           "on-click" = "activate";
-          "format" = "{icon}";
+          "format" = "{icon}  {id}";
+          "show-special" = true;
           "persistent-workspaces" = { "*" = 2; };
           format-icons = {
-            "1" = "1";
-            "2" = "2";
-            "3" = "3";
-            "4" = "4";
-            "5" = "5";
-            "6" = "6";
-            "7" = "7";
-            "8" = "8";
-            "9" = "9";
-            "10" = "10";
+            "default" = "";
+            "active" = "";
+            #"1" = "1";
+            # "2" = "2";
+            #"3" = "3";
+            #"4" = "4";
+            #"5" = "5";
+            #"6" = "6";
+            #"7" = "7";
+            #"8" = "8";
+            #"9" = "9";
+            #"10" = "10";
           };
           "sort-by-number" = true;
         };
@@ -303,7 +306,7 @@
                   }
 
                   #workspaces button.active {
-                    color: @yellow;
+                    color: @fg;
                     background: transparent;
                   }
 
