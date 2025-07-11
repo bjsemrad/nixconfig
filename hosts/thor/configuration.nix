@@ -41,7 +41,8 @@
 
   # Bootloader.
   boot = {
-    binfmt.emulatedSystems = [ "aarch64-linux" "armv7l-linux" "armv6l-linux" "riscv64-linux" ];
+    binfmt.emulatedSystems =
+      [ "aarch64-linux" "armv7l-linux" "armv6l-linux" "riscv64-linux" ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -64,7 +65,6 @@
     HandlePowerKey=ignore
   '';
 
-
   users.users.root = {
     # disable root login here, and also when installing nix by running `nixos-install --no-root-passwd`
     # https://discourse.nixos.org/t/how-to-disable-root-user-account-in-configuration-nix/13235/3
@@ -74,11 +74,9 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    backupFileExtension = "hmback";
+    backupFileExtension = "hmbackup";
     users = import "${inputs.self}/users";
-    extraSpecialArgs = {
-      inherit inputs;
-    };
+    extraSpecialArgs = { inherit inputs; };
   };
 
   # Set your time zone.
