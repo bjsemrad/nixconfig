@@ -18,9 +18,9 @@ in {
         "(cd ${config.home.homeDirectory}/${nixconfigdir} && nix flake update) && sudo nixos-rebuild switch --verbose --upgrade --option keep-outputs false --option keep-derivations false --flake ${config.home.homeDirectory}/${nixconfigdir}";
       nixswitch =
         "sudo nixos-rebuild switch --verbose --upgrade --flake ${config.home.homeDirectory}/${nixconfigdir}";
-      nixgc = "sudo nix-store --gc";
+      nixgc = "sudo nix-store --gc;nix-store --gc";
       # recommeneded to sometimes run as sudo to collect additional garbage
-      nixgcd = "sudo nix-collect-garbage -d";
+      nixgcd = "sudo nix-collect-garbage -d;nix-collect-garbage -d";
       ga = "git add";
       gba = "git branch -a";
       gc = "git commit -v";
