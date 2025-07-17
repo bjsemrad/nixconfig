@@ -37,6 +37,8 @@ in {
       sshminecraft = "ssh mine@10.0.10.11";
       sshproxy = "ssh nginx@proxy.otter-rigel.ts.net";
       sshcroc = "ssh worm@loki.otter-rigel.ts.net";
+      tmuxsessionize =
+        "tmux attach-session -t main || tmux new-session -s main";
       croc-rebuild =
         "nixos-rebuild switch -s --flake .#loki --target-host root@loki.otter-rigel.ts.net  --verbose";
       dashboard-rebuild =
@@ -62,24 +64,24 @@ in {
     initContent = ''
             export PATH=$PATH:~/tools
             if uwsm check may-start && uwsm select; then
-      	exec systemd-cat -t uwsm_start uwsm start default
+      	      exec systemd-cat -t uwsm_start uwsm start default
             fi
 
-            if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-              tmux attach-session -t main || tmux new-session -s main
-            fi
+            #if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+            #  tmux attach-session -t main || tmux new-session -s main
+           # fi
 
-            zellij_tab_name_update() {
-              if [[ -n $ZELLIJ ]]; then
-                local current_dir=$PWD
-                if [[ $current_dir == $HOME ]]; then
-                    current_dir="~"
-                else
-                    current_dir=''${current_dir##*/}
-                fi
-                command nohup zellij action rename-tab $current_dir >/dev/null 2>&1
-              fi
-            }
+            #zellij_tab_name_update() {
+            #  if [[ -n $ZELLIJ ]]; then
+            #    local current_dir=$PWD
+            #    if [[ $current_dir == $HOME ]]; then
+            #        current_dir="~"
+            #    else
+            #        current_dir=''${current_dir##*/}
+            #    fi
+            #    command nohup zellij action rename-tab $current_dir >/dev/null 2>&1
+            #  fi
+            #}
 
 
             #if [[ -z "$ZELLIJ" ]]; then

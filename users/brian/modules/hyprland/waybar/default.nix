@@ -1,4 +1,4 @@
-{ osConfig, ... }: {
+{ osConfig, inputs, pkgs, ... }: {
 
   home.file.".config/waybar/scripts/recorder.sh" = {
     source = ./scripts/recorder.sh;
@@ -18,20 +18,102 @@
         margin-left = 0; # 10;
         margin-right = 0; # 10;
         margin-bottom = 5;
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = [ "group/launcher" "hyprland/workspaces" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [
           #"custom/recorder"
-          "custom/clipboard"
-          "bluetooth"
+          #"custom/clipboard"
+          # "group/expand"
+          #"bluetooth"
           "network"
-          "pulseaudio#sink"
-          "pulseaudio#source"
+          # "pulseaudio#sink"
+          #"pulseaudio#source"
         ] ++ (if (osConfig.networking.hostName == "thor") then [
           "battery"
+          "group/settings"
           "clock"
-        ] else
-          [ "clock" ]);
+        ] else [
+          "group/settings"
+          "clock"
+        ]);
+        "group/launcher" = {
+          "orientation" = "inherit";
+          "drawer" = {
+            "transition-duration" = 500;
+            "transition-left-to-right" = true;
+          };
+          "modules" = [
+            "custom/launcher"
+            "custom/lock"
+            "custom/reboot"
+            "custom/shutdown"
+            "custom/logout"
+            "custom/suspend"
+          ];
+        };
+        "custom/expand" = {
+          "format" = "";
+          "tooltip" = false;
+        };
+        "custom/endpoint" = {
+          "format" = "";
+          "tooltip" = false;
+        };
+        "custom/settings" = {
+          "format" = "";
+          "tooltip" = false;
+        };
+        "group/settings" = {
+          "orientation" = "inherit";
+          "drawer" = {
+            "transition-duration" = 500;
+            "transition-left-to-right" = false;
+          };
+          "modules" = [
+            "custom/settings"
+            "custom/endpoint"
+            "tray"
+            "custom/clipboard"
+            "bluetooth"
+            "pulseaudio#sink"
+            "pulseaudio#source"
+          ];
+        };
+
+        "custom/lock" = {
+          "format" = "";
+          "on-click" = "hyprlock";
+          "tooltip-format" = "Lock";
+        };
+        "custom/reboot" = {
+          "format" = "";
+          "on-click" = "systemctl reboot";
+          "tooltip-format" = "Reboot";
+        };
+        "custom/shutdown" = {
+          "format" = "";
+          "on-click" = "systemctl poweroff";
+          "tooltip-format" = "Shutdown";
+        };
+        "custom/logout" = {
+          "format" = "󰗽";
+          "on-click" = "hyprctl dispatch exit 0";
+          "tooltip-format" = "Logout";
+        };
+        "custom/suspend" = {
+          "format" = "󰤄";
+          "on-click" = "systemctl suspend";
+          "tooltip-format" = "Sleep";
+        };
+        "group/expand" = {
+          "orientation" = "inherit";
+          "drawer" = {
+            "transition-duration" = 500;
+            "transition-left-to-right" = false;
+          };
+          "modules" =
+            [ "custom/expand" "custom/endpoint" "tray" "custom/clipboard" ];
+        };
         "wlr/taskbar" = {
           "format" = "{icon}";
           "icon-size" = 14;
@@ -42,7 +124,9 @@
         "custom/launcher" = {
           format = "{icon}";
           "icon-size" = 22;
-          format-icons = [ "" ];
+          format-icons = [ "󰀻" ];
+          "tooltip-format" = "Applications";
+          #format-icons = [ "" ];
           "on-click" = "$HOME/.config/rofi/scripts/launcher.sh";
         };
         "custom/sep" = { "format" = "|"; };
@@ -100,7 +184,7 @@
           "all-outputs" = false;
           "active-only" = false;
           "on-click" = "activate";
-          "format" = "{icon}  {id}";
+          "format" = "{icon} {id}";
           "show-special" = true;
           "persistent-workspaces" = { "*" = 2; };
           format-icons = {
@@ -138,8 +222,11 @@
         "bluetooth" = {
           "format" = "󰂯";
           "format-disabled" = "󰂲";
-          "format-connected" = "󰂱";
-          "tooltip-format" = "Devices connected: {num_connections}";
+          "format-connected" = "󰂱 {status}";
+          "tooltip-format" = ''
+            Devices connected: 
+            {device_enumerate}'';
+          "tooltip-format-enumerate-connected" = "{device_alias}";
           "on-click" = "GTK_THEME=Adwaita-dark blueman-manager";
           "justify" = "center";
         };
@@ -248,8 +335,8 @@
       	    @define-color diff_text    #274964;
 
                   * {
-                    font-family: Hack Nerd Font;
-                    font-size: 14px;
+                    font-family: JetbrainsMono Nerd Font Propo; /*Hack Nerd Font;*/
+                    font-size: 16px;
                   }
 
                   window {
@@ -285,6 +372,25 @@
                   tooltip label {
                     color: @fg_dark;
                   }
+
+                  #custom-session {
+                    font-size: 16px;
+                  }
+
+                  #custom-launcher {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    font-size: 16px;
+                  } 
+
+
+                 /* #custom-launcher {
+                    background: @black;
+                    margin: 0px 10px 0px 0px;
+                    padding: 0px 35px 0px 15px;
+                    border-radius: 0px 0px 40px 0px;
+                   font-size: 16px;
+                  } */
 
                   #workspaces {
                     margin-left: 10px;
@@ -329,17 +435,8 @@
                     color: @black;
                   }
 
-                  #custom-session {
-                    color: @text;
-                    font-size: 18px;
-                  }
-
                   #window {
                     color: @fg_dark;
-                  }
-
-                  #clock {
-                    margin-right: 10px;
                   }
 
                   #pulseaudio,
@@ -351,7 +448,15 @@
                   #idle_inhibitor,
                   #network,
                   #clock,
-                  #trayu
+                  #tray,
+                  #custom-settings,
+                  #custom-expand,
+                  #custom-lock,
+                  #custom-reboot,
+                  #custom-shutdown,
+                  #custom-suspend,
+                  #custom-logout,
+                  #custom-endpoint,
                   #custom-session,
                   #custom-recorder,
                   #bluetooth,

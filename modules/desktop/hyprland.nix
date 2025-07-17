@@ -1,5 +1,4 @@
-{ pkgs, lib, inputs, ... }:
-{
+{ pkgs, lib, inputs, ... }: {
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -9,19 +8,16 @@
   services.blueman.enable = true;
   programs.thunar.enable = true;
 
-   services.gvfs = {
+  services.gvfs = {
     enable = true;
     package = lib.mkForce pkgs.gnome.gvfs;
   };
 
-  services.displayManager = {
-    defaultSession = "hyprland-uwsm";
-  };
+  services.displayManager = { defaultSession = "hyprland-uwsm"; };
 
   security.polkit.enable = true;
 
-
-  security.pam.services.hyprlock = {};
+  security.pam.services.hyprlock = { };
   environment.systemPackages = with pkgs; [
     hyprpaper
     wf-recorder
@@ -32,8 +28,9 @@
     pamixer
     fuzzel
     cliphist
-    swayidle
-    networkmanagerapplet
+    #swayidle
+    #networkmanagerapplet
+    networkmanager_dmenu
     xdg-desktop-portal-gtk
     grim
     slurp
