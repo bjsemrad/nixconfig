@@ -72,14 +72,27 @@
           "modules" = [
             "custom/settings"
             "custom/endpoint"
-            "tray"
-            "custom/clipboard"
-            "bluetooth"
+            "custom/backlight"
+            "backlight/slider"
             "pulseaudio#sink"
+            "pulseaudio/slider"
             "pulseaudio#source"
+            "custom/clipboard"
+            "tray"
+            "bluetooth"
           ];
         };
-
+        "pulseaudio/slider" = {
+          "min" = 0;
+          "max" = 100;
+          "orientation" = "horizontal";
+        };
+        "backlight/slider" = {
+          "min" = 0;
+          "max" = 100;
+          "orientation" = "horizontal";
+        };
+        "custom/backlight" = { "format" = ""; };
         "custom/lock" = {
           "format" = "";
           "on-click" = "hyprlock";
@@ -439,7 +452,15 @@
                     color: @fg_dark;
                   }
 
-                  #pulseaudio,
+                  #pulseaudio.sink,
+                  #custom-backlight {
+                    color: @fg_dark;
+                    min-width: 13px;
+                    padding: 0px 1px 0px 1px;
+                  }
+
+
+                  #pulseaudio.source,
                   #wireplumber,
                   #battery,
                   #custom-clipboard,
@@ -485,6 +506,45 @@
                   #custom-recorder.enabled {
                     color: @green;
                   }
+
+                  #pulseaudio-slider slider {
+                    min-height: 0px;
+                    min-width: 0px;
+                    opacity: 0;
+                    background-image: none;
+                    border: none;
+                    box-shadow: none;
+                 }
+                #pulseaudio-slider trough {
+                  min-height: 10px;
+                  min-width: 80px;
+                  border-radius: 5px;
+                  background-color: @bg3;
+                }
+                #pulseaudio-slider highlight {
+                  min-width: 10px;
+                  border-radius: 5px;
+                  background-color: @fg;
+                }
+                #backlight-slider slider {
+                  min-height: 0px;
+                  min-width: 0px;
+                  opacity: 0;
+                  background-image: none;
+                  border: none;
+                  box-shadow: none;
+                }
+                #backlight-slider trough {
+                  min-height: 10px;
+                  min-width: 80px;
+                  border-radius: 5px;
+                  background-color: @bg3;
+                }
+                #backlight-slider highlight {
+                  min-width: 10px;
+                  border-radius: 5px;
+                  background-color: @fg;
+                }
     '';
   };
 }
