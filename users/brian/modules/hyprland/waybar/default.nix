@@ -343,8 +343,8 @@
                   }
 
                   window#waybar {
-                    /*background-color: rgba(31, 35, 41, 1.0);*/
-                    background-color: rgba(14, 16, 19, 1.0);
+                    background-color: rgba(0, 0, 0, 1.0);
+                    /*background-color: rgba(14, 16, 19, 1.0);*/
                     transition-property: background-color;
                     transition-duration: 0.5s;
                     border-bottom: 2px solid @bg1;

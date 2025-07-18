@@ -15,7 +15,7 @@ configuration {
 @import                          "themes/colors.rasi"
 
 * {
-     font: "Hack Nerd Font 14";
+     font: "JetbrainsMono Nerd Font Propo 14";
     border-colour:               var(border);
     handle-colour:               var(selected);
     background-colour:           var(background);
@@ -44,7 +44,6 @@ configuration {
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
-   /* transparency:                "real";*/
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;

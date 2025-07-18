@@ -1,9 +1,38 @@
 * {
-    background:     #0e1013ff;/* #1f2329ff; one dark*/ /*0e1013ff;*/ /* Black */
+    background:     #000000E0;/* #1f2329ff; one dark*/ /*0e1013ff;*/ /* Black */
     background-alt: #282c34ff; /* Bg1 */  
     foreground:     #a0a8b7ff; /* text */
-    selected:       #4fa6edff;  /* blue */
+    selected:       #7a818eff;  /* blue */
     active:         #4fa6edff; /* blue */
     urgent:         #e86671ff; /*red */
-    border:	    #4fa6edff; /* bg1 */
+    border:	    #282c34ff; /*#4fa6edff;*/ /* bg1 */
 }
+
+
+    /**
+               @define-color black        #0e1013; 
+                  @define-color bgDark       #1E2127; 
+      	    @define-color bg0          #1f2329;
+      	    @define-color bg1          #282c34;
+      	    @define-color bg2          #30363f;
+      	    @define-color bg3          #323641;
+      	    @define-color bg_d         #181b20;
+      	    @define-color bg_blue      #61afef;
+      	    @define-color bg_yellow    #e8c88c;
+      	    @define-color fg           #a0a8b7;
+                  @define-color fg_dark      #abb2bf;
+      	    @define-color purple       #bf68d9;
+      	    @define-color green        #8ebd6b;
+      	    @define-color orange       #cc9057;
+      	    @define-color blue         #4fa6ed;
+      	    @define-color yellow       #e2b86b;
+      	    @define-color cyan         #48b0bd;
+      	    @define-color red          #e55561;
+      	    @define-color grey         #535965;
+      	    @define-color light_grey   #7a818e;
+      	    @define-color dark_cyan    #266269;
+      	    @define-color dark_red     #8b3434;
+      	    @define-color dark_yellow  #835d1a;
+      	    @define-color dark_purple  #7e3992;
+      	    @define-color diff_add     #272e23;
+ **/
