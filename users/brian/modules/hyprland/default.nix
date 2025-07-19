@@ -224,7 +224,7 @@
 
       windowrulev2 = [
         "workspace 1,class:(firefox)"
-        "workspace 1,class:(firave-browser)"
+        "workspace 1,class:(brave-browser)"
         "workspace 3,class:(Proton Mail)"
         "workspace 2,class:(discord)"
         "workspace 2,class:(signal)"
@@ -262,7 +262,7 @@
         "$mainMod, T, exec, uwsm app -- ghostty"
         "$mainMod, Q, killactive,"
         "$mainMod, E, exec,  uwsm app -- thunar"
-        "$mainMod, B, exec,  uwsm app -- firefox"
+        "$mainMod, B, exec,  uwsm app -- brave"
         "$mainMod, G, togglefloating,"
 
         # "$mainMod, D, exec, ags -t launcher"
