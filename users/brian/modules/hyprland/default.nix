@@ -154,7 +154,7 @@
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
-        # layerrule = ["blur, waybar" "blur, rofi"];
+        layerrule = [ "blur,waybar" "ignorealpha 0.1,waybar" ];
 
         blur = {
           enabled = true;
@@ -163,6 +163,13 @@
           new_optimizations = true;
           ignore_opacity = true;
           xray = true;
+          brightness = 1;
+          noise = 1.0e-2;
+          contrast = 1;
+          popups = true;
+          popups_ignorealpha = 0.6;
+          input_methods = true;
+          input_methods_ignorealpha = 0.8;
         };
 
         shadow = {

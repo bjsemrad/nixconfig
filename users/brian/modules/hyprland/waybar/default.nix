@@ -39,6 +39,7 @@
         "group/launcher" = {
           "orientation" = "inherit";
           "drawer" = {
+            "children-class" = "launcheritems";
             "transition-duration" = 500;
             "transition-left-to-right" = true;
           };
@@ -356,11 +357,11 @@
                   }
 
                   window#waybar {
-                    background-color: rgba(0, 0, 0, 1.0);
+                    background-color: rgba(0, 0, 0, 0.5);
                     /*background-color: rgba(14, 16, 19, 1.0);*/
                     transition-property: background-color;
                     transition-duration: 0.5s;
-                    border-bottom: 2px solid @bg1;
+                    /*border-bottom: 2px solid @bg1;*/
                   }
 
                   .modules-right {
@@ -391,10 +392,15 @@
                   }
 
                   #custom-launcher {
+                    min-width: 13px;
                     margin-left: 10px;
-                    margin-right: 10px;
+                    margin-right: 15px;
                     font-size: 16px;
-                  } 
+                  }
+
+                  #launcher {
+                    margin-left: 10px;
+                  }
 
 
                  /* #custom-launcher {
@@ -405,9 +411,23 @@
                    font-size: 16px;
                   } */
 
+                 /* #launcher {
+                    background: @black;
+                    margin-right: 5px;
+                    padding: 0px 10px 0px 10px;
+                    border-radius: 0px 0px 40px 0px;
+                    font-size: 16px;
+                  } */
+
+
                   #workspaces {
+                    margin-bottom: 5px;
+                    margin-top: 5px;
                     margin-left: 10px;
                     background: transparent;
+                    /*background: @black;
+                    border-radius: 24px 10px 24px 10px;
+                    padding: 0 20px;*/
                   }
 
                   #workspaces button {
