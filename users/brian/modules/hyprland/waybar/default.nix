@@ -17,7 +17,7 @@
         margin-top = 0; # 5;
         margin-left = 0; # 10;
         margin-right = 0; # 10;
-        margin-bottom = 5;
+        margin-bottom = 2;
         modules-left = [ "group/launcher" "hyprland/workspaces" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [
@@ -357,7 +357,7 @@
                   }
 
                   window#waybar {
-                    background-color: rgba(0, 0, 0, 0.5);
+                    background-color: rgba(0, 0, 0, 1.0);
                     /*background-color: rgba(14, 16, 19, 1.0);*/
                     transition-property: background-color;
                     transition-duration: 0.5s;
@@ -421,8 +421,6 @@
 
 
                   #workspaces {
-                    margin-bottom: 5px;
-                    margin-top: 5px;
                     margin-left: 10px;
                     background: transparent;
                     /*background: @black;
