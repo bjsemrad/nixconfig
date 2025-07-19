@@ -72,8 +72,8 @@
           "modules" = [
             "custom/settings"
             "custom/endpoint"
-            "custom/backlight"
-            "backlight/slider"
+            #          "custom/backlight"
+            #"backlight/slider"
             "pulseaudio#sink"
             "pulseaudio/slider"
             "pulseaudio#source"
