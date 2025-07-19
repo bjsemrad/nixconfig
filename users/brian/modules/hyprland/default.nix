@@ -224,6 +224,7 @@
 
       windowrulev2 = [
         "workspace 1,class:(firefox)"
+        "workspace 1,class:(firave-browser)"
         "workspace 3,class:(Proton Mail)"
         "workspace 2,class:(discord)"
         "workspace 2,class:(signal)"
