@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [ 
     nil
@@ -40,7 +40,8 @@
           insert = "bar";
         };
         bufferline = "multiple";
-      };
+     };
+       keys.normal."C-c" = "normal_mode";
        keys.insert."C-c" = "normal_mode";
        keys.select."C-c" = "normal_mode";
        keys.normal."C-/" = "toggle_comments";
