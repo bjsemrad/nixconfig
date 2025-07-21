@@ -41,6 +41,10 @@
         };
         bufferline = "multiple";
       };
+       keys.insert."C-c" = "normal_mode";
+       keys.select."C-c" = "normal_mode";
+       keys.normal."C-/" = "toggle_comments";
+       keys.insert."C-/" = "toggle_comments";
     };
   };
 }
