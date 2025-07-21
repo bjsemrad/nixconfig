@@ -7,6 +7,7 @@
     ./modules/firefox
     ./modules/chromium
     ./modules/git
+    ./modules/jujutsu
     ./modules/hyprland
     ./modules/java
     ./modules/gradle

@@ -32,12 +32,10 @@
 
     hyprlock = {
       url = "github:hyprwm/hyprlock/v0.9.0";
-      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hypridle = {
       url = "github:hyprwm/hypridle/v0.1.6";
-      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     alacritty-theme = {
@@ -53,17 +51,11 @@
     };
 
     matugen = { url = "github:InioX/matugen?ref=v2.4.1"; };
-
-    #ghostty = {
-    #  url = "github:ghostty-org/ghostty?ref=v1.1.3";
-    #};
-
     nix-flatpak = { url = "github:gmodena/nix-flatpak/?ref=latest"; };
 
   };
   outputs = { self, nixpkgs, home-manager, nixos-hardware, alacritty-theme
     , hyprland, hypridle, hyprlock, hyprland-systeminfo, waybar, matugen
-    #, ghostty
     , nixpkgs-unstable, nix-flatpak, ... }@inputs:
     let
       system = "x86_64-linux";
