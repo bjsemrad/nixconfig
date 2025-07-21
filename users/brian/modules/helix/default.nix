@@ -18,7 +18,6 @@
     	   name = "nix";
 	       auto-format = true;
     	}
-      
       {
     	   name = "go";
 	       auto-format = true;
