@@ -137,7 +137,7 @@
         };
         "custom/launcher" = {
           format = "{icon}";
-          "icon-size" = 22;
+          "icon-size" = 24;
           format-icons = [ "󰀻" ];
           "tooltip-format" = "Applications";
           #format-icons = [ "" ];
