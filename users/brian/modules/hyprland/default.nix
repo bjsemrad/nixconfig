@@ -53,6 +53,7 @@
     portalPackage = null;
     plugins = [
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprscrolling
     ];
     settings = {
       monitor = [
@@ -148,6 +149,7 @@
         "col.active_border" = "$blue";
         "col.inactive_border" = "$bg1";
         layout = "dwindle";
+        #layout = "scrolling";
       };
       decoration = {
         rounding = 10;
@@ -212,16 +214,17 @@
         workspace_swipe = true;
       };
 
-      # plugin = {
-      #   hyprexpo = {
-      #     columns = 3;
-      #     gap_size = 5;
-      #     workspace_method = "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
-      #     enable_gesture = true; # laptop touchpad, 4 fingers
-      #     gesture_distance = 300; # how far is the "max"
-      #     gesture_positive = false; # positive = swipe down. Negative = swipe up.
-      #   };
-      # };
+      plugin = {
+        scrolling = { fullscreen_on_one_column = true; };
+        #   hyprexpo = {
+        #     columns = 3;
+        #     gap_size = 5;
+        #     workspace_method = "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
+        #     enable_gesture = true; # laptop touchpad, 4 fingers
+        #     gesture_distance = 300; # how far is the "max"
+        #     gesture_positive = false; # positive = swipe down. Negative = swipe up.
+        #   };
+      };
 
       # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
       #device = {
