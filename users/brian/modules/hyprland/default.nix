@@ -53,7 +53,7 @@
     portalPackage = null;
     plugins = [
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprscrolling
+      #inputs.hyprland-plugins.packages.${pkgs.system}.hyprscrolling
     ];
     settings = {
       monitor = [
@@ -215,7 +215,7 @@
       };
 
       plugin = {
-        scrolling = { fullscreen_on_one_column = true; };
+        #scrolling = { fullscreen_on_one_column = true; };
         #   hyprexpo = {
         #     columns = 3;
         #     gap_size = 5;
