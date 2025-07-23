@@ -30,13 +30,9 @@
       #inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprlock = {
-      url = "github:hyprwm/hyprlock/v0.9.0";
-    };
+    hyprlock = { url = "github:hyprwm/hyprlock/v0.9.0"; };
 
-    hypridle = {
-      url = "github:hyprwm/hypridle/v0.1.6";
-    };
+    hypridle = { url = "github:hyprwm/hypridle/v0.1.6"; };
 
     alacritty-theme = {
       url =
@@ -50,12 +46,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri = {
+      type = "git";
+      url = "https://github.com/YaLTeR/niri";
+      ref = "refs/tags/v25.05.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     matugen = { url = "github:InioX/matugen?ref=v2.4.1"; };
     nix-flatpak = { url = "github:gmodena/nix-flatpak/?ref=latest"; };
 
   };
   outputs = { self, nixpkgs, home-manager, nixos-hardware, alacritty-theme
-    , hyprland, hypridle, hyprlock, hyprland-systeminfo, waybar, matugen
+    , hyprland, hypridle, hyprlock, hyprland-systeminfo, waybar, niri, matugen
     , nixpkgs-unstable, nix-flatpak, ... }@inputs:
     let
       system = "x86_64-linux";

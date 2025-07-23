@@ -18,7 +18,8 @@
         margin-left = 0; # 10;
         margin-right = 0; # 10;
         margin-bottom = 2;
-        modules-left = [ "group/launcher" "hyprland/workspaces" ];
+        modules-left =
+          [ "group/launcher" "hyprland/workspaces" "niri/workspaces" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [
           #"custom/recorder"
@@ -195,6 +196,29 @@
           "tooltip-format" = "{icon}  {percent}%";
         };
         "hyprland/workspaces" = {
+          "all-outputs" = false;
+          "active-only" = false;
+          "on-click" = "activate";
+          "format" = "{icon} {id}";
+          "show-special" = true;
+          "persistent-workspaces" = { "*" = 2; };
+          format-icons = {
+            "default" = "";
+            "active" = "";
+            #"1" = "1";
+            # "2" = "2";
+            #"3" = "3";
+            #"4" = "4";
+            #"5" = "5";
+            #"6" = "6";
+            #"7" = "7";
+            #"8" = "8";
+            #"9" = "9";
+            #"10" = "10";
+          };
+          "sort-by-number" = true;
+        };
+        "niri/workspaces" = {
           "all-outputs" = false;
           "active-only" = false;
           "on-click" = "activate";

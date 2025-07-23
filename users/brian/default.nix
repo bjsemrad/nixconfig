@@ -9,6 +9,7 @@
     ./modules/git
     ./modules/jujutsu
     ./modules/hyprland
+    ./modules/niri
     ./modules/java
     ./modules/gradle
     ./modules/neovim
