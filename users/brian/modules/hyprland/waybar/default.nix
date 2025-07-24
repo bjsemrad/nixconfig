@@ -199,8 +199,8 @@
           "all-outputs" = false;
           "active-only" = false;
           "on-click" = "activate";
-          "format" = "{id}";
-          #"format" = "{icon} {id}";
+          #"format" = "{id}";
+          "format" = "{icon} {id}";
           "show-special" = true;
           "persistent-workspaces" = { "*" = 2; };
           format-icons = {
