@@ -226,7 +226,7 @@
         #   gesture_positive =
         #     false; # positive = swipe down. Negative = swipe up.
         #   skip_empty = true;
-        };
+        # };
       };
 
       # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
