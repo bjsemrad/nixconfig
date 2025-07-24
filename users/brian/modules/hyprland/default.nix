@@ -216,14 +216,17 @@
 
       plugin = {
         #scrolling = { fullscreen_on_one_column = true; };
-        #   hyprexpo = {
-        #     columns = 3;
-        #     gap_size = 5;
-        #     workspace_method = "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
-        #     enable_gesture = true; # laptop touchpad, 4 fingers
-        #     gesture_distance = 300; # how far is the "max"
-        #     gesture_positive = false; # positive = swipe down. Negative = swipe up.
-        #   };
+        # hyprexpo = {
+        #   columns = 3;
+        #   gap_size = 5;
+        #   workspace_method =
+        #     "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
+        #   enable_gesture = true; # laptop touchpad, 4 fingers
+        #   gesture_distance = 300; # how far is the "max"
+        #   gesture_positive =
+        #     false; # positive = swipe down. Negative = swipe up.
+        #   skip_empty = true;
+        };
       };
 
       # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
@@ -266,7 +269,7 @@
       "$mainMod" = "SUPER_L";
 
       bind = [
-        # "$mainMod, grave, hyprexpo:expo, toggle"  # can be: toggle, off/disable or on/enable
+        #"$mainMod SHIFT, E, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
 
         "$mainMod, RETURN, exec, uwsm app -- ghostty" # kitty" #alacritty"
         "$mainMod, T, exec, uwsm app -- ghostty"
@@ -328,6 +331,11 @@
         "$mainMod, Tab, focuscurrentorlast,"
 
         "$mainMod,F,fullscreen"
+
+        "$mainMod ALT, right, workspace, +1"
+        "$mainMod ALT, left, workspace, -1"
+        "$mainMod ALT SHIFT, right, movetoworkspace, +1"
+        "$mainMod ALT SHIFT, left, movetoworkspace, -1"
 
         "$mainMod, 0, workspace, 10"
         "$mainMod SHIFT, 0, movetoworkspace, 10"

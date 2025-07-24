@@ -10,10 +10,10 @@
         user = "greeter";
       };
 
-      # initial_session = {
-      #   command = "uwsm start hyprland-uwsm.desktop";
-      #   user = "brian";
-      # };
+      initial_session = {
+        command = "uwsm start hyprland-uwsm.desktop";
+        user = "brian";
+      };
     };
   };
 }

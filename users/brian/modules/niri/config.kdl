@@ -288,28 +288,38 @@ animations {
     // slowdown 3.0
 }
 
+workspace "browser"
+workspace "chat"
+workspace "email"
+workspace "terminal"
+workspace "ide"
+workspace "games"
+workspace "music"
+workspace "3dprint"
+
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
-window-rule {
+//window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
     // You can get away with just app-id="wezterm" if you want.
     //match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
+  //  default-column-width {}
+//}
 
 // Open the Firefox picture-in-picture player as floating by default.
-window-rule {
+//window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-}
+//    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+//    open-floating true
+//}
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
@@ -329,6 +339,12 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
+window-rule {
+    match app-id="Ghostty"
+    match is-urgent=true
+    match at-startup=true
+    open-on-workspace "4"
+}
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -337,7 +353,7 @@ binds {
     //
     // "Mod" is a special modifier equal to Super when running on a TTY, and to Alt
     // when running as a winit window.
-    //
+    //ty
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
 
@@ -482,24 +498,35 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
-    Mod+7 { focus-workspace 7; }
-    Mod+8 { focus-workspace 8; }
+//     workspace "browser"
+// workspace "chat"
+// workspace "email"
+// workspace "terminal"
+// workspace "ide"
+// workspace "games"
+// workspace "music"
+// workspace "3dprint"
+
+
+    Mod+1 { focus-workspace "browser"; }
+//    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace "chat"; }
+    Mod+3 { focus-workspace "email"; }
+    Mod+4 { focus-workspace "terminal"; }
+    Mod+5 { focus-workspace "ide"; }
+    Mod+6 { focus-workspace "games"; }
+    Mod+7 { focus-workspace "music"; }
+    Mod+8 { focus-workspace "3dprint"; }
     Mod+9 { focus-workspace 9; }
     Mod+0 { focus-workspace 10; }
-    Mod+Shift+1 { move-column-to-workspace 1; }
-    Mod+Shift+2 { move-column-to-workspace 2; }
-    Mod+Shift+3 { move-column-to-workspace 3; }
-    Mod+Shift+4 { move-column-to-workspace 4; }
-    Mod+Shift+5 { move-column-to-workspace 5; }
-    Mod+Shift+6 { move-column-to-workspace 6; }
-    Mod+Shift+7 { move-column-to-workspace 7; }
-    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+1 { move-column-to-workspace "browser"; }
+    Mod+Shift+2 { move-column-to-workspace "chat"; }
+    Mod+Shift+3 { move-column-to-workspace "email"; }
+    Mod+Shift+4 { move-column-to-workspace "terminal"; }
+    Mod+Shift+5 { move-column-to-workspace "ide"; }
+    Mod+Shift+6 { move-column-to-workspace "games"; }
+    Mod+Shift+7 { move-column-to-workspace "music"; }
+    Mod+Shift+8 { move-column-to-workspace "3dprint"; }
     Mod+Shift+9 { move-column-to-workspace 9; }
     Mod+Shift+0 { move-column-to-workspace 10; }
 

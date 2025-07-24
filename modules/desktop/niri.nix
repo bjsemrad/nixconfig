@@ -4,6 +4,17 @@
     #package = inputs.niri.packages.${pkgs.system}.niri;
   };
 
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors = {
+      niri = {
+        prettyName = "Niri";
+        comment = "Niri compositor managed by UWSM";
+        binPath = "/run/current-system/sw/bin/niri";
+      };
+    };
+  };
+
   services.blueman.enable = true;
   programs.thunar.enable = true;
 

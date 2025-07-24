@@ -220,26 +220,20 @@
         };
         "niri/workspaces" = {
           "all-outputs" = false;
-          "active-only" = false;
-          "on-click" = "activate";
-          "format" = "{icon} {id}";
-          "show-special" = true;
-          "persistent-workspaces" = { "*" = 2; };
+          "current-only" = false;
+          "format" = "{icon}";
           format-icons = {
             "default" = "";
-            "active" = "";
-            #"1" = "1";
-            # "2" = "2";
-            #"3" = "3";
-            #"4" = "4";
-            #"5" = "5";
-            #"6" = "6";
-            #"7" = "7";
-            #"8" = "8";
-            #"9" = "9";
-            #"10" = "10";
+            #"active" = "";
+            "browser" = "";
+            "chat" = "󰭻";
+            "email" = "󰇮";
+            "terminal" = "";
+            "ide" = "";
+            "games" = "󰓓";
+            "music" = "";
+            "3dprint" = "󰐫";
           };
-          "sort-by-number" = true;
         };
         "tray" = {
           "icon-size" = 16;
@@ -447,9 +441,6 @@
                   #workspaces {
                     margin-left: 10px;
                     background: transparent;
-                    /*background: @black;
-                    border-radius: 24px 10px 24px 10px;
-                    padding: 0 20px;*/
                   }
 
                   #workspaces button {
@@ -467,7 +458,8 @@
                   }
 
                   #workspaces button.active {
-                    color: @fg;
+                    /*color: @fg;*/
+                    color: @blue;
                     background: transparent;
                   }
 
