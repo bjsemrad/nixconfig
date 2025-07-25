@@ -288,14 +288,14 @@ animations {
     // slowdown 3.0
 }
 
-workspace "browser"
-workspace "chat"
-workspace "email"
-workspace "terminal"
-workspace "ide"
-workspace "games"
-workspace "music"
-workspace "3dprint"
+// workspace "browser"
+// workspace "chat"
+// workspace "email"
+// workspace "terminal"
+// workspace "ide"
+// workspace "games"
+// workspace "music"
+// workspace "3dprint"
 
 
 // Window rules let you adjust behavior for individual windows.

@@ -459,8 +459,7 @@
                   }
 
                   #workspaces button.active {
-                    /*color: @fg;*/
-                    color: @blue;
+                    color: @fg;
                     background: transparent;
                   }
 
