@@ -224,7 +224,7 @@
           "current-only" = false;
           "format" = "{icon}";
           format-icons = {
-            "default" = "";
+            #"default" = "";
             #"active" = "";
             "browser" = "";
             "chat" = "󰭻";
@@ -459,7 +459,7 @@
                   }
 
                   #workspaces button.active {
-                    color: @fg;
+                    color: @blue; /*fg*/
                     background: transparent;
                   }
 

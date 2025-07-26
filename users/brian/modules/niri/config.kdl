@@ -288,14 +288,14 @@ animations {
     // slowdown 3.0
 }
 
-// workspace "browser"
-// workspace "chat"
-// workspace "email"
-// workspace "terminal"
-// workspace "ide"
-// workspace "games"
-// workspace "music"
-// workspace "3dprint"
+workspace "browser"
+workspace "chat"
+workspace "email"
+workspace "terminal"
+workspace "ide"
+workspace "games"
+workspace "music"
+workspace "3dprint"
 
 
 // Window rules let you adjust behavior for individual windows.
@@ -340,10 +340,10 @@ window-rule {
     clip-to-geometry true
 }
 window-rule {
-    match app-id="Ghostty"
+    match app-id="com.mitchellh.ghostty"
     match is-urgent=true
     match at-startup=true
-    open-on-workspace "4"
+    open-on-workspace "terminal"
 }
 
 binds {
