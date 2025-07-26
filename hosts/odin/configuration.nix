@@ -13,6 +13,7 @@
     # desktop-gnome
     desktop-greetd
     desktop-hyprland
+    desktop-niri
     services-tailscale
     services-network
     services-sound
