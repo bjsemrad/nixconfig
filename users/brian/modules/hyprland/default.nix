@@ -272,7 +272,6 @@
         #"$mainMod SHIFT, E, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
 
         "$mainMod, RETURN, exec, uwsm app -- ghostty" # kitty" #alacritty"
-        "$mainMod, T, exec, uwsm app -- ghostty"
         "$mainMod, Q, killactive,"
         "$mainMod, E, exec,  uwsm app -- thunar"
         "$mainMod, B, exec,  uwsm app -- brave"
