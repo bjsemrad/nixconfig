@@ -53,13 +53,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    quickshell = {
+      type = "git";
+      url = "https://github.com/quickshell-mirror/quickshell";
+      ref = "refs/tags/v0.2.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
     matugen = { url = "github:InioX/matugen?ref=v2.4.1"; };
     nix-flatpak = { url = "github:gmodena/nix-flatpak/?ref=latest"; };
 
   };
   outputs = { self, nixpkgs, home-manager, nixos-hardware, alacritty-theme
     , hyprland, hypridle, hyprlock, hyprland-systeminfo, waybar, niri, matugen
-    , nixpkgs-unstable, nix-flatpak, ... }@inputs:
+    , nixpkgs-unstable, nix-flatpak, quickshell, ... }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;

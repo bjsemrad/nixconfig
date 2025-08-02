@@ -41,10 +41,10 @@
     };
 
   };
-
   qt = {
     enable = true;
     style = { name = "adwaita-dark"; };
+    platformTheme.name = "kde6";
   };
 
   wayland.windowManager.hyprland = {

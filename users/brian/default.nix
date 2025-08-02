@@ -95,7 +95,30 @@
 
         devpod
         devpod-desktop
-      ] ++ [ inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli ];
+
+        #quickshell move to quickshell config
+        # kdePackages.kdialog
+        # kdePackages.qt5compat
+        # kdePackages.qtbase
+        # kdePackages.qtdeclarative
+        # kdePackages.qtdeclarative
+        # kdePackages.qtimageformats
+        # kdePackages.qtmultimedia
+        # kdePackages.qtpositioning
+        # kdePackages.qtquicktimeline
+        # kdePackages.qtsensors
+        # kdePackages.qtsvg
+        # kdePackages.qttools
+        # kdePackages.qttranslations
+        # kdePackages.qtvirtualkeyboard
+        # kdePackages.qtwayland
+        # kdePackages.syntax-highlighting
+
+
+      ] ++ [ 
+        inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli 
+        # inputs.quickshell.packages.${system}.quickshell
+      ];
 
     sessionVariables = {
       # EDITOR = "emacs";
