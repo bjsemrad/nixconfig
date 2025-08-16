@@ -6,12 +6,12 @@
     inputs.bzmenu.packages.${pkgs.system}.default
   ];
 
-  programs.walker = {
+  services.walker = {
     enable = false;
-    runAsService = false;
+    systemd.enable = true;
 
     # All options from the config.json can be used here.
-    config = {
+    settings = {
       app_launch_prefix = "uwsm app -- ";
       search.placeholder = "";
       ui.fullscreen = false;

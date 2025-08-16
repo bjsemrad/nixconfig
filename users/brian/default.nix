@@ -27,7 +27,6 @@
     ./modules/vial
     ./modules/wezterm
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
-    #inputs.walker.homeManagerModules.default
     ./modules/flatpak
   ];
 
