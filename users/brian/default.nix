@@ -27,6 +27,8 @@
     ./modules/vial
     ./modules/wezterm
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
+    #inputs.elephant.homeManagerModules.elephant
+    #inputs.walker.homeManagerModules.walker
     ./modules/flatpak
   ];
 
@@ -95,6 +97,7 @@
         devpod
         devpod-desktop
 
+        jq
         #quickshell move to quickshell config
         # kdePackages.kdialog
         # kdePackages.qt5compat
@@ -113,9 +116,8 @@
         # kdePackages.qtwayland
         # kdePackages.syntax-highlighting
 
-
-      ] ++ [ 
-        inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli 
+      ] ++ [
+        inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
         # inputs.quickshell.packages.${system}.quickshell
       ];
 

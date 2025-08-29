@@ -8,7 +8,7 @@
     ./wlogout
     ./dunst
     ./rofi
-    #./walker
+    ./walker
   ];
 
   home.pointerCursor = {
@@ -156,7 +156,7 @@
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
-        layerrule = [ "blur,waybar" "ignorealpha 0.1,waybar" ];
+        layerrule = [ "blur,waybar" "ignorealpha 0.1,waybar" "noanim, walker" ];
 
         blur = {
           enabled = true;
@@ -281,10 +281,11 @@
         # ",XF86PowerOff,  exec, ags -t powermenu"
         # "$mainMod CTRL_L SHIFT, P, exec, ags -t powermenu"
         "$mainMod, D, exec, uwsm app -- $HOME/.config/rofi/scripts/launcher.sh"
-        #"$mainMod, D, exec, uwsm app -- walker -m applications"
+        #"$mainMod, D, exec, uwsm app -- walker"
 
         "$mainMod CTRL_L, W, exec, uwsm app -- $HOME/.config/rofi/scripts/window.sh"
         #"$mainMod CTRL_L, W, exec, uwsm app -- walker -m windows"
+
         ",XF86PowerOff,  exec,  uwsm app -- $HOME/.config/wlogout/scripts/wlogout.sh"
         "$mainMod CTRL_L SHIFT, P, exec, uwsm app -- $HOME/.config/wlogout/scripts/wlogout.sh"
 

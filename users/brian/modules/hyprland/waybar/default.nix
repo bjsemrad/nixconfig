@@ -20,7 +20,7 @@
         margin-bottom = 2;
         modules-left =
           [ "group/launcher" "hyprland/workspaces" "niri/workspaces" ];
-        modules-center = [ "hyprland/window" ];
+        modules-center = [ "clock" ];
         modules-right = [
           #"custom/recorder"
           #"custom/clipboard"
@@ -32,11 +32,8 @@
         ] ++ (if (osConfig.networking.hostName == "thor") then [
           "battery"
           "group/settings"
-          "clock"
-        ] else [
-          "group/settings"
-          "clock"
-        ]);
+        ] else
+          [ "group/settings" ]);
         "group/launcher" = {
           "orientation" = "inherit";
           "drawer" = {
@@ -199,8 +196,8 @@
           "all-outputs" = false;
           "active-only" = false;
           "on-click" = "activate";
-          #"format" = "{id}";
-          "format" = "{icon} {id}";
+          "format" = "{id}";
+          #"format" = "{icon} {id}";
           "show-special" = true;
           "persistent-workspaces" = { "*" = 2; };
           format-icons = {
@@ -377,10 +374,8 @@
 
                   window#waybar {
                     background-color: rgba(0, 0, 0, 1.0);
-                    /*background-color: rgba(14, 16, 19, 1.0);*/
                     transition-property: background-color;
                     transition-duration: 0.5s;
-                    /*border-bottom: 2px solid @bg1;*/
                   }
 
                   .modules-right {
@@ -446,7 +441,7 @@
 
                   #workspaces button {
                       background: transparent;
-                      color: @fg_dark;
+                      color: @light_grey;
                       font-weight: bold;
                       border: none;
                   }

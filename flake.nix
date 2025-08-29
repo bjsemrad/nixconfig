@@ -60,6 +60,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # walker = {
+    #   url = "github:abenz1267/walker?ref=pull/408/head";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    #
+    # elephant = {
+    #   url = "github:abenz1267/elephant?ref=pull/17/head";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     matugen = { url = "github:InioX/matugen?ref=v2.4.1"; };
     nix-flatpak = { url = "github:gmodena/nix-flatpak/?ref=latest"; };
