@@ -60,6 +60,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    tailscale = {
+      type = "git";
+      url = "https://github.com/tailscale/tailscale";
+      ref = "refs/tags/v1.86.2";
+    };
     # walker = {
     #   url = "github:abenz1267/walker?ref=pull/408/head";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -76,7 +81,7 @@
   };
   outputs = { self, nixpkgs, home-manager, nixos-hardware, alacritty-theme
     , hyprland, hypridle, hyprlock, hyprland-systeminfo, waybar, niri, matugen
-    , nixpkgs-unstable, nix-flatpak, quickshell, ... }@inputs:
+    , nixpkgs-unstable, nix-flatpak, quickshell, tailscale, ... }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;

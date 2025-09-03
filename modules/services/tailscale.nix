@@ -1,13 +1,8 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }: {
 
-{
-
-  environment.systemPackages = with pkgs; [
-    tailscale
-  ];
   services.tailscale = {
     enable = true;
-    # package = inputs.tailscale.packages.${pkgs.system}.tailscale;
+    package = inputs.tailscale.packages.${pkgs.system}.tailscale;
   };
 
   networking.firewall = {
