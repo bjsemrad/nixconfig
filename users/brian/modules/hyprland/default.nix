@@ -209,10 +209,11 @@
         # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
       };
 
-      gestures = {
-        # See https://wiki.hyprland.org/Configuring/Variables/ for more
-        workspace_swipe = true;
-      };
+      gesture = [
+        "3,horizontal,workspace"
+        "4,vertical,fullscreen"
+        "4,horizontal,move"
+      ];
 
       plugin = {
         #scrolling = { fullscreen_on_one_column = true; };
