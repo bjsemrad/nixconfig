@@ -13,9 +13,9 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 22;
+    package = pkgs.xcursor-pro; # bibata-cursors;
+    name = "XCursor-Pro-Dark"; # "Bibata-Modern-Classic";
+    size = 24;
   };
 
   dconf.settings = {
@@ -86,8 +86,8 @@
       env = [
         "GDK_BACKEND,wayland"
         "GTK_THEME,Adwaita:dark"
-        "XCURSOR_SIZE,22"
-        "HYPRCURSOR_SIZE,22"
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
         "HYPRCURSOR_THEME,Bibata-Modern-Classic"
         "QT_QPA_PLATFORM,wayland"
         "QT_QPA_PLATFORMTHEME,qt6ct"
