@@ -3,45 +3,38 @@
     pkgs.libqalculate
     inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.iwmenu
     inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.bzmenu
-    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.walker
-    #inputs.walker.packages.${pkgs.system}.walker
-    #inputs.elephant.packages.${pkgs.system}.elephant-with-providers
   ];
 
   home.file = {
-    ".config/walker/config.toml".source = ./config.toml;
-    ".config/walker/themes/matte-black.css".source = ./matte-black.css;
+    #".config/walker/config.toml".source = ./config.toml;
+    ".config/walker/themes/matteblack/style.css".source = ./matte-black.css;
+    # ".config/walker/themes/matte-black/matte-black.json".source =
+    #   ./matte-black.json;
+
   };
 
-  # programs.elephant = { installService = true; };
+  programs.walker = {
+    enable = true;
+    runAsService = true;
+    config = {
+      close_when_open = true;
+      #theme = "matteblack";
+      hotreload_theme = true;
+      force_keyboard_focus = true;
 
-  # programs.walker = {
-  #   enable = true;
-  #   runAsService = true;
-  # };
+      search = { placeholder = "Search..."; };
 
-  # services.walker = {
-  #   enable = false;
-  #   systemd.enable = true;
-  #
-  #   # All options from the config.json can be used here.
-  #   settings = {
-  #     app_launch_prefix = "uwsm app -- ";
-  #     search.placeholder = "";
-  #     ui.fullscreen = false;
-  #     list = {
-  #       height = 200;
-  #     };
-  #     websearch.prefix = "?";
-  #     switcher.prefix = "/";
-  #     applications.cache = false;
-  #   };
-  #
-  #   # If this is not set the default styling is used.
-  #   #style = ''
-  #   # * {
-  #   #    color: #dcd7ba;
-  #   #   }
-  #   #'';
-  # };
+      builtins.hyprland_keybinds = { path = "~/.config/hypr/hyprland.conf"; };
+
+      builtins.applications = {
+        launch_prefix = "uwsm app -- ";
+        placeholder = "Search...";
+        prioritize_new = false;
+        context_aware = false;
+        show_sub_when_single = false;
+        history = true;
+        icon = "";
+      };
+    };
+  };
 }

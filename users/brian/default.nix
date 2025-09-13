@@ -28,7 +28,7 @@
     ./modules/wezterm
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     #inputs.elephant.homeManagerModules.elephant
-    #inputs.walker.homeManagerModules.walker
+    inputs.walker.homeManagerModules.walker
     ./modules/flatpak
   ];
 
