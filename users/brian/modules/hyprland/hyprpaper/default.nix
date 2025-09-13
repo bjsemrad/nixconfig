@@ -1,6 +1,22 @@
 {
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "on";
+      splash = false;
+
+      preload = [
+        "/home/brian/.config/hypr/leaves.png"
+        "/home/brian/.config/hypr/retropc.jpg"
+        "/home/brian/.config/hypr/sunset.jpg"
+        "/home/brian/.config/hypr/shaded_landscape.png"
+        "/home/brian/.config/hypr/water-drop.jpg"
+      ];
+      wallpaper = [ ",/home/brian/.config/hypr/retropc.jpg" ];
+    };
+  };
   home.file = {
-    ".config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
+    #".config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
     ".config/hypr/forrest.png".source = ../../../wallpaper/forrest.png;
     ".config/hypr/small-memory.jpg".source =
       ../../../wallpaper/small-memory.jpg;
