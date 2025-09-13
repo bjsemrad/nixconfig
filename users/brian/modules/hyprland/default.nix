@@ -281,8 +281,8 @@
         # "$mainMod, D, exec, ags -t launcher"
         # ",XF86PowerOff,  exec, ags -t powermenu"
         # "$mainMod CTRL_L SHIFT, P, exec, ags -t powermenu"
-        "$mainMod, D, exec, uwsm app -- $HOME/.config/rofi/scripts/launcher.sh"
-        #"$mainMod, D, exec, uwsm app -- walker"
+        #"$mainMod, D, exec, uwsm app -- $HOME/.config/rofi/scripts/launcher.sh"
+        "$mainMod, D, exec, uwsm app -- walker"
 
         "$mainMod CTRL_L, W, exec, uwsm app -- $HOME/.config/rofi/scripts/window.sh"
         #"$mainMod CTRL_L, W, exec, uwsm app -- walker -m windows"
