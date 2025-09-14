@@ -288,14 +288,14 @@ animations {
     // slowdown 3.0
 }
 
-workspace "browser"
-workspace "chat"
-workspace "email"
-workspace "terminal"
-workspace "ide"
-workspace "games"
-workspace "music"
-workspace "3dprint"
+// workspace "browser"
+// workspace "chat"
+// workspace "email"
+// workspace "terminal"
+// workspace "ide"
+// workspace "games"
+// workspace "music"
+// workspace "3dprint"
 
 
 // Window rules let you adjust behavior for individual windows.
@@ -363,7 +363,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+D hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.

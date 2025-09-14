@@ -221,16 +221,16 @@
           "current-only" = false;
           "format" = "{icon}";
           format-icons = {
-            #"default" = "";
-            #"active" = "";
-            "browser" = "";
-            "chat" = "󰭻";
-            "email" = "󰇮";
-            "terminal" = "";
-            "ide" = "";
-            "games" = "󰓓";
-            "music" = "";
-            "3dprint" = "󰐫";
+            "default" = "";
+            "active" = "";
+            # "browser" = "";
+            # "chat" = "󰭻";
+            # "email" = "󰇮";
+            # "terminal" = "";
+            # "ide" = "";
+            # "games" = "󰓓";
+            # "music" = "";
+            # "3dprint" = "󰐫";
           };
         };
         "tray" = {
