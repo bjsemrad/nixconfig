@@ -75,6 +75,7 @@
         "systemctl --user enable --now hyprpaper.service"
         "systemctl --user enable --now hyprpolkitagent.service"
         "systemctl --user enable --now hypridle.service"
+        "systemctl --user enable --now elephant.service"
         "uwsm app -- wl-paste --type text --watch cliphist -max-items 25 store" # Stores only text data
         "uwsm app -- wl-paste --type image --watch cliphist -max-items 25 store" # Stores only image data
       ] ++ (if (osConfig.networking.hostName == "odin") then [
@@ -290,8 +291,8 @@
         ",XF86PowerOff,  exec,  uwsm app -- $HOME/.config/wlogout/scripts/wlogout.sh"
         "$mainMod CTRL_L SHIFT, P, exec, uwsm app -- $HOME/.config/wlogout/scripts/wlogout.sh"
 
-        "$mainMod CTRL_L SHIFT, C, exec,  uwsm app -- $HOME/.config/rofi/scripts/clipboard.sh"
-        #"$mainMod CTRL_L SHIFT, C, exec,  uwsm app -- walker -m clipboard"
+        #"$mainMod CTRL_L SHIFT, C, exec,  uwsm app -- $HOME/.config/rofi/scripts/clipboard.sh"
+        "$mainMod CTRL_L SHIFT, C, exec,  uwsm app -- walker --provider clipboard"
 
         ''$mainMod CTRL_L SHIFT, I, exec,  uwsm app -- grim -g "$(slurp)"''
         '',Print, exec,  uwsm app -- grim -g "$(slurp)"''
