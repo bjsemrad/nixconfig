@@ -283,16 +283,19 @@
         # ",XF86PowerOff,  exec, ags -t powermenu"
         # "$mainMod CTRL_L SHIFT, P, exec, ags -t powermenu"
         #"$mainMod, D, exec, uwsm app -- $HOME/.config/rofi/scripts/launcher.sh"
-        "$mainMod, D, exec, uwsm app -- walker"
+        "$mainMod, D, exec, uwsm app -- walker -w 800"
+        "$mainMod CTRL_L ALT SHIFT, K, exec, uwsm app -- $HOME/.config/walker/scripts/keybinds.sh"
 
-        "$mainMod CTRL_L, W, exec, uwsm app -- $HOME/.config/rofi/scripts/window.sh"
-        #"$mainMod CTRL_L, W, exec, uwsm app -- walker -m windows"
+
+        #"$mainMod CTRL_L, W, exec, uwsm app -- $HOME/.config/rofi/scripts/window.sh"
+        "$mainMod CTRL_L, W, exec, uwsm app -- $HOME/.config/walker/scripts/windows.sh"
+        #"$jmainMod CTRL_L, W, exec, uwsm app -- walker -m windows"
 
         ",XF86PowerOff,  exec,  uwsm app -- $HOME/.config/wlogout/scripts/wlogout.sh"
         "$mainMod CTRL_L SHIFT, P, exec, uwsm app -- $HOME/.config/wlogout/scripts/wlogout.sh"
 
         #"$mainMod CTRL_L SHIFT, C, exec,  uwsm app -- $HOME/.config/rofi/scripts/clipboard.sh"
-        "$mainMod CTRL_L SHIFT, C, exec,  uwsm app -- walker --provider clipboard"
+        "$mainMod CTRL_L ALT SHIFT, C, exec,  uwsm app -- walker --provider clipboard -w 800"
 
         ''$mainMod CTRL_L SHIFT, I, exec,  uwsm app -- grim -g "$(slurp)"''
         '',Print, exec,  uwsm app -- grim -g "$(slurp)"''

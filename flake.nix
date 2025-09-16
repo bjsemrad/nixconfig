@@ -66,10 +66,17 @@
       ref = "refs/tags/v1.86.2";
     };
 
+    elephant = {
+      type = "git";
+      url = "https://github.com/abenz1267/elephant";
+      ref = "refs/tags/v1.0.4";
+    };
+
     walker = {
       type = "git";
       url = "https://github.com/abenz1267/walker";
-      ref = "refs/tags/v1.0.3";
+      ref = "refs/tags/v1.0.4";
+      inputs.elephant.follows = "elephant";
       #      inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -79,7 +86,7 @@
   };
   outputs = { self, nixpkgs, home-manager, nixos-hardware, alacritty-theme
     , hyprland, hypridle, hyprlock, hyprland-systeminfo, waybar, niri, matugen
-    , nixpkgs-unstable, nix-flatpak, quickshell, tailscale, walker, ...
+    , nixpkgs-unstable, nix-flatpak, quickshell, tailscale, elephant, walker, ...
     }@inputs:
     let
       system = "x86_64-linux";

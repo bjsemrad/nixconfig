@@ -5,13 +5,23 @@
     inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.bzmenu
   ];
 
+  home.file = {
+    ".config/walker/scripts/keybinds.sh".source = ./scripts/keybinds.sh;
+    ".config/walker/scripts/windows.sh".source = ./scripts/windows.sh;
+
+  };
+
+  # programs.elephant = {
+  #
+  # };
+
   programs.walker = {
     enable = true;
     runAsService = true;
     config = {
       force_keyboard_focus = false;    # forces keyboard forcus to stay in Walker
       close_when_open = true;          # close walker when invoking while already opened
-      selection_wrap = false;          # wrap list if at bottom or top
+      selection_wrap = true;          # wrap list if at bottom or top
       global_argument_delimiter = "#"; # query: firefox#https://benz.dev => ignored after delimiter
       keep_open_modifier = "shift";    # won't close on activation, but select next item
       exact_search_prefix = "'";       # disable fuzzy searching
@@ -55,6 +65,7 @@
           { prefix = "="; provider = "calc"; }
           { prefix = "@"; provider = "websearch"; }
           { prefix = ":"; provider = "clipboard"; }
+          { prefix = "~"; provider = "hyprlandkeybinds";}
         ];
 
         archlinuxpkgs = {
@@ -146,211 +157,176 @@
       };
     };
 
+    elephant = {
+        providers = [
+          "files"
+          "desktopapplications"
+          "calc"
+          "clipboard"
+          "menus"
+          "providerlist"
+      ];
+
+      config = {
+        providers = {
+              files = {
+                min_score = 50;
+              };
+              desktopapplications = {
+                launch_prefix = "uwsm app --";
+              };
+        };
+      };
+    };
+
     theme = {
       name = "matte-black";
       style = ''
-@define-color window_bg_color #000000;
-@define-color accent_bg_color  #a0a8b7;
-@define-color theme_fg_color #a0a8b7;
+            @define-color window_bg_color #000000;
+            @define-color accent_bg_color  #a0a8b7;
+            @define-color theme_fg_color #a0a8b7;
 
-* {
-  all: unset;
-}
+            * {
+              all: unset;
+            }
 
-.normal-icons {
-  -gtk-icon-size: 16px;
-}
+            .normal-icons {
+              -gtk-icon-size: 16px;
+            }
 
-.large-icons {
-  -gtk-icon-size: 32px;
-}
+            .large-icons {
+              -gtk-icon-size: 32px;
+            }
 
-scrollbar {
-  opacity: 0;
-}
+            scrollbar {
+              opacity: 0;
+            }
 
-.box-wrapper {
-  box-shadow:
-    0 19px 38px rgba(0, 0, 0, 0.3),
-    0 15px 12px rgba(0, 0, 0, 0.22);
-  background: @window_bg_color;
-  padding: 20px;
-  border-radius: 20px;
-  border: 1px solid darker(@accent_bg_color);
-}
+            .box-wrapper {
+              box-shadow:
+                0 19px 38px rgba(0, 0, 0, 0.3),
+                0 15px 12px rgba(0, 0, 0, 0.22);
+              background: @window_bg_color;
+              padding: 20px;
+              border-radius: 20px;
+              border: 1px solid darker(@accent_bg_color);
+            }
 
-.preview-box,
-.elephant-hint,
-.placeholder {
-  color: @theme_fg_color;
-}
+            .preview-box,
+            .elephant-hint,
+            .placeholder {
+              color: @theme_fg_color;
+            }
 
-.box {
-}
+            .box {
+            }
 
-.search-container {
-  border-radius: 10px;
-}
+            .search-container {
+              border-radius: 10px;
+            }
 
-.input placeholder {
-  opacity: 0.5;
-}
+            .input placeholder {
+              opacity: 0.5;
+            }
 
-.input {
-  caret-color: @theme_fg_color;
-  background: lighter(@window_bg_color);
-  padding: 10px;
-  color: @theme_fg_color;
-}
+            .input {
+              caret-color: @theme_fg_color;
+              background: lighter(@window_bg_color);
+              padding: 10px;
+              color: @theme_fg_color;
+            }
 
-.input:focus,
-.input:active {
-}
+            .input:focus,
+            .input:active {
+            }
 
-.content-container {
-}
+            .content-container {
+            }
 
-.placeholder {
-}
+            .placeholder {
+            }
 
-.scroll {
-}
+            .scroll {
+            }
 
-.list {
-  color: @theme_fg_color;
-}
+            .list {
+              color: @theme_fg_color;
+            }
 
-child {
-}
+            child {
+            }
 
-.item-box {
-  border-radius: 10px;
-  padding: 10px;
-}
+            .item-box {
+              border-radius: 10px;
+              padding: 10px;
+            }
 
-.item-quick-activation {
-  margin-left: 10px;
-  background: alpha(@accent_bg_color, 0.25);
-  border-radius: 5px;
-  padding: 10px;
-}
+            .item-quick-activation {
+              margin-left: 10px;
+              background: alpha(@accent_bg_color, 0.25);
+              border-radius: 5px;
+              padding: 10px;
+            }
 
-child:hover .item-box,
-child:selected .item-box {
-  background: alpha(@accent_bg_color, 0.25);
-}
+            child:hover .item-box,
+            child:selected .item-box {
+              background: alpha(@accent_bg_color, 0.25);
+            }
 
-.item-text-box {
-}
+            .item-text-box {
+            }
 
-.item-text {
-}
+            .item-text {
+            }
 
-.item-subtext {
-  font-size: 12px;
-  opacity: 0.5;
-}
+            .item-subtext {
+              font-size: 12px;
+              opacity: 0.5;
+            }
 
-.item-image {
-  margin-right: 10px;
-}
+            .item-image {
+              margin-right: 10px;
+            }
 
-.keybind-hints {
-  font-size: 12px;
-  opacity: 0.5;
-  color: @theme_fg_color;
-}
+            .keybind-hints {
+              font-size: 12px;
+              opacity: 0.5;
+              color: @theme_fg_color;
+            }
 
-.preview {
-  border: 1px solid alpha(@accent_bg_color, 0.25);
-  padding: 10px;
-  border-radius: 10px;
-  color: @theme_fg_color;
-}
+            .preview {
+              border: 1px solid alpha(@accent_bg_color, 0.25);
+              padding: 10px;
+              border-radius: 10px;
+              color: @theme_fg_color;
+            }
 
-.calc .item-text {
-  font-size: 24px;
-}
+            .calc .item-text {
+              font-size: 24px;
+            }
 
-.calc .item-subtext {
-}
+            .calc .item-subtext {
+            }
 
-.symbols .item-image {
-  font-size: 24px;
-}
+            .symbols .item-image {
+              font-size: 24px;
+            }
 
-.todo.done .item-text-box {
-  opacity: 0.25;
-}
+            .todo.done .item-text-box {
+              opacity: 0.25;
+            }
 
-.todo.urgent {
-  font-size: 24px;
-}
+            .todo.urgent {
+              font-size: 24px;
+            }
 
-.todo.active {
-  font-weight: bold;
-}
+            .todo.active {
+              font-weight: bold;
+            }
 
-.preview .large-icons {
-  -gtk-icon-size: 64px;
-}
-
-/*
-
-* {
-  color:  @fg;
-  font-weight: bold;
-}
-
-window > box {
-  border: 2px solid @fg_dark;
-  border-radius: 10px;
-  background-color: @background;
-  padding: 32px;
-  box-shadow:
-    0 19px 38px rgba(0, 0, 0, 0.3),
-    0 15px 12px rgba(0, 0, 0, 0.22);
-
-}
-
-.search-container > .input {
-    box-shadow:
-	0 1px 3px rgba(0, 0, 0, 0.1),
-	0 1px 2px rgba(0, 0, 0, 0.22);
-    padding: 8px;
-    background-color: @background;
-    outline-color: @light_grey;
-
-}
-
-.list.view {
-  background-color: @background;
-}
-
-.list.view > child > box.item-box {
-  padding: 2px;
-}
-
-box {
-  margin: 2px;
-}
-
-child {
-	padding: 2px;
-	border-radius: 2px;
-        margin: 5px;
-}
-
-child:selected,
-child:hover {
-      color: #00000000;
-      text-decoration-color: #000000;
-      background: alpha(@fg_dark, 0.4);
-      border: 1px solid @fg_dark;
-      border-radius: 10px;
-}
-
-*/ 
+            .preview .large-icons {
+              -gtk-icon-size: 64px;
+            }
       '';
     };
   };
