@@ -3,7 +3,7 @@ let nixconfigdir = "nixconfig";
 in {
   programs.carapace = {
     enable = true;
-    enableNushellIntegration = true;
+    enableNushellIntegration = false;
     enableZshIntegration = true;
   };
 
@@ -100,7 +100,7 @@ in {
   };
 
   programs.nushell = {
-    enable = true;
+    enable = false;
     envFile.text =
       "$env.PATH = ($env.PATH | split row (char esep) | append '~/tools/')";
     extraConfig = ''

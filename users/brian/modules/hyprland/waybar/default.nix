@@ -18,8 +18,7 @@
         margin-left = 0; # 10;
         margin-right = 0; # 10;
         margin-bottom = 2;
-        modules-left =
-          [ "group/launcher" "hyprland/workspaces" "niri/workspaces" ];
+        modules-left = [ "group/launcher" "ext/workspaces" ];
         modules-center = [ "clock" ];
         modules-right = [
           #"custom/recorder"
@@ -197,7 +196,7 @@
           "active-only" = false;
           "on-click" = "activate";
           #"format" = "{id}";
-          "format" = "{icon} {id}";
+          "format" = "{id}";
           "show-special" = true;
           "persistent-workspaces" = { "*" = 2; };
           format-icons = {
@@ -216,10 +215,15 @@
           };
           "sort-by-number" = true;
         };
+        "ext/workspaces" = {
+          "all-outputs" = false;
+          "active-only" = true;
+          "format" = "{name}";
+        };
         "niri/workspaces" = {
           "all-outputs" = false;
           "current-only" = false;
-          "format" = "{icon}";
+          "format" = "{index}";
           format-icons = {
             "default" = "";
             "active" = "";

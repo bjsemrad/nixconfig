@@ -3,9 +3,21 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 
+// exec-once=systemctl --user enable --now waybar.service
+// exec-once=systemctl --user enable --now hyprpaper.service
+// exec-once=systemctl --user enable --now hyprpolkitagent.service
+// exec-once=systemctl --user enable --now hypridle.service
+spawn-at-startup "uwsm finalize WAYLAND_DISPLAY"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "systemctl --user enable --now waybar.service"
+spawn-at-startup "systemctl --user enable --now elephant.service"
+spawn-at-startup "uwsm app -- wl-paste --type text --watch cliphist -max-items 25 store"
+spawn-at-startup "uwsm app -- wl-paste --type image --watch cliphist -max-items 25 store"
+
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
 input {
     keyboard {
         xkb {
@@ -284,18 +296,19 @@ animations {
         off
     }
 
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    // Slow down all animations by this factor. Values below 1 speed them up instead.CU// slowdown 3.0
 }
 
-// workspace "browser"
-// workspace "chat"
-// workspace "email"
-// workspace "terminal"
-// workspace "ide"
-// workspace "games"
-// workspace "music"
-// workspace "3dprint"
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
+workspace "5"
+workspace "6"
+workspace "7"
+workspace "8"
+workspace "9"
+workspace "10"
 
 
 // Window rules let you adjust behavior for individual windows.
@@ -343,7 +356,8 @@ window-rule {
     match app-id="com.mitchellh.ghostty"
     match is-urgent=true
     match at-startup=true
-    open-on-workspace "terminal"
+    open-focused true
+    open-on-workspace "4"
 }
 
 binds {
@@ -491,44 +505,34 @@ binds {
     // Mod+TouchpadScrollUp   { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
 
     // You can refer to workspaces by index. However, keep in mind that
-    // niri is a dynamic workspace system, so these commands are kind of
+    // iiri is a dynamic workspace system, so these commands are kind of
     // "best effort". Trying to refer to a workspace index bigger than
     // the current workspace count will instead refer to the bottommost
     // (empty) workspace.
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-//     workspace "browser"
-// workspace "chat"
-// workspace "email"
-// workspace "terminal"
-// workspace "ide"
-// workspace "games"
-// workspace "music"
-// workspace "3dprint"
 
-
-    Mod+1 { focus-workspace "browser"; }
-//    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace "chat"; }
-    Mod+3 { focus-workspace "email"; }
-    Mod+4 { focus-workspace "terminal"; }
-    Mod+5 { focus-workspace "ide"; }
-    Mod+6 { focus-workspace "games"; }
-    Mod+7 { focus-workspace "music"; }
-    Mod+8 { focus-workspace "3dprint"; }
-    Mod+9 { focus-workspace 9; }
-    Mod+0 { focus-workspace 10; }
-    Mod+Shift+1 { move-column-to-workspace "browser"; }
-    Mod+Shift+2 { move-column-to-workspace "chat"; }
-    Mod+Shift+3 { move-column-to-workspace "email"; }
-    Mod+Shift+4 { move-column-to-workspace "terminal"; }
-    Mod+Shift+5 { move-column-to-workspace "ide"; }
-    Mod+Shift+6 { move-column-to-workspace "games"; }
-    Mod+Shift+7 { move-column-to-workspace "music"; }
-    Mod+Shift+8 { move-column-to-workspace "3dprint"; }
-    Mod+Shift+9 { move-column-to-workspace 9; }
-    Mod+Shift+0 { move-column-to-workspace 10; }
+    Mod+1 { focus-workspace "1"; }
+    Mod+2 { focus-workspace "2"; }
+    Mod+3 { focus-workspace "3"; }
+    Mod+4 { focus-workspace "4"; }
+    Mod+5 { focus-workspace "5"; }
+    Mod+6 { focus-workspace "6"; }
+    Mod+7 { focus-workspace "7"; }
+    Mod+8 { focus-workspace "8"; }
+    Mod+9 { focus-workspace "9"; }
+    Mod+0 { focus-workspace "10"; }
+    Mod+Shift+1 { move-column-to-workspace "1"; }
+    Mod+Shift+2 { move-column-to-workspace "2";}
+    Mod+Shift+3 { move-column-to-workspace "3"; }
+    Mod+Shift+4 { move-column-to-workspace "4"; }
+    Mod+Shift+5 { move-column-to-workspace "5"; }
+    Mod+Shift+6 { move-column-to-workspace "6"; }
+    Mod+Shift+7 { move-column-to-workspace "7"; }
+    Mod+Shift+8 { move-column-to-workspace "8"; }
+    Mod+Shift+9 { move-column-to-workspace "9"; }
+    Mod+Shift+0 { move-column-to-workspace "10"; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
