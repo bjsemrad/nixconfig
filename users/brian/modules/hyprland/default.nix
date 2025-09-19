@@ -283,7 +283,7 @@
         # ",XF86PowerOff,  exec, ags -t powermenu"
         # "$mainMod CTRL_L SHIFT, P, exec, ags -t powermenu"
         #"$mainMod, D, exec, uwsm app -- $HOME/.config/rofi/scripts/launcher.sh"
-        "$mainMod, D, exec, uwsm app -- walker -w 800"
+        "$mainMod, D, exec, uwsm app -- walker"
         "$mainMod CTRL_L ALT SHIFT, K, exec, uwsm app -- $HOME/.config/walker/scripts/keybinds.sh"
 
 

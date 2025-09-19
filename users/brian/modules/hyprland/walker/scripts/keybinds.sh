@@ -78,7 +78,7 @@ parse_bindings() {
     }
 
     if (action != "") {
-        printf "%-35s → %s\n", key_combo, action;
+        printf "%s → %s\n", key_combo, action;
     }
 }'
 }
@@ -89,5 +89,6 @@ menu_height=$((monitor_height * 40 / 100))
 dynamic_bindings | \
   sort -u | \
   parse_bindings | \
-  walker --dmenu -w 800 -h "$menu_height"
+  walker --dmenu 
+#-w 800 -h "$menu_height"
 
