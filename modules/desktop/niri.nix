@@ -3,7 +3,6 @@
     enable = true;
     #package = inputs.niri.packages.${pkgs.system}.niri;
   };
-  programs.xwayland = { enable = true; };
 
   programs.uwsm = {
     enable = true;
@@ -47,5 +46,6 @@
     adw-gtk3
     glib
     gnome-firmware
+    xwayland-satellite
   ];
 }
