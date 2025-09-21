@@ -18,10 +18,11 @@
         margin-left = 0; # 10;
         margin-right = 0; # 10;
         margin-bottom = 2;
-        modules-left = [ "group/launcher" "hyprland/workspaces" "niri/workspaces" ];
+        modules-left =
+          [ "group/launcher" "hyprland/workspaces" "niri/workspaces" ];
         modules-center = [ "clock" ];
         modules-right = [
-          "custom/recorder"
+          #"custom/recorder"
           #"custom/clipboard"
           # "group/expand"
           #"bluetooth"
@@ -70,6 +71,7 @@
           "modules" = [
             "custom/settings"
             "custom/endpoint"
+            #"custom/recorder"
             #          "custom/backlight"
             #"backlight/slider"
             "pulseaudio#sink"
