@@ -41,6 +41,7 @@
         go
         rustup
         cargo-watch
+        ffmpeg-full
         #Moving to flatpack
         #jetbrains.idea-ultimate
         #jetbrains.rust-rover

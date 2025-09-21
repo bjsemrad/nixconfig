@@ -21,7 +21,7 @@
         modules-left = [ "group/launcher" "hyprland/workspaces" "niri/workspaces" ];
         modules-center = [ "clock" ];
         modules-right = [
-          #"custom/recorder"
+          "custom/recorder"
           #"custom/clipboard"
           # "group/expand"
           #"bluetooth"
@@ -176,7 +176,7 @@
           "signal" = 12;
           "interval" = 5;
           "on-click" =
-            "wf-recorder -f $(xdg-user-dir VIDEOS)/$(date +'recording_%Y-%m-%d-%H%M%S.mp4')";
+            "wf-recorder -f ~/Videos/$(date +'recording_%Y-%m-%d-%H%M%S.mp4')";
           "on-click-right" = "pkill --signal SIGINT wf-recorder";
           "escape" = true;
         };
