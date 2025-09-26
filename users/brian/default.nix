@@ -30,6 +30,7 @@
     #inputs.elephant.homeManagerModules.elephant
     inputs.walker.homeManagerModules.walker
     ./modules/flatpak
+    ./modules/webapps
   ];
 
   home = {
