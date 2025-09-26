@@ -306,8 +306,8 @@
           "tooltip-format-disconnected" = "Disconnected";
           "interval" = 3;
           "nospacing" = 1;
-          "on-click-right" = "nm-connection-editor";
-          "on-click" = "$HOME/.config/rofi/scripts/networkmanager.sh";
+          "on-click" = "nm-connection-editor";
+          #"on-click" = "$HOME/.config/rofi/scripts/networkmanager.sh";
         };
         "pulseaudio#sink" = {
           "format" = "{icon}";
