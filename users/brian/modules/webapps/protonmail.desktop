@@ -5,6 +5,6 @@ Terminal=false
 Type=Application
 Name=ProtonMail
 Exec=uwsm app -- brave --app="https://mail.proton.me/u/0/inbox" --ozone-platform=wayland
-Icon=brave-protonmail-Default
+Icon=protonmail
 StartupWMClass=protommail-custom
 Actions=Email

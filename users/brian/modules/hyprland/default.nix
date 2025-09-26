@@ -252,6 +252,9 @@
         "workspace 6,class:(steam)"
         "workspace 9,class:(Cider)"
         "workspace 10,class:(BambuStudio)"
+        "workspace 3,class:^(brave-gmail.com).*"
+        "workspace 3,class:^(brave-mail.proton.me).*"
+
 
         "opacity 1.0 override 1.0 override,class:^(firefox)$"
         "opacity 1.0 override 1.0 override,class:^(Alacritty)$"
