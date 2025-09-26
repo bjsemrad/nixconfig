@@ -75,16 +75,16 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1758181421,
-        "narHash": "sha256-VrEHrnUlle5FNx3CnXZ27eXKPOKd7Dui2SvqZPnjiwA=",
-        "ref": "refs/tags/v1.0.6",
-        "rev": "5341199c6d7283c3ce62e80c68aa8598e4423467",
-        "revCount": 199,
+        "lastModified": 1758863613,
+        "narHash": "sha256-2a+u1cXacsabRQe0D3LS9YYt0RlT4yYDqRlZfUlHP/g=",
+        "ref": "refs/tags/v1.0.8",
+        "rev": "4b73203c8daabef490ee599ddba6ed5e2035b397",
+        "revCount": 205,
         "type": "git",
         "url": "https://github.com/abenz1267/elephant"
       },
       "original": {
-        "ref": "refs/tags/v1.0.6",
+        "ref": "refs/tags/v1.0.8",
         "type": "git",
         "url": "https://github.com/abenz1267/elephant"
       }
@@ -1499,16 +1499,16 @@
         "systems": "systems_9"
       },
       "locked": {
-        "lastModified": 1758203747,
-        "narHash": "sha256-2iMEWiYquQmB7RgMRYSUrZ2J8H+0UPdwAsu/sXMHIw8=",
-        "ref": "refs/tags/v1.0.6",
-        "rev": "40885c3e9e8210b1bd68ed160be0473317fa8e64",
-        "revCount": 1495,
+        "lastModified": 1758863748,
+        "narHash": "sha256-awyiSwPuC0wLX12h2LcaUhz5yz35jchNSei2i8xX8js=",
+        "ref": "refs/tags/v1.0.8",
+        "rev": "39791dbc7b796ff7ecd71d2ebed3470bb26697b4",
+        "revCount": 1503,
         "type": "git",
         "url": "https://github.com/abenz1267/walker"
       },
       "original": {
-        "ref": "refs/tags/v1.0.6",
+        "ref": "refs/tags/v1.0.8",
         "type": "git",
         "url": "https://github.com/abenz1267/walker"
       }

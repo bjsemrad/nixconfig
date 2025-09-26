@@ -295,7 +295,7 @@
         "$mainMod CTRL_L SHIFT, P, exec, uwsm app -- $HOME/.config/wlogout/scripts/wlogout.sh"
 
         #"$mainMod CTRL_L SHIFT, C, exec,  uwsm app -- $HOME/.config/rofi/scripts/clipboard.sh"
-        "$mainMod CTRL_L ALT SHIFT, C, exec,  uwsm app -- walker --provider clipboard -w 800"
+        "$mainMod CTRL_L ALT SHIFT, C, exec,  uwsm app -- walker --provider clipboard"
 
         ''$mainMod CTRL_L SHIFT, I, exec,  uwsm app -- grim -g "$(slurp)"''
         '',Print, exec,  uwsm app -- grim -g "$(slurp)"''
