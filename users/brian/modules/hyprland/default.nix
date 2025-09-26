@@ -254,6 +254,8 @@
         "workspace 10,class:(BambuStudio)"
         "workspace 3,class:^(brave-gmail.com).*"
         "workspace 3,class:^(brave-mail.proton.me).*"
+        "workspace 9,class:^(brave-chatgpt.com).*"
+
 
 
         "opacity 1.0 override 1.0 override,class:^(firefox)$"

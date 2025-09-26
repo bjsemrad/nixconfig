@@ -3,7 +3,7 @@
 Version=1.0
 Terminal=false
 Type=Application
-Name=Gmail
+Name=ChatGpt
 Exec=uwsm app -- brave --app="https://chatgpt.com" --ozone-platform=wayland
 Icon=chatgpt
 StartupWMClass=chatgpt-custom
