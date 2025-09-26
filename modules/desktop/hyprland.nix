@@ -28,9 +28,7 @@
     pamixer
     fuzzel
     cliphist
-    #swayidle
-    #networkmanagerapplet
-    networkmanager_dmenu
+    networkmanagerapplet
     xdg-desktop-portal-gtk
     grim
     slurp
@@ -39,6 +37,5 @@
     glib
     inputs.hyprland-systeminfo.packages.${pkgs.system}.hyprsysteminfo
     gnome-firmware
-
   ];
 }
