@@ -18,8 +18,12 @@
         margin-left = 0; # 10;
         margin-right = 0; # 10;
         margin-bottom = 2;
-        modules-left =
-          [ "group/launcher" "hyprland/workspaces" "niri/workspaces" ];
+        modules-left = [
+          "group/launcher"
+          "custom/windows"
+          "hyprland/workspaces"
+          "niri/workspaces"
+        ];
         modules-center = [ "clock" ];
         modules-right = [
           #"custom/recorder"
@@ -140,7 +144,14 @@
           format-icons = [ "󰀻" ];
           "tooltip-format" = "Applications";
           #format-icons = [ "" ];
-          "on-click" = "$HOME/.config/rofi/scripts/launcher.sh";
+          "on-click" = "uwsm app -- walker";
+        };
+        "custom/windows" = {
+          format = "{icon}";
+          "icon-size" = 24;
+          format-icons = [ "" ];
+          "tooltip-format" = "Applications";
+          "on-click" = "uwsm app -- $HOME/.config/walker/scripts/windows.sh";
         };
         "custom/sep" = { "format" = "|"; };
         "custom/space" = { "format" = " "; };
@@ -417,6 +428,15 @@
                     margin-right: 15px;
                     font-size: 16px;
                   }
+
+                  #custom-windows {
+                    min-width: 13px;
+                    margin-left: 10px;
+                    margin-right: 15px;
+                    font-size: 16px;
+                  }
+
+
 
                   #launcher {
                     margin-left: 10px;
