@@ -163,7 +163,7 @@
         "custom/clipboard" = {
           format = "{icon}";
           format-icons = { "default" = "󰨸"; };
-          "on-click" = "$HOME/.config/rofi/scripts/clipboard.sh";
+          "on-click" = "uwsm app -- walker --provider clipboard";
           "on-click-right" = "cliphist wipe";
         };
         "custom/notification" = {
