@@ -42,6 +42,8 @@
         rustup
         cargo-watch
         ffmpeg-full
+        libheif
+        pinta
         #Moving to flatpack
         #jetbrains.idea-ultimate
         #jetbrains.rust-rover
@@ -99,6 +101,9 @@
         devpod-desktop
 
         jq
+        protonvpn-gui
+        protonvpn-cli
+        loupe
         #quickshell move to quickshell config
         # kdePackages.kdialog
         # kdePackages.qt5compat

@@ -32,6 +32,7 @@
     common-bluetooth
 
     programs-steam
+    programs-localsend
 
     keyboard-qmk
     virt-podman

@@ -272,6 +272,7 @@
 
       bind = [
         #"$mainMod SHIFT, E, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
+        "$mainMod CTRL_L ALT SHIFT, E, exec, systemctl --user restart elephant.service"
 
         "$mainMod, RETURN, exec, uwsm app -- ghostty" # kitty" #alacritty"
         "$mainMod, Q, killactive,"
@@ -285,7 +286,6 @@
         #"$mainMod, D, exec, uwsm app -- $HOME/.config/rofi/scripts/launcher.sh"
         "$mainMod, D, exec, uwsm app -- walker"
         "$mainMod CTRL_L ALT SHIFT, K, exec, uwsm app -- $HOME/.config/walker/scripts/keybinds.sh"
-
 
         #"$mainMod CTRL_L, W, exec, uwsm app -- $HOME/.config/rofi/scripts/window.sh"
         "$mainMod CTRL_L, W, exec, uwsm app -- $HOME/.config/walker/scripts/windows.sh"

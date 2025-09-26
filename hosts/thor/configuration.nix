@@ -32,6 +32,8 @@
     common-packages
     common-bluetooth
 
+    programs-localsend
+
     keyboard-qmk
     virt-podman
     programs-nix-ld
