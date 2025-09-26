@@ -20,6 +20,7 @@
   security.pam.services.hyprlock = { };
   environment.systemPackages = with pkgs; [
     hyprpaper
+    hyprpicker
     wf-recorder
     wl-clipboard
     brightnessctl

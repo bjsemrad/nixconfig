@@ -75,9 +75,7 @@
           "modules" = [
             "custom/settings"
             "custom/endpoint"
-            #"custom/recorder"
-            #          "custom/backlight"
-            #"backlight/slider"
+            "custom/colorpicker"
             "pulseaudio#sink"
             "pulseaudio/slider"
             "pulseaudio#source"
@@ -122,15 +120,6 @@
           "on-click" = "systemctl suspend";
           "tooltip-format" = "Sleep";
         };
-        "group/expand" = {
-          "orientation" = "inherit";
-          "drawer" = {
-            "transition-duration" = 500;
-            "transition-left-to-right" = false;
-          };
-          "modules" =
-            [ "custom/expand" "custom/endpoint" "tray" "custom/clipboard" ];
-        };
         "wlr/taskbar" = {
           "format" = "{icon}";
           "icon-size" = 14;
@@ -165,6 +154,11 @@
           format-icons = { "default" = "󰨸"; };
           "on-click" = "uwsm app -- walker --provider clipboard";
           "on-click-right" = "cliphist wipe";
+        };
+        "custom/colorpicker" = {
+          format = "{icon}";
+          format-icons = {"default" = "󰴱";};
+          "on-click" = "uwsm app -- hyprpicker -a";
         };
         "custom/notification" = {
           "tooltip" = true;
@@ -519,6 +513,7 @@
                   #wireplumber,
                   #battery,
                   #custom-clipboard,
+                  #custom-colorpicker,
                   #custom-menu,
                   #backlight,
                   #idle_inhibitor,
