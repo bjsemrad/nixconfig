@@ -69,13 +69,13 @@
     elephant = {
       type = "git";
       url = "https://github.com/abenz1267/elephant";
-      ref = "refs/tags/v1.0.8";
+      ref = "refs/tags/v2.1.0";
     };
 
     walker = {
       type = "git";
       url = "https://github.com/abenz1267/walker";
-      ref = "refs/tags/v1.0.8";
+      ref = "refs/tags/v2.1.1";
       inputs.elephant.follows = "elephant";
       #      inputs.nixpkgs.follows = "nixpkgs";
     };

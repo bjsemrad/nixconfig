@@ -75,16 +75,16 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1758863613,
-        "narHash": "sha256-2a+u1cXacsabRQe0D3LS9YYt0RlT4yYDqRlZfUlHP/g=",
-        "ref": "refs/tags/v1.0.8",
-        "rev": "4b73203c8daabef490ee599ddba6ed5e2035b397",
-        "revCount": 205,
+        "lastModified": 1759768863,
+        "narHash": "sha256-vr2mPahyG402X8RON2G6mRsnIgKJ16g5YBpwKLXqCno=",
+        "ref": "refs/tags/v2.1.0",
+        "rev": "61c20acc5a3fc03be358ede109121d1194440f29",
+        "revCount": 252,
         "type": "git",
         "url": "https://github.com/abenz1267/elephant"
       },
       "original": {
-        "ref": "refs/tags/v1.0.8",
+        "ref": "refs/tags/v2.1.0",
         "type": "git",
         "url": "https://github.com/abenz1267/elephant"
       }
@@ -1499,16 +1499,16 @@
         "systems": "systems_9"
       },
       "locked": {
-        "lastModified": 1758863748,
-        "narHash": "sha256-awyiSwPuC0wLX12h2LcaUhz5yz35jchNSei2i8xX8js=",
-        "ref": "refs/tags/v1.0.8",
-        "rev": "39791dbc7b796ff7ecd71d2ebed3470bb26697b4",
-        "revCount": 1503,
+        "lastModified": 1759774396,
+        "narHash": "sha256-8jdUXiln/6g/ShhzSZJKctBn06ricqAWira/OcTensA=",
+        "ref": "refs/tags/v2.1.1",
+        "rev": "0b2fac90429866a8d322d0bd8f33a51b169400d9",
+        "revCount": 1553,
         "type": "git",
         "url": "https://github.com/abenz1267/walker"
       },
       "original": {
-        "ref": "refs/tags/v1.0.8",
+        "ref": "refs/tags/v2.1.1",
         "type": "git",
         "url": "https://github.com/abenz1267/walker"
       }
