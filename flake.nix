@@ -60,7 +60,6 @@
       type = "git";
       url = "https://github.com/tailscale/tailscale";
       ref = "refs/tags/v1.86.2";
-      #inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     elephant = {
