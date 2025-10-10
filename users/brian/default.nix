@@ -37,7 +37,7 @@
     packages = with pkgs;
       [
         bitwarden
-        go
+        #go unstable
         rustup
         cargo-watch
         ffmpeg-full
@@ -123,6 +123,7 @@
 
       ] ++ [
         inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
+        inputs.nixpkgs-unstable.legacyPackages.${system}.go
         # inputs.quickshell.packages.${system}.quickshell
       ];
 

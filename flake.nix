@@ -17,7 +17,6 @@
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
       ref = "refs/tags/v0.51.1";
-      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland-plugins = {
@@ -25,14 +24,11 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    hyprland-systeminfo = {
-      url = "github:hyprwm/hyprsysteminfo/v0.1.3";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
+    hyprland-systeminfo = { url = "github:hyprwm/hyprsysteminfo/v0.1.3"; };
 
-    hyprlock = { url = "github:hyprwm/hyprlock/v0.9.0"; };
+    hyprlock = { url = "github:hyprwm/hyprlock/v0.9.2"; };
 
-    hypridle = { url = "github:hyprwm/hypridle/v0.1.6"; };
+    hypridle = { url = "github:hyprwm/hypridle/v0.1.7"; };
 
     alacritty-theme = {
       url =
@@ -64,6 +60,7 @@
       type = "git";
       url = "https://github.com/tailscale/tailscale";
       ref = "refs/tags/v1.86.2";
+      #inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     elephant = {
@@ -75,7 +72,7 @@
     walker = {
       type = "git";
       url = "https://github.com/abenz1267/walker";
-      ref = "refs/tags/v2.1.1";
+      ref = "refs/tags/v2.2.0";
       inputs.elephant.follows = "elephant";
       #      inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -83,7 +80,7 @@
     ghostty = {
       type = "git";
       url = "https://github.com/ghostty-org/ghostty";
-      ref = "refs/tags/v1.2.0";
+      ref = "refs/tags/v1.2.2";
     };
 
     matugen = { url = "github:InioX/matugen?ref=v2.4.1"; };
