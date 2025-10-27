@@ -32,7 +32,7 @@
 
     hyprlauncher = { url = "github:hyprwm/hyprlauncher"; };
 
-    hyprwire = { url = "github:hyprwm/hyprwire"; };
+    #hyprpwcenter = { url = "github:hyprwm/hyprpwcenter"; };
 
     alacritty-theme = {
       url =
@@ -91,9 +91,9 @@
 
   };
   outputs = { self, nixpkgs, home-manager, nixos-hardware, alacritty-theme
-    , hyprland, hypridle, hyprlock, hyprland-systeminfo, hyprlauncher, hyprwire
-    , waybar, niri, matugen, nixpkgs-unstable, nix-flatpak, quickshell
-    , tailscale, elephant, walker, ghostty, ... }@inputs:
+    , hyprland, hypridle, hyprlock, hyprland-systeminfo, hyprlauncher, waybar
+    , niri, matugen, nixpkgs-unstable, nix-flatpak, quickshell, tailscale
+    , elephant, walker, ghostty, ... }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
