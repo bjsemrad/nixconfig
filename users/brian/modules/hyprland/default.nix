@@ -3,6 +3,7 @@
     ./hyprpaper
     ./hyprlock
     ./hypridle
+    ./hyprlauncher
     ./polkitagent
     ./waybar
     ./wlogout
@@ -255,8 +256,6 @@
         "workspace 3,class:^(brave-gmail.com).*"
         "workspace 3,class:^(brave-mail.proton.me).*"
         "workspace 9,class:^(brave-chatgpt.com).*"
-
-
 
         "opacity 1.0 override 1.0 override,class:^(firefox)$"
         "opacity 1.0 override 1.0 override,class:^(Alacritty)$"
