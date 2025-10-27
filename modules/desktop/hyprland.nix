@@ -37,6 +37,8 @@
     adw-gtk3
     glib
     inputs.hyprland-systeminfo.packages.${pkgs.system}.hyprsysteminfo
+    inputs.hyprlauncher.packages.${pkgs.system}.hyprlauncher
+    inputs.hyprwire.packages.${pkgs.system}.hyprwire
     gnome-firmware
   ];
 }
