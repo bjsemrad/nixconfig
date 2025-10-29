@@ -53,6 +53,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mangowm = {
+      type = "git";
+      url = "https://github.com/DreamMaoMao/mangowc";
+      ref = "refs/tags/0.10.4";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     quickshell = {
       type = "git";
       url = "https://github.com/quickshell-mirror/quickshell";
@@ -92,8 +99,8 @@
   };
   outputs = { self, nixpkgs, home-manager, nixos-hardware, alacritty-theme
     , hyprland, hypridle, hyprlock, hyprland-systeminfo, hyprlauncher, waybar
-    , niri, matugen, nixpkgs-unstable, nix-flatpak, quickshell, tailscale
-    , elephant, walker, ghostty, ... }@inputs:
+    , niri, mangowm, matugen, nixpkgs-unstable, nix-flatpak, quickshell
+    , tailscale, elephant, walker, ghostty, ... }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;

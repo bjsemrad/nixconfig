@@ -20,8 +20,9 @@
         margin-bottom = 2;
         modules-left = [
           "group/launcher"
-          "custom/windows"
-          "hyprland/workspaces"
+          #"custom/windows"
+          "ext/workspaces"
+          #Mango experiment"hyprland/workspaces"
           "niri/workspaces"
         ];
         modules-center = [ "clock" ];
@@ -139,7 +140,7 @@
           format = "{icon}";
           "icon-size" = 24;
           format-icons = [ "" ];
-          "tooltip-format" = "Applications";
+          "tooltip-format" = "Windows";
           "on-click" = "uwsm app -- $HOME/.config/walker/scripts/windows.sh";
         };
         "custom/sep" = { "format" = "|"; };
@@ -157,7 +158,7 @@
         };
         "custom/colorpicker" = {
           format = "{icon}";
-          format-icons = {"default" = "󰴱";};
+          format-icons = { "default" = "󰴱"; };
           "on-click" = "uwsm app -- hyprpicker -a";
         };
         "custom/notification" = {
