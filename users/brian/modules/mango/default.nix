@@ -7,6 +7,9 @@
       monitorrule=eDP-1,0.55,1,scroller,0,1.33,0,0,2880,1920,120
       adaptive_sync=1
       animations=0
+
+      borderpx=3
+
       xkb_rules_options=ctrl:nocaps
 
       bind=SUPER,Return,spawn,ghostty
