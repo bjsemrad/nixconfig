@@ -23,7 +23,7 @@
           #"custom/windows"
           "ext/workspaces"
           #Mango experiment"hyprland/workspaces"
-          "niri/workspaces"
+          #"niri/workspaces"
         ];
         modules-center = [ "clock" ];
         modules-right = [
