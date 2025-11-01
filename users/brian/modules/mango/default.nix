@@ -5,12 +5,13 @@
     settings = ''
        # see config.conf
        monitorrule=eDP-1,0.55,1,scroller,0,1.33,0,0,2880,1920,120
+       monitorrule=DP-3,0.55,1,scroller,0,1.33,0,0,3840,2560,60
        adaptive_sync=1
        animations=0
        borderpx=2
 
        sloppyfocus=0
-      enable_floating_snap=1
+       enable_floating_snap=1
 
        scroller_default_proportion=1.0
        scroller_structs=16
