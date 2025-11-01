@@ -118,7 +118,7 @@
       general = {
         gaps_in = 3;
         gaps_out = 4;
-        border_size = 2;
+        border_size = 1;
         "$black" = "0xff0e1013";
         "$bgDark" = "0xff1E2127";
         "$bg0" = "0xff1f2329";
@@ -151,7 +151,6 @@
         "col.active_border" = "$blue";
         "col.inactive_border" = "$bg1";
         layout = "dwindle";
-        #layout = "scrolling";
       };
       decoration = {
         rounding = 10;
@@ -319,7 +318,7 @@
         "$mainMod SHIFT, up, swapwindow, u"
         "$mainMod SHIFT, down, swapwindow, d"
 
-        "$mainMod, J, togglesplit, " # dwindle
+        "ALT, slash, togglesplit, " # dwindle
 
         # Resize window
         "$mainMod CTRL_L, left, resizeactive, -10 0"
