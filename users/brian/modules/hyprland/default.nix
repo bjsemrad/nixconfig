@@ -54,7 +54,7 @@
     portalPackage = null;
     plugins = [
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-      #inputs.hyprland-plugins.packages.${pkgs.system}.hyprscrolling
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprscrolling
     ];
     settings = {
       monitor = [
@@ -118,7 +118,7 @@
       general = {
         gaps_in = 3;
         gaps_out = 4;
-        border_size = 1;
+        border_size = 2;
         "$black" = "0xff0e1013";
         "$bgDark" = "0xff1E2127";
         "$bg0" = "0xff1f2329";
@@ -150,7 +150,7 @@
 
         "col.active_border" = "$blue";
         "col.inactive_border" = "$bg1";
-        layout = "dwindle";
+        layout = "scrolling"; #"dwindle"; #"scrolling";
       };
       decoration = {
         rounding = 10;
@@ -217,17 +217,21 @@
       ];
 
       plugin = {
-        #scrolling = { fullscreen_on_one_column = true; };
-        # hyprexpo = {
-        #   columns = 3;
-        #   gap_size = 5;
-        #   workspace_method =
-        #     "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
-        #   enable_gesture = true; # laptop touchpad, 4 fingers
-        #   gesture_distance = 300; # how far is the "max"
-        #   gesture_positive =
-        #     false; # positive = swipe down. Negative = swipe up.
-        #   skip_empty = true;
+        hyprscrolling = { 
+          fullscreen_on_one_column = true; 
+          column_width = 0.99;
+          explicit_column_widths = "0.5, 0.99";
+        };
+         # hyprexpo = {
+         #  columns = 3;
+         #  gap_size = 5;
+         #  workspace_method =
+         #    "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
+         #  enable_gesture = true; # laptop touchpad, 4 fingers
+         #  gesture_distance = 300; # how far is the "max"
+         #  gesture_positive =
+         #    false; # positive = swipe down. Negative = swipe up.
+         #  skip_empty = true;
         # };
       };
 
@@ -275,6 +279,9 @@
 
       bind = [
         #"$mainMod SHIFT, E, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
+
+        "$mainMod CTRL_L ALT SHIFT, S, exec, hyprctl keyword general:layout \"scrolling\""
+        "$mainMod CTRL_L ALT SHIFT, T, exec, hyprctl keyword general:layout \"dwindle\""
         "$mainMod CTRL_L ALT SHIFT, E, exec, systemctl --user restart elephant.service"
 
         "$mainMod, RETURN, exec, uwsm app -- ghostty" # kitty" #alacritty"
@@ -329,6 +336,9 @@
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
+
+        "$mainMod, period, layoutmsg, colresize +conf"
+        "$mainMod, comma, layoutmsg, colresize -conf"
 
         # Home Automations
         ''

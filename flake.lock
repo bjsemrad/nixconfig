@@ -513,16 +513,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1757774228,
-        "narHash": "sha256-6jAtMjnWq8kty/dpPbIKxIupUG+WAE2AKMIKhxdLYNo=",
+        "lastModified": 1761824067,
+        "narHash": "sha256-dB27qZRH2X5h2KM99UBYmksxb2ly2EGp5eSznTzRDe0=",
         "owner": "hyprwm",
         "repo": "hyprland-plugins",
-        "rev": "5ff379f4e525183cc6766ea95764b52ec97d8966",
+        "rev": "7a07883c4d3e7ec6726862586483ea119e20eb0f",
         "type": "github"
       },
       "original": {
         "owner": "hyprwm",
-        "ref": "v0.51.0",
         "repo": "hyprland-plugins",
         "type": "github"
       }
@@ -1618,16 +1617,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1753595452,
-        "narHash": "sha256-vqkSDvh7hWhPvNjMjEDV4KbSCv2jyl2Arh73ZXe274k=",
-        "ref": "refs/tags/v0.2.0",
-        "rev": "a5431dd02dc23d9ef1680e67777fed00fe5f7cda",
-        "revCount": 665,
+        "lastModified": 1760228054,
+        "narHash": "sha256-e++Ogy91Sv7gGLMdAqZaBzbH/UmPWZ4GAt7VDCA66aU=",
+        "ref": "refs/tags/v0.2.1",
+        "rev": "a1a150fab00a93ea983aaca5df55304bc837f51b",
+        "revCount": 688,
         "type": "git",
         "url": "https://github.com/quickshell-mirror/quickshell"
       },
       "original": {
-        "ref": "refs/tags/v0.2.0",
+        "ref": "refs/tags/v0.2.1",
         "type": "git",
         "url": "https://github.com/quickshell-mirror/quickshell"
       }

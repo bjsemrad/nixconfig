@@ -20,7 +20,7 @@
     };
 
     hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins/v0.51.0";
+      url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
 
@@ -63,7 +63,7 @@
     quickshell = {
       type = "git";
       url = "https://github.com/quickshell-mirror/quickshell";
-      ref = "refs/tags/v0.2.0";
+      ref = "refs/tags/v0.2.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
