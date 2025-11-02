@@ -22,8 +22,8 @@
       }
       {
         label = "logout";
-        action =
-          "pgrep -x Hyprland >/dev/null && hyprctl dispatch exit 0 || pgrep -x niri >/dev/null && niri msg action quit";
+        action = ''
+          [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ] && hyprctl dispatch exit 0 || [ "$XDG_CURRENT_DESKTOP" = "niri" ] && niri msg action quit'';
         text = "Logout";
         keybind = "e";
       }
