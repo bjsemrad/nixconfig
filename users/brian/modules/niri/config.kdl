@@ -482,11 +482,11 @@ binds {
     Mod+B { spawn "brave"; }
     Mod+E { spawn "thunar"; }
 
-    Mod+Ctrl+Shift+P { spawn "$HOME/.config/wlogout/scripts/wlogout.sh";}
-    XF86PowerOff { spawn "$HOME/.config/wlogout/scripts/wlogout.sh";}
+    Mod+Ctrl+Shift+P { spawn "bash" "-c" "$HOME/.config/wlogout/scripts/wlogout.sh";}
+    XF86PowerOff { spawn "bash" "-c" "$HOME/.config/wlogout/scripts/wlogout.sh";}
 
 
-    Mod+Ctrl+Shift+C { spawn "walker --provider clipboard";}
+    Mod+Ctrl+Shift+C { spawn "walker" "--provider" "clipboard";}
 
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
