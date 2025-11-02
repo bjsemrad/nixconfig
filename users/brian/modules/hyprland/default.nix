@@ -339,7 +339,7 @@
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
 
-        "$mainMod, period, layoutmsg, colresize +conf"
+        "$mainMod, R, layoutmsg, colresize +conf"
         "$mainMod, comma, layoutmsg, colresize -conf"
 
         # Home Automations

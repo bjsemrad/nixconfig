@@ -111,6 +111,30 @@ output "eDP-1" {
     position x=0 y=0
 }
 
+output "DP-3" {
+
+    mode "3840x2560@60.000"
+
+    // You can use integer or fractional scale, for example use 1.5 for 150% scale.
+    scale 1.33
+
+    // Transform allows to rotate the output counter-clockwise, valid values are:
+    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+    transform "normal"
+
+
+    // Position of the output in the global coordinate space.
+    // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
+    // The cursor can only move between directly adjacent outputs.
+    // Output scale and rotation has to be taken into account for positioning:
+    // outputs are sized in logical, or scaled, pixels.
+    // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
+    // so to put another output directly adjacent to it on the right, set its x to 1920.
+    // If the position is unset or results in an overlap, the output is instead placed
+    // automatically.
+    position x=0 y=0
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -370,11 +394,69 @@ window-rule {
 }
 
 window-rule {
+    match app-id="discord"
+    match is-urgent=true
+    open-focused true
+    open-on-workspace "2"
+}
+
+window-rule {
+    match app-id="signal"
+    match is-urgent=true
+    open-focused true
+    open-on-workspace "2"
+}
+
+
+window-rule {
     match app-id="brave-mail.proton.me*"
     match is-urgent=true
     open-focused true
     open-on-workspace "3"
 }
+
+window-rule {
+    match app-id="brave-gmail*"
+    match is-urgent=true
+    open-focused true
+    open-on-workspace "3"
+}
+
+window-rule {
+    match app-id="jetbrains-idea"
+    match is-urgent=true
+    open-focused true
+    open-on-workspace "5"
+}
+
+window-rule {
+    match app-id="Code"
+    match is-urgent=true
+    open-focused true
+    open-on-workspace "5"
+}
+
+window-rule {
+    match app-id="steam"
+    match is-urgent=true
+    open-focused true
+    open-on-workspace "6"
+}
+
+window-rule {
+    match app-id="BambooStudio"
+    match is-urgent=true
+    open-focused true
+    open-on-workspace "10"
+}
+
+window-rule {
+    match app-id="brave-chatgpt*"
+    match is-urgent=true
+    open-focused true
+    open-on-workspace "9"
+}
+
 
 
 binds {
@@ -397,6 +479,15 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Mod+B { spawn "brave"; }
+    Mod+E { spawn "thunar"; }
+
+    Mod+Ctrl+Shift+P { spawn "$HOME/.config/wlogout/scripts/wlogout.sh";}
+    XF86PowerOff { spawn "$HOME/.config/wlogout/scripts/wlogout.sh";}
+
+
+    Mod+Ctrl+Shift+C { spawn "walker --provider clipboard";}
+
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -479,6 +570,8 @@ binds {
 
     Mod+Alt+Down      { focus-workspace-down; }
     Mod+Alt+Up        { focus-workspace-up; }
+    Mod+Alt+Left      { focus-workspace-down; }
+    Mod+Alt+Right      { focus-workspace-up; }
     Mod+U              { focus-workspace-down; }
     Mod+I              { focus-workspace-up; }
     Mod+Alt+Shift+Down { move-column-to-workspace-down; }
@@ -607,13 +700,13 @@ binds {
     Mod+Ctrl+Up { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+G       { toggle-window-floating; }
+    Mod+Shift+G { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+W { toggle-column-tabbed-display; }
+    //Alt+Slash { toggle-column-tabbed-display; }
 
     
     // Note: if you uncomment these, make sure you do NOT have
