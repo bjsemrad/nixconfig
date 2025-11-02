@@ -22,7 +22,8 @@
       }
       {
         label = "logout";
-        action = "hyprctl dispatch exit 0";
+        action =
+          "pgrep -x Hyprland >/dev/null && hyprctl dispatch exit 0 || pgrep -x niri >/dev/null && niri msg action quit";
         text = "Logout";
         keybind = "e";
       }

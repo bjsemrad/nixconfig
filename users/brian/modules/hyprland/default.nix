@@ -327,7 +327,7 @@
         "$mainMod SHIFT, up, swapwindow, u"
         "$mainMod SHIFT, down, swapwindow, d"
 
-        "ALT, slash, togglesplit, " # dwindle
+        "ALT, slash, togglesplit, " # dwindlehyprlahyprlahyprlahyprla
 
         # Resize window
         "$mainMod CTRL_L, left, resizeactive, -10 0"
@@ -340,7 +340,9 @@
         "$mainMod, mouse_up, workspace, e-1"
 
         "$mainMod, R, layoutmsg, colresize +conf"
-        "$mainMod, comma, layoutmsg, colresize -conf"
+        #"$mainMod, comma, layoutmsg, colresize -conf"
+        #"$mainMod, comma, layoutmsg, movewindowto d"
+        #"$mainMod, period, layoutmsg, movewindowto u"
 
         # Home Automations
         ''
