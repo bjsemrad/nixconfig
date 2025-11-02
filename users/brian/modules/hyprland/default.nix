@@ -150,7 +150,7 @@
 
         "col.active_border" = "$blue";
         "col.inactive_border" = "$bg1";
-        layout = "scrolling"; #"dwindle"; #"scrolling";
+        layout = "scrolling"; # "dwindle"; #"scrolling";
       };
       decoration = {
         rounding = 10;
@@ -217,21 +217,21 @@
       ];
 
       plugin = {
-        hyprscrolling = { 
-          fullscreen_on_one_column = true; 
+        hyprscrolling = {
+          fullscreen_on_one_column = true;
           column_width = 0.99;
           explicit_column_widths = "0.5, 0.99";
         };
-         # hyprexpo = {
-         #  columns = 3;
-         #  gap_size = 5;
-         #  workspace_method =
-         #    "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
-         #  enable_gesture = true; # laptop touchpad, 4 fingers
-         #  gesture_distance = 300; # how far is the "max"
-         #  gesture_positive =
-         #    false; # positive = swipe down. Negative = swipe up.
-         #  skip_empty = true;
+        # hyprexpo = {
+        #   columns = 3;
+        #   gap_size = 5;
+        #   workspace_method =
+        #     "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
+        #   enable_gesture = true; # laptop touchpad, 4 fingers
+        #   gesture_distance = 300; # how far is the "max"
+        #   gesture_positive =
+        #     false; # positive = swipe down. Negative = swipe up.
+        #   skip_empty = true;
         # };
       };
 
@@ -278,10 +278,12 @@
       "$mainMod" = "SUPER_L";
 
       bind = [
-        #"$mainMod SHIFT, E, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
+        # "$mainMod, O, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
 
-        "$mainMod CTRL_L ALT SHIFT, S, exec, hyprctl keyword general:layout \"scrolling\""
-        "$mainMod CTRL_L ALT SHIFT, T, exec, hyprctl keyword general:layout \"dwindle\""
+        ''
+          $mainMod CTRL_L ALT SHIFT, S, exec, hyprctl keyword general:layout "scrolling"''
+        ''
+          $mainMod CTRL_L ALT SHIFT, T, exec, hyprctl keyword general:layout "dwindle"''
         "$mainMod CTRL_L ALT SHIFT, E, exec, systemctl --user restart elephant.service"
 
         "$mainMod, RETURN, exec, uwsm app -- ghostty" # kitty" #alacritty"
