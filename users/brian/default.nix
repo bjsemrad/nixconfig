@@ -105,6 +105,7 @@
         protonvpn-cli
         loupe
 
+        element-desktop
         # kdePackages.kdialog
         # kdePackages.qt5compat
         # kdePackages.qtbase
