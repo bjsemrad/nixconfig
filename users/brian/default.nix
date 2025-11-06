@@ -30,6 +30,7 @@
     inputs.walker.homeManagerModules.walker
     ./modules/flatpak
     ./modules/webapps
+    ./modules/wmscripts
   ];
 
   home = {

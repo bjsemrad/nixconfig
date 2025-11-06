@@ -1252,16 +1252,16 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1761632473,
-        "narHash": "sha256-ad/vDYRXYmXkN5TjgCZtZYHYj8AQLxAQLpf9ZLJYXjE=",
-        "ref": "refs/tags/0.10.4",
-        "rev": "3e83e0788962320fec474143b36a85870e788d59",
-        "revCount": 1025,
+        "lastModified": 1762235366,
+        "narHash": "sha256-ZESyUtCiIQh6R0VYAo8YaP95Damw3MJVvKy5qU3pgTA=",
+        "ref": "refs/tags/0.10.5",
+        "rev": "3645817f2d9c1ceb27c440a20fca6f5c5dc13a27",
+        "revCount": 1064,
         "type": "git",
         "url": "https://github.com/DreamMaoMao/mangowc"
       },
       "original": {
-        "ref": "refs/tags/0.10.4",
+        "ref": "refs/tags/0.10.5",
         "type": "git",
         "url": "https://github.com/DreamMaoMao/mangowc"
       }

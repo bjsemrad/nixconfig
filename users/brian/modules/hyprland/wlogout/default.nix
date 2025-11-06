@@ -22,8 +22,7 @@
       }
       {
         label = "logout";
-        action = ''
-          [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ] && hyprctl dispatch exit 0 || [ "$XDG_CURRENT_DESKTOP" = "niri" ] && niri msg action quit'';
+        action = "~/.config/wmscripts/logout.sh";
         text = "Logout";
         keybind = "e";
       }

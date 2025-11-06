@@ -56,7 +56,7 @@
     mangowm = {
       type = "git";
       url = "https://github.com/DreamMaoMao/mangowc";
-      ref = "refs/tags/0.10.4";
+      ref = "refs/tags/0.10.5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -113,7 +113,7 @@
         };
         "custom/logout" = {
           "format" = "󰗽";
-          "on-click" = "hyprctl dispatch exit 0";
+          "on-click" = "~/.config/wmscripts/logout.sh";
           "tooltip-format" = "Logout";
         };
         "custom/suspend" = {
