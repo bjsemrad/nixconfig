@@ -1,11 +1,16 @@
-{ cfg, inputs, ... }: {
+{ config, inputs, osConfig, ... }: {
   imports = [ inputs.mangowm.hmModules.mango ];
+
+  home.file = {
+    ".config/mango/monitors.conf".source =
+      builtins.toPath (./. + "/${osConfig.networking.hostName}_monitors.conf");
+  };
+
   wayland.windowManager.mango = {
     enable = true;
     settings = ''
        # see config.conf
-       monitorrule=eDP-1,0.55,1,scroller,0,1.33,0,0,2880,1920,120
-       monitorrule=DP-3,0.55,1,scroller,0,1.33,0,0,3840,2560,60
+       source=~/.config/mango/monitors.conf
        adaptive_sync=1
        animations=0
        borderpx=2
