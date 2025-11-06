@@ -31,6 +31,8 @@
     ./modules/flatpak
     ./modules/webapps
     ./modules/wmscripts
+    #inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+    #./modules/dankmaterialshell
   ];
 
   home = {
