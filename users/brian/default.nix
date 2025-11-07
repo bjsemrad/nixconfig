@@ -31,8 +31,8 @@
     ./modules/flatpak
     ./modules/webapps
     ./modules/wmscripts
-    #inputs.dankMaterialShell.homeModules.dankMaterialShell.default
-    #./modules/dankmaterialshell
+    # inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+    # ./modules/dankmaterialshell
   ];
 
   home = {
@@ -109,27 +109,27 @@
         loupe
 
         element-desktop
-        # kdePackages.kdialog
-        # kdePackages.qt5compat
-        # kdePackages.qtbase
-        # kdePackages.qtdeclarative
-        # kdePackages.qtdeclarative
-        # kdePackages.qtimageformats
-        # kdePackages.qtmultimedia
-        # kdePackages.qtpositioning
-        # kdePackages.qtquicktimeline
-        # kdePackages.qtsensors
-        # kdePackages.qtsvg
-        # kdePackages.qttools
-        # kdePackages.qttranslations
-        # kdePackages.qtvirtualkeyboard
-        # kdePackages.qtwayland
-        # kdePackages.syntax-highlighting
+        kdePackages.kdialog
+        kdePackages.qt5compat
+        kdePackages.qtbase
+        kdePackages.qtdeclarative
+        kdePackages.qtdeclarative
+        kdePackages.qtimageformats
+        kdePackages.qtmultimedia
+        kdePackages.qtpositioning
+        kdePackages.qtquicktimeline
+        kdePackages.qtsensors
+        kdePackages.qtsvg
+        kdePackages.qttools
+        kdePackages.qttranslations
+        kdePackages.qtvirtualkeyboard
+        kdePackages.qtwayland
+        kdePackages.syntax-highlighting
 
       ] ++ [
         inputs.nixpkgs-unstable.legacyPackages.${system}.temporal-cli
         inputs.nixpkgs-unstable.legacyPackages.${system}.go
-        # inputs.quickshell.packages.${system}.quickshell
+        inputs.quickshell.packages.${system}.quickshell
       ];
 
     sessionVariables = {
