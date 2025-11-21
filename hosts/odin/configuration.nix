@@ -64,6 +64,17 @@
     # package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.ollama;
   };
 
+  networking = {
+    interfaces = {
+     enp6s0 = {
+        wakeOnLan.enable = true;
+      };
+    };
+    firewall = {
+      allowedUDPPorts = [9];
+    };
+  };
+
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Semrad";
