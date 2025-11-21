@@ -77,6 +77,10 @@
     };
   };
 
+    # Enable the OpenSSH daemon.
+  security.pam.sshAgentAuth.enable = true; 
+  services.openssh.enable = true;
+
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Semrad";
