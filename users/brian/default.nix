@@ -113,7 +113,6 @@
         kdePackages.qt5compat
         kdePackages.qtbase
         kdePackages.qtdeclarative
-        kdePackages.qtdeclarative
         kdePackages.qtimageformats
         kdePackages.qtmultimedia
         kdePackages.qtpositioning

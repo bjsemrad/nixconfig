@@ -16,11 +16,13 @@
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
-      ref = "refs/tags/v0.51.1";
+      ref = "refs/tags/v0.52.1";
     };
 
     hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
+      type = "git";
+      url = "https://github.com/hyprwm/hyprland-plugins";
+      ref = "refs/tags/v0.52.0";
       inputs.hyprland.follows = "hyprland";
     };
 
@@ -96,29 +98,11 @@
     matugen = { url = "github:InioX/matugen?ref=v2.4.1"; };
     nix-flatpak = { url = "github:gmodena/nix-flatpak/?ref=latest"; };
 
-    # dgop = {
-    #   url = "github:AvengeMedia/dgop";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # dms-cli = {
-    #   url = "github:AvengeMedia/danklinux";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # dankMaterialShell = {
-    #   url = "github:AvengeMedia/DankMaterialShell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.dgop.follows = "dgop";
-    #   inputs.dms-cli.follows = "dms-cli";
-    # };
-
   };
   outputs = { self, nixpkgs, home-manager, nixos-hardware, alacritty-theme
     , hyprland, hypridle, hyprlock, hyprland-systeminfo, hyprlauncher, waybar
     , niri, mangowm, matugen, nixpkgs-unstable, nix-flatpak, quickshell
-    , tailscale, elephant, walker, ghostty
-    , ... }@inputs:
+    , tailscale, elephant, walker, ghostty, ... }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;

@@ -23,6 +23,7 @@
         xz
         systemd
         libgbm
+        kdePackages.qtdeclarative
     ];
   };
 }
