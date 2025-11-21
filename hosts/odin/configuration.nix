@@ -57,10 +57,11 @@
   services.ollama = {
     enable = true;
     acceleration = "rocm";
-    environmentVariables = {
-      HSA_OVERRIDE_GFX_VERSION = "10.3.0";
-      HCC_AMDGPU_TARGET = "gfx1030";
-    };
+    # rocmOverrideGfx = "10.3.0";
+    # environmentVariables = {
+      # HSA_OVERRIDE_GFX_VERSION = "10.3.0";
+      # HCC_AMDGPU_TARGET = "gfx1030";
+    # };
     # package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.ollama;
   };
 
@@ -72,6 +73,7 @@
     };
     firewall = {
       allowedUDPPorts = [9];
+      allowedTCPPorts = [ 22 11434 ];
     };
   };
 
