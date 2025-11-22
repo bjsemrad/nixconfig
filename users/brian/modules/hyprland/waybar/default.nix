@@ -21,9 +21,10 @@
         modules-left = [
           "group/launcher"
           #"custom/windows"
-          "ext/workspaces"
-          #Mango experiment"hyprland/workspaces"
-          #"niri/workspaces"
+          # "ext/workspaces"
+          #Mango experiment
+          "hyprland/workspaces"
+          "niri/workspaces"
         ];
         modules-center = [ "clock" ];
         modules-right = [
