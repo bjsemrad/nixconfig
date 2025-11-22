@@ -856,11 +856,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1763577178,
-        "narHash": "sha256-5Jsj9R9EfQFj3TKR433yd4x3ZEG4He77Sw4HN+6gclY=",
+        "lastModified": 1763819300,
+        "narHash": "sha256-WBTSRJ0PrVW+zDmTraJFXsAKPrYn01VgXvEtcixIEsQ=",
         "owner": "hyprwm",
         "repo": "hyprlauncher",
-        "rev": "fc022cb02c094c886ff18f27bbe1614a8a472ba0",
+        "rev": "53a6b3f2d7f6e3981347ddaaf469b16964287fc2",
         "type": "github"
       },
       "original": {
