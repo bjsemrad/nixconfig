@@ -239,7 +239,7 @@
         "workspace 1,class:(brave-browser)"
         "workspace 3,class:(Proton Mail)"
         "workspace 2,class:(discord)"
-        "workspace 2,class:(signal)"
+        "workspace 2,class:(org.signal.Signal)"
         "workspace 4,class:(Alacritty)"
         "workspace 4,class:(kitty)"
         "workspace 4,class:(com.mitchellh.ghostty)"
