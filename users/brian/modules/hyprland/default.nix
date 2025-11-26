@@ -34,18 +34,20 @@
 
     gtk4.extraConfig = { gtk-application-prefer-dark-theme = true; };
 
-    # catppuccin.icon.enable = true;
-    # catppuccin.icon.accent = "blue";
     iconTheme = {
       package = pkgs.kora-icon-theme;
       name = "kora";
     };
 
   };
+
   qt = {
     enable = true;
-    style = { name = "adwaita-dark"; };
-    platformTheme.name = "kde6";
+    style = { 
+      name = "Adwaita-Dark";
+      package = pkgs.adwaita-qt6;
+    };
+    platformTheme.name = "qt6ct";
   };
 
   wayland.windowManager.hyprland = {
