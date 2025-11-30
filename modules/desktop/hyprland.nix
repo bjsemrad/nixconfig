@@ -14,7 +14,7 @@
   };
 
   services.displayManager = { defaultSession = "hyprland-uwsm"; };
-
+  qt.style = "adwaita-dark";
   security.polkit.enable = true;
   security.pam.services.hyprlock = { };
   environment.systemPackages = with pkgs; [

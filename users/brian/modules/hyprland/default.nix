@@ -44,10 +44,10 @@
   qt = {
     enable = true;
     style = { 
-      name = "Adwaita-Dark";
+      name = "adwaita-dark";
       package = pkgs.adwaita-qt6;
     };
-    platformTheme.name = "qt6ct";
+    platformTheme.name = "adwaita";
   };
 
   wayland.windowManager.hyprland = {
