@@ -273,7 +273,7 @@
       "$mainMod" = "SUPER_L";
 
       bind = [
-        "$mainMod, O, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
+        # "$mainMod, O, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
 
         ''
           $mainMod CTRL_L ALT SHIFT, S, exec, hyprctl keyword general:layout "scrolling"''
