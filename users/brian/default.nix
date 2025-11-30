@@ -26,6 +26,7 @@
     ./modules/ghostty
     ./modules/zoxide
     ./modules/vial
+    ./modules/tailscale
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     inputs.walker.homeManagerModules.walker
     ./modules/flatpak

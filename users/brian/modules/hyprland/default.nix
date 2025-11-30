@@ -218,7 +218,7 @@
           explicit_column_widths = "0.5, 0.99";
         };
         # hyprexpo = {
-        #   columns = 3;
+        #   columns = 1;
         #   gap_size = 5;
         #   workspace_method =
         #     "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
@@ -273,7 +273,7 @@
       "$mainMod" = "SUPER_L";
 
       bind = [
-        # "$mainMod, O, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
+        "$mainMod, O, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
 
         ''
           $mainMod CTRL_L ALT SHIFT, S, exec, hyprctl keyword general:layout "scrolling"''
