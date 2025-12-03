@@ -64,10 +64,11 @@
   # Broken, logs into hyprland then swaps to gnome with GDM.
   # services.xserver.displayManager.autoLogin.enable = true;
   # services.xserver.displayManager.autoLogin.user = "brian";
-  services.logind.extraConfig = ''
+  #25.04 old option services.logind.extraConfig = ''
+  services.logind.settings.Login = {
     # don’t shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
+    HandlePowerKey = "ignore";
+  };
 
   users.users.root = {
     # disable root login here, and also when installing nix by running `nixos-install --no-root-passwd`
