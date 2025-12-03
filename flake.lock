@@ -111,7 +111,7 @@
         "lastModified": 1759768863,
         "narHash": "sha256-vr2mPahyG402X8RON2G6mRsnIgKJ16g5YBpwKLXqCno=",
         "ref": "refs/tags/v2.1.0",
-        "rev": "61c20acc5a3fc03be358ede109121d1194440f29",
+        "rev": "301651e0617bd5068252916b5703fdaaf290e7af",
         "revCount": 252,
         "type": "git",
         "url": "https://github.com/abenz1267/elephant"
@@ -272,7 +272,7 @@
         "lastModified": 1761239688,
         "narHash": "sha256-0tmLOJCrrEnVc/ZCp/e646DTddXjv249QcSwkaukL30=",
         "ref": "refs/tags/v1.2.3",
-        "rev": "ae9b7892fa099e2e72c4f913a593ad0c2f0d0286",
+        "rev": "6d2dd585a5d87fa745d48188dd096ca6e63014d0",
         "revCount": 12214,
         "type": "git",
         "url": "https://github.com/ghostty-org/ghostty"
@@ -560,7 +560,7 @@
         "lastModified": 1762115485,
         "narHash": "sha256-hr53AWO96ooLCwS1a2v416eT1/aWQZmuQV0ULqhaBTY=",
         "ref": "refs/tags/v0.52.0",
-        "rev": "b6d75cf7293cd0846789afc945e8b8f2e2a0c4b3",
+        "rev": "bbb8d2cb0eb667f2911103eadb3d1e8176f4462c",
         "revCount": 362,
         "type": "git",
         "url": "https://github.com/hyprwm/hyprland-plugins"
@@ -1351,7 +1351,7 @@
         "lastModified": 1764399944,
         "narHash": "sha256-FhVj2U3Vy9XZmCdBUUn5Q7YMsnXgQgmmeoLxQkTFohw=",
         "ref": "refs/tags/v25.11",
-        "rev": "15c52bfb4318f3b2452f511d5367b4bfe6335242",
+        "rev": "b35bcae35b3f9665043c335e55ed5828af77db85",
         "revCount": 2564,
         "type": "git",
         "url": "https://github.com/YaLTeR/niri"
@@ -1899,7 +1899,7 @@
         "lastModified": 1753808180,
         "narHash": "sha256-hozfvKkvTeaabN1tYl0NlEpjfD4sZQe9Z+agdoXFHNE=",
         "ref": "refs/tags/v1.86.2",
-        "rev": "c47caa10d6268583103fd4363792f577a584492c",
+        "rev": "d72494bac7a2fb6b6a01715cfc5bcc903dbd7594",
         "revCount": 9348,
         "type": "git",
         "url": "https://github.com/tailscale/tailscale"
@@ -1922,7 +1922,7 @@
         "lastModified": 1759822982,
         "narHash": "sha256-cSRd4ncUWjB59nRqY0X0eXioOIL7q7PwgOQggE54lTI=",
         "ref": "refs/tags/v2.2.0",
-        "rev": "cbacfea97aaf2a3408db45e499411df19f29a0c1",
+        "rev": "10fe90857265871f0c36db5764db92098873c689",
         "revCount": 1555,
         "type": "git",
         "url": "https://github.com/abenz1267/walker"

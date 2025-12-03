@@ -1,4 +1,12 @@
-{ config, pkgs, inputs, lib, osConfig, ... }: {
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  osConfig,
+  ...
+}:
+{
   imports = [
     ./hyprpaper
     ./hyprlock
@@ -20,7 +28,9 @@
   };
 
   dconf.settings = {
-    "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
   };
 
   gtk = {
@@ -30,9 +40,13 @@
       package = pkgs.gnome-themes-extra;
     };
 
-    gtk3.extraConfig = { gtk-application-prefer-dark-theme = true; };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
 
-    gtk4.extraConfig = { gtk-application-prefer-dark-theme = true; };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
 
     iconTheme = {
       package = pkgs.kora-icon-theme;
@@ -43,11 +57,11 @@
 
   qt = {
     enable = true;
-    style = { 
+    style = {
       name = "adwaita-dark";
       package = pkgs.adwaita-qt6;
     };
-    platformTheme.name = "gtk3"; #adwaita";
+    platformTheme.name = "gtk3"; # adwaita";
   };
 
   wayland.windowManager.hyprland = {
@@ -61,17 +75,28 @@
     settings = {
       monitor = [
         #",preferred,auto,1"
-      ] ++ (if (osConfig.networking.hostName == "thor") then [
-        "eDP-1,preferred,auto,1.333333,vrr,1"
-        ",preferred,auto,1.0"
-      ] else if (osConfig.networking.hostName == "odin") then [
-        "DP-3,3840x2560@60,auto,1.333333"
-        ",preferred,auto,1"
-      ] else
-        [ ",preferred,auto,1.0" ]);
-      xwayland = { force_zero_scaling = true; };
+      ]
+      ++ (
+        if (osConfig.networking.hostName == "thor") then
+          [
+            "eDP-1,preferred,auto,1.333333,vrr,1"
+            ",preferred,auto,1.0"
+          ]
+        else if (osConfig.networking.hostName == "odin") then
+          [
+            "DP-3,3840x2560@60,auto,1.333333"
+            ",preferred,auto,1"
+          ]
+        else
+          [ ",preferred,auto,1.0" ]
+      );
+      xwayland = {
+        force_zero_scaling = true;
+      };
 
-      misc = { disable_hyprland_logo = true; };
+      misc = {
+        disable_hyprland_logo = true;
+      };
 
       exec-once = [
         "systemctl --user enable --now waybar.service"
@@ -81,11 +106,16 @@
         #"systemctl --user enable --now elephant.service"
         "uwsm app -- wl-paste --type text --watch cliphist -max-items 25 store" # Stores only text data
         "uwsm app -- wl-paste --type image --watch cliphist -max-items 25 store" # Stores only image data
-      ] ++ (if (osConfig.networking.hostName == "odin") then [
-        "uwsm app -- openrgb -p Nix3"
-        "uwsm app -- wpctl set-default 48"
-      ] else
-        [ ]);
+      ]
+      ++ (
+        if (osConfig.networking.hostName == "odin") then
+          [
+            "uwsm app -- openrgb -p Nix3"
+            "uwsm app -- wpctl set-default 48"
+          ]
+        else
+          [ ]
+      );
 
       env = [
         "GDK_BACKEND,wayland"
@@ -94,8 +124,8 @@
         "HYPRCURSOR_SIZE,24"
         "HYPRCURSOR_THEME,Bibata-Modern-Classic"
         "QT_QPA_PLATFORM,wayland"
-        "QT_QPA_PLATFORMTHEME,gtk3" #"qt6ct"
-        "QT_QPA_PLATFORMTHEME_QT6,gtk3" #"qt6ct"
+        "QT_QPA_PLATFORMTHEME,gtk3" # "qt6ct"
+        "QT_QPA_PLATFORMTHEME_QT6,gtk3" # "qt6ct"
         "NIXOS_OZONE_WL,1"
         "GDK_DPI_SCALE,1.0"
       ];
@@ -106,7 +136,9 @@
         follow_mouse = 1;
         mouse_refocus = false;
 
-        touchpad = { natural_scroll = true; };
+        touchpad = {
+          natural_scroll = true;
+        };
 
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
       };
@@ -153,7 +185,11 @@
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
-        layerrule = [ "blur,waybar" "ignorealpha 0.1,waybar" "noanim, walker" ];
+        layerrule = [
+          "blur,waybar"
+          "ignorealpha 0.1,waybar"
+          "noanim, walker"
+        ];
 
         blur = {
           enabled = true;
@@ -197,8 +233,7 @@
 
       dwindle = {
         # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-        pseudotile =
-          true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+        pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = true; # you probably want this
       };
 
@@ -270,10 +305,8 @@
       bind = [
         # "$mainMod, O, hyprexpo:expo, toggle"
 
-        ''
-          $mainMod CTRL_L ALT SHIFT, S, exec, hyprctl keyword general:layout "scrolling"''
-        ''
-          $mainMod CTRL_L ALT SHIFT, T, exec, hyprctl keyword general:layout "dwindle"''
+        ''$mainMod CTRL_L ALT SHIFT, S, exec, hyprctl keyword general:layout "scrolling"''
+        ''$mainMod CTRL_L ALT SHIFT, T, exec, hyprctl keyword general:layout "dwindle"''
         "$mainMod CTRL_L ALT SHIFT, E, exec, systemctl --user restart elephant.service"
 
         "$mainMod, RETURN, exec, uwsm app -- ghostty" # kitty" #alacritty"
@@ -317,6 +350,13 @@
         "$mainMod SHIFT, up, swapwindow, u"
         "$mainMod SHIFT, down, swapwindow, d"
 
+        "$mainMod ALT, left, layoutmsg, movewindowto l"
+        "$mainMod ALT, right, layoutmsg, movewindowto r"
+        "$mainMod ALT, up, layoutmsg, movewindowto u"
+        "$mainMod ALT, down, layoutmsg, movewindowto d"
+        "$mainMod, R, layoutmsg, colresize +conf"
+        "ALT, period, layoutmsg, promote"
+
         "ALT, slash, togglesplit, " # dwindlehyprlahyprlahyprlahyprla
 
         # Resize window
@@ -329,12 +369,8 @@
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
 
-        "$mainMod, R, layoutmsg, colresize +conf"
-        "ALT, period, layoutmsg, promote"
-
         # Home Automations
-        ''
-          $mainMod CTRL_L ALT_L SHIFT, L, exec, curl -X GET "https://home.semrad.net/api/webhook/-WaJcaS6CZ1F-V-0exl8Nuhmq"''
+        ''$mainMod CTRL_L ALT_L SHIFT, L, exec, curl -X GET "https://home.semrad.net/api/webhook/-WaJcaS6CZ1F-V-0exl8Nuhmq"''
 
         "$mainMod SHIFT CTRL_L, M, exec,  uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         "$mainMod SHIFT CTRL_L, S, exec,  uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -342,23 +378,34 @@
 
         "$mainMod,F,fullscreen"
 
-        "$mainMod ALT, right, workspace, +1"
-        "$mainMod ALT, left, workspace, -1"
+        "$mainMod ALT CTRL_L, right, workspace, +1"
+        "$mainMod ALT CTRL_L, left, workspace, -1"
         "$mainMod ALT SHIFT, right, movetoworkspace, +1"
         "$mainMod ALT SHIFT, left, movetoworkspace, -1"
 
         "$mainMod, 0, workspace, 10"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
-      ] ++ (
+      ]
+      ++ (
         # workspaces
         # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
-        builtins.concatLists (builtins.genList (x:
-          let
-            ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
-          in [
-            "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
-            "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-          ]) 9));
+        builtins.concatLists (
+          builtins.genList (
+            x:
+            let
+              ws =
+                let
+                  c = (x + 1) / 10;
+                in
+                builtins.toString (x + 1 - (c * 10));
+            in
+            [
+              "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
+              "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            ]
+          ) 9
+        )
+      );
 
       bindm = [
         "$mainMod, mouse:272, movewindow"
@@ -366,23 +413,20 @@
       ];
 
       binde = [
-        ''
-          , XF86AudioMute, exec,  uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && dunstify -i ~/.config/dunst/assets/$(pamixer --get-mute | grep -q "true" && echo "volume-mute.png" || echo "volume.png") -t 500 -r 2593 "Toggle Mute"''
-        ''
-          , XF86MonBrightnessUp, exec,  uwsm app -- brightnessctl s 5%+ && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"''
-        ''
-          , XF86MonBrightnessDown, exec,  uwsm app -- brightnessctl s 5%- && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"''
-        ''
-          , XF86AudioRaiseVolume, exec,  uwsm app -- wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"''
+        '', XF86AudioMute, exec,  uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && dunstify -i ~/.config/dunst/assets/$(pamixer --get-mute | grep -q "true" && echo "volume-mute.png" || echo "volume.png") -t 500 -r 2593 "Toggle Mute"''
+        '', XF86MonBrightnessUp, exec,  uwsm app -- brightnessctl s 5%+ && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"''
+        '', XF86MonBrightnessDown, exec,  uwsm app -- brightnessctl s 5%- && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"''
+        '', XF86AudioRaiseVolume, exec,  uwsm app -- wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"''
       ];
       # #
       bindl = [
-        ''
-          , XF86AudioLowerVolume, exec,  uwsm app -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"''
+        '', XF86AudioLowerVolume, exec,  uwsm app -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"''
       ];
     };
     extraConfig = "";
-    xwayland = { enable = true; };
+    xwayland = {
+      enable = true;
+    };
     systemd.enable = false;
   };
 
