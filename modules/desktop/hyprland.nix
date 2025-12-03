@@ -1,4 +1,10 @@
-{ pkgs, lib, inputs, ... }: {
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -13,7 +19,9 @@
     package = lib.mkForce pkgs.gnome.gvfs;
   };
 
-  services.displayManager = { defaultSession = "hyprland-uwsm"; };
+  services.displayManager = {
+    defaultSession = "hyprland-uwsm";
+  };
   qt.style = "adwaita-dark";
   security.polkit.enable = true;
   security.pam.services.hyprlock = { };
@@ -35,6 +43,8 @@
     gojq
     adw-gtk3
     glib
+    # hyprsysteminfo
+    inputs.hyprpwcenter.packages.${stdenv.hostPlatform.system}.hyprpwcenter
     inputs.hyprland-systeminfo.packages.${stdenv.hostPlatform.system}.hyprsysteminfo
     inputs.hyprlauncher.packages.${pkgs.system}.hyprlauncher
     gnome-firmware
