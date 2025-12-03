@@ -1,14 +1,14 @@
 {
   description = "NixOS Configuration";
   inputs = {
-    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-25.05"; };
+    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-25.11"; };
 
     nixpkgs-unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
 
     nixos-hardware = { url = "github:nixos/nixos-hardware"; };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -92,7 +92,8 @@
     ghostty = {
       type = "git";
       url = "https://github.com/ghostty-org/ghostty";
-      ref = "refs/tags/v1.2.2";
+      ref = "refs/tags/v1.2.3";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     matugen = { url = "github:InioX/matugen?ref=v2.4.1"; };
@@ -107,7 +108,7 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = import nixpkgs {
-        system = "${system}";
+        stdenv.hostPlatform.system = "${system}";
         config.allowUnfree = true;
       };
     in {

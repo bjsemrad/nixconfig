@@ -1,7 +1,7 @@
 { inputs, pkgs, ...}:
 {
     home.packages = [
-        #pkgs.ghostty
+        # pkgs.ghostty
         inputs.ghostty.packages.x86_64-linux.default
     ];
 

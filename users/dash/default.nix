@@ -29,7 +29,7 @@ in
     # You should not change this value, even if you update Home Manager. If you do
     # want to update the value, then make sure to first check the Home Manager
     # release notes.
-    stateVersion = "25.05"; # Please read the comment before changing.
+    stateVersion = "25.11"; # Please read the comment before changing.
   };
 
   programs.zsh = {
@@ -63,8 +63,12 @@ in
 
   programs.git = {
     enable = true;
-    userName = "Brian Semrad";
-    userEmail = "bjsemrad@gmail.com";
+    settings = {
+      user = {
+        name = "Brian Semrad";
+        email = "bjsemrad@gmail.com";
+      };
+    };
   };
 
 
