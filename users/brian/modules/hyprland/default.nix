@@ -47,7 +47,7 @@
       name = "adwaita-dark";
       package = pkgs.adwaita-qt6;
     };
-    platformTheme.name = "adwaita";
+    platformTheme.name = "gtk3"; #adwaita";
   };
 
   wayland.windowManager.hyprland = {
@@ -94,7 +94,8 @@
         "HYPRCURSOR_SIZE,24"
         "HYPRCURSOR_THEME,Bibata-Modern-Classic"
         "QT_QPA_PLATFORM,wayland"
-        "QT_QPA_PLATFORMTHEME,qt6ct"
+        "QT_QPA_PLATFORMTHEME,gtk3" #"qt6ct"
+        "QT_QPA_PLATFORMTHEME_QT6,gtk3" #"qt6ct"
         "NIXOS_OZONE_WL,1"
         "GDK_DPI_SCALE,1.0"
       ];
@@ -218,7 +219,7 @@
           explicit_column_widths = "0.5, 0.99";
         };
         # hyprexpo = {
-        #   columns = 1;
+        #   columns = 3;
         #   gap_size = 5;
         #   workspace_method =
         #     "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
@@ -229,12 +230,6 @@
         #   skip_empty = true;
         # };
       };
-
-      # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
-      #device = {
-      #  name = "epic-mouse-v1";
-      #  sensitivity = -0.5;
-      #};
 
       windowrulev2 = [
         "workspace 1,class:(firefox)"
@@ -273,7 +268,7 @@
       "$mainMod" = "SUPER_L";
 
       bind = [
-        # "$mainMod, O, hyprexpo:expo, toggle" # can be: toggle, off/disable or on/enable
+        # "$mainMod, O, hyprexpo:expo, toggle"
 
         ''
           $mainMod CTRL_L ALT SHIFT, S, exec, hyprctl keyword general:layout "scrolling"''

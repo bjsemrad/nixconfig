@@ -35,7 +35,7 @@
     gojq
     adw-gtk3
     glib
-    inputs.hyprland-systeminfo.packages.${pkgs.system}.hyprsysteminfo
+    inputs.hyprland-systeminfo.packages.${stdenv.hostPlatform.system}.hyprsysteminfo
     inputs.hyprlauncher.packages.${pkgs.system}.hyprlauncher
     gnome-firmware
   ];
