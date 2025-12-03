@@ -61,7 +61,7 @@
       name = "adwaita-dark";
       package = pkgs.adwaita-qt6;
     };
-    platformTheme.name = "gtk3"; # adwaita";
+    platformTheme.name = "adwaita"; # adwaita";
   };
 
   wayland.windowManager.hyprland = {
@@ -124,8 +124,8 @@
         "HYPRCURSOR_SIZE,24"
         "HYPRCURSOR_THEME,Bibata-Modern-Classic"
         "QT_QPA_PLATFORM,wayland"
-        "QT_QPA_PLATFORMTHEME,gtk3" # "qt6ct"
-        "QT_QPA_PLATFORMTHEME_QT6,gtk3" # "qt6ct"
+        "QT_QPA_PLATFORMTHEME,adwaita-dark" # "qt6ct"
+        "QT_QPA_PLATFORMTHEME_QT6,adwaita-dark" # "qt6ct"
         "NIXOS_OZONE_WL,1"
         "GDK_DPI_SCALE,1.0"
       ];
@@ -380,8 +380,8 @@
 
         "$mainMod ALT CTRL_L, right, workspace, +1"
         "$mainMod ALT CTRL_L, left, workspace, -1"
-        "$mainMod ALT SHIFT, right, movetoworkspace, +1"
-        "$mainMod ALT SHIFT, left, movetoworkspace, -1"
+        "$mainMod ALT CTRL_L SHIFT, right, movetoworkspace, +1"
+        "$mainMod ALT CTRL_L SHIFT, left, movetoworkspace, -1"
 
         "$mainMod, 0, workspace, 10"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
