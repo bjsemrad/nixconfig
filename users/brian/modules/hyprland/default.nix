@@ -124,8 +124,8 @@
         "HYPRCURSOR_SIZE,24"
         "HYPRCURSOR_THEME,Bibata-Modern-Classic"
         "QT_QPA_PLATFORM,wayland"
-        "QT_QPA_PLATFORMTHEME,adwaita-dark" # "qt6ct"
-        "QT_QPA_PLATFORMTHEME_QT6,adwaita-dark" # "qt6ct"
+        "QT_QPA_PLATFORMTHEME,adwaita" # "qt6ct"
+        "QT_QPA_PLATFORMTHEME_QT6,adwaita" # "qt6ct"
         "NIXOS_OZONE_WL,1"
         "GDK_DPI_SCALE,1.0"
       ];

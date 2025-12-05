@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -39,7 +44,8 @@
   home = {
     username = "brian";
     homeDirectory = "/home/brian";
-    packages = with pkgs;
+    packages =
+      with pkgs;
       [
         bitwarden-desktop
         #go unstable
@@ -98,7 +104,6 @@
         #podman-desktop
         kubectl
 
-        overskride
         cosign
 
         devpod
@@ -127,7 +132,8 @@
 
         wakeonlan
         trayscale
-      ] ++ [
+      ]
+      ++ [
         inputs.nixpkgs-unstable.legacyPackages.${stdenv.hostPlatform.system}.temporal-cli
         inputs.nixpkgs-unstable.legacyPackages.${stdenv.hostPlatform.system}.go
         inputs.quickshell.packages.${stdenv.hostPlatform.system}.quickshell
