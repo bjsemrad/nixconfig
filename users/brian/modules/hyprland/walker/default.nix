@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   home.packages = [
     pkgs.libqalculate
     inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.iwmenu
@@ -22,10 +23,8 @@
       force_keyboard_focus = false; # forces keyboard forcus to stay in Walker
       close_when_open = true; # close walker when invoking while already opened
       selection_wrap = true; # wrap list if at bottom or top
-      global_argument_delimiter =
-        "#"; # query: firefox#https://benz.dev => ignored after delimiter
-      keep_open_modifier =
-        "shift"; # won't close on activation, but select next item
+      global_argument_delimiter = "#"; # query: firefox#https://benz.dev => ignored after delimiter
+      keep_open_modifier = "shift"; # won't close on activation, but select next item
       exact_search_prefix = "'"; # disable fuzzy searching
       disable_mouse = false; # disable mouse (on input and list only)
 
@@ -49,11 +48,19 @@
         previous = [ "Up" ];
         toggle_exact = [ "ctrl e" ];
         resume_last_query = [ "ctrl r" ];
-        quick_activate = [ "F1" "F2" "F3" "F4" ];
+        quick_activate = [
+          "F1"
+          "F2"
+          "F3"
+          "F4"
+        ];
       };
 
       providers = {
-        default = [ "desktopapplications" "calc" ];
+        default = [
+          "desktopapplications"
+          "calc"
+        ];
         empty = [ "desktopapplications" ];
 
         prefixes = [
@@ -192,8 +199,12 @@
 
       config = {
         providers = {
-          files = { min_score = 50; };
-          desktopapplications = { launch_prefix = "uwsm app --"; };
+          files = {
+            min_score = 50;
+          };
+          desktopapplications = {
+            launch_prefix = "uwsm app --";
+          };
         };
       };
     };
@@ -202,7 +213,7 @@
       name = "matte-black";
       style = ''
         @define-color window_bg_color #000000;
-        @define-color accent_bg_color  #a0a8b7;
+        @define-color accent_bg_color #a0a8b7;
         @define-color theme_fg_color #a0a8b7;
 
         * {
@@ -307,6 +318,12 @@
           margin-right: 10px;
         }
 
+        .keybinds {
+          padding-top: 10px;
+          border-top: 1px solid lighter(@window_bg_color);
+          font-size: 12px;
+          color: @theme_fg_color;
+        }
         .keybind-hints {
           font-size: 12px;
           opacity: 0.5;
