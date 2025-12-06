@@ -43,6 +43,7 @@
     gojq
     adw-gtk3
     glib
+    kdePackages.qt6ct
     # hyprsysteminfo
     inputs.hyprpwcenter.packages.${stdenv.hostPlatform.system}.hyprpwcenter
     inputs.hyprland-systeminfo.packages.${stdenv.hostPlatform.system}.hyprsysteminfo
