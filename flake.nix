@@ -22,7 +22,7 @@
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
-      ref = "refs/tags/v0.52.1";
+      ref = "refs/tags/v0.52.2";
     };
 
     hyprland-plugins = {

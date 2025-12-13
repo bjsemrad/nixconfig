@@ -212,7 +212,7 @@
     theme = {
       name = "matte-black";
       style = ''
-        @define-color window_bg_color #111317;
+        @define-color window_bg_color #0e1013;
         @define-color accent_bg_color #a0a8b7;
         @define-color theme_fg_color #a0a8b7;
 
