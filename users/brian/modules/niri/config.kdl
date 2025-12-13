@@ -607,7 +607,7 @@ binds {
     Mod+Alt+Left { consume-window-into-column;}
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
-    Mod+Alt+Right { expel-window-into-column;}
+    Mod+Alt+Right { expel-window-from-column;}
 
 
     Mod+R { switch-preset-column-width; }
