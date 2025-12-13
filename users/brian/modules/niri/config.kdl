@@ -506,10 +506,10 @@ binds {
     // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
     // ...
 
-    Mod+Alt+Down      { focus-workspace-down; }
-    Mod+Alt+Up        { focus-workspace-up; }
-    Mod+Alt+Left      { focus-workspace-down; }
-    Mod+Alt+Right      { focus-workspace-up; }
+    Mod+Ctrl+Alt+Down      { focus-workspace-down; }
+    Mod+Ctrl+Alt+Up        { focus-workspace-up; }
+    Mod+Ctrl+Alt+Left      { focus-workspace-down; }
+    Mod+Ctrl+Alt+Right      { focus-workspace-up; }
     Mod+U              { focus-workspace-down; }
     Mod+I              { focus-workspace-up; }
     Mod+Alt+Shift+Down { move-column-to-workspace-down; }
@@ -604,8 +604,11 @@ binds {
 
     // Consume one window from the right to the bottom of the focused column.
     Mod+Comma  { consume-window-into-column; }
+    Mod+Alt+Left { consume-window-into-column;}
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
+    Mod+Alt+Right { expel-window-into-column;}
+
 
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
