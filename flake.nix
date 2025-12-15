@@ -200,7 +200,14 @@
           ];
           specialArgs = { inherit inputs; };
         };
-
+        baldr = lib.nixosSystem {
+          inherit system; # Tailscale router & others
+          modules = [
+            ./hosts/baldr/configuration.nix
+            home-manager.nixosModules.home-manager
+          ];
+          specialArgs = { inherit inputs; };
+        };
       };
     };
 }

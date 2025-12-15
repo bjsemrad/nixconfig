@@ -45,6 +45,9 @@ in {
         "nixos-rebuild switch -s --flake .#tyr --target-host root@dashboard.otter-rigel.ts.net  --verbose";
       proxy-rebuild =
         "nixos-rebuild switch -s --flake .#yggdrasil --target-host root@proxy.otter-rigel.ts.net --verbose";
+      rebuild-baldr =
+        "nixos-rebuild switch -s --flake .#baldr --target-host root@10.0.10.21 --verbose";
+
       tailreceive = "sudo tailscale file get .";
       setup-vial = "qmk setup bjsemrad/vial-qmk -H ~/vial-qmk -b vial";
       setup-qmk = "qmk setup bjsemrad/qmk_firmware -H ~/qmk_firmwarel";
