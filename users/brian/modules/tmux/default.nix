@@ -42,6 +42,7 @@
        # Fix Colors
       set -g default-terminal "$TERM"
       set -ag terminal-overrides ",$TERM:Tc"
+      set -g default-command "zsh"
       set -g prefix C-a
       unbind-key t
  
