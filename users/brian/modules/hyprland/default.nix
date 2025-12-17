@@ -15,7 +15,8 @@
     ./polkitagent
     ./waybar
     ./wlogout
-    ./dunst
+    # ./dunst
+    ./swaync
     ./rofi
     ./walker
   ];
@@ -335,7 +336,7 @@
         ''$mainMod CTRL_L SHIFT, I, exec,  uwsm app -- grim -g "$(slurp)"''
         '',Print, exec,  uwsm app -- grim -g "$(slurp)"''
 
-        "$mainMod CTRL_L SHIFT, N, exec,  uwsm app -- dunstctl close"
+        # "$mainMod CTRL_L SHIFT, N, exec,  uwsm app -- dunstctl close"
         "$mainMod SHIFT, W, exec,  uwsm app -- pkill waybar && waybar"
         # "$mainMod CTRL_L SHIFT, A, exec, ags -q && ags"
 
@@ -412,16 +413,26 @@
         "$mainMod CTRL_L, mouse:272, resizewindow"
       ];
 
-      binde = [
-        '', XF86AudioMute, exec,  uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && dunstify -i ~/.config/dunst/assets/$(pamixer --get-mute | grep -q "true" && echo "volume-mute.png" || echo "volume.png") -t 500 -r 2593 "Toggle Mute"''
-        '', XF86MonBrightnessUp, exec,  uwsm app -- brightnessctl s 5%+ && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"''
-        '', XF86MonBrightnessDown, exec,  uwsm app -- brightnessctl s 5%- && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"''
-        '', XF86AudioRaiseVolume, exec,  uwsm app -- wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"''
-      ];
+      # binde = [
+      #   '', XF86AudioMute, exec,  uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && dunstify -i ~/.config/dunst/assets/$(pamixer --get-mute | grep -q "true" && echo "volume-mute.png" || echo "volume.png") -t 500 -r 2593 "Toggle Mute"''
+      #   '', XF86MonBrightnessUp, exec,  uwsm app -- brightnessctl s 5%+ && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"''
+      #   '', XF86MonBrightnessDown, exec,  uwsm app -- brightnessctl s 5%- && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"''
+      #   '', XF86AudioRaiseVolume, exec,  uwsm app -- wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"''
+      # ];
       # #
-      bindl = [
-        '', XF86AudioLowerVolume, exec,  uwsm app -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"''
+
+      binde = [
+        '', XF86AudioMute, exec,  uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle''
+        '', XF86MonBrightnessUp, exec,  uwsm app -- brightnessctl s 5%+''
+        '', XF86MonBrightnessDown, exec,  uwsm app -- brightnessctl s 5%-''
+        '', XF86AudioRaiseVolume, exec,  uwsm app -- wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+''
       ];
+      bindl = [
+        '', XF86AudioLowerVolume, exec,  uwsm app -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-''
+      ];
+      # bindl = [
+      #   '', XF86AudioLowerVolume, exec,  uwsm app -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"''
+      # ];
     };
     extraConfig = "";
     xwayland = {
