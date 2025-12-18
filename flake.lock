@@ -270,24 +270,6 @@
         "type": "github"
       }
     },
-    "flake-utils_2": {
-      "inputs": {
-        "systems": "systems_10"
-      },
-      "locked": {
-        "lastModified": 1710146030,
-        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "ghostty": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -342,11 +324,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765859973,
-        "narHash": "sha256-LN5O0h9GSgcDE/sz4+sLS3CbQALru1x4lh9hrxpeHwI=",
+        "lastModified": 1765979862,
+        "narHash": "sha256-/r9/1KamvbHJx6I40H4HsSXnEcBAkj46ZwibhBx9kg0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7df150f0d3857cf68dae443813b27acfb201b2d8",
+        "rev": "d3135ab747fd9dac250ffb90b4a7e80634eacbe9",
         "type": "github"
       },
       "original": {
@@ -1776,11 +1758,11 @@
     },
     "nixpkgs_7": {
       "locked": {
-        "lastModified": 1765608474,
-        "narHash": "sha256-9Wx53UK0z8Di5iesJID0tS1dRKwGxI4i7tsSanOHhF0=",
+        "lastModified": 1765838191,
+        "narHash": "sha256-m5KWt1nOm76ILk/JSCxBM4MfK3rYY7Wq9/TZIIeGnT8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "28bb483c11a1214a73f9fd2d9928a6e2ea86ec71",
+        "rev": "c6f52ebd45e5925c188d1a20119978aa4ffd5ef6",
         "type": "github"
       },
       "original": {
@@ -2102,20 +2084,20 @@
     "tailscale": {
       "inputs": {
         "flake-compat": "flake-compat_3",
-        "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_8"
+        "nixpkgs": "nixpkgs_8",
+        "systems": "systems_10"
       },
       "locked": {
-        "lastModified": 1753808180,
-        "narHash": "sha256-hozfvKkvTeaabN1tYl0NlEpjfD4sZQe9Z+agdoXFHNE=",
-        "ref": "refs/tags/v1.86.2",
-        "rev": "d72494bac7a2fb6b6a01715cfc5bcc903dbd7594",
-        "revCount": 9348,
+        "lastModified": 1765915912,
+        "narHash": "sha256-6dE3kgYABAVtrAjGWnWZ3X4Aq7yJagxNEk6BSyIC3Yk=",
+        "ref": "refs/tags/v1.92.3",
+        "rev": "9a08e8f1c2021d5c85895e660cf01d8bb1bc9df0",
+        "revCount": 9954,
         "type": "git",
         "url": "https://github.com/tailscale/tailscale"
       },
       "original": {
-        "ref": "refs/tags/v1.86.2",
+        "ref": "refs/tags/v1.92.3",
         "type": "git",
         "url": "https://github.com/tailscale/tailscale"
       }

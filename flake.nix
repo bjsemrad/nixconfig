@@ -95,7 +95,7 @@
     tailscale = {
       type = "git";
       url = "https://github.com/tailscale/tailscale";
-      ref = "refs/tags/v1.86.2";
+      ref = "refs/tags/v1.92.3";
     };
 
     elephant = {

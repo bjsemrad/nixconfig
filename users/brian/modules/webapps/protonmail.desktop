@@ -6,5 +6,5 @@ Type=Application
 Name=ProtonMail
 Exec=uwsm app -- brave --app="https://mail.proton.me/u/0/inbox" --ozone-platform=wayland
 Icon=protonmail
-StartupWMClass=protommail
+StartupWMClass=proton.me
 Actions=Email
