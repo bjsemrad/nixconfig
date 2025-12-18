@@ -6,5 +6,5 @@ Type=Application
 Name=ChatGpt
 Exec=uwsm app -- brave --app="https://chatgpt.com" --ozone-platform=wayland
 Icon=chatgpt
-StartupWMClass=chatgpt-custom
+StartupWMClass=chatgpt
 Actions=Email

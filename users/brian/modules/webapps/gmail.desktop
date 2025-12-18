@@ -6,5 +6,5 @@ Type=Application
 Name=Gmail
 Exec=uwsm app -- brave --app="https://gmail.com" --ozone-platform=wayland
 Icon=gmail
-StartupWMClass=gmail-custom
+StartupWMClass=gmail
 Actions=Email
