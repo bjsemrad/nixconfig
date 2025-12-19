@@ -100,7 +100,7 @@
       };
 
       exec-once = [
-        "systemctl --user enable --now waybar.service"
+        # "systemctl --user enable --now waybar.service"
         "systemctl --user enable --now hyprpaper.service"
         "systemctl --user enable --now hyprpolkitagent.service"
         "systemctl --user enable --now hypridle.service"
@@ -187,8 +187,8 @@
         inactive_opacity = 1.0;
 
         layerrule = [
-          "blur,waybar"
-          "ignorealpha 0.1,waybar"
+          # "blur,waybar"
+          # "ignorealpha 0.1,waybar"
           "noanim, walker"
         ];
 
@@ -337,7 +337,7 @@
         '',Print, exec,  uwsm app -- grim -g "$(slurp)"''
 
         # "$mainMod CTRL_L SHIFT, N, exec,  uwsm app -- dunstctl close"
-        "$mainMod SHIFT, W, exec,  uwsm app -- pkill waybar && waybar"
+        "$mainMod CTRL_L ALT SHIFT, W, exec, systemctl --user restart epochshell"
         # "$mainMod CTRL_L SHIFT, A, exec, ags -q && ags"
 
         # Move focus with mainMod + arrow keys
