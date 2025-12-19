@@ -1,11 +1,17 @@
-{ config, inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
   imports = with inputs.self.nixosModules; [
-      ./hardware-configuration.nix
-      common-nixsettings
-      ./nginx-proxy.nix
-    ];
+    ./hardware-configuration.nix
+    common-nixsettings
+    services-tailscale
+    ./nginx-proxy.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -46,10 +52,14 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.nginx = {
+  users.users.nginx = {
     isNormalUser = true;
     description = "Nginx";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
@@ -60,13 +70,13 @@
   };
 
   systemd.tmpfiles.rules = [
-        "d /home/nginx/data 0770 nginx users -"
-        "d /home/nginx/letsencrypt 0770 letsencrypt users -"
+    "d /home/nginx/data 0770 nginx users -"
+    "d /home/nginx/letsencrypt 0770 letsencrypt users -"
   ];
 
   users.users.root.openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxG6NiEQZOEJiqpEDXg/eERqe71XNqnNLlI7VaOGqch bjsemrad@gmail.com"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBlihWxnAF0W+cuKqpQbN1yOY0bABNhQx7qb1sp83Z1 bjsemrad@gmail.com"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxG6NiEQZOEJiqpEDXg/eERqe71XNqnNLlI7VaOGqch bjsemrad@gmail.com"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBlihWxnAF0W+cuKqpQbN1yOY0bABNhQx7qb1sp83Z1 bjsemrad@gmail.com"
   ];
 
   home-manager = {
@@ -79,8 +89,6 @@
     };
   };
 
- 
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -90,29 +98,29 @@
     vim
     docker-compose
     compose2nix
-    tailscale
     curl
     wget
     git
   ];
 
   # List services that you want to enable:
-  services.tailscale.enable = true;
+  # moved up.
+  # services.tailscale.enable = true;
 
   # Enable the OpenSSH daemon.
-  security.pam.sshAgentAuth.enable = true; 
+  security.pam.sshAgentAuth.enable = true;
   services.openssh.enable = true;
-  
+
   services.ntfy-sh = {
     enable = true;
     settings = {
-      upstream-base-url =  "https://ntfy.sh";
+      upstream-base-url = "https://ntfy.sh";
       listen-http = ":9332";
       behind-proxy = true;
     };
     settings.base-url = "http://proxy.otter-rigel.ts.net:9332";
   };
-   # Open ports in the firewall.
+  # Open ports in the firewall.
   networking.firewall = {
     # enable the firewall
     enable = true;
@@ -120,15 +128,19 @@
     allowPing = true;
 
     # always allow traffic from your Tailscale network
-    trustedInterfaces = [ "tailscale0" ];
+    # trustedInterfaces = [ "tailscale0" ];
 
     # allow the Tailscale UDP port through the firewall (3702 SAMBA)
-    allowedUDPPorts = [ config.services.tailscale.port ];
+    # allowedUDPPorts = [ config.services.tailscale.port ];
 
     # allow you to SSH in over the public internet (5357 SAMBA)
-    allowedTCPPorts = [ 22 80 443 81 ];
+    allowedTCPPorts = [
+      22
+      80
+      443
+      81
+    ];
   };
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
