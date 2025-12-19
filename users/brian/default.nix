@@ -37,6 +37,7 @@
     ./modules/flatpak
     ./modules/webapps
     ./modules/wmscripts
+    ./modules/epochshell
     # inputs.dankMaterialShell.homeModules.dankMaterialShell.default
     # ./modules/dankmaterialshell
   ];

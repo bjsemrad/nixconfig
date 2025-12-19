@@ -152,6 +152,30 @@
         "url": "https://github.com/abenz1267/elephant"
       }
     },
+    "epochshell": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quickshell": [
+          "quickshell"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766104205,
+        "narHash": "sha256-VKYq+w709vmjALbOI2Y7pvKluSc6+3cEen8icZCc9AE=",
+        "ref": "refs/heads/main",
+        "rev": "a184ca50683a18b7237aec2ce449de360aef19bb",
+        "revCount": 66,
+        "type": "git",
+        "url": "https://github.com/bjsemrad/epochshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/bjsemrad/epochshell"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -318,6 +342,27 @@
       }
     },
     "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "epochshell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765980955,
+        "narHash": "sha256-rB45jv4uwC90vM9UZ70plfvY/2Kdygs+zlQ07dGQFk4=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "89c9508bbe9b40d36b3dc206c2483ef176f15173",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -1852,8 +1897,9 @@
       "inputs": {
         "alacritty-theme": "alacritty-theme",
         "elephant": "elephant",
+        "epochshell": "epochshell",
         "ghostty": "ghostty",
-        "home-manager": "home-manager",
+        "home-manager": "home-manager_2",
         "hypridle": "hypridle",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",

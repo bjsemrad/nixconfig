@@ -119,6 +119,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    epochshell = {
+      type = "git";
+      url = "https://github.com/bjsemrad/epochshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell";
+    };
+
     matugen = {
       url = "github:InioX/matugen?ref=v2.4.1";
     };
@@ -151,6 +158,7 @@
       elephant,
       walker,
       ghostty,
+      epochshell,
       ...
     }@inputs:
     let

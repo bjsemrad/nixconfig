@@ -6,7 +6,7 @@
   };
 
   programs.waybar = {
-    enable = true;
+    enable = false;
     systemd.enable = true;
     # package = inputs.waybar.packages.${pkgs.system}.waybar;
     settings = {
