@@ -88,6 +88,9 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     zsh
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -103,8 +106,9 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  services.tailscale = {
+  services.jellyfin = {
     enable = true;
+    openFirewall = true;
   };
 
   # Open ports in the firewall.
