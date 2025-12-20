@@ -285,7 +285,7 @@
         "workspace 3,class:^(brave-gmail.com).*"
         "workspace 3,class:^(brave-mail.proton.me).*"
         "workspace 9,class:^(brave-chatgpt.com).*"
-        "workspace 8,class:^(brave-music.apple.com).*"
+        "workspace 8,class:^(brave-music).*"
 
 
         "opacity 1.0 override 1.0 override,class:^(firefox)$"
