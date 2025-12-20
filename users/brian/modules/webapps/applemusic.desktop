@@ -6,4 +6,4 @@ Type=Application
 Name=Apple Music
 Exec=uwsm app -- brave --app="https://music.apple.com" --ozone-platform=wayland
 Icon=applemusic
-StartupWMClass=applemusic
+StartupWMClass=musicapple
