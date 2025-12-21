@@ -95,7 +95,6 @@
 
         #broken signal-desktop
         #Broken devenv
-        slack
         lazygit
         btop
         fd
