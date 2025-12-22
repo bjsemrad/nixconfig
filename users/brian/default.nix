@@ -9,7 +9,7 @@
   imports = [
     ./modules/alacritty
     ./modules/kitty
-    ./modules/firefox
+    # ./modules/firefox
     ./modules/chromium
     ./modules/git
     ./modules/jujutsu
