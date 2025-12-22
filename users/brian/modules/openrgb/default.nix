@@ -5,5 +5,6 @@ lib.mkIf (osConfig.networking.hostName == "odin")  {
     ".config/OpenRGB/Nix2.orp".source = ./Nix2.orp;
     ".config/OpenRGB/Nix3.orp".source = ./Nix3.orp;
     ".config/OpenRGB/sizes.ors".source = ./sizes.ors;
+    ".config/OpenRGB/Red.orp".source = ./Red.orp;
   };
 }
