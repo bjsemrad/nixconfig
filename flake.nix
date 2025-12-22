@@ -133,6 +133,8 @@
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };
 
+    sops-nix.url = "github:Mic92/sops-nix";
+
   };
   outputs =
     {
@@ -159,6 +161,7 @@
       walker,
       ghostty,
       epochshell,
+      sops-nix,
       ...
     }@inputs:
     let
@@ -213,6 +216,7 @@
           modules = [
             ./hosts/baldr/configuration.nix
             home-manager.nixosModules.home-manager
+            sops-nix.nixosModules.sops
           ];
           specialArgs = { inherit inputs; };
         };

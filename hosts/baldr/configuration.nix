@@ -13,9 +13,9 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     common-nixsettings
-    services-tailscale
     services-network
     services-smartd
+    ./containers.nix
   ];
 
   # Bootloader.
@@ -110,6 +110,33 @@
     enable = true;
     openFirewall = true;
   };
+
+  sops.defaultSopsFile = ../../secrets.yaml;
+  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+
+  sops.secrets.baldr_tailscale_authkey = { };
+
+  services.tailscale = {
+    enable = true;
+    package = inputs.tailscale.packages.${pkgs.system}.tailscale;
+    extraUpFlags = [
+      "--advertise-routes=10.0.10.86/32"
+    ];
+    authKeyFile = config.sops.secrets.baldr_tailscale_authkey.path;
+    useRoutingFeatures = "server";
+  };
+
+  networking.firewall = {
+    # enable the firewall
+    enable = true;
+
+    # always allow traffic from your Tailscale network
+    trustedInterfaces = [ "tailscale0" ];
+
+    # allow the Tailscale UDP port through the firewall
+    allowedUDPPorts = [ config.services.tailscale.port ];
+  };
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
