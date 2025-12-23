@@ -32,7 +32,7 @@
              {
               timeout = 600;
               on-timeout = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms off && ${pkgs.systemd}/bin/systemctl suspend";
-              on-resume = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms on && uwsm app -- openrgb -p Red";
+              on-resume = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms on && uwsm app -- openrgb -p Blue";
             }
             ]
       );

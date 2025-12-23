@@ -111,7 +111,7 @@
       ++ (
         if (osConfig.networking.hostName == "odin") then
           [
-            "uwsm app -- openrgb -p Red"
+            "uwsm app -- openrgb -p Blue"
             "uwsm app -- wpctl set-default 48"
           ]
         else
