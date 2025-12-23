@@ -1,6 +1,6 @@
 { pkgs, inputs, ... }:
 let
-  neovim-unwrapped = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.neovim-unwrapped.overrideAttrs (old: {
+  neovim-unwrapped = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.neovim-unwrapped.overrideAttrs (old: {
     meta = old.meta or { } // {
       maintainers = [ ];
     };

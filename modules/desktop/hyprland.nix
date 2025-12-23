@@ -7,7 +7,7 @@
 {
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     withUWSM = true;
   };
@@ -45,9 +45,9 @@
     glib
     kdePackages.qt6ct
     # hyprsysteminfo
-    inputs.hyprpwcenter.packages.${stdenv.hostPlatform.system}.hyprpwcenter
-    inputs.hyprland-systeminfo.packages.${stdenv.hostPlatform.system}.hyprsysteminfo
-    inputs.hyprlauncher.packages.${pkgs.system}.hyprlauncher
+    inputs.hyprpwcenter.packages.${pkgs.stdenv.hostPlatform.system}.hyprpwcenter
+    inputs.hyprland-systeminfo.packages.${pkgs.stdenv.hostPlatform.system}.hyprsysteminfo
+    inputs.hyprlauncher.packages.${pkgs.stdenv.hostPlatform.system}.hyprlauncher
     gnome-firmware
   ];
 }

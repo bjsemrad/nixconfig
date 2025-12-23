@@ -6,40 +6,40 @@
 
   services.hypridle = {
     enable = true;
-    package = inputs.hypridle.packages.${pkgs.system}.hypridle;
+    package = inputs.hypridle.packages.${pkgs.stdenv.hostPlatform.system}.hypridle;
     settings = {
       listener = [
         {
           timeout = 400;
-          on-timeout = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms off";
-          on-resume = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms on";
+          on-timeout = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch dpms off";
+          on-resume = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch dpms on";
         }
       ] ++ (
         if (osConfig.networking.hostName == "thor") then
           [{
             timeout = 300;
-            on-timeout = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
+            on-timeout = "${inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock}/bin/hyprlock";
           }
             {
               timeout = 600;
-              on-timeout = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms off && ${pkgs.systemd}/bin/systemctl suspend";
-              on-resume = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms on";
+              on-timeout = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch dpms off && ${pkgs.systemd}/bin/systemctl suspend";
+              on-resume = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch dpms on";
             }]
         else [{
               timeout = 400;
-              on-timeout = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
+              on-timeout = "${inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock}/bin/hyprlock";
              }
              {
               timeout = 600;
-              on-timeout = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms off && ${pkgs.systemd}/bin/systemctl suspend";
-              on-resume = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms on && uwsm app -- openrgb -p Blue";
+              on-timeout = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch dpms off && ${pkgs.systemd}/bin/systemctl suspend";
+              on-resume = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch dpms on && uwsm app -- openrgb -p Blue";
             }
             ]
       );
       general = {
-        lock_cmd = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
-        before_sleep_cmd = "${inputs.hyprlock.packages.${pkgs.system}.hyprlock}/bin/hyprlock";
-        after_sleep_cmd = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprctl dispatch dpms on";
+        lock_cmd = "${inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock}/bin/hyprlock";
+        before_sleep_cmd = "${inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock}/bin/hyprlock";
+        after_sleep_cmd = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprctl dispatch dpms on";
       };
     };
   };

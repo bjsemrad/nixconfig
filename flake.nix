@@ -165,10 +165,10 @@
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
+      # system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = import nixpkgs {
-        stdenv.hostPlatform.system = "${system}";
+        stdenv.hostPlatform.system = "x86_64-linux";
         config.allowUnfree = true;
       };
     in
@@ -176,7 +176,7 @@
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         thor = lib.nixosSystem {
-          inherit system; # Framework
+          system = "x86_64-linux";  # explicitly set # Framework
           modules = [
             ./hosts/thor/configuration.nix
             home-manager.nixosModules.home-manager
@@ -185,7 +185,7 @@
           specialArgs = { inherit inputs; };
         };
         odin = lib.nixosSystem {
-          inherit system; # Desktop
+          system = "x86_64-linux";  # explicitly set # Desktop
           modules = [
             ./hosts/odin/configuration.nix
             home-manager.nixosModules.home-manager
@@ -196,7 +196,7 @@
           specialArgs = { inherit inputs; };
         };
         tyr = lib.nixosSystem {
-          inherit system; # Dashboard Server
+          system = "x86_64-linux";  # explicitly set # Dashboard Server
           modules = [
             ./hosts/tyr/configuration.nix
             home-manager.nixosModules.home-manager
@@ -204,7 +204,7 @@
           specialArgs = { inherit inputs; };
         };
         yggdrasil = lib.nixosSystem {
-          inherit system; # Nginx Proxy for internal
+          system = "x86_64-linux";  # explicitly set # Nginx Proxy for internal
           modules = [
             ./hosts/yggdrasil/configuration.nix
             home-manager.nixosModules.home-manager
@@ -212,7 +212,7 @@
           specialArgs = { inherit inputs; };
         };
         baldr = lib.nixosSystem {
-          inherit system; # Tailscale router & others
+          system = "x86_64-linux";  # explicitly set # Tailscale router & others
           modules = [
             ./hosts/baldr/configuration.nix
             home-manager.nixosModules.home-manager

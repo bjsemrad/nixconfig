@@ -134,9 +134,9 @@
         trayscale
       ]
       ++ [
-        inputs.nixpkgs-unstable.legacyPackages.${stdenv.hostPlatform.system}.temporal-cli
-        inputs.nixpkgs-unstable.legacyPackages.${stdenv.hostPlatform.system}.go
-        inputs.quickshell.packages.${stdenv.hostPlatform.system}.quickshell
+        inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.temporal-cli
+        inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.go
+        inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.quickshell
       ];
 
     sessionVariables = {

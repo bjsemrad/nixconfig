@@ -2,7 +2,7 @@
 
   services.tailscale = {
     enable = true;
-    package = inputs.tailscale.packages.${pkgs.system}.tailscale;
+    package = inputs.tailscale.packages.${pkgs.stdenv.hostPlatform.system}.tailscale;
   };
 
   networking.firewall = {

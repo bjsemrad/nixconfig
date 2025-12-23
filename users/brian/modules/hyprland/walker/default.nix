@@ -2,8 +2,8 @@
 {
   home.packages = [
     pkgs.libqalculate
-    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.iwmenu
-    inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.bzmenu
+    inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.iwmenu
+    inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.bzmenu
   ];
 
   home.file = {

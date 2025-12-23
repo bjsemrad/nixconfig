@@ -3,7 +3,7 @@
   programs.zellij = {
     enable = true;
     enableZshIntegration = false; #custom session setup
-    package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.zellij;
+    package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.zellij;
     # Cannot get keybinds to properly work using config file model.
     #settings = {
     #  theme = "catppuccin-mocha";
