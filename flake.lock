@@ -980,11 +980,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1766754258,
-        "narHash": "sha256-8WncAJnwMc4Ap+0XcEtyGUfHQQtWKxCnrM/qhbq79tQ=",
+        "lastModified": 1766843695,
+        "narHash": "sha256-slOlmNtNSqtVvmkZErkwFjGxsLioDUp0l1xXt+g8ggo=",
         "owner": "hyprwm",
         "repo": "hyprlauncher",
-        "rev": "044e8b1e045fb1465cd2f740a3fa39780297e9de",
+        "rev": "bde196c357bba53a8da6401c3208f881342d6769",
         "type": "github"
       },
       "original": {
