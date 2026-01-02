@@ -22,13 +22,13 @@
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
-      ref = "refs/tags/v0.52.2";
+      ref = "refs/tags/v0.53.0";
     };
 
     hyprland-plugins = {
       type = "git";
       url = "https://github.com/hyprwm/hyprland-plugins";
-      ref = "refs/tags/v0.52.0";
+      ref = "refs/tags/v0.53.0";
       inputs.hyprland.follows = "hyprland";
     };
 
@@ -36,6 +36,11 @@
       type = "git";
       url = "https://github.com/hyprwm/hyprsysteminfo";
       # ref = "refs/tags/v0.1.3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hyprpaper = {
+      url = "github:hyprwm/hyprpaper/v0.8.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -146,6 +151,7 @@
       hyprland,
       hypridle,
       hyprlock,
+      hyprpaper,
       hyprland-systeminfo,
       hyprlauncher,
       hyprpwcenter,

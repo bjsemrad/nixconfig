@@ -1,18 +1,25 @@
+{inputs, pkgs, ...}:
 {
   services.hyprpaper = {
     enable = true;
+    package = inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper;
     settings = {
       ipc = "on";
       splash = false;
 
-      preload = [
-        "/home/brian/.config/hypr/leaves.png"
-        "/home/brian/.config/hypr/retropc.jpg"
-        "/home/brian/.config/hypr/sunset.jpg"
-        "/home/brian/.config/hypr/shaded_landscape.png"
-        "/home/brian/.config/hypr/water-drop.jpg"
+      # preload = [
+      #   "/home/brian/.config/hypr/leaves.png"
+      #   "/home/brian/.config/hypr/retropc.jpg"
+      #   "/home/brian/.config/hypr/sunset.jpg"
+      #   "/home/brian/.config/hypr/shaded_landscape.png"
+      #   "/home/brian/.config/hypr/water-drop.jpg"
+      # ];
+      wallpaper = [ 
+        { 
+          monitor = "";
+          path ="/home/brian/.config/hypr/retropc.jpg"; 
+        }
       ];
-      wallpaper = [ ",/home/brian/.config/hypr/retropc.jpg" ];
     };
   };
   home.file = {

@@ -8,9 +8,11 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     withUWSM = true;
   };
+
+  programs.uwsm.waylandCompositors.hyprland.binPath = lib.mkForce "/run/current-system/sw/bin/start-hyprland";
+
   services.blueman.enable = true;
   programs.thunar.enable = true;
 
@@ -20,13 +22,12 @@
   };
 
   services.displayManager = {
-    defaultSession = "hyprland-uwsm";
+    defaultSession = "hyprland";
   };
   qt.style = "adwaita-dark";
   security.polkit.enable = true;
   security.pam.services.hyprlock = { };
   environment.systemPackages = with pkgs; [
-    hyprpaper
     hyprpicker
     wf-recorder
     wl-clipboard

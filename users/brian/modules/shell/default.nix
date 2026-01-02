@@ -66,9 +66,9 @@ in {
     syntaxHighlighting.enable = true;
     initContent = ''
             export PATH=$PATH:~/tools
-            if uwsm check may-start && uwsm select; then
-      	      exec systemd-cat -t uwsm_start uwsm start default
-            fi
+            #if uwsm check may-start && uwsm select; then
+            #  exec systemd-cat -t uwsm_start uwsm start default
+            #fi
 
             #if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
             #  tmux attach-session -t main || tmux new-session -s main

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   #=/nix/store/jdw6vbgkwa2ah41m78jskqjh6qbkcryd-uwsm-0.20.4/bin/uwsm start -S -F /run/current-system/sw/bin/Hyprland
   services.greetd = {
     enable = true;
@@ -11,7 +11,7 @@
       };
 
       initial_session = {
-        command = "uwsm start hyprland-uwsm.desktop";
+        command = "${lib.getExe config.programs.uwsm.package} start -e -D Hyprland hyprland-uwsm.desktop";
         user = "brian";
       };
     };

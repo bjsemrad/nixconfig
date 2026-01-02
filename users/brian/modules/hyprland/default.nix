@@ -189,7 +189,8 @@
         layerrule = [
           # "blur,waybar"
           # "ignorealpha 0.1,waybar"
-          "noanim, walker"
+          "no_anim on, match:class ^(walker)$"
+          "no_screen_share on, match:class ^(Bitwarden)$"
         ];
 
         blur = {
@@ -267,41 +268,83 @@
         # };
       };
 
-      windowrulev2 = [
-        "workspace 1,class:(firefox)"
-        "workspace 1,class:(brave-browser)"
-        "workspace 3,class:(Proton Mail)"
-        "workspace 2,class:(discord)"
-        "workspace 2,class:(org.signal.Signal)"
-        "workspace 4,class:(Alacritty)"
-        "workspace 4,class:(kitty)"
-        "workspace 4,class:(com.mitchellh.ghostty)"
-        "workspace 5,class:(jetbrains-idea)"
-        "workspace 5,class:(Code)"
-        "workspace 5,class:(code-url-handler)"
-        "workspace 6,class:(steam)"
-        "workspace 9,class:(Cider)"
-        "workspace 10,class:(BambuStudio)"
-        "workspace 3,class:^(brave-gmail.com).*"
-        "workspace 3,class:^(brave-mail.proton.me).*"
-        "workspace 9,class:^(brave-chatgpt.com).*"
-        "workspace 8,class:^(brave-music).*"
+      windowrule = [
+        # --- Workspace rules ---
+        "workspace 1, match:class ^(firefox)$"
+        "workspace 1, match:class ^(brave-browser)$"
+        "workspace 3, match:class ^(Proton Mail)$"
+        "workspace 2, match:class ^(discord)$"
+        "workspace 2, match:class ^(org.signal.Signal)$"
+        "workspace 4, match:class ^(Alacritty)$"
+        "workspace 4, match:class ^(kitty)$"
+        "workspace 4, match:class ^(com.mitchellh.ghostty)$"
+        "workspace 5, match:class ^(jetbrains-idea)$"
+        "workspace 5, match:class ^(Code)$"
+        "workspace 5, match:class ^(code-url-handler)$"
+        "workspace 6, match:class ^(steam)$"
+        "workspace 9, match:class ^(Cider)$"
+        "workspace 10, match:class ^(BambuStudio)$"
 
+        # Brave app-mode windows
+        "workspace 3, match:class ^(brave-gmail\\.com).*"
+        "workspace 3, match:class ^(brave-mail\\.proton\\.me).*"
+        "workspace 9, match:class ^(brave-chatgpt\\.com).*"
+        "workspace 8, match:class ^(brave-music).*"
 
-        "opacity 1.0 override 1.0 override,class:^(firefox)$"
-        "opacity 1.0 override 1.0 override,class:^(Alacritty)$"
-        "opacity 1.0 override 1.0 override,class:^(kitty)$"
-        "opacity 1.0 override 1.0 override,class:^(com.mitchellh.ghostty)$"
-        "opacity 1.0 override 1.0 override,class:^(jetbrains-idea)$"
-        "opacity 1.0 override 1.0 override,class:^(Code)$"
-        "opacity 1.0 override 1.0 override,class:^(code-url-handler)$"
-        "opacity 1.0 override 1.0 override,class:^(Cider)$"
-        "opacity 1.0 override 1.0 override,class:^(dev.zed.Zed)$"
+        # --- Opacity (active inactive fullscreen) ---
+        "opacity 1.0, match:class ^(firefox)$"
+        "opacity 1.0, match:class ^(Alacritty)$"
+        "opacity 1.0, match:class ^(kitty)$"
+        "opacity 1.0, match:class ^(com.mitchellh.ghostty)$"
+        "opacity 1.0, match:class ^(jetbrains-idea)$"
+        "opacity 1.0, match:class ^(Code)$"
+        "opacity 1.0, match:class ^(code-url-handler)$"
+        "opacity 1.0, match:class ^(Cider)$"
+        "opacity 1.0, match:class ^(dev.zed.Zed)$"
 
-        "float,class:^(blueman-manager)$"
-        "float,class:^(nm-connection-editor)$"
-        "float,class:^(pavucontrol)$"
+        # --- Floating windows ---
+        "float on, match:class ^(blueman-manager)$"
+        "float on, match:class ^(nm-connection-editor)$"
+        "float on, match:class ^(pavucontrol)$"
+
+        "no_anim on, match:class ^(walker)$"
+        "no_dim on, match:class ^(walker)$"
       ];
+      # windowrulev2 = [
+      #   "workspace 1,class:(firefox)"
+      #   "workspace 1,class:(brave-browser)"
+      #   "workspace 3,class:(Proton Mail)"
+      #   "workspace 2,class:(discord)"
+      #   "workspace 2,class:(org.signal.Signal)"
+      #   "workspace 4,class:(Alacritty)"
+      #   "workspace 4,class:(kitty)"
+      #   "workspace 4,class:(com.mitchellh.ghostty)"
+      #   "workspace 5,class:(jetbrains-idea)"
+      #   "workspace 5,class:(Code)"
+      #   "workspace 5,class:(code-url-handler)"
+      #   "workspace 6,class:(steam)"
+      #   "workspace 9,class:(Cider)"
+      #   "workspace 10,class:(BambuStudio)"
+      #   "workspace 3,class:^(brave-gmail.com).*"
+      #   "workspace 3,class:^(brave-mail.proton.me).*"
+      #   "workspace 9,class:^(brave-chatgpt.com).*"
+      #   "workspace 8,class:^(brave-music).*"
+      #
+      #
+      #   "opacity 1.0 override 1.0 override,class:^(firefox)$"
+      #   "opacity 1.0 override 1.0 override,class:^(Alacritty)$"
+      #   "opacity 1.0 override 1.0 override,class:^(kitty)$"
+      #   "opacity 1.0 override 1.0 override,class:^(com.mitchellh.ghostty)$"
+      #   "opacity 1.0 override 1.0 override,class:^(jetbrains-idea)$"
+      #   "opacity 1.0 override 1.0 override,class:^(Code)$"
+      #   "opacity 1.0 override 1.0 override,class:^(code-url-handler)$"
+      #   "opacity 1.0 override 1.0 override,class:^(Cider)$"
+      #   "opacity 1.0 override 1.0 override,class:^(dev.zed.Zed)$"
+      #
+      #   "float,class:^(blueman-manager)$"
+      #   "float,class:^(nm-connection-editor)$"
+      #   "float,class:^(pavucontrol)$"
+      # ];
 
       "$mainMod" = "SUPER_L";
 
