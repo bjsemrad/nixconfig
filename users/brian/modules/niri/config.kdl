@@ -309,7 +309,9 @@ workspace "10"
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+    open-maximized-to-edges false
 }
+
 window-rule {
     match app-id="com.mitchellh.ghostty"
     match is-urgent=true
