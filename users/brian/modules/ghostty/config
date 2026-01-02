@@ -881,6 +881,9 @@ working-directory =
 # Ghostty will attempt to request these permissions. If the permissions are
 # not granted, the keybind will not work. On macOS, you can find these
 # permissions in System Preferences -> Privacy & Security -> Accessibility.
+#
+keybind = global:ctrl+backquote=toggle_quick_terminal
+
 keybind = ctrl+shift+comma=reload_config
 keybind = ctrl+shift+v=paste_from_clipboard
 keybind = shift+insert=paste_from_selection
