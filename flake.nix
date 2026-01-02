@@ -22,7 +22,7 @@
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
-      ref = "refs/tags/v0.53.0";
+      ref = "refs/tags/v0.53.1";
     };
 
     hyprland-plugins = {
@@ -40,7 +40,7 @@
     };
 
     hyprpaper = {
-      url = "github:hyprwm/hyprpaper/v0.8.0";
+      url = "github:hyprwm/hyprpaper/v0.8.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -182,7 +182,7 @@
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         thor = lib.nixosSystem {
-          system = "x86_64-linux";  # explicitly set # Framework
+          system = "x86_64-linux"; # explicitly set # Framework
           modules = [
             ./hosts/thor/configuration.nix
             home-manager.nixosModules.home-manager
@@ -191,7 +191,7 @@
           specialArgs = { inherit inputs; };
         };
         odin = lib.nixosSystem {
-          system = "x86_64-linux";  # explicitly set # Desktop
+          system = "x86_64-linux"; # explicitly set # Desktop
           modules = [
             ./hosts/odin/configuration.nix
             home-manager.nixosModules.home-manager
@@ -202,7 +202,7 @@
           specialArgs = { inherit inputs; };
         };
         tyr = lib.nixosSystem {
-          system = "x86_64-linux";  # explicitly set # Dashboard Server
+          system = "x86_64-linux"; # explicitly set # Dashboard Server
           modules = [
             ./hosts/tyr/configuration.nix
             home-manager.nixosModules.home-manager
@@ -210,7 +210,7 @@
           specialArgs = { inherit inputs; };
         };
         yggdrasil = lib.nixosSystem {
-          system = "x86_64-linux";  # explicitly set # Nginx Proxy for internal
+          system = "x86_64-linux"; # explicitly set # Nginx Proxy for internal
           modules = [
             ./hosts/yggdrasil/configuration.nix
             home-manager.nixosModules.home-manager
@@ -218,7 +218,7 @@
           specialArgs = { inherit inputs; };
         };
         baldr = lib.nixosSystem {
-          system = "x86_64-linux";  # explicitly set # Tailscale router & others
+          system = "x86_64-linux"; # explicitly set # Tailscale router & others
           modules = [
             ./hosts/baldr/configuration.nix
             home-manager.nixosModules.home-manager

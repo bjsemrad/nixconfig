@@ -5,7 +5,7 @@
 
 spawn-at-startup "uwsm finalize WAYLAND_DISPLAY"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "systemctl --user enable --now waybar.service"
+spawn-at-startup "systemctl --user enable --now epochshell.service"
 //spawn-at-startup "systemctl --user enable --now elephant.service"
 spawn-at-startup "uwsm app -- wl-paste --type text --watch cliphist -max-items 25 store"
 spawn-at-startup "uwsm app -- wl-paste --type image --watch cliphist -max-items 25 store"
