@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   networking.hostName = "odin";
@@ -14,7 +19,7 @@
     desktop-greetd
     desktop-hyprland
     desktop-niri
-    desktop-mangowc
+    # desktop-mangowc
     services-tailscale
     services-network
     services-sound
@@ -43,8 +48,12 @@
 
   # Bootloader.
   boot = {
-    binfmt.emulatedSystems =
-      [ "aarch64-linux" "armv7l-linux" "armv6l-linux" "riscv64-linux" ];
+    binfmt.emulatedSystems = [
+      "aarch64-linux"
+      "armv7l-linux"
+      "armv6l-linux"
+      "riscv64-linux"
+    ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -60,8 +69,8 @@
     acceleration = "rocm";
     # rocmOverrideGfx = "10.3.0";
     # environmentVariables = {
-      # HSA_OVERRIDE_GFX_VERSION = "10.3.0";
-      # HCC_AMDGPU_TARGET = "gfx1030";
+    # HSA_OVERRIDE_GFX_VERSION = "10.3.0";
+    # HCC_AMDGPU_TARGET = "gfx1030";
     # };
     # package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.ollama;
   };
@@ -80,28 +89,36 @@
     };
   };
 
-
   networking = {
     interfaces = {
-     enp6s0 = {
+      enp6s0 = {
         wakeOnLan.enable = true;
       };
     };
     firewall = {
-      allowedUDPPorts = [9];
-      allowedTCPPorts = [ 22 11434 ];
+      allowedUDPPorts = [ 9 ];
+      allowedTCPPorts = [
+        22
+        11434
+      ];
     };
   };
 
-    # Enable the OpenSSH daemon.
-  security.pam.sshAgentAuth.enable = true; 
+  # Enable the OpenSSH daemon.
+  security.pam.sshAgentAuth.enable = true;
   services.openssh.enable = true;
 
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Semrad";
-    extraGroups =
-      [ "networkmanager" "wheel" "storage" "dialout" "podman" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "storage"
+      "dialout"
+      "podman"
+      "docker"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [ ];
     openssh.authorizedKeys.keys = [

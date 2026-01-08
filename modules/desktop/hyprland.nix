@@ -8,10 +8,8 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    withUWSM = true;
+    withUWSM = false;
   };
-
-  programs.uwsm.waylandCompositors.hyprland.binPath = lib.mkForce "/run/current-system/sw/bin/start-hyprland";
 
   services.blueman.enable = true;
   programs.thunar.enable = true;
@@ -21,9 +19,9 @@
     package = lib.mkForce pkgs.gnome.gvfs;
   };
 
-  services.displayManager = {
-    defaultSession = "hyprland";
-  };
+  # services.displayManager = {
+  # defaultSession = "hyprland";
+  # };
   qt.style = "adwaita-dark";
   security.polkit.enable = true;
   security.pam.services.hyprlock = { };

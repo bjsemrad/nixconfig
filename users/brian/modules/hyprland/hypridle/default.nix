@@ -69,7 +69,7 @@
                 inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
               }/bin/hyprctl dispatch dpms on || ${
                 inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri
-              }/bin/niri msg action power-on-monitors) && uwsm app -- openrgb -p Blue";
+              }/bin/niri msg action power-on-monitors) && openrgb -p Blue";
             }
           ]
       );

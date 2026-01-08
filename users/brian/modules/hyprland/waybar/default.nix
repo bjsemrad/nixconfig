@@ -1,4 +1,10 @@
-{ osConfig, inputs, pkgs, ... }: {
+{
+  osConfig,
+  inputs,
+  pkgs,
+  ...
+}:
+{
 
   home.file.".config/waybar/scripts/recorder.sh" = {
     source = ./scripts/recorder.sh;
@@ -35,11 +41,16 @@
           "network"
           # "pulseaudio#sink"
           #"pulseaudio#source"
-        ] ++ (if (osConfig.networking.hostName == "thor") then [
-          "battery"
-          "group/settings"
-        ] else
-          [ "group/settings" ]);
+        ]
+        ++ (
+          if (osConfig.networking.hostName == "thor") then
+            [
+              "battery"
+              "group/settings"
+            ]
+          else
+            [ "group/settings" ]
+        );
         "group/launcher" = {
           "orientation" = "inherit";
           "drawer" = {
@@ -96,7 +107,9 @@
           "max" = 100;
           "orientation" = "horizontal";
         };
-        "custom/backlight" = { "format" = ""; };
+        "custom/backlight" = {
+          "format" = "";
+        };
         "custom/lock" = {
           "format" = "";
           "on-click" = "hyprlock";
@@ -135,17 +148,21 @@
           format-icons = [ "󰀻" ];
           "tooltip-format" = "Applications";
           #format-icons = [ "" ];
-          "on-click" = "uwsm app -- walker";
+          "on-click" = "walker";
         };
         "custom/windows" = {
           format = "{icon}";
           "icon-size" = 24;
           format-icons = [ "" ];
           "tooltip-format" = "Windows";
-          "on-click" = "uwsm app -- $HOME/.config/walker/scripts/windows.sh";
+          "on-click" = "$HOME/.config/walker/scripts/windows.sh";
         };
-        "custom/sep" = { "format" = "|"; };
-        "custom/space" = { "format" = " "; };
+        "custom/sep" = {
+          "format" = "|";
+        };
+        "custom/space" = {
+          "format" = " ";
+        };
         "hyprland/window" = {
           "format" = "{title}";
           "max-length" = 50;
@@ -153,14 +170,18 @@
         };
         "custom/clipboard" = {
           format = "{icon}";
-          format-icons = { "default" = "󰨸"; };
-          "on-click" = "uwsm app -- walker --provider clipboard";
+          format-icons = {
+            "default" = "󰨸";
+          };
+          "on-click" = "walker --provider clipboard";
           "on-click-right" = "cliphist wipe";
         };
         "custom/colorpicker" = {
           format = "{icon}";
-          format-icons = { "default" = "󰴱"; };
-          "on-click" = "uwsm app -- hyprpicker -a";
+          format-icons = {
+            "default" = "󰴱";
+          };
+          "on-click" = "hyprpicker -a";
         };
         "custom/notification" = {
           "tooltip" = true;
@@ -184,14 +205,15 @@
           "return-type" = "json";
           "signal" = 12;
           "interval" = 5;
-          "on-click" =
-            "wf-recorder -f ~/Videos/$(date +'recording_%Y-%m-%d-%H%M%S.mp4')";
+          "on-click" = "wf-recorder -f ~/Videos/$(date +'recording_%Y-%m-%d-%H%M%S.mp4')";
           "on-click-right" = "pkill --signal SIGINT wf-recorder";
           "escape" = true;
         };
         "custom/session" = {
           format = "{icon}";
-          format-icons = { "default" = "󰐥 "; };
+          format-icons = {
+            "default" = "󰐥 ";
+          };
           "toolip" = false;
           "on-click" = "killall wlogout || wlogout -b 5 -m 500";
         };
@@ -259,9 +281,15 @@
             <big>{:%a %b %d}</big>
             <tt><small>{calendar}</small></tt>'';
         };
-        "cpu" = { "format" = "  {usage}%"; };
-        "temperature" = { "format" = " HEEH {temperatureC}°C"; };
-        "memory" = { "format" = "  {}%"; };
+        "cpu" = {
+          "format" = "  {usage}%";
+        };
+        "temperature" = {
+          "format" = " HEEH {temperatureC}°C";
+        };
+        "memory" = {
+          "format" = "  {}%";
+        };
         "bluetooth" = {
           "format" = "󰂯";
           "format-disabled" = "󰂲";
@@ -284,11 +312,25 @@
           "format-plugged" = " ";
           #"format-alt" = "{icon} {time}";
           "tooltip-format" = "{capacity}%, {time}";
-          "format-icons" = [ "" "" "" "" "" ];
+          "format-icons" = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
-        "battery#bat2" = { "bat" = "BAT2"; };
+        "battery#bat2" = {
+          "bat" = "BAT2";
+        };
         "network" = {
-          "format-icons" = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+          "format-icons" = [
+            "󰤯"
+            "󰤟"
+            "󰤢"
+            "󰤥"
+            "󰤨"
+          ];
           "family" = "ipv4";
           "format" = "{icon}";
           "format-wifi" = "{icon}";
@@ -297,8 +339,7 @@
           "tooltip-format-wifi" = ''
             {essid} {ipaddr} ({frequency} GHz)
             ⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}'';
-          "tooltip-format-ethernet" =
-            "{ipaddr} ⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
+          "tooltip-format-ethernet" = "{ipaddr} ⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
           "tooltip-format-disconnected" = "Disconnected";
           "interval" = 3;
           "nospacing" = 1;
@@ -321,7 +362,11 @@
             "phone" = "";
             "portable" = "";
             "car" = "";
-            "default" = [ "" "" "" ];
+            "default" = [
+              ""
+              ""
+              ""
+            ];
           };
           "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           "on-click-right" = "pavucontrol";

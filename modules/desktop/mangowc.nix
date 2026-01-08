@@ -1,19 +1,14 @@
-{ pkgs, lib, inputs, ... }: {
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
 
   imports = [ inputs.mangowm.nixosModules.mango ];
 
   programs.mango.enable = true;
-
-  programs.uwsm = {
-    enable = true;
-    waylandCompositors = {
-      mango = {
-        prettyName = "Mango";
-        comment = "Mango compositor managed by UWSM";
-        binPath = "/run/current-system/sw/bin/mango";
-      };
-    };
-  };
 
   services.blueman.enable = true;
   programs.thunar.enable = true;

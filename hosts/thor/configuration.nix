@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   networking.hostName = "thor";
@@ -16,7 +21,7 @@
     #desktop-sway
     desktop-hyprland
     desktop-niri
-    desktop-mangowc
+    # desktop-mangowc
     services-tailscale
     services-network
     services-sound
@@ -45,8 +50,12 @@
 
   # Bootloader.
   boot = {
-    binfmt.emulatedSystems =
-      [ "aarch64-linux" "armv7l-linux" "armv6l-linux" "riscv64-linux" ];
+    binfmt.emulatedSystems = [
+      "aarch64-linux"
+      "armv7l-linux"
+      "armv6l-linux"
+      "riscv64-linux"
+    ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -56,7 +65,13 @@
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Semrad";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "podman" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+      "podman"
+      "docker"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [ ];
   };

@@ -203,7 +203,7 @@
             min_score = 50;
           };
           desktopapplications = {
-            launch_prefix = "uwsm app --";
+            launch_prefix = "";
           };
         };
       };

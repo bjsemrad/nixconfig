@@ -101,18 +101,19 @@
 
       exec-once = [
         # "systemctl --user enable --now waybar.service"
-        "systemctl --user enable --now hyprpaper.service"
-        "systemctl --user enable --now hyprpolkitagent.service"
-        "systemctl --user enable --now hypridle.service"
-        #"systemctl --user enable --now elephant.service"
-        "uwsm app -- wl-paste --type text --watch cliphist -max-items 25 store" # Stores only text data
-        "uwsm app -- wl-paste --type image --watch cliphist -max-items 25 store" # Stores only image data
+        "systemctl --user restart --now hyprpaper.service"
+        "systemctl --user restart --now hyprpolkitagent.service"
+        "systemctl --user restart --now hypridle.service"
+        "systemctl --user restart --now elephant.service"
+        "systemctl --user restart --now epochshell"
+        "wl-paste --type text --watch cliphist -max-items 25 store" # Stores only text data
+        "wl-paste --type image --watch cliphist -max-items 25 store" # Stores only image data
       ]
       ++ (
         if (osConfig.networking.hostName == "odin") then
           [
-            "uwsm app -- openrgb -p Blue"
-            "uwsm app -- wpctl set-default 48"
+            "openrgb -p Blue"
+            "wpctl set-default 48"
           ]
         else
           [ ]
@@ -355,33 +356,29 @@
         ''$mainMod CTRL_L ALT SHIFT, T, exec, hyprctl keyword general:layout "dwindle"''
         "$mainMod CTRL_L ALT SHIFT, E, exec, systemctl --user restart elephant.service"
 
-        "$mainMod, RETURN, exec, uwsm app -- ghostty" # kitty" #alacritty"
+        "$mainMod, T, exec, ghostty"
+        "$mainMod, RETURN, exec, ghostty" # kitty" #alacritty"
         "$mainMod, Q, killactive,"
-        "$mainMod, E, exec,  uwsm app -- thunar"
-        "$mainMod, B, exec,  uwsm app -- brave"
+        "$mainMod, E, exec,  thunar"
+        "$mainMod, B, exec,  brave"
         "$mainMod, G, togglefloating,"
 
         # "$mainMod, D, exec, ags -t launcher"
         # ",XF86PowerOff,  exec, ags -t powermenu"
         # "$mainMod CTRL_L SHIFT, P, exec, ags -t powermenu"
-        #"$mainMod, D, exec, uwsm app -- $HOME/.config/rofi/scripts/launcher.sh"
-        "$mainMod, D, exec, uwsm app -- walker"
-        "$mainMod CTRL_L ALT SHIFT, K, exec, uwsm app -- $HOME/.config/walker/scripts/keybinds.sh"
+        "$mainMod, D, exec, walker"
+        "$mainMod CTRL_L ALT SHIFT, K, exec, $HOME/.config/walker/scripts/keybinds.sh"
 
-        #"$mainMod CTRL_L, W, exec, uwsm app -- $HOME/.config/rofi/scripts/window.sh"
-        "$mainMod CTRL_L, W, exec, uwsm app -- $HOME/.config/walker/scripts/windows.sh"
-        #"$jmainMod CTRL_L, W, exec, uwsm app -- walker -m windows"
+        "$mainMod CTRL_L, W, exec, $HOME/.config/walker/scripts/windows.sh"
 
-        ",XF86PowerOff,  exec,  uwsm app -- $HOME/.config/wlogout/scripts/wlogout.sh"
-        "$mainMod CTRL_L SHIFT, P, exec, uwsm app -- $HOME/.config/wlogout/scripts/wlogout.sh"
+        ",XF86PowerOff,  exec,  $HOME/.config/wlogout/scripts/wlogout.sh"
+        "$mainMod CTRL_L SHIFT, P, exec, $HOME/.config/wlogout/scripts/wlogout.sh"
 
-        #"$mainMod CTRL_L SHIFT, C, exec,  uwsm app -- $HOME/.config/rofi/scripts/clipboard.sh"
-        "$mainMod CTRL_L ALT SHIFT, C, exec,  uwsm app -- walker --provider clipboard"
+        "$mainMod CTRL_L ALT SHIFT, C, exec, walker --provider clipboard"
 
-        ''$mainMod CTRL_L SHIFT, I, exec,  uwsm app -- grim -g "$(slurp)"''
-        '',Print, exec,  uwsm app -- grim -g "$(slurp)"''
+        ''$mainMod CTRL_L SHIFT, I, exec, grim -g "$(slurp)"''
+        '',Print, exec,  grim -g "$(slurp)"''
 
-        # "$mainMod CTRL_L SHIFT, N, exec,  uwsm app -- dunstctl close"
         "$mainMod CTRL_L ALT SHIFT, W, exec, systemctl --user restart epochshell"
         # "$mainMod CTRL_L SHIFT, A, exec, ags -q && ags"
 
@@ -418,8 +415,8 @@
         # Home Automations
         ''$mainMod CTRL_L ALT_L SHIFT, L, exec, curl -X GET "https://home.semrad.net/api/webhook/-WaJcaS6CZ1F-V-0exl8Nuhmq"''
 
-        "$mainMod SHIFT CTRL_L, M, exec,  uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        "$mainMod SHIFT CTRL_L, S, exec,  uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "$mainMod SHIFT CTRL_L, M, exec,  wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        "$mainMod SHIFT CTRL_L, S, exec,  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         "$mainMod, Tab, focuscurrentorlast,"
 
         "$mainMod,F,fullscreen"
@@ -458,32 +455,21 @@
         "$mainMod CTRL_L, mouse:272, resizewindow"
       ];
 
-      # binde = [
-      #   '', XF86AudioMute, exec,  uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && dunstify -i ~/.config/dunst/assets/$(pamixer --get-mute | grep -q "true" && echo "volume-mute.png" || echo "volume.png") -t 500 -r 2593 "Toggle Mute"''
-      #   '', XF86MonBrightnessUp, exec,  uwsm app -- brightnessctl s 5%+ && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"''
-      #   '', XF86MonBrightnessDown, exec,  uwsm app -- brightnessctl s 5%- && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"''
-      #   '', XF86AudioRaiseVolume, exec,  uwsm app -- wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"''
-      # ];
-      # #
-
       binde = [
-        '', XF86AudioMute, exec,  uwsm app -- wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle''
-        '', XF86MonBrightnessUp, exec,  uwsm app -- brightnessctl s 5%+''
-        '', XF86MonBrightnessDown, exec,  uwsm app -- brightnessctl s 5%-''
-        '', XF86AudioRaiseVolume, exec,  uwsm app -- wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+''
+        '', XF86AudioMute, exec,  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle''
+        '', XF86MonBrightnessUp, exec, brightnessctl s 5%+''
+        '', XF86MonBrightnessDown, exec, brightnessctl s 5%-''
+        '', XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+''
       ];
       bindl = [
-        '', XF86AudioLowerVolume, exec,  uwsm app -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-''
+        '', XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-''
       ];
-      # bindl = [
-      #   '', XF86AudioLowerVolume, exec,  uwsm app -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"''
-      # ];
     };
     extraConfig = "";
     xwayland = {
       enable = true;
     };
-    systemd.enable = false;
+    systemd.enable = true; # NO longer using UWSM
   };
 
 }

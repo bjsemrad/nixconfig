@@ -12,17 +12,17 @@
     # ./modules/firefox
     ./modules/chromium
     ./modules/git
-    ./modules/jujutsu
+    #./modules/jujutsu
     ./modules/hyprland
     ./modules/niri
-    ./modules/mango
+    #./modules/mango
     ./modules/java
     ./modules/gradle
     ./modules/neovim
     ./modules/shell
     ./modules/starship
     ./modules/tmux
-    ./modules/zellij
+    #./modules/zellij
     ./modules/openrgb
     ./modules/atuin
     ./modules/kitty
@@ -38,8 +38,6 @@
     ./modules/webapps
     ./modules/wmscripts
     ./modules/epochshell
-    # inputs.dankMaterialShell.homeModules.dankMaterialShell.default
-    # ./modules/dankmaterialshell
   ];
 
   home = {

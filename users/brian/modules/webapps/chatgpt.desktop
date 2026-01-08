@@ -4,7 +4,7 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=ChatGpt
-Exec=uwsm app -- brave --app="https://chatgpt.com" --ozone-platform=wayland
+Exec=brave --app="https://chatgpt.com" --ozone-platform=wayland
 Icon=chatgpt
 StartupWMClass=chatgpt
 Actions=Email

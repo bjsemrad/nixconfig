@@ -1,18 +1,13 @@
-{ pkgs, lib, inputs, ... }: {
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
   programs.niri = {
     enable = true;
-    #package = inputs.niri.packages.${pkgs.system}.niri;
-  };
-
-  programs.uwsm = {
-    enable = true;
-    waylandCompositors = {
-      niri = {
-        prettyName = "Niri";
-        comment = "Niri compositor managed by UWSM";
-        binPath = "/run/current-system/sw/bin/niri-session";
-      };
-    };
+    package = inputs.niri.packages.${pkgs.system}.niri;
   };
 
   services.blueman.enable = true;
@@ -35,10 +30,7 @@
     wlogout
     pavucontrol
     pamixer
-    fuzzel
     cliphist
-    #networkmanagerapplet
-    networkmanager_dmenu
     xdg-desktop-portal-gtk
     grim
     slurp
