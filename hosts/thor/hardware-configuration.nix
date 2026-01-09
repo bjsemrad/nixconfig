@@ -23,6 +23,9 @@
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelParams = [
+    "i915.enable_psr=0"
+  ];
   boot.extraModulePackages = [ ];
 
   services.btrfs.autoScrub = {
