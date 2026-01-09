@@ -43,6 +43,11 @@
   home = {
     username = "brian";
     homeDirectory = "/home/brian";
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      OZONE_PLATFORM = "wayland";
+      XDG_SESSION_TYPE = "wayland";
+    };
     packages =
       with pkgs;
       [
