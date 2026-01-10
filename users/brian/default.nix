@@ -9,7 +9,7 @@
   imports = [
     ./modules/alacritty
     ./modules/kitty
-    # ./modules/firefox
+    ./modules/firefox
     ./modules/chromium
     ./modules/git
     #./modules/jujutsu
@@ -48,20 +48,16 @@
       OZONE_PLATFORM = "wayland";
       XDG_SESSION_TYPE = "wayland";
     };
+
     packages =
       with pkgs;
       [
         bitwarden-desktop
-        #go unstable
         rustup
         cargo-watch
         ffmpeg-full
         libheif
         pinta
-        #Moving to flatpack
-        #jetbrains.idea-ultimate
-        #jetbrains.rust-rover
-        #vscode
         zig
         nodejs_24
         gcc
@@ -95,23 +91,15 @@
         file
         lm_sensors
         dig
-
-        #broken signal-desktop
-        #Broken devenv
         lazygit
         btop
         fd
-        brave
         gnome-disk-utility
         podman-tui
-        #podman-desktop
         kubectl
-
         cosign
-
         devpod
         devpod-desktop
-
         jq
         protonvpn-gui
         loupe

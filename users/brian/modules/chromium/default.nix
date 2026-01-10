@@ -1,3 +1,11 @@
+{pkgs,...}:
 {
-  programs.chromium.enable = true;
+  programs.chromium = {
+    enable = true;
+    package = pkgs.brave;
+    commandLineArgs = [
+      "--enable-features=UseOzonePlatform"
+      "--ozone-platform=wayland"
+    ];
+  };   
 }
