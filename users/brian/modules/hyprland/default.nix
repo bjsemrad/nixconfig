@@ -220,11 +220,11 @@
           priority = 3;
           rounding = 0;
           round_only_edges = true;
-          "col.active" = "$bg1"; # active group background
-          "col.inactive" = "$bg_d"; # inactive group background
+          "col.active" = "$bg_d"; # active group background
+          "col.inactive" = "$black"; # inactive group background
 
           "text_color" = "$fg"; # ACTIVE text color
-          "text_color_inactive" = "$light_grey"; # inactive text color
+          "text_color_inactive" = "$bg2"; # inactive text color
         };
 
         "col.border_active" = "$blue";
