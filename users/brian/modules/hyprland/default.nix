@@ -71,7 +71,7 @@
     portalPackage = null;
     plugins = [
       # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprscrolling
+      # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprscrolling
     ];
     settings = {
       monitor = [
@@ -180,8 +180,57 @@
 
         "col.active_border" = "$blue";
         "col.inactive_border" = "$bg1";
-        layout = "scrolling"; # "dwindle"; #"scrolling";
+        layout = "dwindle"; # "scrolling";
       };
+
+      group = {
+        "$black" = "0xff0e1013";
+        "$bgDark" = "0xff1E2127";
+        "$bg0" = "0xff1f2329";
+        "$bg1" = "0xff282c34";
+        "$bg2" = "0xff30363f";
+        "$bg3" = "0xff323641";
+        "$bg_d" = "0xff181b20";
+        "$bg_blue" = "0xff61afef";
+        "$bg_yellow" = "0xffe8c88c";
+        "$fg" = "0xffa0a8b7";
+        "$fg_dark" = "0xffabb2bf";
+        "$purple" = "0xffbf68d9";
+        "$green" = "0xff8ebd6b";
+        "$orange" = "0xffcc9057";
+        "$blue" = "0xff4fa6ed";
+        "$yellow" = "0xffe2b86b";
+        "$cyan" = "0xff48b0bd";
+        "$red" = "0xffe55561";
+        "$grey" = "0xff535965";
+        "$light_grey" = "0xff7a818e";
+        "$dark_cyan" = "0xff266269";
+        "$dark_red" = "0xff8b3434";
+        "$dark_yellow" = "0xff835d1a";
+        "$dark_purple" = "0xff7e3992";
+        "$diff_add" = "0xff272e23";
+        "$diff_delete" = "0xff2d2223";
+        "$diff_change" = "0xff172a3a";
+        "$diff_text" = "0xff274964";
+        groupbar = {
+          enabled = true;
+          font_size = 16;
+          height = 18;
+          gradients = true;
+          priority = 3;
+          rounding = 0;
+          round_only_edges = true;
+          "col.active" = "$bg1"; # active group background
+          "col.inactive" = "$bg_d"; # inactive group background
+
+          "text_color" = "$fg"; # ACTIVE text color
+          "text_color_inactive" = "$light_grey"; # inactive text color
+        };
+
+        "col.border_active" = "$blue";
+        "col.border_inactive" = "$bg1";
+      };
+
       decoration = {
         rounding = 10;
         active_opacity = 1.0;
@@ -219,7 +268,7 @@
       };
 
       animations = {
-        enabled = true;
+        enabled = false;
 
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
 
@@ -250,24 +299,24 @@
         "4,horizontal,move"
       ];
 
-      plugin = {
-        hyprscrolling = {
-          fullscreen_on_one_column = true;
-          column_width = 0.99;
-          explicit_column_widths = "0.5, 0.99";
-        };
-        # hyprexpo = {
-        #   columns = 3;
-        #   gap_size = 5;
-        #   workspace_method =
-        #     "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
-        #   enable_gesture = true; # laptop touchpad, 4 fingers
-        #   gesture_distance = 300; # how far is the "max"
-        #   gesture_positive =
-        #     false; # positive = swipe down. Negative = swipe up.
-        #   skip_empty = true;
-        # };
-      };
+      # plugin = {
+      #   hyprscrolling = {
+      #     fullscreen_on_one_column = true;
+      #     column_width = 0.99;
+      #     explicit_column_widths = "0.5, 0.99";
+      #   };
+      #   # hyprexpo = {
+      #   #   columns = 3;
+      #   #   gap_size = 5;
+      #   #   workspace_method =
+      #   #     "first 1"; # [center/first] [workspace] e.g. first 1 or center m+1
+      #   #   enable_gesture = true; # laptop touchpad, 4 fingers
+      #   #   gesture_distance = 300; # how far is the "max"
+      #   #   gesture_positive =
+      #   #     false; # positive = swipe down. Negative = swipe up.
+      #   #   skip_empty = true;
+      #   # };
+      # };
 
       windowrule = [
         # --- Workspace rules ---
@@ -393,12 +442,20 @@
         "$mainMod SHIFT, up, swapwindow, u"
         "$mainMod SHIFT, down, swapwindow, d"
 
-        "$mainMod ALT, left, layoutmsg, movewindowto l"
-        "$mainMod ALT, right, layoutmsg, movewindowto r"
-        "$mainMod ALT, up, layoutmsg, movewindowto u"
-        "$mainMod ALT, down, layoutmsg, movewindowto d"
-        "$mainMod, R, layoutmsg, colresize +conf"
-        "ALT, period, layoutmsg, promote"
+        "$ALT, period, togglegroup"
+        "$mainMod ALT, left, changegroupactive, b"
+        "$mainMod ALT, right, changegroupactive, f"
+        "$mainMod SHIFT ALT, up, moveoutofgroup"
+        "$mainMod SHIFT ALT, down, moveoutofgroup"
+        "$mainMod SHIFT ALT, left, moveintogroup, l"
+        "$mainMod SHIFT ALT, right, moveintogroup, r"
+
+        # "$mainMod ALT, left, layoutmsg, movewindowto l"
+        # "$mainMod ALT, right, layoutmsg, movewindowto r"
+        # "$mainMod ALT, up, layoutmsg, movewindowto u"
+        # "$mainMod ALT, down, layoutmsg, movewindowto d"
+        # "$mainMod, R, layoutmsg, colresize +conf"
+        # "ALT, period, layoutmsg, promote"
 
         "ALT, slash, togglesplit, " # dwindlehyprlahyprlahyprlahyprla
 
