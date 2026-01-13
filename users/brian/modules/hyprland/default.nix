@@ -21,6 +21,10 @@
     ./walker
   ];
 
+  home.file = {
+    ".config/hypr/resize.sh".source = ./resize.sh;
+  };
+
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.xcursor-pro; # bibata-cursors;
@@ -465,6 +469,8 @@
         "$mainMod CTRL_L, down, resizeactive, 0 -10"
         "$mainMod CTRL_L, up, resizeactive, 0 10"
 
+        "$mainMod, R, exec, ~/.config/hypr/resize.sh"
+
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
@@ -513,13 +519,13 @@
       ];
 
       binde = [
-        '', XF86AudioMute, exec,  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle''
-        '', XF86MonBrightnessUp, exec, brightnessctl s 5%+''
-        '', XF86MonBrightnessDown, exec, brightnessctl s 5%-''
-        '', XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+''
+        ", XF86AudioMute, exec,  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
       ];
       bindl = [
-        '', XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-''
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ];
     };
     extraConfig = "";
