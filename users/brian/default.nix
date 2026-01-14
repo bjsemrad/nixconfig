@@ -128,6 +128,7 @@
         inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.temporal-cli
         inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.go
         inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.quickshell
+        inputs.opencode.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
 
     sessionVariables = {

@@ -138,6 +138,13 @@
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };
 
+    opencode = {
+      type = "git";
+      url = "https://github.com/anomalyco/opencode";
+      ref = "refs/tags/v1.1.19";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix.url = "github:Mic92/sops-nix";
 
   };
@@ -168,6 +175,7 @@
       ghostty,
       epochshell,
       sops-nix,
+      opencode,
       ...
     }@inputs:
     let
