@@ -409,7 +409,7 @@
         ''$mainMod CTRL_L ALT SHIFT, T, exec, hyprctl keyword general:layout "dwindle"''
         "$mainMod CTRL_L ALT SHIFT, E, exec, systemctl --user restart elephant.service"
 
-        "$mainMod, T, exec, ghostty"
+        # "$mainMod, T, exec, ghostty"
         "$mainMod, RETURN, exec, ghostty" # kitty" #alacritty"
         "$mainMod, Q, killactive,"
         "$mainMod, E, exec,  thunar"
