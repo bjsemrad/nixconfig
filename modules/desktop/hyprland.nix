@@ -46,7 +46,7 @@
     # hyprsysteminfo
     inputs.hyprpwcenter.packages.${pkgs.stdenv.hostPlatform.system}.hyprpwcenter
     inputs.hyprland-systeminfo.packages.${pkgs.stdenv.hostPlatform.system}.hyprsysteminfo
-    inputs.hyprlauncher.packages.${pkgs.stdenv.hostPlatform.system}.hyprlauncher
+    # inputs.hyprlauncher.packages.${pkgs.stdenv.hostPlatform.system}.hyprlauncher
     gnome-firmware
   ];
 }

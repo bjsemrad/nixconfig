@@ -54,10 +54,10 @@
       url = "github:hyprwm/hypridle/v0.1.7";
     };
 
-    hyprlauncher = {
-      url = "github:hyprwm/hyprlauncher";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprlauncher = {
+    #   url = "github:hyprwm/hyprlauncher";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     hyprpwcenter = {
       type = "git";
@@ -161,7 +161,7 @@
       hyprlock,
       hyprpaper,
       hyprland-systeminfo,
-      hyprlauncher,
+      # hyprlauncher,
       hyprpwcenter,
       waybar,
       niri,
