@@ -152,7 +152,7 @@
       general = {
         gaps_in = 3;
         gaps_out = 4;
-        border_size = 2;
+        border_size = 1;
         "$black" = "0xff0e1013";
         "$bgDark" = "0xff1E2127";
         "$bg0" = "0xff1f2329";
