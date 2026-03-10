@@ -121,7 +121,7 @@
     ghostty = {
       type = "git";
       url = "https://github.com/ghostty-org/ghostty";
-      ref = "refs/tags/v1.2.3";
+      ref = "refs/tags/v1.3.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
