@@ -482,8 +482,10 @@
         #"$mainMod, R, exec, ~/.config/hypr/resize.sh"
 
         # Scroll through existing workspaces with mainMod + scroll
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
+        "$mainMod, mouse_down, movefocus, l"
+        "$mainMod, mouse_up, movefocus, r"
+        "$mainMod SHIFT, mouse_down, workspace, e+1"
+        "$mainMod SHIFT, mouse_up, workspace, e-1"
 
         # Home Automations
         ''$mainMod CTRL_L ALT_L SHIFT, L, exec, curl -X GET "https://home.semrad.net/api/webhook/-WaJcaS6CZ1F-V-0exl8Nuhmq"''
