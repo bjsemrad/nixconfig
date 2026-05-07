@@ -17,10 +17,10 @@
         user = "greeter";
       };
       #
-      initial_session = {
-        command = "start-hyprland";
-        user = "brian";
-      };
+      # initial_session = {
+      # command = "start-hyprland";
+      # user = "brian";
+      # };
     };
   };
 }

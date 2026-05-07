@@ -80,7 +80,7 @@
     niri = {
       type = "git";
       url = "https://github.com/YaLTeR/niri";
-      ref = "refs/tags/v25.11";
+      ref = "refs/tags/v26.04";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
