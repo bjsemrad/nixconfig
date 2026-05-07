@@ -152,7 +152,7 @@
       general = {
         gaps_in = 3;
         gaps_out = 4;
-        border_size = 1;
+        border_size = 2;
         "$black" = "0xff0e1013";
         "$bgDark" = "0xff1E2127";
         "$bg0" = "0xff1f2329";
@@ -184,7 +184,8 @@
 
         "col.active_border" = "$blue";
         "col.inactive_border" = "$bg1";
-        layout = "dwindle"; # "scrolling";
+        layout = "scrolling";
+        # "dwindle"; "scrolling";
       };
 
       group = {
@@ -400,6 +401,11 @@
       #   "float,class:^(pavucontrol)$"
       # ];
 
+      scrolling = {
+        column_width = 0.98;
+        explicit_column_widths = "0.5,0.98";
+      };
+
       "$mainMod" = "SUPER_L";
 
       bind = [
@@ -446,30 +452,32 @@
         "$mainMod SHIFT, up, swapwindow, u"
         "$mainMod SHIFT, down, swapwindow, d"
 
-        "$ALT, period, togglegroup"
-        "$mainMod ALT, left, changegroupactive, b"
-        "$mainMod ALT, right, changegroupactive, f"
-        "$mainMod SHIFT ALT, up, moveoutofgroup"
-        "$mainMod SHIFT ALT, down, moveoutofgroup"
-        "$mainMod SHIFT ALT, left, moveintogroup, l"
-        "$mainMod SHIFT ALT, right, moveintogroup, r"
+        # "$ALT, period, togglegroup"
+        # "$mainMod ALT, left, changegroupactive, b"
+        # "$mainMod ALT, right, changegroupactive, f"
+        # "$mainMod SHIFT ALT, up, moveoutofgroup"
+        # "$mainMod SHIFT ALT, down, moveoutofgroup"
+        # "$mainMod SHIFT ALT, left, moveintogroup, l"
+        # "$mainMod SHIFT ALT, right, moveintogroup, r"
 
-        # "$mainMod ALT, left, layoutmsg, movewindowto l"
-        # "$mainMod ALT, right, layoutmsg, movewindowto r"
-        # "$mainMod ALT, up, layoutmsg, movewindowto u"
-        # "$mainMod ALT, down, layoutmsg, movewindowto d"
-        # "$mainMod, R, layoutmsg, colresize +conf"
-        # "ALT, period, layoutmsg, promote"
+        # "$mainMod SHIFT, left, layoutmsg, swapcol l"
+        # "$mainMod SHIFT, right, layoutmsg, swapcol r"
+        # "$mainMod SHIFT, up, layoutmsg, movewindowto u"
+        # "$mainMod SHIFT, down, layoutmsg, movewindowto d"
+        "$mainMod SHIFT CTRL, left, movewindow, l"
+        "$mainMod SHIFT CTRL, right, movewindow, r"
+        "$mainMod, R, layoutmsg, colresize +conf"
+        "ALT, period, layoutmsg, promote"
 
         "ALT, slash, togglesplit, " # dwindlehyprlahyprlahyprlahyprla
 
         # Resize window
-        "$mainMod CTRL_L, left, resizeactive, -10 0"
-        "$mainMod CTRL_L, right, resizeactive, 10 0"
-        "$mainMod CTRL_L, down, resizeactive, 0 -10"
-        "$mainMod CTRL_L, up, resizeactive, 0 10"
+        # "$mainMod CTRL_L, left, resizeactive, -10 0"
+        # "$mainMod CTRL_L, right, resizeactive, 10 0"
+        # "$mainMod CTRL_L, down, resizeactive, 0 -10"
+        # "$mainMod CTRL_L, up, resizeactive, 0 10"
 
-        "$mainMod, R, exec, ~/.config/hypr/resize.sh"
+        #"$mainMod, R, exec, ~/.config/hypr/resize.sh"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
