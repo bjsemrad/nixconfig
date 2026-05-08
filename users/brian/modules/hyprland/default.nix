@@ -550,7 +550,7 @@
     xwayland = {
       enable = true;
     };
-    systemd.enable = true; # NO longer using UWSM
+    systemd.enable = false; # NO longer using UWSM
   };
 
 }
