@@ -89,7 +89,7 @@
           ]
         else if (osConfig.networking.hostName == "odin") then
           [
-            "DP-3,3840x2560@60,auto,1.333333" #",bitdepth,10,cm,hdr,sdrbrightness,1.5,sdrsaturation,1.0"
+            "DP-3,3840x2560@60,auto,1.333333" # ",bitdepth,10,cm,hdr,sdrbrightness,1.5,sdrsaturation,1.0"
             ",preferred,auto,1"
           ]
         else
