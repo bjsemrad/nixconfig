@@ -22,16 +22,16 @@
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
-      ref = "refs/tags/v0.54.3";
+      ref = "refs/tags/v0.55.0";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland-plugins = {
-      type = "git";
-      url = "https://github.com/hyprwm/hyprland-plugins";
-      ref = "refs/tags/v0.53.0";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprland-plugins = {
+    #   type = "git";
+    #   url = "https://github.com/hyprwm/hyprland-plugins";
+    #   ref = "refs/tags/v0.55.0";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
 
     hyprland-systeminfo = {
       type = "git";
