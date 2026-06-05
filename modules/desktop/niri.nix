@@ -7,7 +7,7 @@
 {
   programs.niri = {
     enable = true;
-    package = inputs.niri.packages.${pkgs.system}.niri;
+    package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
   };
 
   services.blueman.enable = true;

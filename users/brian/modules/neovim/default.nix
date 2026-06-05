@@ -1,10 +1,12 @@
 { pkgs, inputs, ... }:
 let
-  neovim-unwrapped = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.neovim-unwrapped.overrideAttrs (old: {
-    meta = old.meta or { } // {
-      maintainers = [ ];
-    };
-  });
+  neovim-unwrapped =
+    inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.neovim-unwrapped.overrideAttrs
+      (old: {
+        meta = old.meta or { } // {
+          maintainers = [ ];
+        };
+      });
 in
 {
 
@@ -12,6 +14,7 @@ in
     enable = true;
     viAlias = true;
     vimAlias = true;
+    sideloadInitLua = true;
     package = neovim-unwrapped;
   };
 

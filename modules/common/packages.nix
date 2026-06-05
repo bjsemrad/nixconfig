@@ -1,10 +1,12 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
   nixpkgs.config.permittedInsecurePackages = [
-    "mbedtls-2.28.10"
+    #"mbedtls-2.28.10"
+    "electron-39.8.10"
   ];
 
   nix.settings = {
@@ -26,11 +28,11 @@
   services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
     vim
-    nixfmt-classic
+    nixfmt
     nixpkgs-fmt
     unzip
     killall
-    neofetch
+    fastfetch
     ripgrep
   ];
 }

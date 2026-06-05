@@ -2,7 +2,7 @@
   description = "NixOS Configuration";
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-25.11";
+      url = "github:NixOS/nixpkgs/nixos-26.05";
     };
 
     nixpkgs-unstable = {
@@ -14,7 +14,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -107,13 +107,13 @@
     elephant = {
       type = "git";
       url = "https://github.com/abenz1267/elephant";
-      ref = "refs/tags/v2.1.0";
+      ref = "refs/tags/v2.21.0";
     };
 
     walker = {
       type = "git";
       url = "https://github.com/abenz1267/walker";
-      ref = "refs/tags/v2.2.0";
+      ref = "refs/tags/v2.16.2";
       inputs.elephant.follows = "elephant";
       #      inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -121,7 +121,7 @@
     ghostty = {
       type = "git";
       url = "https://github.com/ghostty-org/ghostty";
-      ref = "refs/tags/v1.2.3";
+      ref = "refs/tags/v1.3.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

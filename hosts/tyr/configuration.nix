@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
 
@@ -57,7 +62,11 @@
   users.users.dash = {
     isNormalUser = true;
     description = "dashboard";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
@@ -67,10 +76,10 @@
     ];
   };
 
-   users.users.root.openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxG6NiEQZOEJiqpEDXg/eERqe71XNqnNLlI7VaOGqch bjsemrad@gmail.com"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBlihWxnAF0W+cuKqpQbN1yOY0bABNhQx7qb1sp83Z1 bjsemrad@gmail.com"
-    ];
+  users.users.root.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxG6NiEQZOEJiqpEDXg/eERqe71XNqnNLlI7VaOGqch bjsemrad@gmail.com"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBlihWxnAF0W+cuKqpQbN1yOY0bABNhQx7qb1sp83Z1 bjsemrad@gmail.com"
+  ];
 
   home-manager = {
     useGlobalPkgs = true;
@@ -113,7 +122,7 @@
   services.tailscale.enable = true;
 
   # Enable the OpenSSH daemon.
-  security.pam.sshAgentAuth.enable = true; 
+  security.pam.sshAgentAuth.enable = true;
   services.openssh.enable = true;
 
   services.samba = {
@@ -122,7 +131,7 @@
     settings = {
       global = {
         workgroup = "WORKGROUP";
-        security = "user"; 
+        security = "user";
       };
       server = {
         string = "dashnix";
@@ -130,7 +139,7 @@
       netbios = {
         name = "dashnix";
       };
-      #security = "user"; 
+      #security = "user";
       #use sendfile = yes
       #max protocol = smb2
       # note: localhost is the ipv6 localhost ::1
@@ -178,10 +187,16 @@
     trustedInterfaces = [ "tailscale0" ];
 
     # allow the Tailscale UDP port through the firewall (3702 SAMBA)
-    allowedUDPPorts = [ config.services.tailscale.port 3702 ];
+    allowedUDPPorts = [
+      config.services.tailscale.port
+      3702
+    ];
 
     # allow you to SSH in over the public internet (5357 SAMBA)
-    allowedTCPPorts = [ 22 5357 ];
+    allowedTCPPorts = [
+      22
+      5357
+    ];
   };
 
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -195,6 +210,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "26.05"; # Did you read the comment?
 
 }

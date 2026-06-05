@@ -24,7 +24,7 @@
       systemd
       libgbm
       brotli
-      unixODBC
+      unixodbc
       glib
       kdePackages.qtdeclarative
     ];

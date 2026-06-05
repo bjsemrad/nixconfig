@@ -12,7 +12,7 @@ in
     username = "dash";
     homeDirectory = "/home/dash";
     packages = with pkgs; [
-            croc
+      croc
     ];
 
     file = {
@@ -29,7 +29,7 @@ in
     # You should not change this value, even if you update Home Manager. If you do
     # want to update the value, then make sure to first check the Home Manager
     # release notes.
-    stateVersion = "25.11"; # Please read the comment before changing.
+    stateVersion = "26.05"; # Please read the comment before changing.
   };
 
   programs.zsh = {
@@ -50,16 +50,14 @@ in
       gp = "git push";
       gco = "git checkout";
       gst = "git status";
-      crocsend="send(){ croc --relay loki.otter-rigel.ts.net:9009 send --code $2 $1};send";
-      crocreceive="receive(){ croc --relay loki.otter-rigel.ts.net:9009 $1};receive";
+      crocsend = "send(){ croc --relay loki.otter-rigel.ts.net:9009 send --code $2 $1};send";
+      crocreceive = "receive(){ croc --relay loki.otter-rigel.ts.net:9009 $1};receive";
     };
     autosuggestion.enable = true;
     enableCompletion = true;
-    syntaxHighlighting.enable = true; #OLD enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true; # OLD enableSyntaxHighlighting = true;
 
   };
-
-
 
   programs.git = {
     enable = true;
@@ -71,11 +69,9 @@ in
     };
   };
 
-
   # environment.
   programs.direnv.enable = true;
 
   #CONFIRM  programs.home-manager.enable = true;
-
 
 }
