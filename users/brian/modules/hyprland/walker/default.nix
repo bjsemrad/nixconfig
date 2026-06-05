@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, config,... }:
 {
   home.packages = [
     pkgs.libqalculate
@@ -12,9 +12,16 @@
 
   };
 
-  # programs.elephant = {
-  #
-  # };
+  systemd.user.services.elephant.Service.Environment = [
+    "PATH=${lib.makeBinPath [
+      pkgs.rbw
+      pkgs.pinentry-tty
+      pkgs.jq
+      pkgs.wl-clipboard
+      pkgs.wtype
+      pkgs.coreutils
+    ]}:${config.home.profileDirectory}/bin:/run/current-system/sw/bin"
+  ];
 
   programs.walker = {
     enable = true;
@@ -96,7 +103,16 @@
             prefix = "~";
             provider = "hyprlandkeybinds";
           }
+          {
+            prefix = "bw:";
+            provider = "bitwarden";
+          }
         ];
+
+        bitwarden = {
+          default = "copy";
+          copy = "Return";
+        };
 
         archlinuxpkgs = {
           default = "install";
@@ -194,6 +210,8 @@
         "calc"
         "clipboard"
         "menus"
+        "windows"
+        "bitwarden"
         "providerlist"
       ];
 

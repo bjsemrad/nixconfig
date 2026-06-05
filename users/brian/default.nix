@@ -53,6 +53,9 @@
       with pkgs;
       [
         bitwarden-desktop
+        rbw
+        pinentry-tty
+        wtype
         rustup
         cargo-watch
         ffmpeg-full
@@ -123,6 +126,7 @@
 
         wakeonlan
         trayscale
+        wayfreeze
       ]
       ++ [
         inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.temporal-cli

@@ -13,9 +13,9 @@ in
     enable = true;
     shellAliases = {
       #homeupdate = "home-manager switch --flake ${nixconfigdir}";
-      nixupdate = "(cd ${config.home.homeDirectory}/${nixconfigdir} && nix flake update) && sudo nixos-rebuild switch --verbose --upgrade --flake ${config.home.homeDirectory}/${nixconfigdir}";
+      nixupdate = "(cd ${config.home.homeDirectory}/${nixconfigdir} && nix flake update) && sudo nixos-rebuild switch --verbose --flake ${config.home.homeDirectory}/${nixconfigdir}";
       #forces cleanup of home manager generations
-      nixupdateclean = "(cd ${config.home.homeDirectory}/${nixconfigdir} && nix flake update) && sudo nixos-rebuild switch --verbose --upgrade --option keep-outputs false --option keep-derivations false --flake ${config.home.homeDirectory}/${nixconfigdir}";
+      nixupdateclean = "(cd ${config.home.homeDirectory}/${nixconfigdir} && nix flake update) && sudo nixos-rebuild switch --verbose --option keep-outputs false --option keep-derivations false --flake ${config.home.homeDirectory}/${nixconfigdir}";
       nixswitch = "sudo nixos-rebuild switch --verbose --upgrade --flake ${config.home.homeDirectory}/${nixconfigdir}";
       nixgc = "sudo nix-store --gc;nix-store --gc";
       # recommeneded to sometimes run as sudo to collect additional garbage
