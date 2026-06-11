@@ -66,7 +66,7 @@
   services.ollama = {
     enable = true;
     host = "[::]";
-    acceleration = "rocm";
+    # acceleration = "rocm";
     # rocmOverrideGfx = "10.3.0";
     # environmentVariables = {
     # HSA_OVERRIDE_GFX_VERSION = "10.3.0";
