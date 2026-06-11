@@ -196,11 +196,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778259868,
-        "narHash": "sha256-tHJueeXpcnJtZoxckzztJg/BE9GEzJaaPuGmxrs9WzY=",
+        "lastModified": 1781036100,
+        "narHash": "sha256-xvfAEPnQiVWgzZFFam1FKEnEyZWcmenoLxk6G8rZRn4=",
         "ref": "refs/heads/main",
-        "rev": "6e4e267bff421e48fa7e5b02bc7ccccf89e5d337",
-        "revCount": 100,
+        "rev": "a0a77b1fef33b6eec7e501429677c439889e9a93",
+        "revCount": 101,
         "type": "git",
         "url": "https://github.com/bjsemrad/epochshell"
       },
@@ -405,11 +405,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780883961,
-        "narHash": "sha256-WU6SUrESuPiEXEUvX4D51AgWrXRJty+sLJBwBaDBGqE=",
+        "lastModified": 1781124985,
+        "narHash": "sha256-hIaUkf6qalGk2xxNEkBMP2m2aPBq+qXvUPOIwwEDySI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "4eb4fec41674d5b059aa2eedf0f98453890546fa",
+        "rev": "d899b01766784bcc9a141ee13bad6dc689d47c37",
         "type": "github"
       },
       "original": {
@@ -1714,11 +1714,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1781020964,
-        "narHash": "sha256-fS7xTi2j2iso5Hj7RNZLv/acDlCT+fgMVkVk40A7Uco=",
+        "lastModified": 1781168557,
+        "narHash": "sha256-LOnLQ2tpYF9gqIDDr3+j3DbpJJr/QCH6zPRT2GzEUOE=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "32c2cd9e46286c4eced3dc6b613c659126bf3cca",
+        "rev": "6358ff76821101c178e3ab4919a62799bfe3652e",
         "type": "github"
       },
       "original": {
