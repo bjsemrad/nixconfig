@@ -24,7 +24,7 @@
           }/bin/niri msg action power-off-monitors";
           on-resume = "[ -n \"$${HYPRLAND_INSTANCE_SIGNATURE:-}\" ] && ${
             inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
-          }/bin/hyprctl dispatch dpms on || ${
+          }/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })' || ${
             inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri
           }/bin/niri msg action power-on-monitors";
         }
@@ -40,13 +40,13 @@
               timeout = 600;
               on-timeout = "([ -n \"$${HYPRLAND_INSTANCE_SIGNATURE:-}\" ] && ${
                 inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
-              }/bin/hyprctl dispatch dpms off || ${
+              }/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })' || ${
                 inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri
               }/bin/niri msg action power-off-monitors) && ${pkgs.systemd}/bin/systemctl suspend";
 
               on-resume = "[ -n \"$${HYPRLAND_INSTANCE_SIGNATURE:-}\" ] && ${
                 inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
-              }/bin/hyprctl dispatch dpms on || ${
+              }/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })' || ${
                 inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri
               }/bin/niri msg action power-on-monitors";
             }
@@ -61,13 +61,13 @@
               timeout = 600;
               on-timeout = "([ -n \"$${HYPRLAND_INSTANCE_SIGNATURE:-}\" ] && ${
                 inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
-              }/bin/hyprctl dispatch dpms off || ${
+              }/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })' || ${
                 inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri
               }/bin/niri msg action power-off-monitors) && ${pkgs.systemd}/bin/systemctl suspend";
 
               on-resume = "([ -n \"$${HYPRLAND_INSTANCE_SIGNATURE:-}\" ] && ${
                 inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
-              }/bin/hyprctl dispatch dpms on || ${
+              }/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })' || ${
                 inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri
               }/bin/niri msg action power-on-monitors) && openrgb -p Blue";
             }
@@ -80,7 +80,7 @@
         }/bin/hyprlock";
         after_sleep_cmd = "[ -n \"$${HYPRLAND_INSTANCE_SIGNATURE:-}\" ] && ${
           inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
-        }/bin/hyprctl dispatch dpms on || ${
+        }/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })' || ${
           inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri
         }/bin/niri msg action power-on-monitors";
       };
