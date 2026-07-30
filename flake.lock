@@ -196,11 +196,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781186730,
-        "narHash": "sha256-xKY0Ro9dY9355XHAnAssSWEO+bSszGoUFeeyUF+AFqM=",
+        "lastModified": 1785424109,
+        "narHash": "sha256-okAaYKbftqp//fKYcXTZe9OAev9ZEsGuhYLPi451Xew=",
         "ref": "refs/heads/main",
-        "rev": "865bad5306997396a1e909efe24b9fc347e0416f",
-        "revCount": 102,
+        "rev": "4055365459bb4195705fabb977a2a82b075c4fee",
+        "revCount": 103,
         "type": "git",
         "url": "https://github.com/bjsemrad/epochshell"
       },
@@ -364,11 +364,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765980955,
-        "narHash": "sha256-rB45jv4uwC90vM9UZ70plfvY/2Kdygs+zlQ07dGQFk4=",
+        "lastModified": 1785306346,
+        "narHash": "sha256-DScBkW0fOgpGPK2trNoX3ryLTlaC14+gglFo/BhGJ4g=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "89c9508bbe9b40d36b3dc206c2483ef176f15173",
+        "rev": "e705714e918c3b11affcdd15db2cbe3a070420a0",
         "type": "github"
       },
       "original": {
