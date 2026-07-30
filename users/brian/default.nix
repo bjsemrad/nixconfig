@@ -127,6 +127,7 @@
         wakeonlan
         trayscale
         wayfreeze
+        inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.herdr
       ]
       ++ [
         inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.temporal-cli

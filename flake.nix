@@ -132,6 +132,11 @@
       inputs.quickshell.follows = "quickshell";
     };
 
+    herdr = {
+      url = "github:herdrdev/herdr/v0.7.5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     matugen = {
       url = "github:InioX/matugen?ref=v2.4.1";
     };
@@ -165,6 +170,7 @@
       hyprpwcenter,
       waybar,
       niri,
+      herdr,
       mangowm,
       matugen,
       nixpkgs-unstable,
