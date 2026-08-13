@@ -22,21 +22,13 @@
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
-      ref = "refs/tags/v0.56.0";
+      ref = "refs/tags/v0.56.1";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # hyprland-plugins = {
-    #   type = "git";
-    #   url = "https://github.com/hyprwm/hyprland-plugins";
-    #   ref = "refs/tags/v0.55.0";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
 
     hyprland-systeminfo = {
       type = "git";
       url = "https://github.com/hyprwm/hyprsysteminfo";
-      # ref = "refs/tags/v0.1.3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -51,7 +43,7 @@
     };
 
     hypridle = {
-      url = "github:hyprwm/hypridle/v0.1.7";
+      url = "github:hyprwm/hypridle/v0.1.8";
     };
 
     # hyprlauncher = {
@@ -62,7 +54,7 @@
     hyprpwcenter = {
       type = "git";
       url = "https://github.com/hyprwm/hyprpwcenter";
-      # ref = "refs/tags/v0.1.1";
+      ref = "refs/tags/v0.1.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -84,24 +76,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mangowm = {
-      type = "git";
-      url = "https://github.com/DreamMaoMao/mangowc";
-      ref = "refs/tags/0.10.5";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # mangowm = {
+    #   type = "git";
+    #   url = "https://github.com/DreamMaoMao/mangowc";
+    #   ref = "refs/tags/0.10.5";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     quickshell = {
       type = "git";
       url = "https://github.com/quickshell-mirror/quickshell";
-      ref = "refs/tags/v0.2.1";
+      ref = "refs/tags/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     tailscale = {
       type = "git";
       url = "https://github.com/tailscale/tailscale";
-      ref = "refs/tags/v1.92.3";
+      ref = "refs/tags/v1.102.2";
     };
 
     elephant = {
@@ -133,7 +125,7 @@
     };
 
     herdr = {
-      url = "github:herdrdev/herdr/v0.7.5";
+      url = "github:herdrdev/herdr/v0.8.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -147,7 +139,7 @@
     opencode = {
       type = "git";
       url = "https://github.com/anomalyco/opencode";
-      ref = "refs/tags/v1.1.19";
+      ref = "refs/tags/v1.18.16";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -171,7 +163,7 @@
       waybar,
       niri,
       herdr,
-      mangowm,
+      #mangowm,
       matugen,
       nixpkgs-unstable,
       nix-flatpak,
