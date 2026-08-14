@@ -216,10 +216,10 @@
           ];
           specialArgs = { inherit inputs; };
         };
-        yggdrasil = lib.nixosSystem {
+        proxy = lib.nixosSystem {
           system = "x86_64-linux"; # explicitly set # Nginx Proxy for internal
           modules = [
-            ./hosts/yggdrasil/configuration.nix
+            ./hosts/proxy/configuration.nix
             home-manager.nixosModules.home-manager
           ];
           specialArgs = { inherit inputs; };

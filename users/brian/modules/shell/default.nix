@@ -39,7 +39,7 @@ in
       tmuxsessionize = "tmux attach-session -t main || tmux new-session -s main";
       croc-rebuild = "nixos-rebuild switch -s --flake .#loki --target-host root@loki.otter-rigel.ts.net  --verbose";
       dashboard-rebuild = "nixos-rebuild switch -s --flake .#tyr --target-host root@dashboard.otter-rigel.ts.net  --verbose";
-      proxy-rebuild = "nixos-rebuild switch -s --flake .#yggdrasil --target-host root@proxy.otter-rigel.ts.net --verbose";
+      proxy-rebuild = "nixos-rebuild switch -s --flake .#proxy --target-host root@proxy.otter-rigel.ts.net --verbose";
       rebuild-baldr = "nixos-rebuild switch -s --flake .#baldr --target-host root@10.0.10.21 --verbose";
 
       tailreceive = "sudo tailscale file get .";
@@ -157,7 +157,7 @@ in
       sshminecraft = "ssh mine@minecraft.otter-rigel.ts.net";
       sshproxy = "ssh nginx@proxy.otter-rigel.ts.net";
       dashboard-rebuild = "nixos-rebuild switch -s --flake .#tyr --target-host root@dashboard.otter-rigel.ts.net  --verbose";
-      proxy-rebuild = "nixos-rebuild switch -s --flake .#yggdrasil --target-host root@proxy.otter-rigel.ts.net --verbose";
+      proxy-rebuild = "nixos-rebuild switch -s --flake .#proxy --target-host root@proxy.otter-rigel.ts.net --verbose";
       tailreceive = "sudo tailscale file get .";
       setup-vial = "qmk setup bjsemrad/vial-qmk -H ~/vial-qmk -b vial";
       setup-qmk = "qmk setup bjsemrad/qmk_firmware -H ~/qmk_firmwarel";
