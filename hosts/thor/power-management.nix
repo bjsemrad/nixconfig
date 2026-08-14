@@ -22,7 +22,10 @@
   environment.systemPackages = with pkgs; [
     powertop
   ];
-  
+
+  services.udev.extraRules = ''
+    ACTION=="add|change", SUBSYSTEM=="usb", ATTR{idVendor}=="27c6", ATTR{idProduct}=="609c", TEST=="power/control", ATTR{power/control}="on"
+  '';
+
   services.upower.enable = true;
 }
-
