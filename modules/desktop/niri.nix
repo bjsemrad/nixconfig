@@ -10,6 +10,8 @@
     package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
   };
 
+  systemd.user.services.niri.overrideStrategy = "asDropin";
+
   services.blueman.enable = true;
   programs.thunar.enable = true;
 

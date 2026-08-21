@@ -6,7 +6,7 @@ set -euo pipefail
 case "${XDG_CURRENT_DESKTOP:-}" in
   Hyprland|hyprland)
     echo "Logging out of Hyprland..."
-    hyprctl dispatch exit
+    hyprctl dispatch 'hl.dsp.exit()'
     ;;
   Niri|niri)
     echo "Logging out of Niri..."
