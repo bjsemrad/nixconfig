@@ -21,7 +21,7 @@
     #desktop-sway
     desktop-hyprland
     desktop-niri
-    # desktop-mangowc
+    desktop-mangowc
     services-tailscale
     services-network
     services-sound

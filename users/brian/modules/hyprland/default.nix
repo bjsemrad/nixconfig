@@ -358,8 +358,21 @@
       -- Keybinds   --
       ----------------
 
-      hl.bind("SUPER + CTRL + ALT + SHIFT + S", exec('hyprctl keyword general:layout "scrolling"'))
-      hl.bind("SUPER + CTRL + ALT + SHIFT + T", exec('hyprctl keyword general:layout "dwindle"'))
+      hl.bind("SUPER + CTRL + ALT + SHIFT + S",  function()
+        hl.config({
+            general = {
+                layout = "scrolling",
+            },
+        })
+      end)
+      hl.bind("SUPER + CTRL + ALT + SHIFT + T",  function()
+        hl.config({
+            general = {
+                layout = "dwindle",
+            },
+        })
+      end)
+
       hl.bind("SUPER + CTRL + ALT + SHIFT + E", exec("systemctl --user restart elephant.service"))
 
       hl.bind("SUPER + RETURN", exec("ghostty"))
@@ -444,11 +457,13 @@
       ----------------
 
       hl.on("hyprland.start", function()
-        hl.exec_cmd("systemctl --user restart --now hyprpaper.service")
-        hl.exec_cmd("systemctl --user restart --now hyprpolkitagent.service")
-        hl.exec_cmd("systemctl --user restart --now hypridle.service")
-        hl.exec_cmd("systemctl --user restart --now elephant.service")
-        hl.exec_cmd("systemctl --user restart --now epochshell")
+        -- Turned on SystemD so these start automatically now.
+        -- hl.exec_cmd("systemctl --user restart --now hyprpaper.service")
+        -- hl.exec_cmd("systemctl --user restart --now hyprpolkitagent.service")
+        -- hl.exec_cmd("systemctl --user restart --now hypridle.service")
+        -- hl.exec_cmd("systemctl --user restart --now elephant.service")
+        -- hl.exec_cmd("systemctl --user restart --now walker.service")
+        -- hl.exec_cmd("systemctl --user restart --now epochshell")
         hl.exec_cmd("wl-paste --type text --watch cliphist -max-items 25 store")
         hl.exec_cmd("wl-paste --type image --watch cliphist -max-items 25 store")
       end)
@@ -518,7 +533,7 @@
     xwayland = {
       enable = true;
     };
-    systemd.enable = false; # NO longer using UWSM
+    systemd.enable = true;
   };
 
 }

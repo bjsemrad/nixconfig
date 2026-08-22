@@ -76,12 +76,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # mangowm = {
-    #   type = "git";
-    #   url = "https://github.com/DreamMaoMao/mangowc";
-    #   ref = "refs/tags/0.10.5";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    mangowm = {
+      type = "git";
+      url = "https://github.com/mangowm/mango";
+      ref = "refs/tags/0.16.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     quickshell = {
       type = "git";
@@ -163,7 +163,7 @@
       waybar,
       niri,
       herdr,
-      #mangowm,
+      mangowm,
       matugen,
       nixpkgs-unstable,
       nix-flatpak,

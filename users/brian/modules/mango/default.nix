@@ -1,14 +1,21 @@
-{ config, inputs, osConfig, ... }: {
+{
+  config,
+  inputs,
+  osConfig,
+  ...
+}:
+{
   imports = [ inputs.mangowm.hmModules.mango ];
 
   home.file = {
-    ".config/mango/monitors.conf".source =
-      builtins.toPath (./. + "/${osConfig.networking.hostName}_monitors.conf");
+    ".config/mango/monitors.conf".source = builtins.toPath (
+      ./. + "/${osConfig.networking.hostName}_monitors.conf"
+    );
   };
 
   wayland.windowManager.mango = {
     enable = true;
-    settings = ''
+    extraConfig = ''
       # see config.conf
       source=~/.config/mango/monitors.conf
       adaptive_sync=1
