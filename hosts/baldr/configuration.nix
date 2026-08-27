@@ -16,6 +16,9 @@
     services-network
     services-smartd
     ./containers.nix
+    ./omada.nix
+    ./nginx.nix
+    ./nfs.nix
   ];
 
   # Bootloader.
@@ -88,9 +91,6 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     zsh
-    jellyfin
-    jellyfin-web
-    jellyfin-ffmpeg
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -104,11 +104,27 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  services.jellyfin = {
+  services.openssh = {
+    settings = {
+      PermitRootLogin = "yes";
+      PasswordAuthentication = true;
+    };
     enable = true;
-    openFirewall = true;
+  };
+
+  services.omada-controller = {
+    enable = true;
+    version = "6.2";
+  };
+
+  services.nginx-proxy-manager = {
+    enable = true;
+    version = "latest";
+  };
+
+  services.nfs-client = {
+    enable = true;
+    truenas = "10.0.10.8"; # or use the IP directly
   };
 
   sops.defaultSopsFile = ../../secrets.yaml;

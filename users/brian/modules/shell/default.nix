@@ -31,7 +31,7 @@ in
       gst = "git status";
       sshdash = "ssh dash@dashboard.otter-rigel.ts.net";
       sshprox = "ssh root@proxmox.otter-rigel.ts.net";
-      sshtruenas = "ssh root@10.0.10.13";
+      sshtruenas = "ssh root@10.0.10.8";
       sshchannels = "ssh channels@channels.otter-rigel.ts.net";
       sshminecraft = "ssh mine@minecraft.otter-rigel.ts.net";
       sshproxy = "ssh nginx@proxy.otter-rigel.ts.net";
@@ -40,7 +40,7 @@ in
       croc-rebuild = "nixos-rebuild switch -s --flake .#loki --target-host root@loki.otter-rigel.ts.net  --verbose";
       dashboard-rebuild = "nixos-rebuild switch -s --flake .#tyr --target-host root@dashboard.otter-rigel.ts.net  --verbose";
       proxy-rebuild = "nixos-rebuild switch -s --flake .#proxy --target-host root@proxy.otter-rigel.ts.net --verbose";
-      rebuild-baldr = "nixos-rebuild switch -s --flake .#baldr --target-host root@10.0.10.21 --verbose";
+      rebuild-baldr = "nixos-rebuild switch -s --flake .#baldr --target-host root@10.0.10.6 --verbose";
 
       tailreceive = "sudo tailscale file get .";
       setup-vial = "qmk setup bjsemrad/vial-qmk -H ~/vial-qmk -b vial";
@@ -152,7 +152,7 @@ in
       gst = "git status";
       sshdash = "ssh dash@dashboard.otter-rigel.ts.net";
       sshprox = "ssh root@proxmox.otter-rigel.ts.net";
-      sshtruenas = "ssh root@10.0.10.13";
+      sshtruenas = "ssh root@10.0.10.8";
       sshchannels = "ssh channels@channels.otter-rigel.ts.net";
       sshminecraft = "ssh mine@minecraft.otter-rigel.ts.net";
       sshproxy = "ssh nginx@proxy.otter-rigel.ts.net";
