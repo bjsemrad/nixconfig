@@ -20,6 +20,7 @@
     ./nginx.nix
     ./nfs.nix
     ./channelsdvr.nix
+    ./dashboard.nix
   ];
 
   # Bootloader.
@@ -133,6 +134,8 @@
     version = "tve";
     trueNasIp = "10.0.10.8";
   };
+
+  services.homepage.enable = true;
 
   sops.defaultSopsFile = ../../secrets.yaml;
   sops.age.keyFile = "/var/lib/sops-nix/key.txt";
