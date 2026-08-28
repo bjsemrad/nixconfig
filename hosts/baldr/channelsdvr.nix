@@ -53,6 +53,7 @@ in
           "umask=000"
           "exec"
           "nofail"
+          "nonempty"
         ];
       };
 
@@ -61,13 +62,10 @@ in
         device = "${cfg.trueNasIp}:/mnt/tank/movies";
         fsType = "nfs";
         options = [
-          "auto"
+          "nfsvers=4"
+          "noauto"
+          "x-systemd.automount"
           "nofail"
-          "noatime"
-          "nolock"
-          "intr"
-          "tcp"
-          "actimeo=1800"
         ];
       };
 
@@ -76,13 +74,10 @@ in
         device = "${cfg.trueNasIp}:/mnt/tank/tvshows";
         fsType = "nfs";
         options = [
-          "auto"
+          "nfsvers=4"
+          "noauto"
+          "x-systemd.automount"
           "nofail"
-          "noatime"
-          "nolock"
-          "intr"
-          "tcp"
-          "actimeo=1800"
         ];
       };
 
@@ -91,13 +86,10 @@ in
         device = "${cfg.trueNasIp}:/mnt/tank/pinchflat/downloads";
         fsType = "nfs";
         options = [
-          "auto"
+          "nfsvers=4"
+          "noauto"
+          "x-systemd.automount"
           "nofail"
-          "noatime"
-          "nolock"
-          "intr"
-          "tcp"
-          "actimeo=1800"
         ];
       };
     };
@@ -106,25 +98,47 @@ in
     virtualisation.oci-containers.containers.channels-dvr = {
       image = "fancybits/channels-dvr:${cfg.version}";
       autoStart = true;
+
       environment = {
         TZ = "America/Chicago"; # Configured for your local time zone scheduling accuracy
+        LIBVA_DRIVER_NAME = "iHD";
       };
+      devices = [
+        "/dev/dri/card0:/dev/dri/card0"
+        "/dev/dri/renderD128:/dev/dri/renderD128"
+      ];
 
       # Maps your local 1TB drive as the active sandbox and nests network shares inside it
       volumes = [
         "/mnt/dvr/ChannelsDVR/Database:/channels-dvr/data" # Active database engine workspace mapping
         "/mnt/dvr/ChannelsDVR:/shares/DVR" # Primary recordings sandbox (Local 1TB)
-        "/shares/nasmovies:/shares/DVR/Movies" # Nested network pool link
-        "/shares/tvnas:/shares/DVR/TV" # Nested network pool link
-        "/shares/pinchflat/downloads:/shares/DVR/Imports" # Nested network pool link
+        "/shares/nasmovies:/shares/Movies" # Nested network pool link
+        "/shares/tvnas:/shares/TV" # Nested network pool link
+        "/shares/pinchflat/downloads:/shares/YouTube" # Nested network pool link
       ];
 
       extraOptions = [
         "--network=host" # Crucial for Bonjour automatic Apple TV client discovery
         "--pull=always" # Pull updates automatically on container restarts
         "--stop-timeout=60" # Gracefully park application database logs before stopping
-        "--device=/dev/dri:/dev/dri" # Passes Intel N100 iGPU nodes for Quick Sync transcoding
+        # Passes the graphics hardware planes directly past container layers
       ];
+    };
+
+    systemd.services.docker-channels-dvr = {
+      # Binds the container life cycle strictly to the physical hardware drive
+      wants = [ "mnt-dvr.mount" ];
+      after = [ "mnt-dvr.mount" ];
+      requires = [ "mnt-dvr.mount" ]; # Prevents it from running if the mount ever drops
+
+      # Forces systemd to automatically trigger this service during a standard system boot
+      wantedBy = [ "multi-user.target" ];
+
+      # AUTOMATIC RETRY LOGIC: If the USB drive is slow to wake up, retry every 10 seconds
+      serviceConfig = {
+        Restart = "on-failure";
+        RestartSec = "10s";
+      };
     };
 
     # 4. Global Core Container Backend Configurations
