@@ -19,6 +19,7 @@
     ./omada.nix
     ./nginx.nix
     ./nfs.nix
+    ./channelsdvr.nix
   ];
 
   # Bootloader.
@@ -125,6 +126,12 @@
   services.nfs-client = {
     enable = true;
     truenas = "10.0.10.8"; # or use the IP directly
+  };
+
+  services.channels-dvr = {
+    enable = true;
+    version = "tve";
+    trueNasIp = "10.0.10.8";
   };
 
   sops.defaultSopsFile = ../../secrets.yaml;
