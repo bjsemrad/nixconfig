@@ -2331,16 +2331,16 @@
         "systems": "systems_11"
       },
       "locked": {
-        "lastModified": 1785864766,
-        "narHash": "sha256-vqNShvER4jT+8WJCcaSVboXPEP6S3QacmkC39tJkR4g=",
-        "ref": "refs/tags/v1.102.2",
-        "rev": "eb67e5dcbe145d63e1128b9b4b630f8a82da101f",
-        "revCount": 11057,
+        "lastModified": 1787166463,
+        "narHash": "sha256-NzWuMhLCqewkH/vwyfRND8yEubRmUSXe/TYA2ldhFl8=",
+        "ref": "refs/tags/v1.102.3",
+        "rev": "53a0d659afa51835dd7a9283873cca44261454f8",
+        "revCount": 11070,
         "type": "git",
         "url": "https://github.com/tailscale/tailscale"
       },
       "original": {
-        "ref": "refs/tags/v1.102.2",
+        "ref": "refs/tags/v1.102.3",
         "type": "git",
         "url": "https://github.com/tailscale/tailscale"
       }
