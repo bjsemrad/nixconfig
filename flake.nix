@@ -208,22 +208,6 @@
           ];
           specialArgs = { inherit inputs; };
         };
-        tyr = lib.nixosSystem {
-          system = "x86_64-linux"; # explicitly set # Dashboard Server
-          modules = [
-            ./hosts/tyr/configuration.nix
-            home-manager.nixosModules.home-manager
-          ];
-          specialArgs = { inherit inputs; };
-        };
-        proxy = lib.nixosSystem {
-          system = "x86_64-linux"; # explicitly set # Nginx Proxy for internal
-          modules = [
-            ./hosts/proxy/configuration.nix
-            home-manager.nixosModules.home-manager
-          ];
-          specialArgs = { inherit inputs; };
-        };
         baldr = lib.nixosSystem {
           system = "x86_64-linux"; # explicitly set # Tailscale router & others
           modules = [
