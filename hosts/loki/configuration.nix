@@ -1,6 +1,6 @@
 # Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# your system. Help is available in the configuration.nix(5) man page, on
+# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 {
   config,
@@ -11,31 +11,23 @@
 
 {
   imports = with inputs.self.nixosModules; [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     common-nixsettings
     services-network
     services-smartd
-    ./containers.nix
-    ./omada.nix
-    ./nginx.nix
-    ./nfs.nix
-    ./channelsdvr.nix
-    ./dashboard.nix
+
   ];
 
-  # Bootloader.
+  # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "baldr"; # Define your hostname.
+  networking.hostName = "loki"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -65,7 +57,7 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.admin = {
+  users.users."admin" = {
     isNormalUser = true;
     description = "admin";
     extraGroups = [
@@ -87,23 +79,19 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     zsh
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
+  services.uptime-kuma = {
+    enable = true;
+    settings = {
+      UPTIME_KUMA_HOST = "0.0.0.0";
+      UPTIME_KUMA_PORT = "3001";
+    };
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh = {
@@ -114,40 +102,11 @@
     enable = true;
   };
 
-  services.omada-controller = {
-    enable = true;
-    version = "6.2";
-  };
-
-  services.nginx-proxy-manager = {
-    enable = true;
-    version = "latest";
-  };
-
-  services.nfs-client = {
-    enable = true;
-    truenas = "10.0.10.8"; # or use the IP directly
-  };
-
-  services.channels-dvr = {
-    enable = true;
-    version = "tve";
-    trueNasIp = "10.0.10.8";
-  };
-
-  services.homepage.enable = true;
-
-  sops.defaultSopsFile = ../../secrets.yaml;
-  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
-
-  sops.secrets.baldr_tailscale_authkey = { };
-
   services.tailscale = {
     enable = true;
     package = inputs.tailscale.packages.${pkgs.stdenv.hostPlatform.system}.tailscale;
     extraUpFlags = [
     ];
-    authKeyFile = config.sops.secrets.baldr_tailscale_authkey.path;
     useRoutingFeatures = "server";
   };
 
@@ -158,22 +117,29 @@
     # always allow traffic from your Tailscale network
     trustedInterfaces = [ "tailscale0" ];
 
+    allowedTCPPorts = [ 3001 ];
+
     # allow the Tailscale UDP port through the firewall
     allowedUDPPorts = [ config.services.tailscale.port ];
   };
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  # This option defines the first version of NixOS you have installed on this particular machine,
+  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
+  #
+  # Most users should NEVER change this value after the initial install, for any reason,
+  # even if you've upgraded your system to a new NixOS release.
+  #
+  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
+  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
+  # to actually do that.
+  #
+  # This value being lower than the current NixOS release does NOT mean your system is
+  # out of date, out of support, or vulnerable.
+  #
+  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
+  # and migrated your data accordingly.
+  #
+  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "26.05"; # Did you read the comment?
 
 }

@@ -106,7 +106,8 @@
         jq
         proton-vpn
         loupe
-
+        iperf3
+        ethtool
         element-desktop
         kdePackages.kdialog
         kdePackages.qt5compat

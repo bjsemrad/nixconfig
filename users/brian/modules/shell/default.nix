@@ -34,6 +34,7 @@ in
       sshminecraft = "ssh mine@minecraft.otter-rigel.ts.net";
       tmuxsessionize = "tmux attach-session -t main || tmux new-session -s main";
       rebuild-baldr = "nixos-rebuild switch -s --flake .#baldr --target-host root@10.0.10.6 --verbose";
+      rebuild-loki = "nixos-rebuild switch -s --flake .#loki --target-host root@10.0.10.7 --verbose";
 
       tailreceive = "sudo tailscale file get .";
       setup-vial = "qmk setup bjsemrad/vial-qmk -H ~/vial-qmk -b vial";

@@ -209,7 +209,7 @@
           specialArgs = { inherit inputs; };
         };
         baldr = lib.nixosSystem {
-          system = "x86_64-linux"; # explicitly set # Tailscale router & others
+          system = "x86_64-linux";
           modules = [
             ./hosts/baldr/configuration.nix
             home-manager.nixosModules.home-manager
@@ -217,6 +217,15 @@
           ];
           specialArgs = { inherit inputs; };
         };
+        loki = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/loki/configuration.nix
+            home-manager.nixosModules.home-manager
+          ];
+          specialArgs = { inherit inputs; };
+        };
+
       };
     };
 }
