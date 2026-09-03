@@ -14,7 +14,6 @@
   };
 
   home.file = {
-    ".local/share/flatpak/overrides/org.signal.Signal".source =
-      ./overrides/org.signal.Signal;
+    ".local/share/flatpak/overrides/org.signal.Signal".source = ./overrides/org.signal.Signal;
   };
 }
