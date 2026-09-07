@@ -33,10 +33,11 @@
     ./modules/vial
     ./modules/tailscale
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
-    inputs.walker.homeManagerModules.walker
+    # inputs.walker.homeManagerModules.walker
     ./modules/flatpak
     ./modules/webapps
     ./modules/wmscripts
+    ./modules/xdg
     ./modules/epochshell
   ];
 
@@ -53,8 +54,10 @@
       with pkgs;
       [
         bitwarden-desktop
-        rbw
-        pinentry-tty
+        bitwarden-cli
+        #rbw
+        # pinentry-tty
+        pinentry-qt
         wtype
         rustup
         cargo-watch

@@ -1,4 +1,10 @@
-{ inputs, pkgs, lib, config,... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   home.packages = [
     pkgs.libqalculate
@@ -13,18 +19,20 @@
   };
 
   systemd.user.services.elephant.Service.Environment = [
-    "PATH=${lib.makeBinPath [
-      pkgs.rbw
-      pkgs.pinentry-tty
-      pkgs.jq
-      pkgs.wl-clipboard
-      pkgs.wtype
-      pkgs.coreutils
-    ]}:${config.home.profileDirectory}/bin:/run/current-system/sw/bin"
+    "PATH=${
+      lib.makeBinPath [
+        pkgs.rbw
+        pkgs.pinentry-tty
+        pkgs.jq
+        pkgs.wl-clipboard
+        pkgs.wtype
+        pkgs.coreutils
+      ]
+    }:${config.home.profileDirectory}/bin:/run/current-system/sw/bin"
   ];
 
   programs.walker = {
-    enable = true;
+    enable = false;
     runAsService = true;
     config = {
       force_keyboard_focus = false; # forces keyboard forcus to stay in Walker

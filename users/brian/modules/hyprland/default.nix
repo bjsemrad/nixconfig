@@ -18,7 +18,7 @@
     # ./dunst
     ./swaync
     ./rofi
-    ./walker
+    # ./walker
   ];
 
   home.file = {
@@ -381,6 +381,8 @@
       hl.bind("SUPER + B", exec("brave"))
       hl.bind("SUPER + G", hl.dsp.window.float({ action = "toggle" }))
       hl.bind("SUPER + D", exec("walker"))
+      hl.bind("SUPER + SPACE", exec("qs ipc -p $HOME/.config/epochshell call launcher toggle"))
+      hl.bind("SUPER + SHIFT + slash", exec("qs ipc -p $HOME/.config/epochshell call launcher openKeybinds"))
       hl.bind("SUPER + CTRL + W", exec("walker --provider windows"))
 
       hl.bind("XF86PowerOff", exec("$HOME/.config/wlogout/scripts/wlogout.sh"))

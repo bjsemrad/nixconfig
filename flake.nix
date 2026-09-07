@@ -96,20 +96,20 @@
       ref = "refs/tags/v1.102.3";
     };
 
-    elephant = {
-      type = "git";
-      url = "https://github.com/abenz1267/elephant";
-      ref = "refs/tags/v2.21.0";
-    };
-
-    walker = {
-      type = "git";
-      url = "https://github.com/abenz1267/walker";
-      ref = "refs/tags/v2.16.2";
-      inputs.elephant.follows = "elephant";
-      #      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    # elephant = {
+    #   type = "git";
+    #   url = "https://github.com/abenz1267/elephant";
+    #   ref = "refs/tags/v2.21.0";
+    # };
+    #
+    # walker = {
+    #   type = "git";
+    #   url = "https://github.com/abenz1267/walker";
+    #   ref = "refs/tags/v2.16.2";
+    #   inputs.elephant.follows = "elephant";
+    #   #      inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    #
     ghostty = {
       type = "git";
       url = "https://github.com/ghostty-org/ghostty";
@@ -169,8 +169,8 @@
       nix-flatpak,
       quickshell,
       tailscale,
-      elephant,
-      walker,
+      # elephant,
+      # walker,
       ghostty,
       epochshell,
       sops-nix,
