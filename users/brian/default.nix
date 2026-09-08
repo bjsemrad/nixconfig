@@ -55,6 +55,8 @@
       [
         bitwarden-desktop
         bitwarden-cli
+        sops
+        #claude-code
         #rbw
         # pinentry-tty
         pinentry-qt
@@ -134,8 +136,9 @@
         inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.herdr
       ]
       ++ [
-        inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.temporal-cli
-        inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.go
+        pkgs.unstable.temporal-cli
+        pkgs.unstable.go
+        pkgs.unstable.claude-code
         inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.quickshell
         inputs.opencode.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];

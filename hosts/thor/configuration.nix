@@ -48,6 +48,12 @@
 
   hardware.framework.enableKmod = false;
 
+  sops.defaultSopsFile = ../../secrets.yaml;
+  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+  sops.secrets."home-assistant-token" = {
+    owner = "brian";
+  };
+
   # Bootloader.
   boot = {
     binfmt.emulatedSystems = [

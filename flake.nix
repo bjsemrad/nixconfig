@@ -165,7 +165,6 @@
       herdr,
       mangowm,
       matugen,
-      nixpkgs-unstable,
       nix-flatpak,
       quickshell,
       tailscale,
@@ -178,12 +177,7 @@
       ...
     }@inputs:
     let
-      # system = "x86_64-linux";
       lib = nixpkgs.lib;
-      pkgs = import nixpkgs {
-        stdenv.hostPlatform.system = "x86_64-linux";
-        config.allowUnfree = true;
-      };
     in
     {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
@@ -194,6 +188,7 @@
             ./hosts/thor/configuration.nix
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.framework-12th-gen-intel
+            sops-nix.nixosModules.sops
           ];
           specialArgs = { inherit inputs; };
         };
@@ -205,6 +200,7 @@
             nixos-hardware.nixosModules.common-cpu-amd
             nixos-hardware.nixosModules.common-hidpi
             nixos-hardware.nixosModules.common-pc-ssd
+            sops-nix.nixosModules.sops
           ];
           specialArgs = { inherit inputs; };
         };
