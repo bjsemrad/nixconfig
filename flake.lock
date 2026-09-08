@@ -173,8 +173,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1788880634,
-        "narHash": "sha256-M14VkiMhYG90dzTpjKW1a3SsEcfulPPY4Noh/k9lsu4=",
+        "lastModified": 1788885353,
+        "narHash": "sha256-E6qpc6M+VuVZnCYxzxHPUwZ+SrivldQWrv2UVNH4TD8=",
         "path": "/home/brian/projects/EpochOxide",
         "type": "path"
       },
@@ -195,11 +195,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788883978,
-        "narHash": "sha256-FZD8CJNd+akswbHOOE2FfUDeZFDP0WPVr4EaYAhqdmc=",
+        "lastModified": 1788885465,
+        "narHash": "sha256-EnPnECAwjeTn1TGJ3NvHSagY0uk00+zTlw3WbuihPr4=",
         "ref": "refs/heads/main",
-        "rev": "9a2520a460574b9bf6f8f5f61e38a567a294ca7f",
-        "revCount": 144,
+        "rev": "403336a52f9f6fe8bdea958e3badfe4913b20a1e",
+        "revCount": 145,
         "type": "git",
         "url": "https://github.com/bjsemrad/epochshell"
       },
