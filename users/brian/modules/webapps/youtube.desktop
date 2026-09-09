@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=YouTube
+Comment=YouTube
+Exec=brave --app="https://youtube.com" --ozone-platform=wayland
+Icon=youtube
+Terminal=false
+StartupNotify=true
+StartupWMClass=brave-youtube.com__-Default
+Categories=Network;
