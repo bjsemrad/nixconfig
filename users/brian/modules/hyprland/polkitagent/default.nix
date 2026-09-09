@@ -1,4 +1,4 @@
-{ pkgs, ...}:{
-    services.hyprpolkitagent.enable = true;
-    #services.polkit-gnome.enable = true;
+{ pkgs, ... }: {
+  services.hyprpolkitagent.enable = false;
+  #services.polkit-gnome.enable = true;
 }

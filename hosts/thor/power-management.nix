@@ -2,16 +2,19 @@
 {
   powerManagement.enable = true;
   services.thermald.enable = true;
-  powerManagement.powertop.enable = true;
+
+  # Off: applies aggressive autosuspend once at boot, doesn't adapt
+  # to AC/battery, common source of USB weirdness.
+  powerManagement.powertop.enable = false;
+
   services.power-profiles-daemon.enable = false;
-  services.tlp = {
-    enable = false;
-  };
+  services.tlp.enable = false;
+
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
     battery = {
       governor = "powersave";
-      turbo = "never";
+      turbo = "auto";
     };
     charger = {
       governor = "performance";

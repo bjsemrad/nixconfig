@@ -15,9 +15,7 @@
     ./polkitagent
     ./waybar
     ./wlogout
-    # ./dunst
     ./swaync
-    ./rofi
     # ./walker
   ];
 
@@ -381,9 +379,21 @@
       hl.bind("SUPER + B", exec("brave"))
       hl.bind("SUPER + G", hl.dsp.window.float({ action = "toggle" }))
       hl.bind("SUPER + D", exec("walker"))
-      hl.bind("SUPER + SPACE", exec("qs ipc -p $HOME/.config/epochshell call launcher toggle"))
-      hl.bind("SUPER + SHIFT + slash", exec("qs ipc -p $HOME/.config/epochshell call launcher openKeybinds"))
-      hl.bind("SUPER + CTRL + W", exec("walker --provider windows"))
+      hl.bind("SUPER + SPACE", exec("epochctl launcher toggle")) 
+      hl.bind("SUPER + SHIFT + slash",  exec("epochctl launcher provider keybinds"))
+      hl.bind("SUPER + SHIFT + W",  exec("epochctl launcher provider windows"))
+      hl.bind("SUPER + SHIFT + C",  exec("epochctl launcher provider clipboard"))
+      hl.bind("SUPER + SHIFT + F",  exec("epochctl launcher provider files"))
+
+
+      hl.bind("SUPER + ALT + SHIFT + T",  exec("epochctl panel toggle tailscale"))
+      hl.bind("SUPER + ALT + SHIFT + L",  exec("epochctl panel toggle localsend"))
+      hl.bind("SUPER + ALT + SHIFT + W",  exec("epochctl panel toggle wifi"))
+      hl.bind("SUPER + ALT + SHIFT + B",  exec("epochctl panel toggle bluetooth"))
+      hl.bind("SUPER + ALT + SHIFT + A",  exec("epochctl panel toggle audio"))
+      hl.bind("SUPER + ALT + SHIFT + H",  exec("epochctl panel toggle homeassistant"))
+
+      -- hl.bind("SUPER + CTRL + W", exec("walker --provider windows"))
 
       hl.bind("XF86PowerOff", exec("$HOME/.config/wlogout/scripts/wlogout.sh"))
       hl.bind("SUPER + CTRL + SHIFT + P", exec("$HOME/.config/wlogout/scripts/wlogout.sh"))
