@@ -24,7 +24,7 @@ in
     };
     version = mkOption {
       type = types.str;
-      default = "6.2";
+      default = "6.3.0.45";
       description = "Omada controller image tag";
     };
   };

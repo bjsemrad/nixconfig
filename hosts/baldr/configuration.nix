@@ -116,7 +116,7 @@
 
   services.omada-controller = {
     enable = true;
-    version = "6.2";
+    version = "6.3.0.45";
   };
 
   services.nginx-proxy-manager = {

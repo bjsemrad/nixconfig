@@ -66,6 +66,15 @@ in
           name = "odin";
           rebuild = "nixupdate";
         }
+        {
+          name = "baldr";
+          rebuild = "rebuild-baldr";
+        }
+        {
+          name = "loki";
+          rebuild = "rebuild-loki";
+        }
+
       ];
     };
 
