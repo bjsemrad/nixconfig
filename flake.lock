@@ -173,11 +173,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788918092,
-        "narHash": "sha256-l8d3ZeBhzbCAe6XNuvs6Ut3P+N2MqHAqNETpYNZsm+A=",
+        "lastModified": 1788973814,
+        "narHash": "sha256-nOrImCNuyY2xvIuytU+Q7JQLrMVccp7bjnVzqiZj3Xg=",
         "owner": "bjsemrad",
         "repo": "epochctl",
-        "rev": "39f2aec244aeaefa8f459460409ddf97843f94bc",
+        "rev": "6353d3f7a760e2d9e010b1a5ab01af1ed08eeab4",
         "type": "github"
       },
       "original": {
@@ -194,11 +194,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788955680,
-        "narHash": "sha256-1CW6+freKPwEYp9+jqQHFKlio70oJtOSi893RNqAuEY=",
+        "lastModified": 1788973825,
+        "narHash": "sha256-/E1IGSaxPOB3+9TxFMX6ga34J0NWwAoV6R5xXjAyt7I=",
         "owner": "bjsemrad",
         "repo": "epochoxide",
-        "rev": "2f8b49e3a481bcc0f81d56ddd6c263b12db77e45",
+        "rev": "decb350865cf5ce80270e31a26ce56adf4f5e976",
         "type": "github"
       },
       "original": {
@@ -220,11 +220,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788955726,
-        "narHash": "sha256-8ObH1SxrrJqCX0bjAeEjOtLWbZF4rEXcu42r+AsDsIM=",
+        "lastModified": 1788994353,
+        "narHash": "sha256-HiWIwzzUlpvdgUnGye4X5T+vAYEYNEiujpqTPlA1gZ8=",
         "ref": "refs/heads/main",
-        "rev": "199792aab831aa6af1e83c6d1a215696e162c379",
-        "revCount": 169,
+        "rev": "7b6bac0183c7ab9002c28f4a3c57d6f7847a08ed",
+        "revCount": 178,
         "type": "git",
         "url": "https://github.com/bjsemrad/epochshell"
       },
@@ -388,16 +388,16 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1787161794,
-        "narHash": "sha256-sEGIN3dLZasaHob3EHscWBCIQHflMQVchYmzgsETDk4=",
+        "lastModified": 1788808373,
+        "narHash": "sha256-SUYF4bbaYwNgoe498VoCUzuLPcjBLQXR0o0DWjjoSnI=",
         "owner": "herdrdev",
         "repo": "herdr",
-        "rev": "9eb521456ac0d19d3ab3d9d7cea3cca10baa8a4c",
+        "rev": "b99002ac99b09e00b4ca692436cb15a6b0d676f1",
         "type": "github"
       },
       "original": {
         "owner": "herdrdev",
-        "ref": "v0.8.2",
+        "ref": "v0.9.0",
         "repo": "herdr",
         "type": "github"
       }

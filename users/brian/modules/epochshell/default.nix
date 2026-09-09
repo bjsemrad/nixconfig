@@ -50,6 +50,25 @@ in
       ];
     };
 
+    # Flake update awareness. Checking never writes to the flake: EpochOxide resolves the inputs
+    # into a throwaway lock file and compares, so flake.lock is left alone. The commands below run
+    # in a terminal through zsh interactively, which is what makes an alias work here.
+    nixUpdates = {
+      enable = true;
+      flake = "${config.home.homeDirectory}/nixconfig";
+      checkIntervalMinutes = 60;
+      hosts = [
+        {
+          name = "thor";
+          rebuild = "nixupdate";
+        }
+        {
+          name = "odin";
+          rebuild = "nixupdate";
+        }
+      ];
+    };
+
     epochoxide.settings = {
       launch_prefix = "";
       persistent_index = true;

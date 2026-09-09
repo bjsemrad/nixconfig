@@ -11,6 +11,10 @@
       "text/html" = "brave.desktop";
       "application/pdf" = "brave.desktop";
       "image/*" = "pinta.desktop";
+      # Without this, xdg-open falls back to the first mimeinfo.cache in XDG_DATA_DIRS that
+      # claims inode/directory -- which is the IntelliJ flatpak's export directory, so every
+      # "open this folder" landed in the IDE.
+      "inode/directory" = "thunar.desktop";
     };
   };
 
