@@ -167,6 +167,24 @@ in
     keywords = ["nix", "rebuild", "switch", "odin"]
 
     [[entries]]
+    text = "Night mode"
+    subtext = "Toggle: warm the screen"
+    value = "epochctl toggle night-light"
+    keywords = ["night", "warm", "blue", "light", "sunset", "gamma", "evening"]
+
+    [[entries]]
+    text = "Night mode on"
+    subtext = "Warm the screen regardless of what it was"
+    value = "epochctl toggle night-light on"
+    keywords = ["night", "warm", "blue", "light", "sunset"]
+
+    [[entries]]
+    text = "Night mode off"
+    subtext = "Hand the screen back to normal"
+    value = "epochctl toggle night-light off"
+    keywords = ["night", "warm", "blue", "light", "daylight"]
+
+    [[entries]]
     text = "Stay awake"
     subtext = "Toggle: hold the machine out of idle and sleep"
     value = "epochctl toggle stay-awake"

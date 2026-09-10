@@ -134,11 +134,16 @@
         trayscale
         wayfreeze
         inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.herdr
+
+        satty
+        mpv
+        zathura
       ]
       ++ [
         pkgs.unstable.temporal-cli
         pkgs.unstable.go
         pkgs.unstable.claude-code
+        pkgs.unstable.zed-editor
         inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.quickshell
         inputs.opencode.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
