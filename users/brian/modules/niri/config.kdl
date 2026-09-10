@@ -453,7 +453,8 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+D hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
+    Mod+D hotkey-overlay-title="Run an Application" { spawn "epochctl" "launcher" "provider" "apps"; }
+    Mod+Space hotkey-overlay-title="All launcher providers" { spawn "epochctl" "launcher" "providers"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+B { spawn "brave"; }
     Mod+E { spawn "thunar"; }
