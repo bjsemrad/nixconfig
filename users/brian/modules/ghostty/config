@@ -357,7 +357,8 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 #   - macOS: titlebar tabs style is not updated when switching themes.
 # 
 
-theme = onedark-darker 
+theme = matteblack
+#onedark-darker 
 
 # If you select across cells with differing foregrounds and backgrounds, the
 # selection color will vary across the selection.

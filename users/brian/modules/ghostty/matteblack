@@ -1,0 +1,27 @@
+# ~/.config/ghostty/config (or a separate theme file you source)
+
+background = 121212
+foreground = EAEAEA
+
+cursor-color = F59E0B
+cursor-text = 121212
+
+selection-background = 333333
+selection-foreground = FFFFFF
+
+palette = 0=#333333
+palette = 1=#B91C1C
+palette = 2=#10B981
+palette = 3=#F59E0B
+palette = 4=#5C8DC9
+palette = 5=#a87bb8
+palette = 6=#1EA7A0
+palette = 7=#BEBEBE
+palette = 8=#8A8A8D
+palette = 9=#DC2626
+palette = 10=#059669
+palette = 11=#FBBF24
+palette = 12=#5C8DC9
+palette = 13=#B027DE
+palette = 14=#1EA7A0
+palette = 15=#FFFFFF
