@@ -147,9 +147,11 @@
       url = "github:lukasl-dev/pi.nix";
     };
 
-    codex = {
-      url = "github:openai/codex";
-    };
+    # codex = {
+    #   type = "git";
+    #   url = "https://github.com/openai/codex";
+    #   ref = "refs/tags/rust-v0.155.0";
+    # };
 
     sops-nix.url = "github:Mic92/sops-nix";
 
@@ -183,7 +185,7 @@
       sops-nix,
       opencode,
       pi,
-      codex,
+      # codex,
       ...
     }@inputs:
     let
