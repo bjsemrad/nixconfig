@@ -259,7 +259,7 @@
         general = {
           border_size = 2,
           col = {
-            active_border = 0xFFE68E0D, --blue,
+            active_border = blue,
             inactive_border = bg1,
           },
           gaps_in = 3,

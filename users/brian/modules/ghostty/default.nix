@@ -8,6 +8,7 @@
   home.file = {
     ".config/ghostty/config".source = ./config;
     ".config/ghostty/themes/onedark-darker".source = ./onedark-darker;
+    ".config/ghostty/themes/onedark-warmer".source = ./onedark-warmer;
     ".config/ghostty/themes/onedark".source = ./onedark;
     ".config/ghostty/themes/matteblack".source = ./matteblack;
   };
