@@ -147,7 +147,7 @@
         pkgs.unstable.zed-editor
         inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.quickshell
         inputs.opencode.packages.${pkgs.stdenv.hostPlatform.system}.default
-        inputs.codex.packages.${pkgs.stdenv.hostPlatform.system}.default
+        # inputs.codex.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
 
     sessionVariables = {
