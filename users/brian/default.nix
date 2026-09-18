@@ -39,6 +39,7 @@
     ./modules/wmscripts
     ./modules/xdg
     ./modules/epochshell
+    ./modules/pi
   ];
 
   home = {

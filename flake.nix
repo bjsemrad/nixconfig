@@ -143,6 +143,10 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    pi = {
+      url = "github:lukasl-dev/pi.nix";
+    };
+
     sops-nix.url = "github:Mic92/sops-nix";
 
   };
@@ -174,6 +178,7 @@
       epochshell,
       sops-nix,
       opencode,
+      pi,
       ...
     }@inputs:
     let
