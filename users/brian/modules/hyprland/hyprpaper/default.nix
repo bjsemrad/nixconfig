@@ -18,7 +18,7 @@
         {
           monitor = "";
           path = "/home/brian/.config/hypr/retropc.jpg";
-          fit_mode = "fill";
+          # fit_mode = "fill";
         }
       ];
     };

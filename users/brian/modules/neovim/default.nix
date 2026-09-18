@@ -14,6 +14,10 @@ in
     vimAlias = true;
     sideloadInitLua = true;
     package = neovim-unwrapped;
+    extraPackages = with pkgs; [
+      tree-sitter
+      gcc
+    ];
   };
 
   home.packages = with pkgs; [

@@ -522,6 +522,7 @@
       workspace_rule(3, "^(brave-gmail\\.com).*")
       workspace_rule(3, "^(brave-mail\\.proton\\.me).*")
       workspace_rule(9, "^(brave-chatgpt\\.com).*")
+      workspace_rule(9, "^(brave-claude\\.ai).*")
       workspace_rule(8, "^(brave-music).*")
 
       opacity_rule("^(firefox)$")
