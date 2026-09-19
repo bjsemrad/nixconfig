@@ -54,11 +54,11 @@
         else
           [
             {
-              timeout = 400;
+              timeout = 1800;
               on-timeout = "${inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock}/bin/hyprlock";
             }
             {
-              timeout = 600;
+              timeout = 3600;
               on-timeout = "([ -n \"$${HYPRLAND_INSTANCE_SIGNATURE:-}\" ] && ${
                 inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
               }/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })' || ${
