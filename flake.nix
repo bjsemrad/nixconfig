@@ -234,7 +234,7 @@
           specialArgs = { inherit inputs; };
         };
         semradpi = lib.nixosSystem {
-          system = "x86_64-linux";
+          system = "aarch64-linux";
           modules = [
             ./hosts/semradpi/configuration.nix
           ];
