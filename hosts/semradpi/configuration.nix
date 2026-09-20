@@ -24,10 +24,10 @@
 
   environment.systemPackages = with pkgs; [ vim git htop ];
   
-  services.journald.storage = "volatile";
-  services.journald.extraConfig = ''
-    RuntimeMaxUse=64M
-  '';
+  # services.journald.storage = "volatile";
+  # services.journald.extraConfig = ''
+    # RuntimeMaxUse=64M
+  # '';
   services.tailscale.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

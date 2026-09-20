@@ -1,7 +1,6 @@
 { config, lib, pkgs, modulesPath, ... }:
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-  nixpkgs.hostPlatform = lib.mkForce "aarch64-linux";
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
 
@@ -19,7 +18,7 @@
   fileSystems."/boot/firmware" = {
     device = "/dev/disk/by-label/FIRMWARE";
     fsType = "vfat";
-    options = [ "noatime" ];
+    options = [ "noatime" "nofail" "noauto" ];
   };
 
 
