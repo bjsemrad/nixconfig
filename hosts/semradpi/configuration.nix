@@ -2,7 +2,7 @@
 {
   networking.hostName = "semradpi";
 
-  imports = with inputs.self.nixosModules; [
+  imports = [
     ./hardware-configuration.nix
   ];
 
@@ -29,6 +29,7 @@
     # RuntimeMaxUse=64M
   # '';
   services.tailscale.enable = true;
+  services.tailscale.extraUpFlags = [ "--accept-dns=false" ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.gc = {
