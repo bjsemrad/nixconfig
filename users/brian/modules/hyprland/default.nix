@@ -399,8 +399,8 @@
       hl.bind("SUPER + CTRL + SHIFT + P", exec("$HOME/.config/wlogout/scripts/wlogout.sh"))
       hl.bind("SUPER + CTRL + ALT + SHIFT + C", exec("walker --provider clipboard"))
       hl.bind("SUPER + CTRL + ALT + SHIFT + W", exec("walker --provider windows"))
-      hl.bind("SUPER + CTRL + SHIFT + I", exec('grim -g "$(slurp)"'))
-      --hl.bind("Print", exec('grim -g "$(slurp)"'))
+      hl.bind("SUPER + CTRL + SHIFT + I", exec('epochctl capture screenshot region'))
+      --hl.bind("Print", exec('epochctl capture screenshot region'))
       --hl.bind("SUPER + CTRL + ALT + SHIFT + W", exec("systemctl --user restart epochshell"))
 
       hl.bind("SUPER + left", hl.dsp.focus({ direction = "l" }))
