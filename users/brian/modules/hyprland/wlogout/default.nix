@@ -1,3 +1,35 @@
+{ pkgs, lib, ... }:
+let
+  # epochshell's matte-black theme (~/.config/epochshell/theme/themes/matte-black.toml), copied
+  # by hand like hyprlock's: a theme switched in the shell does not reach here.
+  theme = {
+    background = "#121212";
+    surfaceContainer = "#2a2a2a";
+    surfaceText = "#bebebe";
+    accent = "#61afef";
+    fontFamily = "JetBrainsMono Nerd Font Propo";
+  };
+
+  # The icons ship in one colour for resting and another for focused (Catppuccin's text and base).
+  # Recolour them to the theme at build time, keeping the shape and the alpha, so the originals
+  # in ./images stay as they were.
+  icons = [
+    "lock"
+    "logout"
+    "power"
+    "restart"
+    "sleep"
+  ];
+  themedIcons =
+    pkgs.runCommand "wlogout-icons" { nativeBuildInputs = [ pkgs.imagemagick ]; }
+      ''
+        mkdir -p $out
+        for icon in ${lib.concatStringsSep " " icons}; do
+          magick ${./images}/$icon.png -fill '${theme.surfaceText}' -colorize 100 $out/$icon.png
+          magick ${./images}/$icon-hover.png -fill '${theme.background}' -colorize 100 $out/$icon-hover.png
+        done
+      '';
+in
 {
   programs.wlogout = {
     enable = true;
@@ -36,10 +68,10 @@
 
     style = ''
         window {
-          font-family: JetBrainsMono Nerd Font;
+          font-family: ${theme.fontFamily};
           font-size: 12pt;
-          color: #abb2bf; /* fg_dark */
-          background-color:  rgba(30, 33, 39, 0.85);
+          color: ${theme.surfaceText};
+          background-color: alpha(${theme.background}, 0.85);
       }
 
       button {
@@ -47,20 +79,20 @@
           background-position: center;
           background-size: 20%;
           border: none;
-          color: #abb2bf; /* fg_dark */
+          color: ${theme.surfaceText};
           text-shadow: none;
-          background-color: rgba(30, 33, 39, 0);
+          background-color: transparent;
           margin: 5px;
           transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
       }
 
       button:hover {
-          background-color: rgba(50,54,65, 0.5); /* bg3 */
+          background-color: alpha(${theme.surfaceContainer}, 0.7);
       }
 
       button:focus {
-          background-color: #4fa6ed; /*blue*/
-          color: #1E2127; /* bgDark */
+          background-color: ${theme.accent};
+          color: ${theme.background};
           text-shadow: none;
       }
 
@@ -102,16 +134,16 @@
   };
 
   home.file = {
-    ".config/wlogout/lock-hover.png".source = ./images/lock-hover.png;
-    ".config/wlogout/lock.png".source = ./images/lock.png;
-    ".config/wlogout/logout-hover.png".source = ./images/logout-hover.png;
-    ".config/wlogout/logout.png".source = ./images/logout.png;
-    ".config/wlogout/power-hover.png".source = ./images/power-hover.png;
-    ".config/wlogout/power.png".source = ./images/power.png;
-    ".config/wlogout/restart-hover.png".source = ./images/restart-hover.png;
-    ".config/wlogout/restart.png".source = ./images/restart.png;
-    ".config/wlogout/sleep-hover.png".source = ./images/sleep-hover.png;
-    ".config/wlogout/sleep.png".source = ./images/sleep.png;
+    ".config/wlogout/lock-hover.png".source = "${themedIcons}/lock-hover.png";
+    ".config/wlogout/lock.png".source = "${themedIcons}/lock.png";
+    ".config/wlogout/logout-hover.png".source = "${themedIcons}/logout-hover.png";
+    ".config/wlogout/logout.png".source = "${themedIcons}/logout.png";
+    ".config/wlogout/power-hover.png".source = "${themedIcons}/power-hover.png";
+    ".config/wlogout/power.png".source = "${themedIcons}/power.png";
+    ".config/wlogout/restart-hover.png".source = "${themedIcons}/restart-hover.png";
+    ".config/wlogout/restart.png".source = "${themedIcons}/restart.png";
+    ".config/wlogout/sleep-hover.png".source = "${themedIcons}/sleep-hover.png";
+    ".config/wlogout/sleep.png".source = "${themedIcons}/sleep.png";
     ".config/wlogout/scripts/wlogout.sh".source = ./scripts/wlogout.sh;
   };
 }

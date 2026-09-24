@@ -8,6 +8,7 @@
 }:
 {
   imports = [
+    ./wallpaper
     ./hyprpaper
     ./hyprlock
     ./hypridle
@@ -305,6 +306,9 @@
 
         misc = {
           disable_hyprland_logo = true,
+          -- What shows while hyprpaper loads the next wallpaper: epochshell's matte-black ground,
+          -- so a switch dims for a moment rather than flashing Hyprland's own grey.
+          background_color = 0xff121212,
         },
 
         render = {

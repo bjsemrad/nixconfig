@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   services.hyprpaper = {
     enable = true;
@@ -17,7 +22,7 @@
       wallpaper = [
         {
           monitor = "";
-          path = "/home/brian/.config/hypr/retropc.jpg";
+          path = config.wallpaper.current;
           # fit_mode = "fill";
         }
       ];
