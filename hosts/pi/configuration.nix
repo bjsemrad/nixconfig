@@ -5,7 +5,7 @@
   ...
 }:
 {
-  networking.hostName = "semradpi";
+  networking.hostName = "pi";
 
   imports = [
     ./hardware-configuration.nix

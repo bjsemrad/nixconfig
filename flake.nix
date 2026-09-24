@@ -240,8 +240,13 @@
           ];
           specialArgs = { inherit inputs; };
         };
-
-
+        pi = lib.nixosSystem {
+          system = "aarch64-linux";
+          modules = [
+            ./hosts/pi/configuration.nix
+          ];
+          specialArgs = { inherit inputs; };
+        };
       };
     };
 }
