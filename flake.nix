@@ -155,6 +155,11 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
 
+    # Official flake + NixOS module (Tier 2 upstream: main can break, so pin a tag).
+    hermes-agent = {
+      url = "github:NousResearch/hermes-agent/v2026.9.24";
+    };
+
   };
   outputs =
     {
@@ -185,6 +190,7 @@
       sops-nix,
       opencode,
       pi,
+      hermes-agent,
       # codex,
       ...
     }@inputs:
@@ -230,6 +236,8 @@
           modules = [
             ./hosts/loki/configuration.nix
             home-manager.nixosModules.home-manager
+            sops-nix.nixosModules.sops
+            hermes-agent.nixosModules.default
           ];
           specialArgs = { inherit inputs; };
         };

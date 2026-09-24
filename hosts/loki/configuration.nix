@@ -1,6 +1,12 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
+# loki: Intel N100 (Alder Lake-N) mini PC, 16GB RAM. Headless, always-on agent box.
+#
+# The N100 is slow to compile, so build on thor and push the closure with the
+# `rebuild-loki` shell alias (users/brian/modules/shell):
+#
+#   nixos-rebuild switch -s --flake .#loki --target-host root@10.0.10.7 --verbose
+#
+# sops secrets are decrypted on loki at activation, so loki needs its own copy
+# of /var/lib/sops-nix/key.txt (same as baldr).
 
 {
   config,
@@ -16,7 +22,9 @@
     common-nixsettings
     services-network
     services-smartd
-
+    services-firmware
+    ./hermes.nix
+    ./paperclip.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -71,6 +79,28 @@
     ];
   };
 
+  # Unprivileged account the AI agents run as. Deliberately not in wheel or
+  # docker (docker group membership is effectively root).
+  users.users.agent = {
+    isNormalUser = true;
+    description = "agent";
+    extraGroups = [ ];
+    # Keep user services (tmux servers, agent daemons) running without a login.
+    linger = true;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxG6NiEQZOEJiqpEDXg/eERqe71XNqnNLlI7VaOGqch bjsemrad@gmail.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBlihWxnAF0W+cuKqpQbN1yOY0bABNhQx7qb1sp83Z1 bjsemrad@gmail.com"
+    ];
+  };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "hmbackup";
+    users.agent = import "${inputs.self}/users/agent";
+    extraSpecialArgs = { inherit inputs; };
+  };
+
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxG6NiEQZOEJiqpEDXg/eERqe71XNqnNLlI7VaOGqch bjsemrad@gmail.com"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBlihWxnAF0W+cuKqpQbN1yOY0bABNhQx7qb1sp83Z1 bjsemrad@gmail.com"
@@ -83,21 +113,44 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     zsh
+    git
+    gh
+    tmux
+    htop
+    jq
+    ripgrep
+    fd
+    curl
+    dnsutils
+    iperf3
+    nmap
   ];
 
-  services.uptime-kuma = {
-    enable = true;
-    settings = {
-      UPTIME_KUMA_HOST = "0.0.0.0";
-      UPTIME_KUMA_PORT = "3001";
-    };
-  };
+  # mtr needs raw sockets; this installs it with a cap_net_raw wrapper.
+  programs.mtr.enable = true;
 
-  # Enable the OpenSSH daemon.
+  # Microcode for the N100. hardware-configuration.nix ties updateMicrocode to
+  # enableRedistributableFirmware, which services-firmware turns on; set it
+  # explicitly so it doesn't depend on that.
+  hardware.cpu.intel.updateMicrocode = true;
+
+  nix.settings.trusted-users = [
+    "root"
+    "admin"
+  ];
+
+  # Agent task board.
+  services.paperclip.enable = true;
+
+  sops.defaultSopsFile = ../../secrets.yaml;
+  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+
+  # Enable the OpenSSH daemon. Key-only; root may log in with its keys but never a password.
   services.openssh = {
     settings = {
-      PermitRootLogin = "yes";
-      PasswordAuthentication = true;
+      PermitRootLogin = "prohibit-password";
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
     };
     enable = true;
   };
@@ -117,7 +170,7 @@
     # always allow traffic from your Tailscale network
     trustedInterfaces = [ "tailscale0" ];
 
-    allowedTCPPorts = [ 3001 ];
+    # SSH (services.openssh) and Paperclip (paperclip.nix) open their own ports.
 
     # allow the Tailscale UDP port through the firewall
     allowedUDPPorts = [ config.services.tailscale.port ];
