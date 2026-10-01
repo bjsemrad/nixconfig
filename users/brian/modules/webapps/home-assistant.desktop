@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Home Assistant
+Comment=Home Assistant
+Exec=brave --app="https://home.semrad.net" --ozone-platform=wayland
+Icon=home-assistant
+Terminal=false
+StartupNotify=true
+StartupWMClass=brave-home.semrad.net__-Default
+Categories=Network;

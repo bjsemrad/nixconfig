@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Omada
+Comment=Omada
+Exec=brave --app="https://omada.semrad.net" --ozone-platform=wayland
+Icon=omada
+Terminal=false
+StartupNotify=true
+StartupWMClass=brave-omada.semrad.net__-Default
+Categories=Network;

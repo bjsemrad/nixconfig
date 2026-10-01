@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=TrueNas
+Comment=TrueNas
+Exec=brave --app="https://truenas.semrad.net" --ozone-platform=wayland
+Icon=truenas
+Terminal=false
+StartupNotify=true
+StartupWMClass=brave-truenas.semrad.net__-Default
+Categories=Network;

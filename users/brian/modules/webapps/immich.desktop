@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Immich
+Comment=Immich
+Exec=brave --app="https://immich.semrad.net" --ozone-platform=wayland
+Icon=immich
+Terminal=false
+StartupNotify=true
+StartupWMClass=brave-immich.semrad.net__-Default
+Categories=Network;

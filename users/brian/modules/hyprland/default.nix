@@ -193,12 +193,23 @@
           mode = "3840x2560@60",
           position = "auto",
           scale = 1.333333,
-          -- Original Nix comment kept here for HDR testing:
-          -- bitdepth = 10,
-          -- cm = "hdr",
-          -- sdrbrightness = 1.5,
-          -- sdrsaturation = 1.0,
         })
+
+        hl.monitor({
+          output = "DP-2",
+          mode = "3840x2560@60",
+          position = "auto",
+          scale = 1.333333,
+        })
+
+        hl.monitor({
+          output = "DP-2",
+          mode = "3840x2560@60",
+          position = "auto",
+          scale = 1.333333,
+        })
+
+
 
         hl.monitor({
           output = "",
@@ -528,6 +539,8 @@
       workspace_rule(9, "^(brave-chatgpt\\.com).*")
       workspace_rule(9, "^(brave-claude\\.ai).*")
       workspace_rule(8, "^(brave-music).*")
+      workspace_rule(7, "^(brave-todo).*")
+
 
       opacity_rule("^(firefox)$")
       opacity_rule("^(Alacritty)$")

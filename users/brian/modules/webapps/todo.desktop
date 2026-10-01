@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=TODO
+Comment=TODO
+Exec=brave --app="https://todo.semrad.net/" --ozone-platform=wayland
+Icon=todo
+Terminal=false
+StartupNotify=true
+StartupWMClass=brave-todo.semrad.net__-Default
+Categories=Network;
