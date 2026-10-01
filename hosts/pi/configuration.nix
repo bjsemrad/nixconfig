@@ -11,7 +11,12 @@
     ./hardware-configuration.nix
   ];
 
-  networking.useDHCP = true;
+  # Ethernet and Wi-Fi both managed by NetworkManager (DHCP on each). NM gives
+  # the wired default route the lower metric, so Wi-Fi is the backup path /
+  # second vantage point. The Wi-Fi profile was added by hand on the Pi
+  # (`nmcli dev wifi connect "/dev/net" ifname wlan0 --ask`) and lives,
+  # root-only, in /etc/NetworkManager/system-connections.
+  networking.networkmanager.enable = true;
 
   time.timeZone = "America/Chicago";
 

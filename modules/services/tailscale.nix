@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, ... }: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
 
   services.tailscale = {
     enable = true;
@@ -17,4 +23,3 @@
   };
 
 }
-

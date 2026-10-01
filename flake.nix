@@ -199,6 +199,22 @@
     in
     {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
+      # Bootable image for the Pi (same system as nixosConfigurations.pi). Build on
+      # thor (aarch64 via binfmt) and flash the .img to the USB drive:
+      #   nix build .#images.pi
+      #   sudo dd if=result/sd-image/nixos-image-sd-card-*.img of=/dev/sdX bs=4M status=progress conv=fsync
+      images.pi =
+        (self.nixosConfigurations.pi.extendModules {
+          modules = [
+            "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+            # The generic image enables ZFS; the Pi doesn't use it.
+            {
+              boot.supportedFilesystems.zfs = nixpkgs.lib.mkForce false;
+              # Plain .img (no zstd) so it can be flashed/mounted directly.
+              sdImage.compressImage = false;
+            }
+          ];
+        }).config.system.build.sdImage;
       nixosConfigurations = {
         thor = lib.nixosSystem {
           system = "x86_64-linux"; # explicitly set # Framework
