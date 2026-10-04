@@ -217,7 +217,7 @@ in
     [[entries]]
     text = "Log out"
     subtext = "Quit the compositor and return to the login screen"
-    value = "([ -n \"$HYPRLAND_INSTANCE_SIGNATURE\" ] && hyprctl dispatch exit) || niri msg action quit"
+    value = "~/.config/wmscripts/logout.sh"
     keywords = ["logout", "exit", "session", "quit"]
 
     [[entries]]

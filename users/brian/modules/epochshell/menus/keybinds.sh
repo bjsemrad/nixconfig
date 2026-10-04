@@ -209,77 +209,168 @@ PY
 
 niri_entries() {
   local cfg="${XDG_CONFIG_HOME:-$HOME/.config}/niri/config.kdl"
-  [ -f "$cfg" ] || return 0
-  # Minimal kdl binds parser: find `binds {` block and per-combo "action" lines.
+  [ -f "$cfg" ] || { echo "[]"; return 0; }
+  # niri has no IPC for its binds, so read them from config.kdl. Binds are almost always one line
+  # (`Mod+Q repeat=false { close-window; }`), so this tokenizes the KDL rather than going line by
+  # line: a bind is a key node inside `binds { }` whose children are its action and arguments.
   python3 - "$cfg" <<'PY'
-import json, sys, re
+import json, shlex, sys
 
-cfg = sys.argv[1]
 try:
-    src = open(cfg).read()
+    src = open(sys.argv[1]).read()
 except OSError:
     json.dump([], sys.stdout)
     sys.exit(0)
 
-src = re.sub(r"//.*", "", src)
-in_binds = False
-depth = 0
-combo = None
-entries = []
-
-def value_of(tok):
-    if tok.startswith('"') or tok.startswith("'"):
-        return tok[1:-1]
-    return tok
-
-lines = [l for l in src.splitlines() if l.strip() and not l.strip().startswith(("/", "/*"))]
-i = 0
-while i < len(lines):
-    line = lines[i].strip()
-    if not in_binds and line.startswith("binds"):
-        in_binds, depth = True, 0
-        i += 1
-        continue
-    if not in_binds:
-        i += 1
-        continue
-    # track depth within binds block
-    depth += line.count("{") - line.count("}")
-    if depth < 0:
-        break
-    if line.rstrip().endswith("{") or line.startswith(("Mod", "Super", "Ctrl", "Alt", "Shift")):
-        # combo header, e.g. "Mod+Shift+T { spawn ... }"
-        head = line.split("{")[0]
-        combo = " ".join(head.split()).replace("+", "+")
-        # gather actions until matching close
-        inner = []
-        while i < len(lines) and "}" not in lines[i]:
-            inner.append(lines[i].strip())
+def tokens(s):
+    i, n = 0, len(s)
+    while i < n:
+        c = s[i]
+        if s.startswith("//", i):
+            while i < n and s[i] != "\n":
+                i += 1
+        elif s.startswith("/*", i):
+            end = s.find("*/", i + 2)
+            i = n if end < 0 else end + 2
+        elif s.startswith("/-", i):
+            # KDL slashdash comments out the next node, argument, or block
+            yield ("slashdash", None)
+            i += 2
+        elif c == '"':
+            buf, i = [], i + 1
+            while i < n and s[i] != '"':
+                if s[i] == "\\" and i + 1 < n:
+                    i += 1
+                    buf.append({"n": "\n", "t": "\t"}.get(s[i], s[i]))
+                else:
+                    buf.append(s[i])
+                i += 1
+            yield ("str", "".join(buf))
             i += 1
-        for a in inner:
-            if a.startswith("spawn"):
-                args = value_of(a.split(None, 1)[1]) if len(a.split(None, 1)) > 1 else ""
-                text = args.split()[0] if args else "command"
-                entries.append({
-                    "text": f"Launch {text}",
-                    "subtext": combo,
-                    "icon": "",
-                    "value": f"niri msg action spawn -- {args}",
-                    "keywords": ["spawn", args],
-                })
-            elif a.startswith("action"):
-                parts = a.split()
-                name = parts[1] if len(parts) > 1 else ""
-                rest = value_of(parts[2]) if len(parts) > 2 else ""
-                text = " ".join(w.capitalize() for w in name.replace("-", " ").split())
-                entries.append({
-                    "text": text,
-                    "subtext": combo,
-                    "icon": "",
-                    "value": f"niri msg action {name}" + (f" {rest}" if rest else ""),
-                    "keywords": [name],
-                })
-    i += 1
+        elif c in "{};":
+            yield ("punct", c)
+            i += 1
+        elif c == "\n":
+            yield ("punct", ";")
+            i += 1
+        elif c.isspace() or c == "\\":
+            i += 1
+        else:
+            j = i
+            while j < n and not s[j].isspace() and s[j] not in '{};"':
+                j += 1
+            word = s[i:j]
+            # a property's value may be a quoted string: `hotkey-overlay-title="..."`
+            if word.endswith("=") and j < n and s[j] == '"':
+                yield ("prop", word[:-1])
+            elif "=" in word:
+                k, v = word.split("=", 1)
+                yield ("prop", k)
+                yield ("str", v)
+            else:
+                yield ("word", word)
+            i = j
+
+def nodes(toks):
+    """Parse a token stream into (name, args, props, children) nodes."""
+    out, cur, skip = [], None, False
+    while True:
+        t = next(toks, None)
+        if t is None or t == ("punct", "}"):
+            if cur and not skip:
+                out.append(cur)
+            return out
+        kind, val = t
+        if kind == "slashdash":
+            if cur is None:
+                skip = True
+            else:
+                nxt = next(toks, None)
+                if nxt == ("punct", "{"):
+                    nodes(toks)
+            continue
+        if kind == "punct" and val == ";":
+            if cur and not skip:
+                out.append(cur)
+            cur, skip = None, False
+        elif kind == "punct" and val == "{":
+            children = nodes(toks)
+            if cur is not None:
+                cur["children"] = children
+                if not skip:
+                    out.append(cur)
+            cur, skip = None, False
+        elif cur is None:
+            cur = {"name": val, "args": [], "props": {}, "children": []}
+        elif kind == "prop":
+            v = next(toks, (None, ""))[1]
+            cur["props"][val] = v
+        else:
+            cur["args"].append(val)
+
+def title_case(name):
+    return " ".join(w.capitalize() for w in name.replace("-", " ").split())
+
+LABELS = {
+    "close-window": "Close window",
+    "show-hotkey-overlay": "Show hotkey overlay",
+    "fullscreen-window": "Toggle fullscreen",
+    "toggle-window-floating": "Toggle floating",
+    "toggle-overview": "Toggle overview",
+    "quit": "Quit niri",
+    "screenshot": "Screenshot",
+    "screenshot-screen": "Screenshot screen",
+    "screenshot-window": "Screenshot window",
+    "power-off-monitors": "Power off monitors",
+}
+
+entries, seen = [], set()
+for top in nodes(tokens(src)):
+    if top["name"] != "binds":
+        continue
+    for bind in top["children"]:
+        combo = bind["name"]
+        title = bind["props"].get("hotkey-overlay-title")
+        for action in bind["children"][:1]:
+            name, args = action["name"], [str(a) for a in action["args"]]
+            if name in ("spawn", "spawn-sh"):
+                display = " ".join(args)
+                if name == "spawn-sh" or (args[:2] == ["sh", "-c"] or args[:2] == ["bash", "-c"]):
+                    cmd = args[-1] if args else ""
+                    value = "niri msg action spawn-sh -- " + shlex.quote(cmd)
+                    fallback = cmd if len(cmd) <= 80 else cmd[:80] + " …"
+                else:
+                    value = "niri msg action spawn -- " + " ".join(shlex.quote(a) for a in args)
+                    fallback = "Launch " + (args[0] if args else "command")
+                text = title or fallback
+                subtext = f"{combo}  ·  {display}"
+                keywords = [name, display]
+            else:
+                if name.startswith("focus-workspace") and args:
+                    fallback = f"Focus workspace {args[0]}"
+                elif name.startswith("move-column-to-workspace") and args and args[0].isdigit():
+                    fallback = f"Move column to workspace {args[0]}"
+                elif name.startswith("move-window-to-workspace") and args and args[0].isdigit():
+                    fallback = f"Move window to workspace {args[0]}"
+                else:
+                    fallback = LABELS.get(name) or title_case(name)
+                    if args:
+                        fallback += ": " + " ".join(args)
+                text = title or fallback
+                value = "niri msg action " + name + "".join(" " + shlex.quote(a) for a in args)
+                subtext = combo
+                keywords = [name] + args
+            key = (text, combo)
+            if key in seen:
+                continue
+            seen.add(key)
+            entries.append({
+                "text": text,
+                "subtext": subtext,
+                "icon": "",
+                "value": value,
+                "keywords": keywords + [combo.replace("+", " ")],
+            })
 
 json.dump(entries, sys.stdout)
 PY
@@ -287,10 +378,19 @@ PY
 
 EMPTY="[]"
 
-if [ -n "${NIRI_SOCKET:-}" ] || [ -S "${XDG_RUNTIME_DIR:-/run/user/1000}/niri.sock" ]; then
-  niri_entries
-elif [ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}" ] || command -v hyprctl >/dev/null; then
+# Same order EpochOxide's compositor detection uses for workspaces: the session's own socket
+# variables first, then XDG_CURRENT_DESKTOP. hyprctl merely being installed says nothing about
+# which compositor is running, so it is not a signal.
+running_niri() {
+  [ -n "${NIRI_SOCKET:-}" ] && return 0
+  case "${XDG_CURRENT_DESKTOP:-}" in *[Nn]iri*) return 0 ;; esac
+  compgen -G "${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/niri.*.sock" >/dev/null
+}
+
+if [ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}" ]; then
   hypr_entries
+elif running_niri; then
+  niri_entries
 else
   echo "$EMPTY"
 fi

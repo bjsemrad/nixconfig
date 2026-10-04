@@ -386,7 +386,6 @@
         })
       end)
 
-      hl.bind("SUPER + CTRL + ALT + SHIFT + E", exec("systemctl --user restart elephant.service"))
 
       hl.bind("SUPER + RETURN", exec("ghostty"))
       hl.bind("SUPER + Q", hl.dsp.window.close())
@@ -408,12 +407,9 @@
       hl.bind("SUPER + ALT + SHIFT + A",  exec("epochctl panel toggle audio"))
       hl.bind("SUPER + ALT + SHIFT + H",  exec("epochctl panel toggle homeassistant"))
 
-      -- hl.bind("SUPER + CTRL + W", exec("walker --provider windows"))
 
       hl.bind("XF86PowerOff", exec("$HOME/.config/wlogout/scripts/wlogout.sh"))
       hl.bind("SUPER + CTRL + SHIFT + P", exec("$HOME/.config/wlogout/scripts/wlogout.sh"))
-      hl.bind("SUPER + CTRL + ALT + SHIFT + C", exec("walker --provider clipboard"))
-      hl.bind("SUPER + CTRL + ALT + SHIFT + W", exec("walker --provider windows"))
       hl.bind("SUPER + CTRL + SHIFT + I", exec('epochctl capture screenshot region'))
       --hl.bind("Print", exec('epochctl capture screenshot region'))
       --hl.bind("SUPER + CTRL + ALT + SHIFT + W", exec("systemctl --user restart epochshell"))
@@ -491,8 +487,6 @@
         -- hl.exec_cmd("systemctl --user restart --now elephant.service")
         -- hl.exec_cmd("systemctl --user restart --now walker.service")
         -- hl.exec_cmd("systemctl --user restart --now epochshell")
-        hl.exec_cmd("wl-paste --type text --watch cliphist -max-items 25 store")
-        hl.exec_cmd("wl-paste --type image --watch cliphist -max-items 25 store")
       end)
 
       ----------------

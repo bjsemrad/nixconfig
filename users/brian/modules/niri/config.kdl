@@ -5,7 +5,11 @@
 
 // spawn-at-startup "uwsm finalize WAYLAND_DISPLAY"
 // spawn-at-startup "xwayland-satellite"
-spawn-at-startup "systemctl --user enable --now epochshell.service"
+// epochoxide and epochshell start from graphical-session.target, which niri.service binds to.
+// Hyprland leaves hyprland-session.target (and so graphical-session.target) up when it exits, so
+// coming here from Hyprland nothing gets started, and epochshell has already burned its restart
+// limit crash-looping without a display. Drop the stale targets and kick the shell if it's down.
+spawn-sh-at-startup "systemctl --user stop hyprland-session.target mango-session.target; systemctl --user is-active -q epochshell.service || { systemctl --user reset-failed epochshell.service; systemctl --user restart epochoxide.service epochshell.service; }"
 // spawn-at-startup "systemctl --user enable --now elephant.service"
 // spawn-at-startup "wl-paste --type text --watch cliphist -max-items 25 store"
 // spawn-at-startup "wl-paste --type image --watch cliphist -max-items 25 store"
@@ -138,10 +142,10 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#E06C75"
+        active-color "#4fa6ed"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#505050"
+        inactive-color "#282c34"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -166,8 +170,8 @@ layout {
         off
 
         width 3
-        active-color "#E06C75"
-        inactive-color "#505050"
+        active-color "#4fa6ed"
+        inactive-color "#282c34"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
@@ -178,8 +182,7 @@ layout {
 
     // You can enable drop shadows for windows.
     shadow {
-        // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -341,99 +344,78 @@ window-rule {
     open-maximized-to-edges false
 }
 
+// Apps pinned to workspaces, mirroring workspace_rule() in the Hyprland config.
+// Several match lines in one rule are OR'd, so each rule lists every app for its workspace.
+
 window-rule {
-    match app-id="com.mitchellh.ghostty"
-    match is-urgent=true
+    match app-id=r#"^firefox$"#
+    match app-id=r#"^brave-browser$"#
+    open-focused true
+    open-on-workspace "1"
+}
+
+window-rule {
+    match app-id=r#"^discord$"#
+    match app-id=r#"^org\.signal\.Signal$"#
+    open-focused true
+    open-on-workspace "2"
+}
+
+window-rule {
+    match app-id=r#"^Proton Mail$"#
+    match app-id=r#"^brave-gmail\.com"#
+    match app-id=r#"^brave-mail\.proton\.me"#
+    open-focused true
+    open-on-workspace "3"
+}
+
+window-rule {
+    match app-id=r#"^Alacritty$"#
+    match app-id=r#"^kitty$"#
+    match app-id=r#"^com\.mitchellh\.ghostty$"#
     open-focused true
     open-on-workspace "4"
 }
 
 window-rule {
-    match app-id="firefox"
-    match is-urgent=true
-    open-focused true
-    open-on-workspace "1"
-}
-
-window-rule {
-    match app-id="brave-browser"
-    match is-urgent=true
-    open-focused true
-    open-on-workspace "1"
-}
-
-window-rule {
-    match app-id="discord"
-    match is-urgent=true
-    open-focused true
-    open-on-workspace "2"
-}
-
-window-rule {
-    match app-id="signal"
-    match is-urgent=true
-    open-focused true
-    open-on-workspace "2"
-}
-
-
-window-rule {
-    match app-id="brave-mail.proton.me*"
-    match is-urgent=true
-    open-focused true
-    open-on-workspace "3"
-}
-
-window-rule {
-    match app-id="brave-gmail*"
-    match is-urgent=true
-    open-focused true
-    open-on-workspace "3"
-}
-
-window-rule {
-    match app-id="jetbrains-idea"
-    match is-urgent=true
+    match app-id=r#"^jetbrains-idea$"#
+    match app-id=r#"^Code$"#
+    match app-id=r#"^code-url-handler$"#
     open-focused true
     open-on-workspace "5"
 }
 
 window-rule {
-    match app-id="Code"
-    match is-urgent=true
-    open-focused true
-    open-on-workspace "5"
-}
-
-window-rule {
-    match app-id="steam"
-    match is-urgent=true
+    match app-id=r#"^steam$"#
     open-focused true
     open-on-workspace "6"
 }
 
 window-rule {
-    match app-id="BambooStudio"
-    match is-urgent=true
+    match app-id=r#"^brave-todo"#
     open-focused true
-    open-on-workspace "10"
+    open-on-workspace "7"
 }
 
 window-rule {
-    match app-id="brave-chatgpt*"
-    match is-urgent=true
+    match app-id=r#"^brave-music"#
+    open-focused true
+    open-on-workspace "8"
+}
+
+window-rule {
+    match app-id=r#"^Cider$"#
+    match app-id=r#"^brave-chatgpt\.com"#
+    match app-id=r#"^brave-claude\.ai"#
     open-focused true
     open-on-workspace "9"
 }
 
 window-rule {
-    match app-id="brave-music.apple*"
-    match is-urgent=true
+    match app-id=r#"^BambuStudio$"#
     open-focused true
-    open-on-workspace "8"
+    open-on-workspace "10"
 }
-
-
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -449,9 +431,10 @@ binds {
     // Mod-Shift-/, which is usually the same as Mod-?,
     // opens the EpochShell keybinds menu (launcher scoped to ?).
     Mod+Shift+Slash { spawn "epochctl" "launcher" "provider" "keybinds"; }
+    // Mod-Ctrl-Shift-/ shows niri's built-in hotkey overlay.
+    Mod+Ctrl+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application" { spawn "epochctl" "launcher" "provider" "apps"; }
     Mod+Space hotkey-overlay-title="All launcher providers" { spawn "epochctl" "launcher" "providers"; }
@@ -463,7 +446,18 @@ binds {
     XF86PowerOff { spawn "bash" "-c" "$HOME/.config/wlogout/scripts/wlogout.sh";}
 
 
-    Mod+Ctrl+Shift+C { spawn "walker" "--provider" "clipboard";}
+    // EpochShell launcher providers and panels, matching the Hyprland binds.
+    Mod+Shift+W hotkey-overlay-title="Windows" { spawn "epochctl" "launcher" "provider" "windows"; }
+    Mod+Shift+C hotkey-overlay-title="Clipboard history" { spawn "epochctl" "launcher" "provider" "clipboard"; }
+    Mod+Shift+F hotkey-overlay-title="Files" { spawn "epochctl" "launcher" "provider" "files"; }
+
+    Mod+Alt+Shift+T hotkey-overlay-title="Tailscale panel" { spawn "epochctl" "panel" "toggle" "tailscale"; }
+    Mod+Alt+Shift+L hotkey-overlay-title="LocalSend panel" { spawn "epochctl" "panel" "toggle" "localsend"; }
+    Mod+Alt+Shift+W hotkey-overlay-title="Wi-Fi panel" { spawn "epochctl" "panel" "toggle" "wifi"; }
+    Mod+Alt+Shift+B hotkey-overlay-title="Bluetooth panel" { spawn "epochctl" "panel" "toggle" "bluetooth"; }
+    Mod+Alt+Shift+A hotkey-overlay-title="Audio panel" { spawn "epochctl" "panel" "toggle" "audio"; }
+    Mod+Alt+Shift+H hotkey-overlay-title="Home Assistant panel" { spawn "epochctl" "panel" "toggle" "homeassistant"; }
+
 
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
@@ -472,14 +466,14 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "bash" "-c" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ && dunstify -h int:value:\"$(pamixer --get-volume)\" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 \"Volume: $(pamixer --get-volume) %\""; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "bash" "-c" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1- && dunstify -h int:value:\"$(pamixer --get-volume)\" -i ~/.config/dunst/assets/volume.png -t 500 -r 2593 \"Volume: $(pamixer --get-volume) %\""; }
-    XF86AudioMute        allow-when-locked=true { spawn "bash" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && dunstify -i ~/.config/dunst/assets/$(pamixer --get-mute | grep -q \"true\" && echo \"volume-mute.png\" || echo \"volume.png\") -t 500 -r 2593 \"Toggle Mute\""; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    Mod+Shift+Ctrl+M hotkey-overlay-title="Toggle mic mute" { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "bash" "-c" "brightnessctl s 5%+ && dunstify -h int:value:\"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))\"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 \"Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%\""; }
-    
-    XF86MonBrightnessDown allow-when-locked=true { spawn "bash" "-c" "brightnessctl s 5%- && dunstify -h int:value:\"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))\"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 \"Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%\"";}
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "s" "5%+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "5%-"; }
 
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
@@ -547,14 +541,18 @@ binds {
 
     Mod+Ctrl+Alt+Down      { focus-workspace-down; }
     Mod+Ctrl+Alt+Up        { focus-workspace-up; }
-    Mod+Ctrl+Alt+Left      { focus-workspace-down; }
-    Mod+Ctrl+Alt+Right      { focus-workspace-up; }
+    Mod+Ctrl+Alt+Left      { focus-workspace-up; }
+    Mod+Ctrl+Alt+Right     { focus-workspace-down; }
     Mod+U              { focus-workspace-down; }
     Mod+I              { focus-workspace-up; }
     Mod+Alt+Shift+Down { move-column-to-workspace-down; }
     Mod+Alt+Shift+Up   { move-column-to-workspace-up; }
     Mod+Alt+U         { move-column-to-workspace-down; }
     Mod+Alt+I         { move-column-to-workspace-up; }
+    Mod+Ctrl+Alt+Shift+Left  { move-column-to-workspace-up; }
+    Mod+Ctrl+Alt+Shift+Right { move-column-to-workspace-down; }
+    Mod+Ctrl+Alt+Shift+Up    { move-column-to-workspace-up; }
+    Mod+Ctrl+Alt+Shift+Down  { move-column-to-workspace-down; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
@@ -632,8 +630,9 @@ binds {
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
 
-    // Switches focus between the current and the previous workspace.
-    Mod+Tab { focus-workspace-previous; }
+    // Mod+Tab: previously focused window. Mod+Shift+Tab: previous workspace.
+    Mod+Tab { focus-window-previous; }
+    Mod+Shift+Tab { focus-workspace-previous; }
 
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
@@ -652,8 +651,8 @@ binds {
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
+    Mod+F { fullscreen-window; }
+    Mod+M { maximize-column; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
@@ -699,8 +698,8 @@ binds {
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
-    Super+Shift+Ctrl+S { screenshot-screen; }
-    Super+Shift+Ctrl+W { screenshot-window; }
+    // Super+Shift+Ctrl+S { screenshot-screen; }
+    // Super+Shift+Ctrl+W { screenshot-window; }
     Super+Shift+Ctrl+I { screenshot; }
 
     // Applications such as remote-desktop clients and software KVM switches may
