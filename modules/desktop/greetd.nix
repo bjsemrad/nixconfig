@@ -27,8 +27,8 @@
       };
 
       initial_session = {
-        #command = "niri-session";
-        command = "start-hyprland";
+        command = "niri-session";
+        #command = "start-hyprland";
         user = "brian";
       };
     };

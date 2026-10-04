@@ -280,11 +280,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791081661,
-        "narHash": "sha256-hBnbnzt4gwP70pHHs2+hTf41+26ubhKabtQAr1awcas=",
+        "lastModified": 1791082269,
+        "narHash": "sha256-I4RdWC6B7H2o6hhahEFNEBuoxMWdOPhb+RqU0ancpbY=",
         "ref": "refs/heads/main",
-        "rev": "92bda87887ff54415531a9a605e14d3db81d18ed",
-        "revCount": 226,
+        "rev": "d62c4e8e67111ee804d3f03cb4a6dd24cad2a68b",
+        "revCount": 227,
         "type": "git",
         "url": "https://github.com/bjsemrad/epochshell"
       },

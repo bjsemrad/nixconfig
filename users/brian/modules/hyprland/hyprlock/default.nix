@@ -24,7 +24,7 @@ in
     ".config/hypr/tux-small.png".source = ./tux-small.png;
   };
   programs.hyprlock = {
-    enable = true;
+    enable = false;
     package = inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock;
     settings = {
       background = [
