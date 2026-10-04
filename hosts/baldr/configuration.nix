@@ -22,6 +22,7 @@
     ./channelsdvr.nix
     ./dashboard.nix
     ./mlbserver.nix
+    ./atuin.nix
   ];
 
   # Bootloader.
@@ -139,6 +140,8 @@
   services.homepage.enable = true;
 
   services.mlbserver.enable = true;
+
+  services.atuin-server.enable = true;
 
   sops.defaultSopsFile = ../../secrets.yaml;
   sops.age.keyFile = "/var/lib/sops-nix/key.txt";
