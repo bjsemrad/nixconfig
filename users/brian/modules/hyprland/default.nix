@@ -545,10 +545,9 @@
       workspace_rule(8, "^(brave-music).*")
       workspace_rule(7, "^(brave-todo).*")
 
-
       hl.window_rule({
         name = "bitwarden_popup",
-        match = { title = "^Extension: \\(Bitwarden" },
+        match = { class = ".*nngceckbapebfimnlniiiahkandclblb.*" },
         float = true,
       })
 
