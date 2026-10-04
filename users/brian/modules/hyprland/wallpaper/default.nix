@@ -55,7 +55,8 @@ in
       readOnly = true;
       default = "${config.xdg.stateHome}/wallpaper/current";
       description = ''
-        A symlink to the chosen wallpaper, for anything that shows one (hyprpaper, hyprlock).
+        A symlink to the chosen wallpaper, for anything else that shows one (hyprlock; hyprpaper
+        when it is enabled). epochshell draws the desktop from its own state, not this link.
         Kept outside ~/.config/wallpaper so epochshell's picker does not list it as another image.
       '';
     };
@@ -65,7 +66,7 @@ in
     wallpaper.default = "${config.home.homeDirectory}/.config/wallpaper/retropc.jpg";
 
     # Every rebuild: after the new files are linked, before home-manager restarts services, so
-    # the link exists before hyprpaper could start from it.
+    # the link exists before anything (hyprpaper, if re-enabled) could start from it.
     home.activation.wallpaperSync = lib.hm.dag.entryBetween [ "reloadSystemd" ] [ "linkGeneration" ] ''
       run ${wallpaperSync}/bin/wallpaper-sync
     '';

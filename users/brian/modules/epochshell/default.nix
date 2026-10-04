@@ -204,9 +204,9 @@ in
 
     [[entries]]
     text = "Lock screen"
-    subtext = "Through logind, so hypridle's own locker runs"
+    subtext = "Through logind, which hypridle hands to epochshell's lock screen"
     value = "loginctl lock-session"
-    keywords = ["lock", "screen", "away", "hyprlock"]
+    keywords = ["lock", "screen", "away"]
 
     [[entries]]
     text = "Sleep"
@@ -275,6 +275,37 @@ in
       ];
     };
 
+    # Idle handling in the shell rather than hypridle (disabled in modules/hyprland/hypridle):
+    # the same stages as before. thor is the laptop: locks soon and suspends; the desktops lock
+    # late and turn the lights back on after sleep.
+    idle =
+      if osConfig.networking.hostName == "thor" then
+        {
+          enable = true;
+          lockAfter = 300;
+          screenOffAfter = 400;
+          suspendAfter = 600;
+        }
+      else
+        {
+          enable = true;
+          lockAfter = 1800;
+          screenOffAfter = 400;
+          suspendAfter = 3600;
+          afterSleepCommand = "openrgb -p Blue";
+        };
+
+    # Drawn by the shell on a background layer surface rather than by hyprpaper: instant switches
+    # under niri (hyprpaper's IPC is off there, so it had to be restarted per switch) and every
+    # fit mode works. hyprpaper is disabled in modules/hyprland/hyprpaper to match.
+    wallpaper = {
+      backend = "shell";
+      # Wallpapers are linked into ~/.config/wallpaper by the hyprpaper module.
+      directories = [
+        "~/.config/wallpaper"
+      ];
+    };
+
     epochoxide.settings = {
       launch_prefix = "";
       persistent_index = true;
@@ -299,11 +330,6 @@ in
 
       file_roots = [
         "~"
-      ];
-
-      # Wallpapers are linked into ~/.config/wallpaper by the hyprpaper module.
-      wallpaper_dirs = [
-        "~/.config/wallpaper"
       ];
     };
   };

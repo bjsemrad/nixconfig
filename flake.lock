@@ -233,11 +233,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789757121,
-        "narHash": "sha256-CZ4mm9EwcUwv1PJda5SPeE19pGharHfrKFWxiD+t20U=",
+        "lastModified": 1791079970,
+        "narHash": "sha256-SsWLSEqNS0fBiK4UvbB2Gq6CZ4D2UxgVVcdurQ/NOPc=",
         "owner": "bjsemrad",
         "repo": "epochctl",
-        "rev": "331cd51849ad5d07b578448adb1f8c3c3062b550",
+        "rev": "aa41862ac7985163c2be2648f8af6db4a2e6e496",
         "type": "github"
       },
       "original": {
@@ -254,11 +254,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791064301,
-        "narHash": "sha256-3r7MEuQ28OSAXf16YyoHg6FQJpT0K9BIW+G9nCvk4KQ=",
+        "lastModified": 1791078486,
+        "narHash": "sha256-aEanhafh1HGkh339ZKhKxs2hghv7kpaXU6tf0wE0U1Y=",
         "owner": "bjsemrad",
         "repo": "epochoxide",
-        "rev": "50817fc9735031be1cd6c89761f36a76fd73be79",
+        "rev": "184ebb1ba8daccd3af5dcca1dd1d723cc3ea3c10",
         "type": "github"
       },
       "original": {
@@ -280,11 +280,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791073751,
-        "narHash": "sha256-Z5YDm8jbDaVIHSXLut56ht/uNCwLhOkPxUUboFxBRMk=",
+        "lastModified": 1791081661,
+        "narHash": "sha256-hBnbnzt4gwP70pHHs2+hTf41+26ubhKabtQAr1awcas=",
         "ref": "refs/heads/main",
-        "rev": "4307fd091fabbc22dcb945a3ccfb74100b8629fc",
-        "revCount": 222,
+        "rev": "92bda87887ff54415531a9a605e14d3db81d18ed",
+        "revCount": 226,
         "type": "git",
         "url": "https://github.com/bjsemrad/epochshell"
       },

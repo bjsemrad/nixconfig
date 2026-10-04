@@ -112,7 +112,7 @@
         };
         "custom/lock" = {
           "format" = "";
-          "on-click" = "hyprlock";
+          "on-click" = "epochctl lock";
           "tooltip-format" = "Lock";
         };
         "custom/reboot" = {

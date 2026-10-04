@@ -444,7 +444,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application" { spawn "epochctl" "launcher" "provider" "apps"; }
     Mod+Space hotkey-overlay-title="All launcher providers" { spawn "epochctl" "launcher" "providers"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "epochctl" "lock"; }
     Mod+B { spawn "brave"; }
     Mod+E { spawn "thunar"; }
 

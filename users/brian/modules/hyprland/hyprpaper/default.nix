@@ -5,8 +5,11 @@
   ...
 }:
 {
+  # Off: epochshell draws the wallpaper itself now (programs.epochshell.wallpaper.backend), under
+  # both Hyprland and niri. Kept configured so turning this back on is all a return takes. This
+  # module still links the images into ~/.config/wallpaper, which the picker reads.
   services.hyprpaper = {
-    enable = true;
+    enable = false;
     package = inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper;
     settings = {
       ipc = "on";

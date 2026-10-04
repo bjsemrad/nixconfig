@@ -317,9 +317,13 @@
 
         misc = {
           disable_hyprland_logo = true,
-          -- What shows while hyprpaper loads the next wallpaper: epochshell's matte-black ground,
-          -- so a switch dims for a moment rather than flashing Hyprland's own grey.
+          -- What shows before epochshell's wallpaper surface is up: its matte-black ground, so
+          -- the session starts dark rather than on Hyprland's own grey.
           background_color = 0xff121212,
+          -- epochshell is the session locker. If it crashes while locked, the session stays
+          -- locked and the restarted shell takes the lock back over; without this Hyprland
+          -- refuses a second lock client and the only way out is a TTY.
+          allow_session_lock_restore = true,
         },
 
         render = {

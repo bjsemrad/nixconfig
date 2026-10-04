@@ -5,13 +5,20 @@
   osConfig,
   ...
 }:
+let
+  # epochshell's lock screen. Locking is idempotent, so the idle timeout, logind's Lock signal
+  # (`loginctl lock-session`) and the before-sleep hook can all fire it without stacking lockers.
+  lock = "${config.programs.epochshell.epochctl.package}/bin/epochctl lock";
+in
 {
   # imports = [
   # hypridle.homeManagerModules.default
   # ];
 
+  # Off: epochshell handles idle itself now (programs.epochshell.idle in modules/epochshell), with
+  # the same timeouts. Kept configured so turning it back on is all a return takes.
   services.hypridle = {
-    enable = true;
+    enable = false;
     package = inputs.hypridle.packages.${pkgs.stdenv.hostPlatform.system}.hypridle;
     settings = {
       listener = [
@@ -34,7 +41,7 @@
           [
             {
               timeout = 300;
-              on-timeout = "${inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock}/bin/hyprlock";
+              on-timeout = lock;
             }
             {
               timeout = 600;
@@ -55,7 +62,7 @@
           [
             {
               timeout = 1800;
-              on-timeout = "${inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock}/bin/hyprlock";
+              on-timeout = lock;
             }
             {
               timeout = 3600;
@@ -74,10 +81,10 @@
           ]
       );
       general = {
-        lock_cmd = "${inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock}/bin/hyprlock";
-        before_sleep_cmd = "${
-          inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock
-        }/bin/hyprlock";
+        lock_cmd = lock;
+        # epochctl waits for the compositor to confirm the lock before returning, so the machine
+        # does not go to sleep with the desktop still on screen.
+        before_sleep_cmd = lock;
         after_sleep_cmd = "[ -n \"$${HYPRLAND_INSTANCE_SIGNATURE:-}\" ] && ${
           inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
         }/bin/hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })' || ${

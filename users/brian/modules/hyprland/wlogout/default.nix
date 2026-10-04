@@ -36,7 +36,7 @@ in
     layout = [
       {
         label = "lock";
-        action = "hyprlock";
+        action = "epochctl lock";
         text = "Lock";
         keybind = "l";
       }
