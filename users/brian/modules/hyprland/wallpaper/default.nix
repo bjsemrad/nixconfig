@@ -56,13 +56,13 @@ in
       default = "${config.xdg.stateHome}/wallpaper/current";
       description = ''
         A symlink to the chosen wallpaper, for anything that shows one (hyprpaper, hyprlock).
-        Kept outside ~/.config/hypr so epochshell's picker does not list it as another image.
+        Kept outside ~/.config/wallpaper so epochshell's picker does not list it as another image.
       '';
     };
   };
 
   config = {
-    wallpaper.default = "${config.home.homeDirectory}/.config/hypr/retropc.jpg";
+    wallpaper.default = "${config.home.homeDirectory}/.config/wallpaper/retropc.jpg";
 
     # Every rebuild: after the new files are linked, before home-manager restarts services, so
     # the link exists before hyprpaper could start from it.

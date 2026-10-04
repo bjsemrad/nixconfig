@@ -300,6 +300,11 @@ in
       file_roots = [
         "~"
       ];
+
+      # Wallpapers are linked into ~/.config/wallpaper by the hyprpaper module.
+      wallpaper_dirs = [
+        "~/.config/wallpaper"
+      ];
     };
   };
 
