@@ -18,6 +18,12 @@ spawn-sh-at-startup "systemctl --user stop hyprland-session.target mango-session
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 prefer-no-csd
+
+// Don't pop the "Important Hotkeys" overlay on launch; Mod+Ctrl+Shift+Slash still shows it.
+hotkey-overlay {
+    skip-at-startup
+}
+
 input {
     keyboard {
         xkb {
