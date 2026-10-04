@@ -487,6 +487,12 @@
         -- hl.exec_cmd("systemctl --user restart --now elephant.service")
         -- hl.exec_cmd("systemctl --user restart --now walker.service")
         -- hl.exec_cmd("systemctl --user restart --now epochshell")
+
+        -- force_zero_scaling leaves XWayland apps at native pixels; tell them the
+        -- 1.33 scale via Xft.dpi (96 * 1.333) so they size themselves up crisply.
+        if hostname == "thor" or hostname == "odin" then
+          hl.exec_cmd("echo 'Xft.dpi: 128' | ${pkgs.xrdb}/bin/xrdb -merge")
+        end
       end)
 
       ----------------
