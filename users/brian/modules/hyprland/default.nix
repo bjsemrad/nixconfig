@@ -546,6 +546,12 @@
       workspace_rule(7, "^(brave-todo).*")
 
 
+      hl.window_rule({
+        name = "bitwarden_popup",
+        match = { title = "^Extension: \\(Bitwarden" },
+        float = true,
+      })
+
       opacity_rule("^(firefox)$")
       opacity_rule("^(Alacritty)$")
       opacity_rule("^(kitty)$")
