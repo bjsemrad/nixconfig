@@ -645,6 +645,9 @@ binds {
     // If the window is already in a column, they will expel it out.
     Mod+Ctrl+Shift+Left  { consume-or-expel-window-left; }
     Mod+Ctrl+Shift+Right{ consume-or-expel-window-right; }
+    // Swap the focused window with the one above/below it in the same column.
+    Mod+Ctrl+Shift+Up    { move-window-up; }
+    Mod+Ctrl+Shift+Down  { move-window-down; }
 
     // Consume one window from the right to the bottom of the focused column.
     Mod+Comma  { consume-window-into-column; }
