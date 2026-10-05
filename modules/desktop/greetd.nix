@@ -18,9 +18,11 @@
           inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
         }/share/wayland-sessions:${
           inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri
-        }/share/wayland-sessions:${
-          inputs.mangowm.packages.${pkgs.stdenv.hostPlatform.system}.mango
-        }/share/wayland-sessions --remember --remember-user-session --asterisks";
+        }/share/wayland-sessions
+        :/share/wayland-sessions --remember --remember-user-session --asterisks";
+        #   ${
+        #   inputs.mangowm.packages.${pkgs.stdenv.hostPlatform.system}.mango
+        # }
 
         #command = "${pkgs.tuigreet}/bin/tuigreet --sessions ${config.services.displayManager.sessionData.desktops}/share/xsessions:${config.services.displayManager.sessionData.desktops}/share/wayland-sessions --remember --remember-user-session --asterisks";
         user = "greeter";

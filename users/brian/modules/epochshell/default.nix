@@ -239,7 +239,7 @@ in
     autostart = true;
 
     homeAssistant = {
-      enable = true;
+      enable = false;
       baseUrl = "https://home.semrad.net";
       tokenFile = osConfig.sops.secrets."home-assistant-token".path;
       favorites = [
