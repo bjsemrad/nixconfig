@@ -280,11 +280,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791164425,
-        "narHash": "sha256-ta2rzRy176ZnwQEak6J9bW2socIlhNcWdPArNgpkGL4=",
+        "lastModified": 1791253395,
+        "narHash": "sha256-bAU06irdudwazlpwV+OCB56Z2OudGoNmMwh1i+g+VaE=",
         "ref": "refs/heads/main",
-        "rev": "d3815d22352aa4d723d7283114632f24ac5206ff",
-        "revCount": 235,
+        "rev": "f50af4e748d5dcb4be4bacb8333460cb17a13af9",
+        "revCount": 236,
         "type": "git",
         "url": "https://github.com/bjsemrad/epochshell"
       },
@@ -447,16 +447,16 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1789583424,
-        "narHash": "sha256-N6+kprfWRyh0AkAiopkGsNXUGGORyPVFHEaDHCpGQs8=",
+        "lastModified": 1790708764,
+        "narHash": "sha256-uu452Xe23pSvFk7w7fKPjiaqY5QenUIljao2SFAxpc0=",
         "owner": "herdrdev",
         "repo": "herdr",
-        "rev": "065ef9d6a531c49fb8bee7e818ef837065b21ee9",
+        "rev": "7b116c05bfda646af39d2524c54e70c751f57ee8",
         "type": "github"
       },
       "original": {
         "owner": "herdrdev",
-        "ref": "v0.9.1",
+        "ref": "v0.9.3",
         "repo": "herdr",
         "type": "github"
       }

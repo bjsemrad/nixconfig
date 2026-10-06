@@ -111,7 +111,7 @@
     };
 
     herdr = {
-      url = "github:herdrdev/herdr/v0.9.1";
+      url = "github:herdrdev/herdr/v0.9.3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
