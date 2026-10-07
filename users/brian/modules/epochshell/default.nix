@@ -339,40 +339,4 @@ in
     After = [ "epochoxide.service" ];
   };
 
-  # programs.epochshell = {
-  #   enable = true;
-  #   configDir = "epochshell"; # ~/.config/epochshell
-  #   autostart = true;
-  #   homeAssistant = {
-  #     enable = true;
-  #     baseUrl = "https://home.semrad.net";
-  #     tokenFile = osConfig.sops.secrets."home-assistant-token".path;
-  #     favorites = [
-  #       "light.office_lights"
-  #     ];
-  #   };
-  #   elephant = {
-  #     providers = [
-  #       "files"
-  #       "desktopapplications"
-  #       "calc"
-  #       "clipboard"
-  #       "menus"
-  #       "windows"
-  #       # "bitwarden"
-  #       "providerlist"
-  #     ];
-  #
-  #     settings = {
-  #       providers = {
-  #         files = {
-  #           min_score = 50;
-  #         };
-  #         desktopapplications = {
-  #           launch_prefix = "";
-  #         };
-  #       };
-  #     };
-  #   };
-  # };
 }
