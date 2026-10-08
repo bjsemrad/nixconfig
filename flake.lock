@@ -233,11 +233,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791079970,
-        "narHash": "sha256-SsWLSEqNS0fBiK4UvbB2Gq6CZ4D2UxgVVcdurQ/NOPc=",
+        "lastModified": 1791427545,
+        "narHash": "sha256-zerYSq8zYyFYb9yFtHlnGl4UaC3crbO2rHMl207qvvI=",
         "owner": "bjsemrad",
         "repo": "epochctl",
-        "rev": "aa41862ac7985163c2be2648f8af6db4a2e6e496",
+        "rev": "622e59629a624c4724f97fe31d8c776553c4b871",
         "type": "github"
       },
       "original": {
@@ -254,11 +254,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791078486,
-        "narHash": "sha256-aEanhafh1HGkh339ZKhKxs2hghv7kpaXU6tf0wE0U1Y=",
+        "lastModified": 1791427572,
+        "narHash": "sha256-sbkpA51cW7X8wrlCpoNXI2mevsXRDwHZn/C8cU/M7/M=",
         "owner": "bjsemrad",
         "repo": "epochoxide",
-        "rev": "184ebb1ba8daccd3af5dcca1dd1d723cc3ea3c10",
+        "rev": "dbf72e7e1c7e4371a23ca8694012a29335e6a093",
         "type": "github"
       },
       "original": {
@@ -280,11 +280,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791409002,
-        "narHash": "sha256-5GceFlez4u4qvyBpipka/zrR7ejvrPTqbV8HXJM7ajA=",
+        "lastModified": 1791427989,
+        "narHash": "sha256-D2+a2LSfF+4M/6vA+GzA35gkVM7TEqvP4gU+PXWh0P0=",
         "ref": "refs/heads/main",
-        "rev": "cf002360d464a1fe33d4040af04734e78144b8f9",
-        "revCount": 246,
+        "rev": "67d0cb3c812947a76fa4c02f048f85fea6187639",
+        "revCount": 250,
         "type": "git",
         "url": "https://github.com/bjsemrad/epochshell"
       },
@@ -494,11 +494,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790989254,
-        "narHash": "sha256-ZN+riaeFuE+DZ5zfqJiXlM12jLwZzeIXiNkU1YeHMXI=",
+        "lastModified": 1791306979,
+        "narHash": "sha256-KuLePuhwJM9NLt/gTLHzXaOoSZKGoB3m7NfXjiQ98HY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "acd21c5a3420a9d5fd0ed06299b10828267ef9ba",
+        "rev": "fae6e9e42c3b762ab47635cddcfaf6f52374a61b",
         "type": "github"
       },
       "original": {
@@ -2156,11 +2156,11 @@
         "nixpkgs-x86_64-darwin": "nixpkgs-x86_64-darwin"
       },
       "locked": {
-        "lastModified": 1791371282,
-        "narHash": "sha256-7/hLv9AtWXZktX7pXwvTJaO3O6XYsYdXi9QvDI6l4GQ=",
+        "lastModified": 1791414984,
+        "narHash": "sha256-1b10xGX9RH2uwPbWC4ZKUPN40LMbRNXdO6mexnU8rNk=",
         "owner": "lukasl-dev",
         "repo": "pi.nix",
-        "rev": "fa130d96f6fe1b503e7112d3bff13a8b544e37a7",
+        "rev": "2a1f1ddf5f7da2ee0c7ed3e51a2c5f5fbb70c439",
         "type": "github"
       },
       "original": {
