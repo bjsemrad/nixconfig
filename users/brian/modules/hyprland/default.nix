@@ -441,6 +441,12 @@
       hl.bind("SUPER + W", hl.dsp.group.toggle())
       hl.bind("SUPER + J", hl.dsp.group.next())
       hl.bind("SUPER + K", hl.dsp.group.prev())
+      -- Tuck the focused window into the group in that direction, or pop it back out.
+      hl.bind("SUPER + ALT + left", hl.dsp.window.move({ into_group = "l" }))
+      hl.bind("SUPER + ALT + right", hl.dsp.window.move({ into_group = "r" }))
+      hl.bind("SUPER + ALT + up", hl.dsp.window.move({ into_group = "u" }))
+      hl.bind("SUPER + ALT + down", hl.dsp.window.move({ into_group = "d" }))
+      hl.bind("SUPER + ALT + O", hl.dsp.window.move({ out_of_group = true }))
 
       hl.bind("SUPER + mouse_down", hl.dsp.focus({ direction = "l" }))
       hl.bind("SUPER + mouse_up", hl.dsp.focus({ direction = "r" }))
