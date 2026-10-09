@@ -234,6 +234,11 @@
           enabled = false,
         },
 
+        -- SUPER+arrows walk a group's tabs first, then move on to the neighbouring window.
+        binds = {
+          movefocus_cycles_groupfirst = true,
+        },
+
         decoration = {
           rounding = 10,
           active_opacity = 1.0,
@@ -435,12 +440,10 @@
       hl.bind("ALT + period", hl.dsp.layout("promote"))
 
       -- Column stacking and tabs, mirroring niri: consume/expel move windows in and out of the
-      -- focused column; a group is Hyprland's tab stack, flipped with J/K like a tabbed niri column.
+      -- focused column; a group is Hyprland's tab stack, flipped with SUPER+arrows (binds above).
       hl.bind("SUPER + comma", hl.dsp.layout("consume"))
       hl.bind("SUPER + period", hl.dsp.layout("expel"))
       hl.bind("SUPER + W", hl.dsp.group.toggle())
-      hl.bind("SUPER + J", hl.dsp.group.next())
-      hl.bind("SUPER + K", hl.dsp.group.prev())
       -- Tuck the focused window into the group in that direction, or pop it back out.
       hl.bind("SUPER + ALT + left", hl.dsp.window.move({ into_group = "l" }))
       hl.bind("SUPER + ALT + right", hl.dsp.window.move({ into_group = "r" }))
