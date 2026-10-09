@@ -14,9 +14,7 @@
         vt = lib.mkForce 8;
       };
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --sessions ${
-          inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
-        }/share/wayland-sessions:${
+        command = "${pkgs.tuigreet}/bin/tuigreet --sessions ${config.programs.hyprland.package}/share/wayland-sessions:${
           inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri
         }/share/wayland-sessions
         :/share/wayland-sessions --remember --remember-user-session --asterisks";

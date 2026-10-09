@@ -275,7 +275,7 @@
             inactive_border = bg1,
           },
           gaps_in = 3,
-          gaps_out = 4,
+          gaps_out = 6,
           layout = "scrolling",
         },
 
@@ -332,8 +332,8 @@
         },
 
         scrolling = {
-          column_width = 0.98,
-          explicit_column_widths = "0.33, 0.5, 0.66, 0.98",
+          column_width = 1.0,
+          explicit_column_widths = "0.33, 0.5, 0.66, 1.0",
         },
 
         xwayland = {

@@ -63,7 +63,7 @@ in
   };
 
   config = {
-    wallpaper.default = "${config.home.homeDirectory}/.config/wallpaper/retropc.jpg";
+    wallpaper.default = "${config.home.homeDirectory}/.config/wallpaper/mountain-lake.png";
 
     # Every rebuild: after the new files are linked, before home-manager restarts services, so
     # the link exists before anything (hyprpaper, if re-enabled) could start from it.

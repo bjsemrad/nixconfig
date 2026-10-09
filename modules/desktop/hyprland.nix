@@ -4,10 +4,22 @@
   inputs,
   ...
 }:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+in
 {
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # Hyprland's flake builds against its own pinned nixos-unstable (newer wayland-protocols etc.),
+    # but that nixpkgs ships glaze 8 while Hyprland requires glaze 7.x; on a mismatch CMake falls
+    # back to a git FetchContent that fails in the sandbox. glaze is header-only, so swap in
+    # stable's 7.x (with the same overrides Hyprland's own overlay applies).
+    package = inputs.hyprland.packages.${system}.hyprland.override {
+      glaze-hyprland = pkgs.glaze.override {
+        enableSSL = false;
+        enableInterop = false;
+      };
+    };
     withUWSM = false;
   };
 
