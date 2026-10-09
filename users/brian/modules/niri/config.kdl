@@ -712,12 +712,14 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
-    // Super+Shift+Ctrl+S { screenshot-screen; }
-    // Super+Shift+Ctrl+W { screenshot-window; }
-    Super+Shift+Ctrl+I { screenshot; }
+    // Screenshots go through EpochOxide (epochctl capture), the same as the bar's capture panel
+    // and Hyprland's binds: one selection, one set of file names, and the shell's copy/save,
+    // annotate and notification settings, rather than niri's own screenshot UI.
+    Print hotkey-overlay-title="Screenshot a region" { spawn "epochctl" "capture" "screenshot" "region"; }
+    Ctrl+Print hotkey-overlay-title="Screenshot the screen" { spawn "epochctl" "capture" "screenshot" "fullscreen"; }
+    Alt+Print hotkey-overlay-title="Screenshot the window" { spawn "epochctl" "capture" "screenshot" "window"; }
+    Super+Shift+Ctrl+I hotkey-overlay-title="Screenshot a region" { spawn "epochctl" "capture" "screenshot" "region"; }
+     Super+Shift+Ctrl+Alt+I hotkey-overlay-title="Screenshot a region annotate" { spawn "epochctl" "capture" "screenshot" "region" "--annotate"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
