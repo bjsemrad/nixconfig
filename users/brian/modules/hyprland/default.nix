@@ -415,6 +415,7 @@
       hl.bind("XF86PowerOff", exec("$HOME/.config/wlogout/scripts/wlogout.sh"))
       hl.bind("SUPER + CTRL + SHIFT + P", exec("$HOME/.config/wlogout/scripts/wlogout.sh"))
       hl.bind("SUPER + CTRL + SHIFT + I", exec('epochctl capture screenshot region'))
+      hl.bind("SUPER + CTRL + SHIFT + ALT + I", exec('epochctl capture screenshot region --annotate'))
       --hl.bind("Print", exec('epochctl capture screenshot region'))
       --hl.bind("SUPER + CTRL + ALT + SHIFT + W", exec("systemctl --user restart epochshell"))
 
