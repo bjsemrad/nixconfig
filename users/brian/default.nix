@@ -12,7 +12,6 @@
     ./modules/firefox
     ./modules/chromium
     ./modules/git
-    #./modules/jujutsu
     ./modules/hyprland
     ./modules/niri
     # ./modules/mango
@@ -22,7 +21,6 @@
     ./modules/shell
     ./modules/starship
     ./modules/tmux
-    #./modules/zellij
     ./modules/openrgb
     ./modules/atuin
     ./modules/kitty
@@ -33,7 +31,6 @@
     ./modules/vial
     ./modules/tailscale
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
-    # inputs.walker.homeManagerModules.walker
     ./modules/flatpak
     ./modules/webapps
     ./modules/wmscripts

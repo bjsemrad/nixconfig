@@ -238,6 +238,17 @@ in
     configDir = "epochshell";
     autostart = true;
 
+    settings = {
+      theme = "matte-black-blue";
+      barStyle = "full";
+      panelStyle = "attached";
+      statusStyle = "individual";
+      workspaceStyle = "pill";
+      barOpacity = 1;
+      popupOpacity = 1;
+      panelOpacity = 1;
+    };
+
     homeAssistant = {
       enable = false;
       baseUrl = "https://home.semrad.net";

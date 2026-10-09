@@ -17,8 +17,6 @@
     services-firmware
     # desktop-gnome
     desktop-greetd
-    #desktop-plasma
-    #desktop-sway
     desktop-hyprland
     desktop-niri
     # desktop-mangowc

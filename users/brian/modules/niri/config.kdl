@@ -122,7 +122,7 @@ layout {
     // You can change the default width of the new windows.
     //default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    default-column-width { proportion 1.0;}
+    default-column-width { proportion 1.0; }
 
     // By default focus ring and border are rendered as a solid background rectangle
     // behind windows. That is, they will show up through semitransparent windows.
@@ -229,8 +229,8 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        left 0
-        right 0
+        left 6
+        right 6
         // top 64
         // bottom 64
     }
@@ -704,7 +704,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    //Alt+Slash { toggle-column-tabbed-display; }
+    Mod+W { toggle-column-tabbed-display; }
 
     
     // Note: if you uncomment these, make sure you do NOT have

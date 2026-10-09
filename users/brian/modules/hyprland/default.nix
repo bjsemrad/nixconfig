@@ -17,7 +17,6 @@
     ./waybar
     ./wlogout
     ./swaync
-    # ./walker
   ];
 
   home.file = {
@@ -332,8 +331,8 @@
         },
 
         scrolling = {
-          column_width = 1.0,
-          explicit_column_widths = "0.33, 0.5, 0.66, 1.0",
+          column_width = 0.99,
+          explicit_column_widths = "0.33, 0.5, 0.66, 0.99",
         },
 
         xwayland = {
@@ -435,6 +434,14 @@
       hl.bind("SUPER + R", hl.dsp.layout("colresize +conf"))
       hl.bind("ALT + period", hl.dsp.layout("promote"))
 
+      -- Column stacking and tabs, mirroring niri: consume/expel move windows in and out of the
+      -- focused column; a group is Hyprland's tab stack, flipped with J/K like a tabbed niri column.
+      hl.bind("SUPER + comma", hl.dsp.layout("consume"))
+      hl.bind("SUPER + period", hl.dsp.layout("expel"))
+      hl.bind("SUPER + W", hl.dsp.group.toggle())
+      hl.bind("SUPER + J", hl.dsp.group.next())
+      hl.bind("SUPER + K", hl.dsp.group.prev())
+
       hl.bind("SUPER + mouse_down", hl.dsp.focus({ direction = "l" }))
       hl.bind("SUPER + mouse_up", hl.dsp.focus({ direction = "r" }))
       hl.bind("SUPER + SHIFT + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -490,7 +497,6 @@
         -- hl.exec_cmd("systemctl --user restart --now hyprpolkitagent.service")
         -- hl.exec_cmd("systemctl --user restart --now hypridle.service")
         -- hl.exec_cmd("systemctl --user restart --now elephant.service")
-        -- hl.exec_cmd("systemctl --user restart --now walker.service")
         -- hl.exec_cmd("systemctl --user restart --now epochshell")
 
         -- force_zero_scaling leaves XWayland apps at native pixels; tell them the
