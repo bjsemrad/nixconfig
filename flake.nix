@@ -141,6 +141,11 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.2.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Official flake + NixOS module (Tier 2 upstream: main can break, so pin a tag).
     hermes-agent = {
       url = "github:NousResearch/hermes-agent/v2026.9.24";
@@ -217,6 +222,7 @@
             nixos-hardware.nixosModules.common-hidpi
             nixos-hardware.nixosModules.common-pc-ssd
             sops-nix.nixosModules.sops
+            inputs.lanzaboote.nixosModules.lanzaboote
           ];
           specialArgs = { inherit inputs; };
         };

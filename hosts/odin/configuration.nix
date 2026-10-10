@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   inputs,
   ...
@@ -55,8 +56,13 @@
       "riscv64-linux"
     ];
     loader = {
-      systemd-boot.enable = true;
+      # Replaced by lanzaboote for Secure Boot.
+      systemd-boot.enable = lib.mkForce false;
       efi.canTouchEfiVariables = true;
+    };
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/var/lib/sbctl";
     };
   };
 
@@ -146,7 +152,10 @@
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
-  environment.systemPackages = with pkgs; [ nut ];
+  environment.systemPackages = with pkgs; [
+    nut
+    sbctl
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
