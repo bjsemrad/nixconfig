@@ -11,6 +11,8 @@ if [ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}" ]; then
   desktop=Hyprland
 elif [ -n "${NIRI_SOCKET:-}" ]; then
   desktop=niri
+elif [ -n "${MANGO_INSTANCE_SIGNATURE:-}" ]; then
+  desktop=mango
 fi
 
 case "$desktop" in
@@ -27,7 +29,7 @@ case "$desktop" in
     ;;
   *Mango*|*mango*)
     echo "Logging out of MangoWC..."
-    mmsg -d quit
+    mmsg dispatch quit
     ;;
   *)
     echo "Unknown or unsupported desktop: ${XDG_CURRENT_DESKTOP:-<unset>}"

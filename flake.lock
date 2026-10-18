@@ -269,11 +269,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791557168,
-        "narHash": "sha256-MneXBNB/BDJDGUGsmuzcKXjMvqufcQJU014Q2Gc71YE=",
+        "lastModified": 1792357156,
+        "narHash": "sha256-eJo6NlvehOG1lU+S3stvuMerKwuEjniu8Fh7lr1z2/w=",
         "owner": "bjsemrad",
         "repo": "epochoxide",
-        "rev": "31cf05255af29d29d095d798ef3f725ed71c8005",
+        "rev": "11ad7908f71ebdff1ea8939f57130a9b649bf27d",
         "type": "github"
       },
       "original": {
@@ -295,11 +295,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791571136,
-        "narHash": "sha256-ON2hjuIJ18bowWuDFrDNpeOkPjpifxgo7lTcrh/QQa4=",
+        "lastModified": 1792357203,
+        "narHash": "sha256-cYnsX9CYEA53dRX3m9GVdbNHvusvNbs82EIEaQMwIOY=",
         "ref": "refs/heads/main",
-        "rev": "bfd43ecf34480121de7ad595a372144d2817c1fd",
-        "revCount": 261,
+        "rev": "769627a7c7ba37258654c6113655762c0fed0b89",
+        "revCount": 263,
         "type": "git",
         "url": "https://github.com/bjsemrad/epochshell"
       },
@@ -586,11 +586,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791484883,
-        "narHash": "sha256-iKxFHJrg7Sltwhq3ssCZYQ4CFEDVvReVVuVuO9dj3sE=",
+        "lastModified": 1792098797,
+        "narHash": "sha256-u4DIIZgznEGzByxXrxWCXK19VcMtTBmi/M9gZ7Jk9bM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "dfadbe5162d5e86bc0808badec8f346f81b4b3f0",
+        "rev": "640725978b99076e18e069f6e7d2959124584f8f",
         "type": "github"
       },
       "original": {
@@ -2334,11 +2334,11 @@
         "nixpkgs-x86_64-darwin": "nixpkgs-x86_64-darwin"
       },
       "locked": {
-        "lastModified": 1792226258,
-        "narHash": "sha256-NxhjxYAK8KbR0WtrOS0dSLBE+So4m6Ui7Dbpxnbl81w=",
+        "lastModified": 1792313583,
+        "narHash": "sha256-lCDPq2+X6Qaeb0MHGKHSMT2tKbBKLKGjDp51St6syvk=",
         "owner": "lukasl-dev",
         "repo": "pi.nix",
-        "rev": "a8ce1745fcfae2cbb86b37f9e89f76941893d00e",
+        "rev": "9077b335ba99d2f13a6629226df39319261b1f1e",
         "type": "github"
       },
       "original": {
