@@ -26,6 +26,12 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland-scroll-overview = {
+      url = "github:yayuuu/hyprland-scroll-overview";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     hyprland-systeminfo = {
       type = "git";
       url = "https://github.com/hyprwm/hyprsysteminfo";
@@ -76,12 +82,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # mangowm = {
-    #   type = "git";
-    #   url = "https://github.com/mangowm/mango";
-    #   ref = "refs/tags/0.16.1";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    mangowm = {
+      type = "git";
+      url = "https://github.com/mangowm/mango";
+      ref = "refs/tags/0.18.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     quickshell = {
       type = "git";
@@ -139,6 +145,13 @@
     #   ref = "refs/tags/rust-v0.155.0";
     # };
 
+    # Channels DVR metadata for Pinchflat downloads (hosts/loki/youtub3r.nix). Plain
+    # source: scan.rb is run directly by a systemd timer.
+    youtub3r = {
+      url = "github:maddox/youtub3r";
+      flake = false;
+    };
+
     sops-nix.url = "github:Mic92/sops-nix";
 
     lanzaboote = {
@@ -168,7 +181,7 @@
       waybar,
       niri,
       herdr,
-      # mangowm,
+      mangowm,
       matugen,
       nix-flatpak,
       quickshell,

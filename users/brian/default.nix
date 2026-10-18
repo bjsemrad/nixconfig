@@ -14,7 +14,7 @@
     ./modules/git
     ./modules/hyprland
     ./modules/niri
-    # ./modules/mango
+    ./modules/mango
     ./modules/java
     ./modules/gradle
     ./modules/neovim

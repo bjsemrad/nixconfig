@@ -6,6 +6,18 @@
   osConfig,
   ...
 }:
+let
+  hyprlandPackage = osConfig.programs.hyprland.package;
+  # Built against the system Hyprland (with its glaze override) rather than the plugin flake's
+  # own Hyprland, which fails to build and would not match the running ABI anyway.
+  scrollOverview =
+    inputs.hyprland-scroll-overview.packages.${pkgs.stdenv.hostPlatform.system}.scrolloverview.overrideAttrs
+      (_: {
+        hyprland = hyprlandPackage;
+        # mkHyprlandPlugin derives buildInputs from the hyprland it was first called with.
+        buildInputs = [ hyprlandPackage ] ++ hyprlandPackage.buildInputs ++ [ pkgs.lua5_4 ];
+      });
+in
 {
   imports = [
     ./wallpaper
@@ -72,6 +84,7 @@
     package = null;
     portalPackage = null;
     plugins = [
+      scrollOverview
     ];
     extraConfig = ''
             ----------------
@@ -435,6 +448,10 @@
 
       hl.bind("SUPER + SHIFT + CTRL + left", hl.dsp.window.move({ direction = "l" }))
       hl.bind("SUPER + SHIFT + CTRL + right", hl.dsp.window.move({ direction = "r" }))
+
+      hl.bind("SUPER + O", function()
+        hl.plugin.scrolloverview.overview("toggle all")
+      end)
 
       hl.bind("SUPER + R", hl.dsp.layout("colresize +conf"))
       hl.bind("ALT + period", hl.dsp.layout("promote"))

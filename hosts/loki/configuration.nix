@@ -25,6 +25,8 @@
     services-firmware
     ./hermes.nix
     ./paperclip.nix
+    ./pinchflat.nix
+    ./youtub3r.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
