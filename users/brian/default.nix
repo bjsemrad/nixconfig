@@ -54,9 +54,7 @@
         bitwarden-desktop
         bitwarden-cli
         sops
-        #claude-code
-        #rbw
-        # pinentry-tty
+        nautilus
         pinentry-qt
         wtype
         rustup
