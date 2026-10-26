@@ -388,6 +388,15 @@ in
         no_screen_share = true,
       })
 
+      hl.layer_rule({
+        name = "epochshell-blur",
+        match = { namespace = "^(quickshell|epochshell-.*)$" },
+        blur = true,
+        blur_popups = true,
+        ignore_alpha = 0.3,
+        xray = true,
+      })
+
       ----------------
       -- Keybinds   --
       ----------------

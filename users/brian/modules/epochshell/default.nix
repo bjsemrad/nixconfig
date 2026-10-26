@@ -240,13 +240,12 @@ in
 
     settings = {
       theme = "matte-black-blue";
-      barStyle = "full";
+      barStyle = "centered";
+      barSpan = "full";
       panelStyle = "attached";
-      statusStyle = "individual";
-      workspaceStyle = "pill";
+      statusStyle = "dashboard";
+      workspaceStyle = "ledge";
       barOpacity = 1;
-      popupOpacity = 1;
-      panelOpacity = 1;
     };
 
     homeAssistant = {
