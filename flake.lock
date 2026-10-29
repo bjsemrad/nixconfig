@@ -269,11 +269,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793032254,
-        "narHash": "sha256-A0YFYvusfkdgkofsL52+xOyljvQ96yJcLrQBM0zUsGY=",
+        "lastModified": 1793283061,
+        "narHash": "sha256-178kYg9OKmLFw+rDs2eaAP2gdI7PPZZhPVPCA7CT/Ak=",
         "owner": "bjsemrad",
         "repo": "epochoxide",
-        "rev": "50d5ed9711e6957fa3bbbc251d6801c4ebb92217",
+        "rev": "73898ec64e4645c29ebb66bd59415aaee99a943c",
         "type": "github"
       },
       "original": {
@@ -295,11 +295,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793032308,
-        "narHash": "sha256-qo5YgUjgz22Lmhl6LFnusLLZB+UFeStQyLeY3m3fQN0=",
+        "lastModified": 1793291460,
+        "narHash": "sha256-33XWm/JUUA3OiG2zeGUGRI0nu2N5o3Qj9OCoUyhn6iA=",
         "ref": "refs/heads/main",
-        "rev": "3caad5a9c6802aa2a09c6073c751959692f512df",
-        "revCount": 287,
+        "rev": "bca23d8b80d0781fde0176bbb37df349c5ed3515",
+        "revCount": 291,
         "type": "git",
         "url": "https://github.com/bjsemrad/epochshell"
       },
@@ -586,11 +586,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793029262,
-        "narHash": "sha256-CN3Y4hnAjOvvnHFbUE7ogKko0/hM3/ZWPobSpQn/qsQ=",
+        "lastModified": 1793193205,
+        "narHash": "sha256-X6xa6sGA7RnJQuZGbFMC+K+KToWAlBDCCjJXfTwEPsw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b256132d1134c8d73b99b3c33f6b8e6f7bf3727f",
+        "rev": "095fef2f265c3c0da4fe315efba8f8a04495ab34",
         "type": "github"
       },
       "original": {
@@ -2021,11 +2021,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1793054847,
-        "narHash": "sha256-mhud3nRH8RoP0h9MydfkJ8mISpj+QE/S//wOt9bNgC0=",
+        "lastModified": 1793236063,
+        "narHash": "sha256-jGFe4xdrCw6xpgH2zgKwslACyt/NGuPwGILPEMFxmcQ=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "8ba09466dc929acf5c8bb3e0cc40f472a7df3630",
+        "rev": "b6754c901c21478fd8450d62101e712b2a4f0d75",
         "type": "github"
       },
       "original": {
@@ -2238,11 +2238,11 @@
     },
     "nixpkgs_7": {
       "locked": {
-        "lastModified": 1793015021,
-        "narHash": "sha256-Ee5BWo8sh3pGt70QUdRajnaginqFmWvrtdBc4gJzhks=",
+        "lastModified": 1793183032,
+        "narHash": "sha256-56mFMf8heLNfYhcgbrh4GpN5x+G9JOfTFXZC3n6w0qM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "718f670e845328e9c2cecdd832835712b2cbd065",
+        "rev": "08d3a97586f6b6343b3b5e799980773629432610",
         "type": "github"
       },
       "original": {

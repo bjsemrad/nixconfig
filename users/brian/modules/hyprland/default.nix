@@ -436,6 +436,7 @@ in
       hl.bind("SUPER + ALT + SHIFT + B",  exec("epochctl panel toggle bluetooth"))
       hl.bind("SUPER + ALT + SHIFT + A",  exec("epochctl panel toggle audio"))
       hl.bind("SUPER + ALT + SHIFT + H",  exec("epochctl panel toggle homeassistant"))
+      hl.bind("SUPER + CTRL + ALT + SHIFT + N", exec("epochctl panel toggle notifications"))
 
 
       hl.bind("XF86PowerOff", exec("$HOME/.config/wlogout/scripts/wlogout.sh"))

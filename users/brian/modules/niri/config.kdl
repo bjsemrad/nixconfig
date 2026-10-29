@@ -9,7 +9,7 @@
 // Hyprland leaves hyprland-session.target (and so graphical-session.target) up when it exits, so
 // coming here from Hyprland nothing gets started, and epochshell has already burned its restart
 // limit crash-looping without a display. Drop the stale targets and kick the shell if it's down.
-spawn-sh-at-startup "systemctl --user stop hyprland-session.target mango-session.target; systemctl --user is-active -q epochshell.service || { systemctl --user reset-failed epochshell.service; systemctl --user restart epochoxide.service epochshell.service; }"
+spawn-sh-at-startup "systemctl --user import-environment DISPLAY; systemctl --user stop hyprland-session.target mango-session.target; systemctl --user is-active -q epochshell.service || { systemctl --user reset-failed epochshell.service; systemctl --user restart epochoxide.service epochshell.service; }"
 // spawn-at-startup "systemctl --user enable --now elephant.service"
 // spawn-at-startup "wl-paste --type text --watch cliphist -max-items 25 store"
 // spawn-at-startup "wl-paste --type image --watch cliphist -max-items 25 store"
@@ -479,6 +479,7 @@ binds {
     Mod+Alt+Shift+B hotkey-overlay-title="Bluetooth panel" { spawn "epochctl" "panel" "toggle" "bluetooth"; }
     Mod+Alt+Shift+A hotkey-overlay-title="Audio panel" { spawn "epochctl" "panel" "toggle" "audio"; }
     Mod+Alt+Shift+H hotkey-overlay-title="Home Assistant panel" { spawn "epochctl" "panel" "toggle" "homeassistant"; }
+    Mod+Ctrl+Alt+Shift+N hotkey-overlay-title="Notifications" { spawn "epochctl" "panel" "toggle" "notifications"; }
 
 
 
