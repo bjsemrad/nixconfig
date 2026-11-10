@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Apple Music
-Exec=brave --app="https://music.apple.com" --ozone-platform=wayland
+Exec=webapp-launch applemusic "https://music.apple.com"
 Icon=applemusic
-StartupWMClass=musicapple
+StartupWMClass=webapp-applemusic

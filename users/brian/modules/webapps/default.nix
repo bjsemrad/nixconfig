@@ -32,11 +32,15 @@ let
         ]
       }:$PATH
       export WEBAPPS_DIR="''${WEBAPPS_DIR:-${webappsDir}}"
+      export WEBAPP_FIREFOX=${config.programs.firefox.finalPackage}/bin/firefox
+      export WEBAPP_USER_JS=${./profile/user.js}
+      export WEBAPP_USER_CHROME=${./profile/userChrome.css}
       ${builtins.readFile source}
     '';
 in
 {
   home.packages = [
+    (mkScript "webapp-launch" ./webapp-launch.sh)
     (mkScript "webapp-add" ./webapp-add.sh)
     (mkScript "webapp-remove" ./webapp-remove.sh)
   ];

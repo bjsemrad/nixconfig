@@ -15,7 +15,7 @@ let
       (_: {
         hyprland = hyprlandPackage;
         # mkHyprlandPlugin derives buildInputs from the hyprland it was first called with.
-        buildInputs = [ hyprlandPackage ] ++ hyprlandPackage.buildInputs ++ [ pkgs.lua5_4 ];
+        buildInputs = [ hyprlandPackage ] ++ hyprlandPackage.buildInputs ++ [ ];
       });
 in
 {
@@ -420,7 +420,7 @@ in
       hl.bind("SUPER + RETURN", exec("ghostty"))
       hl.bind("SUPER + Q", hl.dsp.window.close())
       hl.bind("SUPER + E", exec("thunar"))
-      hl.bind("SUPER + B", exec("brave"))
+      hl.bind("SUPER + B", exec("firefox"))
       hl.bind("SUPER + G", hl.dsp.window.float({ action = "toggle" }))
       hl.bind("SUPER + D", exec("epochctl launcher provider apps"))
       hl.bind("SUPER + SPACE", exec("epochctl launcher providers"))
@@ -568,7 +568,6 @@ in
       ------------------
 
       workspace_rule(1, "^(firefox)$")
-      workspace_rule(1, "^(brave-browser)$")
       workspace_rule(3, "^(Proton Mail)$")
       workspace_rule(2, "^(discord)$")
       workspace_rule(2, "^(org.signal.Signal)$")
@@ -581,12 +580,12 @@ in
       workspace_rule(6, "^(steam)$")
       workspace_rule(9, "^(Cider)$")
       workspace_rule(10, "^(BambuStudio)$")
-      workspace_rule(3, "^(brave-gmail\\.com).*")
-      workspace_rule(3, "^(brave-mail\\.proton\\.me).*")
-      workspace_rule(9, "^(brave-chatgpt\\.com).*")
-      workspace_rule(9, "^(brave-claude\\.ai).*")
-      workspace_rule(8, "^(brave-music).*")
-      workspace_rule(7, "^(brave-todo).*")
+      workspace_rule(3, "^(webapp-gmail)$")
+      workspace_rule(3, "^(webapp-protonmail)$")
+      workspace_rule(9, "^(webapp-chatgpt)$")
+      workspace_rule(9, "^(webapp-claude-ai)$")
+      workspace_rule(8, "^(webapp-applemusic)$")
+      workspace_rule(7, "^(webapp-todo)$")
 
       hl.window_rule({
         name = "bitwarden_popup",

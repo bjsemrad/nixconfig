@@ -3,9 +3,9 @@ Version=1.0
 Type=Application
 Name=YouTube
 Comment=YouTube
-Exec=brave --app="https://youtube.com" --ozone-platform=wayland
+Exec=webapp-launch youtube "https://youtube.com"
 Icon=youtube
 Terminal=false
 StartupNotify=true
-StartupWMClass=brave-youtube.com__-Default
+StartupWMClass=webapp-youtube
 Categories=Network;

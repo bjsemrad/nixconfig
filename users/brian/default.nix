@@ -10,7 +10,6 @@
     ./modules/alacritty
     ./modules/kitty
     ./modules/firefox
-    ./modules/chromium
     ./modules/git
     ./modules/hyprland
     ./modules/niri
@@ -37,6 +36,7 @@
     ./modules/xdg
     ./modules/epochshell
     ./modules/pi
+    # ./modules/rex
   ];
 
   home = {

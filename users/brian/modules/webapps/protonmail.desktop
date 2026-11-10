@@ -4,7 +4,7 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=ProtonMail
-Exec=brave --app="https://mail.proton.me/u/0/inbox" --ozone-platform=wayland
+Exec=webapp-launch protonmail "https://mail.proton.me/u/0/inbox"
 Icon=protonmail
-StartupWMClass=proton.me
+StartupWMClass=webapp-protonmail
 Actions=Email

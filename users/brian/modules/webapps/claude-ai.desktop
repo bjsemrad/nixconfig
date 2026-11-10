@@ -3,9 +3,9 @@ Version=1.0
 Type=Application
 Name=Claude.ai
 Comment=Claude.ai
-Exec=brave --app="https://claude.ai" --ozone-platform=wayland
+Exec=webapp-launch claude-ai "https://claude.ai"
 Icon=claude-ai
 Terminal=false
 StartupNotify=true
-StartupWMClass=brave-claude.ai__-Default
+StartupWMClass=webapp-claude-ai
 Categories=Network;

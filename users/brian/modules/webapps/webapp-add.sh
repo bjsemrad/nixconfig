@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Create a Brave web app launcher and commit it to the nix config.
+# Create a Firefox web app launcher (see webapp-launch) and commit it to the nix config.
 #
 # Writes three things into $WEBAPPS_DIR (a directory inside the nixconfig repo):
 #   <slug>.desktop                     the launcher
@@ -9,7 +9,6 @@
 set -euo pipefail
 
 SIZES=(32 48 128 256 512)
-BROWSER="brave"
 
 die() {
   printf '\033[31merror:\033[0m %s\n' "$*" >&2
@@ -25,7 +24,7 @@ Usage: webapp-add <Name> <url> [options]
 Options:
   --icon <url|path>  Use this icon instead of autodetecting one from the site.
   --slug <slug>      Override the derived file/icon name.
-  --class <wmclass>  Override the derived StartupWMClass.
+  --class <wmclass>  Override StartupWMClass (default: webapp-<slug>).
   --force            Overwrite an existing web app of the same slug.
   -h, --help         Show this message.
 
@@ -92,7 +91,9 @@ slugify() {
 
 [[ -n $SLUG ]] || SLUG=$(slugify "$NAME")
 [[ -n $SLUG ]] || die "could not derive a usable slug from name: $NAME"
-[[ $SLUG == */* ]] && die "slug cannot contain '/': $SLUG"
+# The slug becomes a Firefox profile directory and the window's app_id, and is
+# written unquoted into Exec=, so keep it to a safe charset.
+[[ $SLUG =~ ^[a-z0-9][a-z0-9-]*$ ]] || die "slug must be lowercase letters, digits and dashes: $SLUG"
 
 # Checked before the icon fetch so a repeat invocation fails instantly instead of
 # spending a round trip on an icon it is about to refuse to write.
@@ -103,24 +104,21 @@ fi
 # --- url --------------------------------------------------------------------
 
 # Bare "youtube.com" is the common way to type this, so add the scheme. Anything
-# that then isn't http(s) is refused: chromium's --app= treats javascript:,
-# data: and file: as a document to execute.
+# that then isn't http(s) is refused, so a launcher can't be pointed at
+# javascript:, data: or file: URLs.
 [[ $URL =~ ^[a-zA-Z][a-zA-Z0-9+.-]*: ]] || URL="https://$URL"
 [[ ${URL,,} =~ ^https?:// ]] || die "url must be http or https: $URL"
 [[ $URL =~ [[:space:]] ]] && die "url must not contain whitespace: $URL"
+# The url sits inside double quotes in Exec=, where these are special.
+[[ $URL =~ [\"\`\$\\] ]] && die "url must not contain \", \`, \$ or \\: $URL"
 
 URL_HOST=$(sed -E 's|^https?://||; s|/.*$||; s|\?.*$||' <<<"$URL")
-URL_PATH=$(sed -E 's|^https?://[^/]*||' <<<"$URL")
-[[ -n $URL_PATH ]] || URL_PATH="/"
 ORIGIN=$(sed -E 's|^(https?://[^/]+).*|\1|' <<<"$URL")
 
-# Chromium derives the app's WM class from GenerateApplicationNameFromURL(),
-# which is host + "_" + path, with "/" replaced by "_". Verified against a live
-# session: https://gmail.com -> brave-gmail.com__-Default, and
-# https://mail.proton.me/u/0/inbox -> brave-mail.proton.me__u_0_inbox-Default.
-# The hyprland/niri/mango window rules match on exactly this string.
+# webapp-launch runs firefox with --name/--class webapp-<slug>, so that is the
+# app_id the hyprland/niri/mango window rules match on.
 if [[ -z $WMCLASS ]]; then
-  WMCLASS="${BROWSER}-${URL_HOST}_${URL_PATH//\//_}-Default"
+  WMCLASS="webapp-$SLUG"
 fi
 
 # --- icon fetching ----------------------------------------------------------
@@ -238,7 +236,7 @@ Version=1.0
 Type=Application
 Name=$(desktop_escape "$NAME")
 Comment=$(desktop_escape "$NAME")
-Exec=$BROWSER --app="$URL" --ozone-platform=wayland
+Exec=webapp-launch $SLUG "${URL//%/%%}"
 Icon=$SLUG
 Terminal=false
 StartupNotify=true

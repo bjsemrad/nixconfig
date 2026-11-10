@@ -27,7 +27,8 @@
     };
 
     hyprland-scroll-overview = {
-      url = "github:yayuuu/hyprland-scroll-overview";
+      # Pinned: newer main targets Hyprland git (src/workspace/* headers), not v0.56.x.
+      url = "github:yayuuu/hyprland-scroll-overview/07a944e4d16f11d2d9be6ce10bea74a6f1e5f2ae";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.hyprland.follows = "hyprland";
     };
@@ -164,6 +165,7 @@
       url = "github:NousResearch/hermes-agent/v2026.9.24";
     };
 
+    # rex.url = "https://pkgs.superlogical.com/rex/nix/snapshot.tar.gz";
   };
   outputs =
     {
@@ -192,6 +194,7 @@
       opencode,
       pi,
       hermes-agent,
+      # rex,
       ...
     }@inputs:
     let

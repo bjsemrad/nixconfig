@@ -79,7 +79,7 @@
       # ----------------
       bind=SUPER,Return,spawn,ghostty
       bind=SUPER,q,killclient
-      bind=SUPER,b,spawn,brave
+      bind=SUPER,b,spawn,firefox
       bind=SUPER,e,spawn,thunar
       bind=SUPER,d,spawn,epochctl launcher provider apps
       bind=SUPER,space,spawn,epochctl launcher providers
@@ -246,12 +246,11 @@
       # Window rules
       # ----------------
       window_rule=tags:1,app_id:^(firefox)$
-      window_rule=tags:1,app_id:^(brave-browser)$
       window_rule=tags:2,app_id:^(discord)$
       window_rule=tags:2,app_id:^(org\.signal\.Signal)$
       window_rule=tags:3,app_id:^(Proton Mail)$
-      window_rule=tags:3,app_id:^(brave-gmail\.com).*
-      window_rule=tags:3,app_id:^(brave-mail\.proton\.me).*
+      window_rule=tags:3,app_id:^(webapp-gmail)$
+      window_rule=tags:3,app_id:^(webapp-protonmail)$
       window_rule=tags:4,app_id:^(Alacritty)$
       window_rule=tags:4,app_id:^(kitty)$
       window_rule=tags:4,app_id:^(com\.mitchellh\.ghostty)$
@@ -259,11 +258,11 @@
       window_rule=tags:5,app_id:^(Code)$
       window_rule=tags:5,app_id:^(code-url-handler)$
       window_rule=tags:6,app_id:^(steam)$
-      window_rule=tags:7,app_id:^(brave-todo).*
-      window_rule=tags:8,app_id:^(brave-music).*
+      window_rule=tags:7,app_id:^(webapp-todo)$
+      window_rule=tags:8,app_id:^(webapp-applemusic)$
       window_rule=tags:9,app_id:^(Cider)$
-      window_rule=tags:9,app_id:^(brave-chatgpt\.com).*
-      window_rule=tags:9,app_id:^(brave-claude\.ai).*
+      window_rule=tags:9,app_id:^(webapp-chatgpt)$
+      window_rule=tags:9,app_id:^(webapp-claude-ai)$
       window_rule=tags:10,app_id:^(BambuStudio)$
 
       window_rule=is_floating:1,app_id:^(blueman-manager)$

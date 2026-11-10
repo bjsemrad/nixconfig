@@ -3,9 +3,9 @@ Version=1.0
 Type=Application
 Name=TrueNas
 Comment=TrueNas
-Exec=brave --app="https://truenas.semrad.net" --ozone-platform=wayland
+Exec=webapp-launch truenas "https://truenas.semrad.net"
 Icon=truenas
 Terminal=false
 StartupNotify=true
-StartupWMClass=brave-truenas.semrad.net__-Default
+StartupWMClass=webapp-truenas
 Categories=Network;

@@ -1,0 +1,9 @@
+/* Web app profiles: hide everything but the page, like chromium's --app= window. */
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar,
+#sidebar-main,
+#sidebar-box,
+#sidebar-splitter {
+  visibility: collapse !important;
+}

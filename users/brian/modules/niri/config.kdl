@@ -353,7 +353,6 @@ window-rule {
 
 window-rule {
     match app-id=r#"^firefox$"#
-    match app-id=r#"^brave-browser$"#
     open-focused true
     open-on-workspace "1"
 }
@@ -367,8 +366,8 @@ window-rule {
 
 window-rule {
     match app-id=r#"^Proton Mail$"#
-    match app-id=r#"^brave-gmail\.com"#
-    match app-id=r#"^brave-mail\.proton\.me"#
+    match app-id=r#"^webapp-gmail$"#
+    match app-id=r#"^webapp-protonmail$"#
     open-focused true
     open-on-workspace "3"
 }
@@ -396,21 +395,21 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^brave-todo"#
+    match app-id=r#"^webapp-todo$"#
     open-focused true
     open-on-workspace "7"
 }
 
 window-rule {
-    match app-id=r#"^brave-music"#
+    match app-id=r#"^webapp-applemusic$"#
     open-focused true
     open-on-workspace "8"
 }
 
 window-rule {
     match app-id=r#"^Cider$"#
-    match app-id=r#"^brave-chatgpt\.com"#
-    match app-id=r#"^brave-claude\.ai"#
+    match app-id=r#"^webapp-chatgpt$"#
+    match app-id=r#"^webapp-claude-ai$"#
     open-focused true
     open-on-workspace "9"
 }
@@ -461,7 +460,7 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application" { spawn "epochctl" "launcher" "provider" "apps"; }
     Mod+Space hotkey-overlay-title="All launcher providers" { spawn "epochctl" "launcher" "providers"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "epochctl" "lock"; }
-    Mod+B { spawn "brave"; }
+    Mod+B { spawn "firefox"; }
     Mod+E { spawn "thunar"; }
 
     Mod+Ctrl+Shift+P { spawn "bash" "-c" "$HOME/.config/wlogout/scripts/wlogout.sh";}

@@ -4,7 +4,7 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Gmail
-Exec=brave --app="https://gmail.com" --ozone-platform=wayland
+Exec=webapp-launch gmail "https://gmail.com"
 Icon=gmail
-StartupWMClass=gmail
+StartupWMClass=webapp-gmail
 Actions=Email

@@ -3,9 +3,9 @@ Version=1.0
 Type=Application
 Name=Home Assistant
 Comment=Home Assistant
-Exec=brave --app="https://home.semrad.net" --ozone-platform=wayland
+Exec=webapp-launch home-assistant "https://home.semrad.net"
 Icon=home-assistant
 Terminal=false
 StartupNotify=true
-StartupWMClass=brave-home.semrad.net__-Default
+StartupWMClass=webapp-home-assistant
 Categories=Network;
